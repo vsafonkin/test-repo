@@ -19,7 +19,7 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    - name: Run a multi-line script
+    - name: Update test branch
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        git checkout goodbye
+        git merge --no-edit --strategy-option=ours master
