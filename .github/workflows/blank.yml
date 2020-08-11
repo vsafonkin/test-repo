@@ -23,6 +23,8 @@ jobs:
 
     - name: Update test branch
       run: |
+        git config --global user.email "no-reply@microsoft.com"
+        git config --global user.name "Service Account"
         git checkout test-branch
         git merge --no-edit --strategy-option=ours master
         git push origin test-branch
