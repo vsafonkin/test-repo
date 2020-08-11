@@ -24,3 +24,4 @@ jobs:
     - name: Update test branch
       run: |
         git checkout test-branch
+        git merge --no-edit --strategy-option=ours main
