@@ -21,4 +21,5 @@ jobs:
 
     - name: Update test branch
       run: |
-        git branch
+        git pull test-branch
+        git checkout test-branch
