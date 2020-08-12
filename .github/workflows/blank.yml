@@ -26,5 +26,5 @@ jobs:
         git config --global user.email "no-reply@microsoft.com"
         git config --global user.name "Service Account"
         git checkout test-branch
-        git merge --no-edit --strategy-option=ours master
-        git push origin test-branch
+        git checkout -b test-branch-pr
+        git push origin test-branch-pr
