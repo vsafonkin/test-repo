@@ -27,4 +27,4 @@ jobs:
         git config --global user.name "Service Account"
         git checkout test-branch
         git checkout -b test-branch-pr
-        git push origin test-branch-pr
+        git push origin test-branch-pr --force
