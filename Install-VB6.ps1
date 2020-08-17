@@ -2,8 +2,8 @@
 $Url = "https://download.microsoft.com/download/5/a/d/5ad868a0-8ecd-4bb0-a882-fe53eb7ef348/VB6.0-KB290887-X86.exe"
 (New-Object System.Net.WebClient).DownloadFile($Url, "C:\\vb6.exe")
 
-New-Item -ItemType "directory" -Path "C:\\" -Name "vb6"
+New-Item -ItemType "directory" -Path "C:\" -Name "vb6"
 # & "C:\\vb6.exe /T:C:\vb6 /C /Q"
-& "C:\\vb6.exe /?"
+& "C:\vb6.exe /?"
 
-ls C:\\
+ls C:\
