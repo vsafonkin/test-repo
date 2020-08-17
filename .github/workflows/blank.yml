@@ -14,4 +14,5 @@ jobs:
 
     - name: Test
       run: |
-        wget "https://www.microsoft.com/en-us/download/confirmation.aspx?id=7030"
+        $Url = "https://www.microsoft.com/en-us/download/confirmation.aspx?id=7030"
+        (New-Object System.Net.WebClient).DownloadFile($Url, .)
