@@ -6,6 +6,7 @@ $Url = "https://download.microsoft.com/download/5/a/d/5ad868a0-8ecd-4bb0-a882-fe
 (New-Object System.Net.WebClient).DownloadFile($Url, "C:\vb6.exe")
 
 7z.exe x "C:\vb6.exe" -o"C:\vb6" -y | Out-Null
+7z.exe x "C:\vbrun60sp6.exe" -o"C:\vb6" -y | Out-Null
 Push-Location "C:\vb6"
 
 ls .
