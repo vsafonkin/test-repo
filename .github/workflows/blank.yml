@@ -5,12 +5,11 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: windows-2016
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
 
-    - name: env
-      run: env
+    - name: Test
+      run: |
+        ls C:\\Windows
