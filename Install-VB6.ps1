@@ -4,6 +4,6 @@ $Url = "https://download.microsoft.com/download/5/a/d/5ad868a0-8ecd-4bb0-a882-fe
 
 New-Item -ItemType "directory" -Path "C:\" -Name "vb6"
 # & "C:\\vb6.exe /T:C:\vb6 /C /Q"
-& "C:\vb6.exe /?"
+& "vb6.exe /?"
 
 ls C:\
