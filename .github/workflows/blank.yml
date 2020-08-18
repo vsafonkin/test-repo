@@ -1,6 +1,12 @@
 name: CI
 
 on:
+  workflow_dispatch:
+    inputs:
+      test:
+        description: 'test'     
+        required: true
+        default: '1'
   push:
     branches:
       - master
@@ -14,8 +20,4 @@ jobs:
 
     - name: Test
       run: |
-        node --version
-        . ~/.bashrc
-        nvm install 10.5.0
-        nvm alias default 10.5.0
-        node --version
+        pwsh Test.ps1
