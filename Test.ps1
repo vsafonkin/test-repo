@@ -4,4 +4,5 @@ gcc -Wall sample.c -o sample
 sample.exe
 
 git clone https://github.com/git/git
-ls .
+cd git
+make configure
