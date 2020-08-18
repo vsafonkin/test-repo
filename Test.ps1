@@ -1,6 +1,7 @@
 Get-Command bash
 
-gcc -Wall sample.c -o sample
+gcc -Wall sample.c -o sample.exe
+sample.exe
 
 ls C:\mingw64\bin
 
