@@ -1,1 +1,2 @@
-gcc -Wall sample.c -o sample
+gfortran --version
+gcc sample.c -o sample
