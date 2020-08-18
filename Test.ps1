@@ -1,8 +1,11 @@
 Get-Command bash
 
 gcc -Wall sample.c -o sample
-sample.exe
+ls .
 
-git clone https://github.com/git/git
-cd git
-make configure
+git clone https://github.com/memcached/memcached
+cd memcached
+./autogen.sh
+./configure
+make
+make test
