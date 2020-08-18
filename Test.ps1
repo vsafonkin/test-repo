@@ -1,7 +1,8 @@
 Get-Command bash
 
 gcc -Wall sample.c -o sample
-ls .
+
+ls C:\mingw64\bin
 
 git clone https://github.com/memcached/memcached
 cd memcached
