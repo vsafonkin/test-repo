@@ -1,7 +1,7 @@
 Get-Command bash
 
 gcc -Wall sample.c -o sample
-ls .
+sample.exe
 
 git clone https://github.com/git/git
 ls .
