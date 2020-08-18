@@ -7,11 +7,11 @@ on:
 
 jobs:
   build:
-    runs-on: windows-2016
+    runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v2
 
     - name: Test
       run: |
-        pwsh ./Install-VB6.ps1
+        nvm install 10.5.0
