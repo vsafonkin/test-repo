@@ -12,3 +12,7 @@
 # ls .
 
 Get-Command gcc.exe
+Get-Command g++.exe
+
+Write-Host "----------"
+ls C:\ProgramData\Chocolatey\bin
