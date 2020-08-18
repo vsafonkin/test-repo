@@ -11,4 +11,4 @@
 
 # ls .
 
-gcc --version
+Get-Command gcc.exe
