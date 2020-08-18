@@ -2,9 +2,9 @@ Get-Command bash
 Get-Command gcc
 
 gcc -Wall sample.c -o sample
-bash.exe ./sample
+sample.exe
 
-ls C:\
+ls C:\ProgramData\Chocolatey\bin\
 
 # git clone https://github.com/memcached/memcached
 # cd memcached
