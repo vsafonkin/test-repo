@@ -12,7 +12,7 @@ on:
       - master
 
 jobs:
-  run_Test.ps1:
+  run_Test_ps1:
     runs-on: windows-latest
 
     steps:
