@@ -1,2 +1,1 @@
-gfortran --version
-gcc sample.c -o sample
+ls C:\msys2
