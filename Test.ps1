@@ -1,1 +1,1 @@
-C:\msys64\mingw64\bin\gcc -Wall sample.c -o sample
+C:\msys64\mingw64\bin\gcc -c sample.c -o sample
