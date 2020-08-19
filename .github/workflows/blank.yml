@@ -20,4 +20,4 @@ jobs:
 
     - name: Test
       run: |
-        C:\msys64\mingw64\bin\gcc -v sample.c -o sample
+        C:\msys64\mingw64\bin\gcc --help
