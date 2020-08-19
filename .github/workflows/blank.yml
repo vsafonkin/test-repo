@@ -20,4 +20,4 @@ jobs:
 
     - name: Test
       run: |
-        Test.ps1
+        pwsh Test.ps1
