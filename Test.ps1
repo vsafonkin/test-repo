@@ -1,1 +1,1 @@
-ls C:\msys2
+ls C:\msys64\usr\bin
