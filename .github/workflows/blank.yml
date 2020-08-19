@@ -20,4 +20,4 @@ jobs:
 
     - name: Test
       run: |
-        C:\msys64\mingw64\bin\gcc -o sample sample.c
+        pwsh ./Test.ps1
