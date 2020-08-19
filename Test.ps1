@@ -1,1 +1,1 @@
-ls C:\msys64\usr\bin
+ls C:\msys64\mingw64\bin
