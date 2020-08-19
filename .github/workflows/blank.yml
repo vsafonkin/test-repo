@@ -20,4 +20,4 @@ jobs:
 
     - name: Test
       run: |
-        pacman --version
+        pwsh Test.ps1
