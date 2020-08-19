@@ -20,4 +20,4 @@ jobs:
 
     - name: Test
       run: |
-        gcc sample.c -o sample
+        gcc -v sample.c -o sample
