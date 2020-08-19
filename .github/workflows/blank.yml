@@ -20,5 +20,4 @@ jobs:
 
     - name: Test
       run: |
-        ls .
-        C:\msys64\mingw64\bin\gcc sample.c -o sample
+        C:\msys64\mingw64\bin\gcc --version
