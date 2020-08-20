@@ -2,4 +2,4 @@ $buildScriptsPackageUrl = 'https://appcenterbuildassets-int.azureedge.net/builds
 Invoke-WebRequest -Uri $buildScriptsPackageUrl -OutFile 'appcenter-build-assets-latest.zip'
 # New-Item -ItemType directory -Path 'scripts' | Out-Null
 unzip -q -d 'scripts' 'appcenter-build-assets-latest.zip'
-if (Test-Path ./scripts) { Invoke-Expression 'bash ./scripts/init.sh' }
+if (Test-Path ./scripts) { Invoke-Expression 'cat ./scripts/init.sh' }
