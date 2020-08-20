@@ -21,4 +21,3 @@ jobs:
     - name: Test
       run: |
         bash test.sh
-        pwsh Test.ps1
