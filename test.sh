@@ -1,7 +1,2 @@
-mkdir -p "$HOME/.gradle/init.d"
+rm "$HOME/.gradle/init.d/hello.gradle"
 
-if [ -d "$HOME/.gradle/init.d" ]; then
-   rm -rf "$HOME/.gradle/init.d"
-fi
-
-ls $HOME/.gradle
