@@ -1,3 +1,6 @@
-$origPath = $env:PATH
-$env:PATH = "C:\msys64\mingw64\bin;C:\msys64\usr\bin;$origPath"
-pacman -S --noconfirm --needed --noprogressbar git-extras
+$buildScriptsPackageUrl = 'https://appcenterbuildassets-int.azureedge.net/buildscripts/appcenter-build-assets-latest.zip'
+Set-Location -Path '$(Agent.HomeDirectory)'
+Invoke-WebRequest -Uri $buildScriptsPackageUrl -OutFile 'appcenter-build-assets-latest.zip'
+New-Item -ItemType directory -Path 'scripts' | Out-Null
+unzip -q -d 'scripts' 'appcenter-build-assets-latest.zip'
+ls ./scripts
