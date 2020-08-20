@@ -3,3 +3,5 @@ Invoke-WebRequest -Uri $buildScriptsPackageUrl -OutFile 'appcenter-build-assets-
 unzip -q -d 'scripts' 'appcenter-build-assets-latest.zip'
 ls ./scripts
 # if (Test-Path ./scripts) { Invoke-Expression 'bash ./scripts/init.sh' }
+rm -rf "./scripts"
+ls .
