@@ -17,7 +17,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
+    - name: test.sh
+      run: |
+        bash test.sh
 
-    - name: Test
+    - name: Test.ps1
       run: |
         pwsh ./Test.ps1
