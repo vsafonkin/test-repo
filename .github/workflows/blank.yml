@@ -21,4 +21,4 @@ jobs:
     - name: Test
       run: |
         ghc -o sample sample.hs
-        ls .
+        ./sample
