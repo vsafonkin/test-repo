@@ -24,4 +24,5 @@ jobs:
 
     - name: Test.ps1
       run: |
-        pwsh ./Test.ps1
+        ghc -o sample sample.hs
+        ls .
