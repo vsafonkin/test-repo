@@ -17,12 +17,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    
-    - name: test.sh
-      run: |
-        bash test.sh
 
-    - name: Test.ps1
+    - name: Test
       run: |
         ghc -o sample sample.hs
         ls .
