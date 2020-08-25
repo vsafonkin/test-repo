@@ -1,6 +1,6 @@
 mkdir sample
 cd sample
-cabal init --license=NONE -p sample
+cabal init --license=MIT -p sample
 cabal build :sample
-ls .
-./sample
+ls ./dist-newstyle
+
