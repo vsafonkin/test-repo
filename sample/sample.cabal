@@ -2,7 +2,6 @@ name:                sample
 version:             0.1.0.0
 license:             MIT
 build-type:          Simple
-extra-source-files:  CHANGELOG.md
 
 executable sample
   main-is:             Main.hs
