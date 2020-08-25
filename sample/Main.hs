@@ -4,4 +4,4 @@ import HaskellSay (haskellSay)
 
 main :: IO ()
 main =
-  haskellSay "Hello, Haskell! You're using a function from another package!"
+  haskellSay "Azure pipelines canary"
