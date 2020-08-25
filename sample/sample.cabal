@@ -18,6 +18,6 @@ executable sample
   -- other-extensions:
   build-depends:       
       base >=4.14 && <4.15,
-      haskell-say ^>=1.0.0.0
+      haskell-say ^>=1.0.0.0,
   -- hs-source-dirs:
   default-language:    Haskell2010
