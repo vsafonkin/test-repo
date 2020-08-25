@@ -20,5 +20,4 @@ jobs:
 
     - name: Test
       run: |
-        ghc -o sample sample.hs
-        ./sample
+        pwsh ./Test.ps1
