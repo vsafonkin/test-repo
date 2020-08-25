@@ -1,3 +1,4 @@
 cd sample
 cabal init --license=MIT -p sample
-cabal install --help
+cabal install haskell-say
+cabal build :sample
