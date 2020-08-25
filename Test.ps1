@@ -5,4 +5,4 @@ unzip -q -d 'scripts' 'appcenter-build-assets-latest.zip'
 Invoke-Expression 'bash ./scripts/init.sh'
 ls ./scripts
 echo "------"
-ls /Users/runner/.gradle
+ls /Users/runner/.gradle/init.d
