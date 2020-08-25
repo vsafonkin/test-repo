@@ -1,1 +1,3 @@
-cabal install cabal-install
+cd sample
+cabal init --license=MIT -p sample
+cabal build :sample
