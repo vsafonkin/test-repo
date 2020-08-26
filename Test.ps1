@@ -1,7 +1,13 @@
-cd sample
-cabal install haskell-say
-cabal build :sample
+# cd sample
+# cabal install haskell-say
+# cabal build :sample
+# cabal run
+mkdir cabal-sample
+cd cabal-sample
+cabal init
+cabal build :cabal-sample
 cabal run
+
 
 cd ..
 stack new my-project
