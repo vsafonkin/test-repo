@@ -4,10 +4,9 @@ cabal build :sample
 cabal run
 
 cd ..
-mkdir stack-sample
-cd stack-sample
-stack new
+stack new my-project
+cd my-project
 stack setup
 stack build
-stack run
+stack exec my-project-exe
 
