@@ -20,6 +20,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
+    - name: Help
+      run: |
+        stack --help
 
     - name: Test Cabal
       run: |
