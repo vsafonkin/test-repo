@@ -30,7 +30,6 @@ jobs:
         cabal --version
         cd sample
         cabal update
-        cabal install haskell-say
         cabal build
         cabal run
     
