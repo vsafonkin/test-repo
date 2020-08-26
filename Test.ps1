@@ -1,15 +1,15 @@
-cd sample
-cabal update
-cabal install haskell-say
-ghc Main.hs --make -o sample
-ls .
+# cd sample
+# cabal update
+# cabal install haskell-say
+# ghc Main.hs --make -o sample
+# ls .
 
 # echo "---------------"
 # cd ..
-# # cd sample
-# # cabal install haskell-say
-# # cabal build :sample
-# # cabal run
+cd sample
+cabal install haskell-say
+cabal build :sample
+cabal run
 # mkdir sample-cabal
 # cd sample-cabal
 # cabal init
