@@ -7,6 +7,7 @@
 # echo "---------------"
 # cd ..
 cd sample
+cabal update
 cabal install haskell-say
 cabal build :sample
 cabal run
