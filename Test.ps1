@@ -6,16 +6,16 @@
 
 # echo "---------------"
 # cd ..
-cd sample
-cabal update
-cabal install haskell-say
-cabal build :sample
-cabal run
-# mkdir sample-cabal
-# cd sample-cabal
-# cabal init
-# cabal build :sample-cabal
+# cd sample
+# cabal update
+# cabal install haskell-say
+# cabal build :sample
 # cabal run
+mkdir sample-cabal
+cd sample-cabal
+cabal init
+cabal build :sample-cabal
+cabal run
 
 # echo "---------------"
 # cd ..
