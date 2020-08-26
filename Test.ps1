@@ -2,10 +2,8 @@ cd sample
 ghc Main.hs --make -o sample
 ls .
 
+echo "---------------"
 cd ..
-
-
-
 # cd sample
 # cabal install haskell-say
 # cabal build :sample
@@ -16,7 +14,7 @@ cabal init
 cabal build :sample-cabal
 cabal run
 
-
+echo "---------------"
 cd ..
 stack new sample-stack new-template
 cd sample-stack
