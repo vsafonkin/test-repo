@@ -13,7 +13,10 @@ on:
 
 jobs:
   run_Test_ps1:
-    runs-on: macos-latest
+    runs-on: ${{ matrix.platform }}
+    strategy:
+      matrix:
+        platform: [windows-latest, ubuntu-latest, macos-latest]
 
     steps:
     - uses: actions/checkout@v2
