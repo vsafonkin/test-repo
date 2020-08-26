@@ -7,4 +7,4 @@ executable sample
   main-is:             Main.hs
   build-depends:       
       base,
-      cli-setup
+      hello
