@@ -3,11 +3,10 @@ cd sample
 # cabal build :sample
 # cabal run
 
-mkdir stack-sample
-cd stack-sample
-stack new
+stack init
 stack setup
 stack build
+stack run
 
 echo "-----"
 stack --help
