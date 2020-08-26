@@ -1,4 +1,5 @@
 cd sample
+cabal update
 cabal install haskell-say
 ghc Main.hs --make -o sample
 ls .
