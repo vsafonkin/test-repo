@@ -1,3 +1,11 @@
+cd sample
+ghc Main.hs --make -o sample
+ls .
+
+cd ..
+
+
+
 # cd sample
 # cabal install haskell-say
 # cabal build :sample
