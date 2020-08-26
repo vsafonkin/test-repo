@@ -32,3 +32,9 @@ jobs:
         cabal install haskell-say
         cabal build
         cabal run
+    
+    - name: Test Stack
+      run: |
+        cd sample
+        stack update
+        stack install haskell-say
