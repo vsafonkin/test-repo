@@ -21,6 +21,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Test
+    - name: Test Cabal
       run: |
-        pwsh ./Test.ps1
+        cd sample
+        cabal update
+        cabal install haskell-say
+        cabal build
+        cabal run
