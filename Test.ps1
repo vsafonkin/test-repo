@@ -2,17 +2,17 @@
 # cabal install haskell-say
 # cabal build :sample
 # cabal run
-mkdir cabal-sample
+mkdir sample-cabal
 cd cabal-sample
 cabal init
-cabal build :cabal-sample
+cabal build :sample-cabal
 cabal run
 
 
 cd ..
-stack new my-project
-cd my-project
+stack new sample-stack new-template
+cd sample-stack
 stack setup
 stack build
-stack exec my-project-exe
+stack exec sample-stack-exe
 
