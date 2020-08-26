@@ -9,7 +9,7 @@ cd ..
 # cabal build :sample
 # cabal run
 mkdir sample-cabal
-cd cabal-sample
+cd sample-cabal
 cabal init
 cabal build :sample-cabal
 cabal run
