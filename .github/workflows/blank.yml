@@ -37,5 +37,6 @@ jobs:
       run: |
         cd sample
         stack clean
+        stack init
         stack install haskell-say
         stack build
