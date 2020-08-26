@@ -27,6 +27,7 @@ jobs:
 
     - name: Test Cabal
       run: |
+        cabal --version
         cd sample
         cabal update
         cabal install haskell-say
