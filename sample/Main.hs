@@ -1,4 +1,7 @@
-import qualified Data.Text.IO as T
+module Main where
 
-someFunc :: IO ()
-someFunc = T.putStrLn "Azure Pipelines Canary"
+import HaskellSay (haskellSay)
+
+main :: IO ()
+main =
+  haskellSay "Azure Pipelines Canary"
