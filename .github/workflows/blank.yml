@@ -23,4 +23,5 @@ jobs:
     
     - name: Test
       run: |
-        ls /usr/share/dotnet/sdk
+        ls /usr/share/dotnet/sdk/NuGetFallbackFolder
+
