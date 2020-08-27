@@ -38,6 +38,6 @@ jobs:
       run: |
         mkdir sample-stack
         cd sample-stack
-        stack init
+        stack new
         stack setup
         stack build
