@@ -21,9 +21,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Help
+    - name: GHC
       run: |
-        stack --help
+        cd sample
+        ghc Main.hs --make -o sample
 
     - name: Test Cabal
       run: |
