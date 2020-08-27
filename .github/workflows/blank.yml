@@ -21,25 +21,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: GHC
+    - name: Test
       run: |
-        cd sample
-        ghc --make Factorial.hs
-
-    - name: Test Cabal
-      run: |
-        cabal --version
-        cd sample
-        cabal update
-        cabal install haskell-say
-        cabal build
-        cabal run
-    
-    - name: Test Stack
-      run: |
-        stack new sample-stack new-template
-        cd sample-stack
-        stack setup
-        stack build
-        stack exec sample-stack-exe
-        stack test
+        ls /home
