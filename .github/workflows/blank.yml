@@ -30,11 +30,14 @@ jobs:
         cabal --version
         cd sample
         cabal update
+        cabal install haskell-say
         cabal build
         cabal run
     
     - name: Test Stack
       run: |
-        cd sample
-        stack clean
+        mkdir sample-stack
+        cd sample-stack
         stack init
+        stack setup
+        stack build
