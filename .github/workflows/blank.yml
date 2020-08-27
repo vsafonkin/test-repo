@@ -16,14 +16,14 @@ jobs:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
-        platform: [macos-latest]
+        platform: [windows-latest]
 
     steps:
     - uses: actions/checkout@v2
     
     - name: Test
       run: |
-        ls /Users/runner/.dotnet/sdk
+        ls C:\Program Files\dotnet\sdk\NuGetFallbackFolder
 
 
 
