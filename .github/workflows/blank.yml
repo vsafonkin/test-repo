@@ -36,8 +36,7 @@ jobs:
     
     - name: Test Stack
       run: |
-        mkdir sample-stack
+        stack new sample-stack new-template
         cd sample-stack
-        stack new
         stack setup
         stack build
