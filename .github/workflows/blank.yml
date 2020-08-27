@@ -41,3 +41,4 @@ jobs:
         stack setup
         stack build
         stack exec sample-stack-exe
+        stack test
