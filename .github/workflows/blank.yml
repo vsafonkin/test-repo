@@ -23,4 +23,4 @@ jobs:
     
     - name: Test
       run: |
-        ls /home
+        ls /home/runner
