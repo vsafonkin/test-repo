@@ -40,3 +40,4 @@ jobs:
         cd sample-stack
         stack setup
         stack build
+        stack exec sample-stack-exe
