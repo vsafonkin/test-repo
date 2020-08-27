@@ -23,7 +23,7 @@ jobs:
     
     - name: Test
       run: |
-        ls C:\Program Files\dotnet\sdk\NuGetFallbackFolder
+        Get-ChildItem -Path "C:\Program Files\dotnet\sdk\NuGetFallbackFolder"
 
 
 
