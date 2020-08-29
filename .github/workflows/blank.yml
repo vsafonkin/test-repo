@@ -23,12 +23,11 @@ jobs:
     
     - name: Help
       run: |
-        nuget version
         nuget help
         
     - name: Test
       run: |
-        nuget version
+        echo "hello nuget"
 
 
 
