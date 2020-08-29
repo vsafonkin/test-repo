@@ -25,9 +25,9 @@ jobs:
       run: |
         nuget help
         
-    - name: Test
+    - name: Restore
       run: |
-        echo "hello nuget"
+        nuget restore help
 
 
 
