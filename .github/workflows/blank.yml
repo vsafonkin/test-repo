@@ -16,14 +16,19 @@ jobs:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
-        platform: [windows-latest]
+        platform: [windows-latest, makos-latest]
 
     steps:
     - uses: actions/checkout@v2
     
+    - name: Help
+      run: |
+        nuget --version
+        nuget --help
+        
     - name: Test
       run: |
-        Get-ChildItem -Path "C:\Program Files\dotnet\sdk\NuGetFallbackFolder"
+        nuget --version
 
 
 
