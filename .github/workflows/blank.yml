@@ -23,12 +23,12 @@ jobs:
     
     - name: Help
       run: |
-        nuget --version
-        nuget --help
+        nuget version
+        nuget help
         
     - name: Test
       run: |
-        nuget --version
+        nuget version
 
 
 
