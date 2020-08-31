@@ -23,7 +23,7 @@ jobs:
     
     - name: Test
       run: |
-        minikube start
+        pwsh Test.ps1
 
 
 
