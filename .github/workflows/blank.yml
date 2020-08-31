@@ -16,18 +16,14 @@ jobs:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
-        platform: [windows-latest, macos-latest]
+        platform: [windows-latest, macos-latest, ubuntu-latest]
 
     steps:
     - uses: actions/checkout@v2
     
-    - name: Help
+    - name: Test
       run: |
-        nuget help
-        
-    - name: Restore
-      run: |
-        nuget pack -help
+        minikube start
 
 
 
