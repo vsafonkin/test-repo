@@ -6,3 +6,6 @@ kubectl expose deployment test-minikube --type=NodePort --port=8080
 Start-Sleep -Seconds 60
 kubectl get pod
 minikube service test-minikube --url
+kubectl delete services test-minikube
+kubectl delete deployment test-minikube
+minikube stop
