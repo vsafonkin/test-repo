@@ -27,7 +27,7 @@ jobs:
         
     - name: Restore
       run: |
-        nuget restore help
+        nuget pack -help
 
 
 
