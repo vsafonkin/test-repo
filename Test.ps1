@@ -2,7 +2,7 @@
 # Import-Module hyper-V
 # (Get-Command hyper-v\get-vm).Module.Name
 
-Install-WindowsFeature -Name Hyper-V -IncludeManagementTools
+$cpu.VirtualizationFirmwareEnabled
 Write-Host "------"
 
 minikube start
