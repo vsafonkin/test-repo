@@ -2,10 +2,6 @@
 # Import-Module hyper-V
 # (Get-Command hyper-v\get-vm).Module.Name
 
-$cpu = (Get-CimInstance -ClassName Win32_Processor)[0]
-$cpu.VirtualizationFirmwareEnabled
-Write-Host "------"
-
 minikube start
 minikube status
 kubectl create deployment test-minikube --image=k8s.gcr.io/echoserver:1.10
