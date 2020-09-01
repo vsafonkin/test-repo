@@ -2,6 +2,7 @@
 # Import-Module hyper-V
 # (Get-Command hyper-v\get-vm).Module.Name
 
+$cpu = (Get-CimInstance -ClassName Win32_Processor)[0]
 $cpu.VirtualizationFirmwareEnabled
 Write-Host "------"
 
