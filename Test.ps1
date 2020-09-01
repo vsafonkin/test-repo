@@ -5,7 +5,7 @@
 # Install-WindowsFeature -Name Hyper-V -IncludeManagementTools
 Write-Host "------"
 
-minikube start --vm-driver=virtualbox
+minikube start --vm-driver=docker
 minikube status
 kubectl create deployment test-minikube --image=k8s.gcr.io/echoserver:1.10
 kubectl expose deployment test-minikube --type=NodePort --port=8080
