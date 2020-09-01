@@ -1,7 +1,8 @@
 # Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Management-PowerShell
-Import-Module hyper-V
-(Get-Command hyper-v\get-vm).Module.Name
+# Import-Module hyper-V
+# (Get-Command hyper-v\get-vm).Module.Name
 
+Install-WindowsFeature -Name Hyper-V -IncludeManagementTools
 Write-Host "------"
 
 minikube start
