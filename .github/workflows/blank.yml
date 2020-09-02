@@ -16,14 +16,18 @@ jobs:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
-        platform: [windows-latest]
+        platform: [ubuntu-1604, ubuntu-1804]
 
     steps:
     - uses: actions/checkout@v2
     
     - name: Test
       run: |
-        pwsh Test.ps1
+        php7.1 --version
+        php7.2 --version
+        php7.3 --version
+        php7.4 --version
+        
 
 
 
