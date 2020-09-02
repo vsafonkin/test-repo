@@ -16,7 +16,7 @@ jobs:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
-        platform: [ubuntu-1604, ubuntu-1804]
+        platform: [ubuntu-latest]
 
     steps:
     - uses: actions/checkout@v2
