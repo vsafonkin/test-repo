@@ -16,14 +16,14 @@ jobs:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
-        platform: [ubuntu-latest]
+        platform: [windows-latest, ubuntu-latest, macos-latest]
 
     steps:
     - uses: actions/checkout@v2
     
     - name: Test
       run: |
-        sqlite3 --version
+        clang --help
         
 
 
