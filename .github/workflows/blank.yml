@@ -23,10 +23,7 @@ jobs:
     
     - name: Test
       run: |
-        php7.1 --version
-        php7.2 --version
-        php7.3 --version
-        php7.4 --version
+        m4 --version
         
 
 
