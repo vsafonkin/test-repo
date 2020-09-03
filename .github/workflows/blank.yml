@@ -23,7 +23,7 @@ jobs:
     
     - name: Test
       run: |
-        m4 --version
+        sqlite3 --version
         
 
 
