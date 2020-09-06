@@ -23,7 +23,9 @@ jobs:
     
     - name: Test
       run: |
-        apt list --installed
+        gfortran-7 --version
+        gfortran-8 --version
+        gfortran-9 --version
         
 
 
