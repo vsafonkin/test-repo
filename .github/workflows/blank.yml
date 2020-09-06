@@ -23,7 +23,7 @@ jobs:
     
     - name: Test
       run: |
-        cat /etc/issue
+        apt list --installed
         
 
 
