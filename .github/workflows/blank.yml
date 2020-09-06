@@ -23,7 +23,7 @@ jobs:
     
     - name: Test
       run: |
-        swift --version
+        julia --version
         
 
 
