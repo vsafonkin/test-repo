@@ -23,7 +23,7 @@ jobs:
     
     - name: Test
       run: |
-        clang-6 --version
+        erl --version
         
 
 
