@@ -23,7 +23,7 @@ jobs:
     
     - name: Test
       run: |
-        gfortran-5 --version
+        clang-8 --version
         
 
 
