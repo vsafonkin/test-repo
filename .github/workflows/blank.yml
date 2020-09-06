@@ -23,9 +23,7 @@ jobs:
     
     - name: Test
       run: |
-        gfortran-7 --version
-        gfortran-8 --version
-        gfortran-9 --version
+        gfortran-5 --version
         
 
 
