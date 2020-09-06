@@ -23,7 +23,7 @@ jobs:
     
     - name: Test
       run: |
-        erl --version
+        erl -version
         
 
 
