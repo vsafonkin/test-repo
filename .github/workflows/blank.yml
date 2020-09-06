@@ -23,7 +23,8 @@ jobs:
     
     - name: Test
       run: |
-        vcpkg version
+        pip --version
+        pip3 --version
         
 
 
