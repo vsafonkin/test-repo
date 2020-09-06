@@ -23,7 +23,7 @@ jobs:
     
     - name: Test
       run: |
-        pwsh --version
+        ruby --version
         
 
 
