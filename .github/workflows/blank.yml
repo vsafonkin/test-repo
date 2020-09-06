@@ -23,7 +23,7 @@ jobs:
     
     - name: Test
       run: |
-        helm version
+        npm --version
         
 
 
