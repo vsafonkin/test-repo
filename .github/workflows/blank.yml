@@ -23,7 +23,7 @@ jobs:
     
     - name: Test
       run: |
-        brew -v
+        bash -c "brew -v 2>&1"
         
 
 
