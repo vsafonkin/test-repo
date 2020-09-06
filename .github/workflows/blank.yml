@@ -23,7 +23,8 @@ jobs:
     
     - name: Test
       run: |
-        npm --version
+        pip --version
+        pip3 --version
         
 
 
