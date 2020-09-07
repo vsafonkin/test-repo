@@ -26,11 +26,13 @@ jobs:
         flex --help
         echo "-------"
         cc --help
+        echo "-------"
+        bison --help
     
     - name: Test
       run: |
         lex sample.lex
-        bison -d bisonparser.y
+        bison -v -d bisonparser.y
         
         
 
