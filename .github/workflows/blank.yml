@@ -29,7 +29,7 @@ jobs:
     
     - name: Test
       run: |
-        flex sample.lex
+        flex sample.lex -v
         
         
 
