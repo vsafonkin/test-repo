@@ -29,9 +29,9 @@ jobs:
     
     - name: Test
       run: |
-        flex flexsample.lex
-        cc lex.yy.c -o flexsample
-        ./flexsample
+        bison bisonsample.y
+        cc -ly bisonsample.tab.c -o bisonsample
+        ./bisonsample
         
 
 
