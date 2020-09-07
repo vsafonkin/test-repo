@@ -1,20 +1,32 @@
-input:
-  %empty
-| input line
+%{
+    #include <stdio.h>
+    int yylex() { return getc(stdin); }
+    void yyerror(char *s) {
+      fprintf (stderr, "%s\n", s);
+    }
+%}
+
+%%
+
+EVALUATE: EXPR '\n' { printf("%d\n", $$) } ;
+
+EXPR:    TERM
+        | EXPR '+' TERM { $$ = $1 + $3; }
+        | EXPR '-' TERM { $$ = $1 - $3; }
 ;
 
-line:
-  '\n'
-| exp '\n'      { printf ("%.10g\n", $1); }
+TERM:    NUM
+        | TERM '*' NUM  { $$ = $1 * $3; }
+        | TERM '/' NUM  { $$ = $1 / $3; }
 ;
 
-exp:
-  NUM
-| exp exp '+'   { $$ = $1 + $2;      }
-| exp exp '-'   { $$ = $1 - $2;      }
-| exp exp '*'   { $$ = $1 * $2;      }
-| exp exp '/'   { $$ = $1 / $2;      }
-| exp exp '^'   { $$ = pow ($1, $2); }  /* Exponentiation */
-| exp 'n'       { $$ = -$1;          }  /* Unary minus   */
+NUM:      DIGIT
+        | NUM DIGIT    { $$ = $1*10+$2; }
 ;
+
+DIGIT:    '0' { $$=0; } | '1' { $$=1; } | '2' { $$=2; } | '3' { $$=3; }
+        | '4' { $$=4; } | '5' { $$=5; } | '6' { $$=6; } | '7' { $$=7; }
+        | '8' { $$=8; } | '9' { $$=9; }
+;
+
 %%
