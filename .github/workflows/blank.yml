@@ -31,6 +31,8 @@ jobs:
       run: |
         flex sample.lex
         bison -d bisonparser.y
+        cc -ly lex.yy.c bisonparser.tab.c -o sample
+        ./sample
         
         
 
