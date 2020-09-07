@@ -31,7 +31,7 @@ jobs:
     
     - name: Test
       run: |
-        lex sample.lex
+        flex -v sample.lex
         bison -v -d bisonparser.y
         
         
