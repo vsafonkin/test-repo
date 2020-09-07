@@ -1,14 +1,16 @@
-# Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Management-PowerShell
-# Import-Module hyper-V
-# (Get-Command hyper-v\get-vm).Module.Name
+function Get-CommandResult {
+    param (
+        [Parameter(Mandatory=$true)]
+        [string] $Command,
+        [switch] $Multiline
+    )
+    # Bash trick to suppress and show error output because some commands write to stderr (for example, "python --version")
+    $stdout = & bash -c "$Command 2>&1"
+    $exitCode = $LASTEXITCODE
+    return @{
+        Output = If ($Multiline -eq $true) { $stdout } else { [string]$stdout }
+        ExitCode = $exitCode
+    }
+}
 
-minikube start
-minikube status
-kubectl create deployment test-minikube --image=k8s.gcr.io/echoserver:1.10
-kubectl expose deployment test-minikube --type=NodePort --port=8080
-Start-Sleep -Seconds 60
-kubectl get pod
-minikube service test-minikube --url
-kubectl delete services test-minikube
-kubectl delete deployment test-minikube
-minikube stop
+Get-CommandResult "brew -v"
