@@ -23,7 +23,8 @@ jobs:
     
     - name: Test
       run: |
-        mono --version
+        flex flexsample.l
+        cc lex.yy.c -o flexsample -ll
         
 
 
