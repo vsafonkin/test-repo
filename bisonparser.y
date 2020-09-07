@@ -3,6 +3,7 @@
     void yyerror(char *s) {
       fprintf (stderr, "%s\n", s);
     }
+    #define YYPRINT(file, type, value) fprintf(file, "%d", value);
 %}
 
 %token NUM
@@ -22,3 +23,4 @@ TERM:    NUM
 ;
 
 %%
+int main () { yydebug=1; return yyparse(); }
