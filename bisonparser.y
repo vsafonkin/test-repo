@@ -23,4 +23,4 @@ TERM:    NUM
 ;
 
 %%
-int main () { yydebug=1; return yyparse("11+2*7-15"); }
+int main () { yydebug=1; return yyparse(); }
