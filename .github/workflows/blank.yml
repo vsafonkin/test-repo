@@ -34,7 +34,7 @@ jobs:
         flex -v sample.lex
         bison -vdt bisonparser.y
         cc -v lex.yy.c bisonparser.tab.c
-        ls .
+        ./a.out
         
         
 
