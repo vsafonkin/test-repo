@@ -33,7 +33,7 @@ jobs:
       run: |
         flex -v sample.lex
         bison -v -d bisonparser.y
-        cc -ly lex.yy.c bisonparser.tab.c
+        cc -v -ly lex.yy.c bisonparser.tab.c
         
         
 
