@@ -24,7 +24,7 @@ jobs:
     - name: Test
       run: |
         flex flexsample.l
-        cc lex.yy.c -o flexsample -ll
+        cc lex.yy.c -o flexsample -lfl
         
 
 
