@@ -23,7 +23,7 @@ jobs:
     
     - name: Help
       run: |
-        apt list -h
+        apt list
     
     - name: Test
       run: |
