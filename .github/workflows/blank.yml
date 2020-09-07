@@ -33,7 +33,7 @@ jobs:
         echo "-----------------------------"
         ls .
         echo "-----------------------------"
-        ./bisonsample
+        echo "2+3" | ./bisonsample
 
 
 
