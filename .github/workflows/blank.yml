@@ -21,6 +21,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - name: Help
+      run: |
+        flex --help
+    
     - name: Test
       run: |
         flex flexsample.l
