@@ -29,7 +29,8 @@ jobs:
     
     - name: Test
       run: |
-        lex sample.lex
+        flex sample.lex
+        
         
 
 
