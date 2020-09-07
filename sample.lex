@@ -1,26 +1,17 @@
 %{
-    #include <stdio.h>
-    void yyerror(char *s) {
-      fprintf (stderr, "%s\n", s);
-    }
-    #define YYPRINT(file, type, value) fprintf(file, "%d", value);
+    #include "3.tab.h"
 %}
 
-%token NUM
+%option yylineno
+%option noyywrap
 
 %%
 
-EVALUATE: EXPR          { printf("=%d\n", $$); } ;
-
-EXPR:    TERM
-        | EXPR '+' TERM { $$ = $1 + $3; }
-        | EXPR '-' TERM { $$ = $1 - $3; }
-;
-
-TERM:    NUM
-        | TERM '*' NUM  { $$ = $1 * $3; }
-        | TERM '/' NUM  { $$ = $1 / $3; }
-;
+[/][/].*\n      ; // comment
+[0-9]+          { yylval = atoi(yytext);
+                  return NUM;
+                }
+[ \t\r\n]      ; // whitespace
+.              { return *yytext; }
 
 %%
-int main () { yydebug=1; return yyparse(); }
