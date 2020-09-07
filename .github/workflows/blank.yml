@@ -23,7 +23,7 @@ jobs:
     
     - name: Test
       run: |
-        sbt -version
+        brew -v
         
 
 
