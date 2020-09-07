@@ -23,7 +23,8 @@ jobs:
     
     - name: Help
       run: |
-        apt list --installed -a g++
+        terraform --help
+        
     
     - name: Test
       run: |
