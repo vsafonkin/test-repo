@@ -23,11 +23,7 @@ jobs:
     
     - name: Help
       run: |
-        flex --help
-        echo "-------"
-        cc --help
-        echo "-------"
-        bison --help
+        apt list -a gfortran
     
     - name: Test
       run: |
@@ -37,7 +33,6 @@ jobs:
         echo "-----------------------------"
         ls .
         echo "-----------------------------"
-        ./a.out
         
         
 
