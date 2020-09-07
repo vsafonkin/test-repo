@@ -30,10 +30,8 @@ jobs:
         flex -v sample.lex
         bison -vdt bisonparser.y
         cc -v lex.yy.c bisonparser.tab.c -o bisonsample
-        echo "-----------------------------"
-        ls .
-        echo "-----------------------------"
-        echo "2+3" | ./bisonsample
+
+        echo "2+3*15-79" | ./bisonsample
 
 
 
