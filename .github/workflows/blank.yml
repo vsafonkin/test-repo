@@ -23,7 +23,7 @@ jobs:
     
     - name: Test
       run: |
-        sudo pwsh Test.ps1
+        pwsh Test.ps1
         
 
 
