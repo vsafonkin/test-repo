@@ -10,5 +10,5 @@
 \}                      printf("EBRACE ");
 ;                       printf("SEMICOLON ");
 \n                      printf("\n");
-[ \t]+                  /* игнорируем пробелы и знаки табуляции */;
+[ \t]+                  /* ignore whitespaces and tabs */;
 %%
