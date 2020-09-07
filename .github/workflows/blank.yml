@@ -23,7 +23,7 @@ jobs:
     
     - name: Test
       run: |
-        brew -v
+        pwsh Test.ps1
         
 
 
