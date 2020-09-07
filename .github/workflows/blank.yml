@@ -23,8 +23,7 @@ jobs:
     
     - name: Test
       run: |
-        ant -version
-        mvn -version
+        gradlew --version
         
 
 
