@@ -24,6 +24,8 @@ jobs:
     - name: Help
       run: |
         flex --help
+        echo "-------"
+        cc --help
     
     - name: Test
       run: |
