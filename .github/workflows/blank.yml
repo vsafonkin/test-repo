@@ -23,7 +23,7 @@ jobs:
     
     - name: Help
       run: |
-        apt list -a gfortran
+        apt list -a g++
     
     - name: Test
       run: |
