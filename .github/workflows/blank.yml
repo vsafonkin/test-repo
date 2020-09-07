@@ -23,7 +23,7 @@ jobs:
     
     - name: Help
       run: |
-        apt list -a g++
+        apt list -a -installed g++
     
     - name: Test
       run: |
