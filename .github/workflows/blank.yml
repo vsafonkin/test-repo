@@ -30,7 +30,7 @@ jobs:
     - name: Test
       run: |
         flex flexsample.l
-        cc lex.yy.c -o flexsample -f
+        cc lex.yy.c -o flexsample
         
 
 
