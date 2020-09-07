@@ -30,9 +30,6 @@ jobs:
     - name: Test
       run: |
         lex sample.lex
-        bison -dt sample.y
-        cc lex.yy.c sample.tab.c
-        ./a.out
         
 
 
