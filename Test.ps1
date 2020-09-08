@@ -1,2 +1,2 @@
-Invoke-Expression "whereis php7.4"
+Invoke-Expression "which php7.4"
    
