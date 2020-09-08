@@ -23,6 +23,6 @@ function Get-JavaVersions {
     }
 }
 
-Get-JavaVersions
+
 Write-Host "-----"
 & java -version
