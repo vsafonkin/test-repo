@@ -8,7 +8,7 @@ function Get-JavaVersions {
     return Get-ChildItem $javaDir | ForEach-Object {
         Write-Host $_
         $javaBinPath = Join-Path $_ "bin"
-        $rawVersion = & "$javaBinPath/java -version 2>&1" | Out-String
+        $rawVersion = Invoke-Expression "$javaBinPath/java -version 2>&1" | Out-String
         $rawVersion -match 'openjdk version "(?<version>.+)"' | Out-Null
         $version = $Matches.Version
         if ($version -match $DefaultVersion) {
