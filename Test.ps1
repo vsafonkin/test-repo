@@ -1,1 +1,1 @@
-Get-Item env:JAVA_HOME
+ls $env:CARGO_HOME/bin
