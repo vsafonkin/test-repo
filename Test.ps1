@@ -1,3 +1,3 @@
-composer --version
-phpunit --version
+$(phpunit --version) -match "PHPUnit (?<version>\d+\.\d+\.\d+)\s" | Out-Null
+$Matches.Version
    
