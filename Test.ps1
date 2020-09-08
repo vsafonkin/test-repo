@@ -1,2 +1,2 @@
-Invoke-Expression "php5.6 --version"
+Invoke-Expression "php7.4 --version"
    
