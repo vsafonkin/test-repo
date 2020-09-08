@@ -1,16 +1,25 @@
-function Get-CommandResult {
-    param (
-        [Parameter(Mandatory=$true)]
-        [string] $Command,
-        [switch] $Multiline
+function Get-JavaVersions {
+    param(
+        [string] $DefaultVersion
     )
-    # Bash trick to suppress and show error output because some commands write to stderr (for example, "python --version")
-    $stdout = & bash -c "$Command 2>&1"
-    $exitCode = $LASTEXITCODE
-    return @{
-        Output = If ($Multiline -eq $true) { $stdout } else { [string]$stdout }
-        ExitCode = $exitCode
+
+    $postfix = ""
+    $javaDir = "/usr/lib/jvm"
+    return Get-ChildItem $javaDir | ForEach-Object {
+        $javaBinPath = Join-Path $_ "bin"
+        $rawVersion = & "$javaBinPath\java -version 2>&1" | Out-String
+        $rawVersion -match 'openjdk version "(?<version>.+)"' | Out-Null
+        $version = $Matches.Version
+        if ($version -match $DefaultVersion) {
+            $postfix = "(default)"
+        } else {
+            $postfix = ""
+        }
+        return "Java $version $postfix"
+    } | Sort-Object {
+        $version = ($_.Split(" ")[1]).Split("_")[0]
+        return [System.Version]$version
     }
 }
 
-Get-CommandResult "brew -v"
+Get-JavaVersions
