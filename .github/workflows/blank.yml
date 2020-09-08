@@ -20,7 +20,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
+    - name: Apt packages
+      run: |
+        apt list --installed
     - name: Test
       run: |
         pwsh Test.ps1
