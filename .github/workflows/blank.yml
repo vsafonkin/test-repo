@@ -20,19 +20,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    
-    - name: Help
-      run: |
-        terraform --help
-        
-    
+
     - name: Test
       run: |
-        flex -v sample.lex
-        bison -vdt bisonparser.y
-        cc -v lex.yy.c bisonparser.tab.c -o bisonsample
-
-        echo "2+3*15-79" | ./bisonsample
+        pwsh Test.ps1
 
 
 
