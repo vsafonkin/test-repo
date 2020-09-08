@@ -1,1 +1,1 @@
-java -version
+cargo --list
