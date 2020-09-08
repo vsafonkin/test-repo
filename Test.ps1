@@ -10,6 +10,7 @@ function Get-JavaVersions {
         $rawVersion = Invoke-Expression "$javaBinPath/java -version 2>&1" | Out-String
         $rawVersion -match 'openjdk version "(?<version>.+)"' | Out-Null
         $version = $Matches.Version
+        Write-Host "Version: $version"
         if ($version -match $DefaultVersion) {
             $postfix = "(default)"
         } else {
