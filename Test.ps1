@@ -1,1 +1,1 @@
-rustc --version
+bindgen --version
