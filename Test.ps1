@@ -1,2 +1,3 @@
-Invoke-Expression "which php7.4"
+composer --version
+phpunit --version
    
