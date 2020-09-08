@@ -22,4 +22,4 @@ function Get-JavaVersions {
     }
 }
 
-Get-ChildItem /usr/lib/jvm/adoptopenjdk-11-hotspot-amd64
+Get-ChildItem /usr/lib/jvm/adoptopenjdk-11-hotspot-amd64/bin
