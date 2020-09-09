@@ -2,5 +2,6 @@
 #     $_.Name.Split("_")[1]
 # }
 
-hg clone https://github.com/actions/virtual-environments
-cd virtual-environments
+hg clone https://www.mercurial-scm.org/repo/hello
+cd hello
+ls .
