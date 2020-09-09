@@ -4,4 +4,6 @@
 
 hg clone https://www.mercurial-scm.org/repo/hello
 cd hello
-ls .
+rm Hello.c
+hg add .
+hg status
