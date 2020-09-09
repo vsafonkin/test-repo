@@ -1,1 +1,1 @@
-ls $env:CARGO_HOME/bin
+clang --version
