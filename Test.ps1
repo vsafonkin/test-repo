@@ -5,4 +5,4 @@ clang -v -c -Wall -std=c++14 primes.cpp
 clang main.o -o primes_in_range
 
 echo "--------"
-./primes_in_range
+ls .
