@@ -2,7 +2,7 @@
 #     $_.Name.Split("_")[1]
 # }
 
-hg clone https://www.mercurial-scm.org/repo/hello
+hg init -v hello
 cd hello
 echo 'This is a test' > data.txt
 hg add data.txt
