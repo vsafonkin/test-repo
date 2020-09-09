@@ -2,5 +2,5 @@
 #     $_.Name.Split("_")[1]
 # }
 
-hd clone https://github.com/actions/virtual-environments
+hg clone https://github.com/actions/virtual-environments
 cd virtual-environments
