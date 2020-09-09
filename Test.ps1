@@ -1,1 +1,1 @@
-brew -v
+brew doctor
