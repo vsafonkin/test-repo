@@ -22,7 +22,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Help
       run: |
-        hg --help
+        hg init --help
     - name: Test
       run: |
         pwsh Test.ps1
