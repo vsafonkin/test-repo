@@ -16,11 +16,13 @@ jobs:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
-        platform: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04, macos-latest]
+        platform: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04]
 
     steps:
     - uses: actions/checkout@v2
-      
+    - name: Help
+      run: |
+        brew --help
     - name: Test
       run: |
         pwsh Test.ps1
