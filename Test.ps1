@@ -4,6 +4,6 @@
 
 hg clone https://www.mercurial-scm.org/repo/hello
 cd hello
-rm Hello.c
-hg add .
+echo 'This is a test' > data.txt
+hg add data.txt
 hg status
