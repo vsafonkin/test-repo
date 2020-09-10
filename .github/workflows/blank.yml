@@ -20,12 +20,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Help
-      run: |
-        hg --help
-    - name: Test
-      run: |
-        pwsh Test.ps1
+    
+    - name: Clone ruby-install
+      run: git clone https://github.com/postmodern/ruby-install.git
+    
+    - name: Install ruby-install
+      run: sudo make install
+      working-directory: ./ruby-install
+
+    - name: List versions
+      run: ruby-install
 
 
 
