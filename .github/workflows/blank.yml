@@ -21,12 +21,18 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - name: env
+      run: env
+    
     - name: show PATH
       run: echo $PATH
     
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.7.1
+    
+    - name: env
+      run: env
     
     - name: Ruby version
       run: |
