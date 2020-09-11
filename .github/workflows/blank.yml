@@ -42,6 +42,7 @@ jobs:
     - name: Ruby toolcache
       run: |
         ls $AGENT_TOOLSDIRECTORY/Ruby/2.7.1/x64/lib
+        /home/runner/.rubies/ruby-2.7.1/bin/gem --version
         
     - name: show PATH
       run: echo $PATH
