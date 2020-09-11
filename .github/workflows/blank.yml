@@ -23,7 +23,7 @@ jobs:
     
     - name: Ruby toolcache
       run: |
-        ls $AGENT_TOOLSDIRECTORY/ruby
+        ls $AGENT_TOOLSDIRECTORY
     
     - name: Clone ruby-install
       run: git clone https://github.com/postmodern/ruby-install.git
