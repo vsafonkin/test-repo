@@ -25,7 +25,7 @@ jobs:
       run: |
         ls $AGENT_TOOLSDIRECTORY/Ruby/2.7.1/x64/lib
         echo "-------"
-        ls ~
+        ls -a ~
     
     - name: Clone ruby-install
       run: git clone https://github.com/postmodern/ruby-install.git
