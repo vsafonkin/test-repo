@@ -40,17 +40,7 @@ jobs:
     - name: show PATH
       run: echo $PATH
       
-    - name: Clone ruby-install
-      run: git clone https://github.com/postmodern/ruby-install.git
-    
-    - name: Install ruby-install
-      run: sudo make install
-      working-directory: ./ruby-install
-
-    - name: List versions
-      run: ruby-install
-
-    - name: Help
-      run: ruby-install --help
+    - name: run Test.ps1
+      run: sudo pwsh ./Test.ps1
 
 
