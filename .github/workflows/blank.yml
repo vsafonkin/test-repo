@@ -42,5 +42,8 @@ jobs:
       
     - name: run Test.ps1
       run: sudo pwsh ./Test.ps1
+    
+    - name: Show .gemrc
+      run: cat $HOME/.gemrc
 
 
