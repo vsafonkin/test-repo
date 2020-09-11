@@ -25,14 +25,19 @@ jobs:
         ruby-version: 2.7.1
     
     - name: Ruby version
-      run: ruby --version
+      run: |
+        ruby --version
+        which ruby
       
     - name: Ruby toolcache
       run: |
         ls $AGENT_TOOLSDIRECTORY/Ruby/2.7.1/x64/lib
         echo "-------"
         ls -a ~/.rubies
-    
+        
+    - name: show PATH
+      run: echo $PATH
+      
     - name: Clone ruby-install
       run: git clone https://github.com/postmodern/ruby-install.git
     
