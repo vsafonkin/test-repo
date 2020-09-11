@@ -31,8 +31,8 @@ jobs:
       with:
         ruby-version: 2.7.1
     
-    - name: env
-      run: env
+    - name: bin directory
+      run: ls /home/runner/.rubies/ruby-2.7.1/bin
     
     - name: Ruby version
       run: |
