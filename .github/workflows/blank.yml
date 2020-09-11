@@ -20,6 +20,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
+    - name: show PATH
+      run: echo $PATH
+    
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.7.1
@@ -32,8 +36,6 @@ jobs:
     - name: Ruby toolcache
       run: |
         ls $AGENT_TOOLSDIRECTORY/Ruby/2.7.1/x64/lib
-        echo "-------"
-        ls -a /etc/ld.so.conf.d
         
     - name: show PATH
       run: echo $PATH
