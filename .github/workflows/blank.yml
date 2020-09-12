@@ -27,30 +27,15 @@ jobs:
     - name: show PATH
       run: echo $PATH
     
-    - uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: 2.7.1
-    
-    - name: bin directory
-      run: ls /home/runner/.rubies/ruby-2.7.1/bin
-    
     - name: Ruby version
       run: |
         ruby --version
         which ruby
-      
-    - name: Ruby toolcache
-      run: |
-        ls $AGENT_TOOLSDIRECTORY/Ruby/2.7.1/x64/lib
-        /home/runner/.rubies/ruby-2.7.1/bin/gem --version
         
     - name: show PATH
       run: echo $PATH
       
     - name: run Test.ps1
       run: sudo pwsh ./Test.ps1
-    
-    - name: Show .gemrc
-      run: cat $HOME/.gemrc
 
 
