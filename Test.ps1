@@ -17,7 +17,7 @@ Get-ChildItem $testPath
 # Invoke-Expression "echo 'export LD_LIBRARY_PATH=$env:AGENT_TOOLSDIRECTORY/Ruby/2.7.1/x64/lib' | tee -a /etc/skel/.bashrc"
 # Invoke-Expression "sudo echo '$rubyPath/lib' >> /etc/ld.so.conf.d/ruby.conf;sudo ldconfig"
 
-Invoke-Expression "echo '##vso[task.prependpath]/home/vsts/.rubies/ruby-2.7.1/bin'"
+# Invoke-Expression "echo '##vso[task.prependpath]/home/vsts/.rubies/ruby-2.7.1/bin'"
 # Invoke-Expression "/home/vsts/.rubies/ruby-2.7.1/bin/gem install bundler -v ~> 2 --no-document"
-Invoke-Expression "/home/vsts/.rubies/ruby-2.7.1/bin/ruby --version"
-Invoke-Expression "/home/vsts/.rubies/ruby-2.7.1/bin/gem --version"
+Invoke-Expression "/home/runner/.rubies/ruby-2.7.1/bin/ruby --version"
+Invoke-Expression "/home/runner/.rubies/ruby-2.7.1/bin/gem --version"
