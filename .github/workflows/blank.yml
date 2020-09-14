@@ -21,6 +21,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - name: env
+      run: env
+    
     - name: Test.ps1
       run: sudo pwsh ./Test.ps1
 
