@@ -26,6 +26,7 @@ jobs:
     
     - name: Test
       run: |
-        ls .
+        Get-ChildItem
+        ./sample-installer.exe
 
 
