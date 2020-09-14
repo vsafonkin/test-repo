@@ -21,8 +21,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: makensis --version
-      run: makensis --version
+    - name: makensis
+      run: makensis nsis_sample_installer.nsi
     
     - name: Test.ps1
       run: pwsh ./Test.ps1
