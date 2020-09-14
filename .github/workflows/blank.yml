@@ -16,26 +16,20 @@ jobs:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
-        platform: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04]
+        platform: [ ubuntu-18.04 ]
 
     steps:
     - uses: actions/checkout@v2
     
-    - name: env
-      run: env
-    
-    - name: show PATH
-      run: echo $PATH
-    
-    - name: Ruby version
-      run: |
-        ruby --version
-        which ruby
-        
-    - name: show PATH
-      run: echo $PATH
-      
-    - name: run Test.ps1
-      run: sudo pwsh ./Test.ps1
+    - name: Test merge pull request
+      uses: actions/github-script@v2
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          github.pulls.merge({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            pull_number: 2
+          })
 
 
