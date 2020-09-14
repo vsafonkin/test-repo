@@ -1,15 +1,3 @@
-﻿---
-title: App Center macOS 10.15 (Catalina)
-description: Software used on macOS 10.15 build machines
-keywords: build
-author: elamalani
-ms.author: elamalani
-ms.date: 09/01/2020
-ms.topic: article
-ms.service: vs-appcenter
-ms.custom: build
-ms.assetid: 72b0e628-3211-412e-ab64-ef6e0a0e0d07
----
 # macOS info
 - System Version: macOS 10.15.6 (19G2021)
 - Kernel Version: Darwin 19.6.0
@@ -17,7 +5,7 @@ ms.assetid: 72b0e628-3211-412e-ab64-ef6e0a0e0d07
 
 ## Installed Software
 ### Language and Runtime
-- Clang/LLVM 10.0.1
+- Clang/LLVM 10.0.2
 - gcc-8 (Homebrew GCC 8.4.0_1) 8.4.0  â€” available by `gcc-8` alias
 - gcc-9 (Homebrew GCC 9.3.0) 9.3.0  â€” available by `gcc-9` alias
 - GNU Fortran (Homebrew GCC 8.4.0_1) 8.4.0  â€” available by `gfortran-8` alias
