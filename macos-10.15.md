@@ -23,7 +23,7 @@
 - julia 1.5.2
 
 ### Package Management
-- Vcpkg 2020.06.15
+- Vcpkg 2020.06.16
 - Bundler version 2.1.4
 - Carthage 0.35.0
 - CocoaPods 1.9.3
