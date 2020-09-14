@@ -16,13 +16,13 @@ jobs:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
-        platform: [ ubuntu-18.04, macos-latest ]
+        platform: [ windows-latest ]
 
     steps:
     - uses: actions/checkout@v2
     
-    - name: env
-      run: env
+    - name: makensis --version
+      run: makensis --version
     
     - name: Test.ps1
       run: pwsh ./Test.ps1
