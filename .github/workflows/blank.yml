@@ -24,7 +24,8 @@ jobs:
     - name: makensis
       run: makensis nsis_sample_installer.nsi
     
-    - name: Test.ps1
-      run: pwsh ./Test.ps1
+    - name: Test
+      run: |
+        ls .
 
 
