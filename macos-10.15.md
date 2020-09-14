@@ -20,7 +20,7 @@
 - R 4.0.2
 - Go 1.15
 - PHP 7.4.9
-- julia 1.5.1
+- julia 1.5.2
 
 ### Package Management
 - Vcpkg 2020.06.15
