@@ -29,9 +29,19 @@ jobs:
           github.pulls.createReview({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            pull_number: 3,
+            pull_number: 4,
             event: "APPROVE"
           });
-
+    - name: Merge pull request
+      uses: actions/github-script@v2
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          github.pulls.merge({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            pull_number: 4,
+            merge-method: "squash"
+          })
 
 
