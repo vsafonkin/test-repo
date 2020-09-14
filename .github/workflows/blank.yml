@@ -21,15 +21,18 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Test merge pull request
+    - name: Approve PR
       uses: actions/github-script@v2
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
-          github.pulls.merge({
+          octokit.pulls.submitReview({
             owner: context.repo.owner,
             repo: context.repo.repo,
             pull_number: 2
-          })
+            review_id: 1
+            event: APPROVE
+          });
+
 
 
