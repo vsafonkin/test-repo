@@ -29,8 +29,8 @@ jobs:
           github.pulls.submitReview({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            pull_number: 2
-            review_id: 1
+            pull_number: 2,
+            review_id: 1,
             event: "APPROVE"
           });
 
