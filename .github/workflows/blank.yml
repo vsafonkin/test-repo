@@ -27,6 +27,7 @@ jobs:
     - name: Test
       run: |
         Get-ChildItem
-        ./sample-installer.exe
+        Write-Host "-----"
+        sample-installer.exe
 
 
