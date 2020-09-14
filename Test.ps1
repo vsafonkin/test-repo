@@ -1,1 +1,1 @@
-Write-Host $env:AGENT_TOOLSDIRECTORY
+
