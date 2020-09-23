@@ -23,9 +23,6 @@ jobs:
     
     - name: Run SQL Server
       run: |
-        Get-ChildItem "C:\Program Files\Microsoft SQL Server\130"
-        Get-ChildItem "C:\Program Files\Microsoft SQL Server\130\Tools"
-        Get-ChildItem "C:\Program Files\Microsoft SQL Server\130\Tools\Binn"
         pwsh Test.ps1
 
 
