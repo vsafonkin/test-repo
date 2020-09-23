@@ -23,6 +23,6 @@ jobs:
     
     - name: Run SQL Server
       run: |
-        services.msc
+        Get-ChildItem "C:\Program Files\Microsoft SQL Server\130\Tools\Binn"
 
 
