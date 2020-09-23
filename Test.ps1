@@ -1,13 +1,13 @@
 Import-Module -Name SqlServer
 
 Set-Location "C:\Program Files\Microsoft SQL Server\130\Tools\Binn"
-# SqlLocalDB.exe create "TestLocalDBInstance"
-# SqlLocalDB.exe share "TestLocalDBInstance" "TestSharedLocalDBInstance"
-# SqlLocalDB.exe start "TestLocalDBInstance"  
-# SqlLocalDB.exe info "TestLocalDBInstance"
+SqlLocalDB.exe create "TestLocalDBInstance"
+SqlLocalDB.exe share "TestLocalDBInstance" "TestSharedLocalDBInstance"
+SqlLocalDB.exe start "TestLocalDBInstance"  
+SqlLocalDB.exe info "TestLocalDBInstance"
 
-SqlLocalDB.exe start
-SqlLocalDB.exe info MSSQLLocalDB
+# SqlLocalDB.exe start
+# SqlLocalDB.exe info MSSQLLocalDB
 
 Get-PSDrive
 Get-SqlInstance -Credential -MachineName "fv-az153"
