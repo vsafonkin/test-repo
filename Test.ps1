@@ -1,5 +1,6 @@
 Set-Location "C:\Program Files\Microsoft SQL Server\130\Tools\Binn"
-SqlLocalDB.exe create "TestLocalDBInstance" 
+SqlLocalDB.exe create "TestLocalDBInstance"
+SqlLocalDB.exe share "TestLocalDBInstance" "TestSharedLocalDBInstance"
 SqlLocalDB.exe start "TestLocalDBInstance"  
 SqlLocalDB.exe info "TestLocalDBInstance"
 
