@@ -1,5 +1,7 @@
 Import-Module -Name SqlServer
 
+Get-ChildItem ""C:\Program Files\Microsoft SQL Server\150"
+
 Set-Location "C:\Program Files\Microsoft SQL Server\130\Tools\Binn"
 SqlLocalDB.exe create "TestLocalDBInstance"
 SqlLocalDB.exe share "TestLocalDBInstance" "TestSharedLocalDBInstance"
@@ -10,7 +12,7 @@ SqlLocalDB.exe info "TestLocalDBInstance"
 # SqlLocalDB.exe info MSSQLLocalDB
 
 Get-PSDrive
-Get-ChildItem "SQLSERVER:\SQL\fv-az153\TestLocalDBInstance"
+Get-ChildItem "SQLSERVER:\SQL\fv-az153"
 # Get-SqlInstance -Credential -MachineName "fv-az153"
 # Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery" -ServerInstance "fv-az153\MSSQLLocalDB"
 Set-Location "SQLSERVER:\SQL\fv-az153"
