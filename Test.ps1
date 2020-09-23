@@ -4,9 +4,7 @@ SqlLocalDB.exe share "TestLocalDBInstance" "TestSharedLocalDBInstance"
 SqlLocalDB.exe start "TestLocalDBInstance"  
 SqlLocalDB.exe info "TestLocalDBInstance"
 
-Get-PSDrive
-
-Set-Location SQLSERVER:\SQL\localhost\DEFAULT\Databases
+SqllocalDB.exe info MSSQLLocalDB
 
 # Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery" -ServerInstance "TestSharedLocalDBInstance"
 
