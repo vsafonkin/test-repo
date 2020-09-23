@@ -6,6 +6,8 @@ SqlLocalDB.exe info "TestLocalDBInstance"
 
 Get-PSDrive
 
+Set-Location SQLSERVER:\SQL\localhost\DEFAULT\Databases
+
 # Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery" -ServerInstance "TestSharedLocalDBInstance"
 
 # Set-Location "C:\Users\runneradmin\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances\TestLocalDBInstance"
