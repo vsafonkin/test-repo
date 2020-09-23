@@ -8,7 +8,7 @@ SqlLocalDB.exe start
 SqlLocalDB.exe info MSSQLLocalDB
 
 sqlcmd -S \(localdb\)\\MSSQLLocalDB
-
+Get-PSDrive
 # sqlcmd -S (localDB)\TestLocalDBInstance
 # Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery" -ServerInstance "TestSharedLocalDBInstance"
 
