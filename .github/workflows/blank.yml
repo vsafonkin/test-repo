@@ -21,32 +21,18 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: makensis
-      run: makensis nsis_sample_installer.nsi
-    
-    - name: Test
-      run: |
-        Get-ChildItem
-
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create pull request
+      uses: actions/github-script@v2
       with:
-        tag_name: NSIS/sample_installer
-        release_name: NSIS sample installer
-        draft: false
-        prerelease: true
-    - name: Upload installer
-      id: upload-release-asset 
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-        asset_path: sample-installer.exe
-        asset_name: sample-installer.exe
-        asset_content_type: application/zip
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          github.pulls.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: "Test",
+            head: "test-approve",
+            base: "master",
+            body: `hello \ world`
+          });
 
 
