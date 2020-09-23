@@ -23,6 +23,6 @@ jobs:
     
     - name: Run SQL Server
       run: |
-        ls C:\
+        Get-ChildItem "C:\Program Files\Microsoft SQL Server"
 
 
