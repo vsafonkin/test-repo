@@ -21,18 +21,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Create pull request
-      uses: actions/github-script@v2
-      with:
-        github-token: ${{secrets.GITHUB_TOKEN}}
-        script: |
-          github.pulls.create({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            title: "Test",
-            head: "test-approve",
-            base: "master",
-            body: `hello \ world`
-          });
+    - name: Run SQL Server
+      run: |
+        net --version
 
 
