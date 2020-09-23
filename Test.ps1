@@ -5,7 +5,7 @@ Set-Location "C:\Program Files\Microsoft SQL Server\130\Tools\Binn"
 # SqlLocalDB.exe info "TestLocalDBInstance"
 
 SqlLocalDB.exe start
-SqlLocalDB.exe info
+SqlLocalDB.exe info MSSQLLocalDB
 
 # sqlcmd -S (localDB)\TestLocalDBInstance
 # Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery" -ServerInstance "TestSharedLocalDBInstance"
