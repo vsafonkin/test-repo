@@ -10,8 +10,8 @@ SqlLocalDB.exe start
 SqlLocalDB.exe info MSSQLLocalDB
 
 Get-PSDrive
-Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery" -ServerInstance "fv-az153\MSSQLLocalDB"
-Set-Location "SQLSERVER:\SQL\fv-az153\MSSQLLocalDB"
+# Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery" -ServerInstance "fv-az153\MSSQLLocalDB"
+Set-Location "SQLSERVER:\SQL\fv-az153\runneradmin\MSSQLLocalDB"
 
 
 # sqlcmd -S (localDB)\TestLocalDBInstance
