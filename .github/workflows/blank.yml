@@ -23,6 +23,6 @@ jobs:
     
     - name: Run SQL Server
       run: |
-        NET HELPMSG 2185
+        net start "SQL Server (MSSQLSERVER)"
 
 
