@@ -23,6 +23,6 @@ jobs:
     
     - name: Run SQL Server
       run: |
-        net --version
+        net start MSSQLSERVER
 
 
