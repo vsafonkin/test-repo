@@ -3,5 +3,5 @@ SqlLocalDB.exe create "TestLocalDBInstance"
 SqlLocalDB.exe start "TestLocalDBInstance"  
 SqlLocalDB.exe info "TestLocalDBInstance"
 
-Set-Location "C:\Users\runneradmin\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances"
+Set-Location "C:\Users\runneradmin\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances\TestLocalDBInstance"
 Get-SqlDatabase -Name "TestLocalDBInstance"
