@@ -25,5 +25,6 @@ jobs:
       run: |
         Get-ChildItem "C:\Users"
         pwsh Test.ps1
+        Get-ChildItem "C:\Users\runneradmin\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances"
 
 
