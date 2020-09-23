@@ -10,7 +10,8 @@ Set-Location "C:\Program Files\Microsoft SQL Server\130\Tools\Binn"
 # SqlLocalDB.exe info MSSQLLocalDB
 
 Get-PSDrive
-
+Set-Location "SQLSERVER:"
+Get-ChildItem
 
 # sqlcmd -S (localDB)\TestLocalDBInstance
 # Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery" -ServerInstance "TestSharedLocalDBInstance"
