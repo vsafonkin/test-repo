@@ -1,6 +1,17 @@
 Import-Module -Name SqlServer
-(Get-Command sqlcmd).Source
-Get-ChildItem "C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn"
+
+function Get-InstancePipeName ([string] $localDbName)
+{
+  while (!($pipeName = ((sqllocaldb info $localDbName) -match 'instance pipe name').Split(':', 2)[1].Trim()))
+  {
+    sqllocaldb start $localDbName | Out-Null
+  }
+  return $pipeName
+}
+
+$pipe = Get-InstancePipeName "TestDBInstance"
+Write-Host "PIPE: $pipe"
+Write-Host "-----"
 
 Set-Location "C:\Program Files\Microsoft SQL Server\130\Tools\Binn"
 SqlLocalDB.exe create "TestLocalDBInstance"
