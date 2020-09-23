@@ -1,6 +1,6 @@
 Import-Module -Name SqlServer
 
-Get-ChildItem ""C:\Program Files\Microsoft SQL Server\150"
+Get-ChildItem "C:\Program Files\Microsoft SQL Server\150"
 
 Set-Location "C:\Program Files\Microsoft SQL Server\130\Tools\Binn"
 SqlLocalDB.exe create "TestLocalDBInstance"
