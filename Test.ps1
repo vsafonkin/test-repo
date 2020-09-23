@@ -1,3 +1,5 @@
+Import-Module -Name SqlServer
+
 Set-Location "C:\Program Files\Microsoft SQL Server\130\Tools\Binn"
 # SqlLocalDB.exe create "TestLocalDBInstance"
 # SqlLocalDB.exe share "TestLocalDBInstance" "TestSharedLocalDBInstance"
