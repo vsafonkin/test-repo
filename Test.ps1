@@ -1,6 +1,9 @@
 Import-Module -Name SqlServer
 Get-ChildItem "C:\Program Files\Microsoft SQL Server"
 Get-ChildItem "C:\Program Files\Microsoft SQL Server\130"
+Get-ChildItem "C:\Program Files\Microsoft SQL Server\130\Tools"
+Get-ChildItem "C:\Program Files\Microsoft SQL Server\130\KeyFile"
+Get-ChildItem "C:\Program Files\Microsoft SQL Server\130\Shared"
 
 Set-Location "C:\Program Files\Microsoft SQL Server\130\Tools\Binn"
 
