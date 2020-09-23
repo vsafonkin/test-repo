@@ -1,9 +1,4 @@
 Import-Module -Name SqlServer
-Get-ChildItem "C:\Program Files\Microsoft SQL Server"
-Get-ChildItem "C:\Program Files\Microsoft SQL Server\130"
-Get-ChildItem "C:\Program Files\Microsoft SQL Server\130\Tools"
-Get-ChildItem "C:\Program Files\Microsoft SQL Server\130\KeyFile"
-Get-ChildItem "C:\Program Files\Microsoft SQL Server\130\Shared"
 
 Set-Location "C:\Program Files\Microsoft SQL Server\130\Tools\Binn"
 
@@ -19,9 +14,9 @@ Get-PSDrive
 Get-ChildItem "SQLSERVER:\SQL\fv-az153"
 # Get-SqlInstance -Credential -MachineName "fv-az153"
 # Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery" -ServerInstance "fv-az153\MSSQLLocalDB"
-Set-Location "SQLSERVER:\SQL\fv-az153"
+# Set-Location "SQLSERVER:\SQL\fv-az153"
 
-# sqlcmd -S (localDB)\TestLocalDBInstance
+sqlcmd -S (localdb)\.\TestSharedLocalDBInstance
 # Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery" -ServerInstance "TestSharedLocalDBInstance"
 
 # Set-Location "C:\Users\runneradmin\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances\TestLocalDBInstance"
