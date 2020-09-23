@@ -10,7 +10,7 @@ Set-Location "C:\Program Files\Microsoft SQL Server\130\Tools\Binn"
 # SqlLocalDB.exe info MSSQLLocalDB
 
 Get-PSDrive
-Set-Location "SQLSERVER:\SQL"
+Set-Location "SQLSERVER:\SQL\fv-az153"
 Get-ChildItem
 
 # sqlcmd -S (localDB)\TestLocalDBInstance
