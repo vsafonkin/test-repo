@@ -10,7 +10,7 @@ SqlLocalDB.exe info "TestLocalDBInstance"
 # SqlLocalDB.exe info MSSQLLocalDB
 
 Get-PSDrive
-Get-ChildItem "SQLSERVER:\SQL\fv-az153"
+Get-ChildItem "SQLSERVER:\SQL\fv-az153\TestLocalDBInstance"
 # Get-SqlInstance -Credential -MachineName "fv-az153"
 # Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery" -ServerInstance "fv-az153\MSSQLLocalDB"
 Set-Location "SQLSERVER:\SQL\fv-az153"
