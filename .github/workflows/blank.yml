@@ -27,6 +27,7 @@ jobs:
     - name: Install ms sql command line utils
       run: |
         choco install sqlserver-cmdlineutils
+        echo "::add-path::C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn"
         
     - name: Path
       run: $env:Path
