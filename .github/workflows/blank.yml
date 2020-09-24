@@ -23,7 +23,6 @@ jobs:
     
     - name: Install ms sql command line utils
       run: |
-        choco install sqlserver-odbcdriver
         choco install sqlserver-cmdlineutils
     
     - name: Run SQL Server
