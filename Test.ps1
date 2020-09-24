@@ -6,3 +6,4 @@ SqlLocalDB.exe start "TestLocalDBInstance"
 SqlLocalDB.exe info "TestLocalDBInstance"
 
 sqlcmd -S "(localdb)\TestLocalDBInstance" -Q "SELECT GETDATE() AS TimeOfQuery"
+sqlcmd -S "(localdb)\TestLocalDBInstance" -Q "CREATE DATABASE testDatabase"
