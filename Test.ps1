@@ -19,10 +19,14 @@ CREATE TABLE testTable (
 );
 "@
 
-$selectAllQuery = @"
-SELECT *  
-FROM testTable  
-ORDER BY last_name;
+$getAllTablesQuery = @"
+SELECT
+  *
+FROM
+  SYSOBJECTS
+WHERE
+  xtype = 'U';
+GO
 "@
 
-sqlcmd -S "(localdb)\TestLocalDBInstance" -d "testDatabase" -Q $selectAllQuery
+sqlcmd -S "(localdb)\TestLocalDBInstance" -d "testDatabase" -Q $getAllTablesQuery
