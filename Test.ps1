@@ -1,5 +1,5 @@
 (Get-Command sqlcmd).Source
-Get-ChildItem "C:\Program Files\Microsoft SQL Server\Client SDK\ODBC"
+Get-ChildItem "C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170"
 
 SqlLocalDB.exe create "TestLocalDBInstance"
 SqlLocalDB.exe start "TestLocalDBInstance"  
