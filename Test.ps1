@@ -1,11 +1,15 @@
 Import-Module -Name SqlServer
 
-Set-Location "C:\Program Files\Microsoft SQL Server\130\Tools\Binn"
+$url = "https://go.microsoft.com/fwlink/?linkid=866662"
+Invoke-RestMethod -Uri $url
+Get-ChildItem
 
-SqlLocalDB.exe create "TestLocalDBInstance"
-SqlLocalDB.exe share "TestLocalDBInstance" "TestSharedLocalDBInstance"
-SqlLocalDB.exe start "TestLocalDBInstance"  
-SqlLocalDB.exe info "TestLocalDBInstance"
+# Set-Location "C:\Program Files\Microsoft SQL Server\130\Tools\Binn"
+
+# SqlLocalDB.exe create "TestLocalDBInstance"
+# SqlLocalDB.exe share "TestLocalDBInstance" "TestSharedLocalDBInstance"
+# SqlLocalDB.exe start "TestLocalDBInstance"  
+# SqlLocalDB.exe info "TestLocalDBInstance"
 
 # SqlLocalDB.exe start
 # SqlLocalDB.exe info MSSQLLocalDB
@@ -16,7 +20,7 @@ Get-ChildItem "SQLSERVER:\SQL\fv-az153"
 # Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery" -ServerInstance "fv-az153\MSSQLLocalDB"
 # Set-Location "SQLSERVER:\SQL\fv-az153"
 
-sqlcmd -S (localdb)\.\TestSharedLocalDBInstance
+# sqlcmd -S (localdb)\.\TestSharedLocalDBInstance
 # Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery" -ServerInstance "TestSharedLocalDBInstance"
 
 # Set-Location "C:\Users\runneradmin\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances\TestLocalDBInstance"
