@@ -31,3 +31,6 @@ GO
 
 sqlcmd -S "(localdb)\TestLocalDBInstance" -d "testDatabase" -Q $createTestTableQuery
 sqlcmd -S "(localdb)\TestLocalDBInstance" -d "testDatabase" -Q $getAllUserTablesQuery
+
+Write-Host "-----------"
+SqlPackage.exe /Version
