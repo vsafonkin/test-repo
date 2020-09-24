@@ -1,4 +1,4 @@
-
+Import-Module -Name SqlServer
 
 # $url = "https://go.microsoft.com/fwlink/?linkid=866662"
 # (New-Object System.Net.WebClient).DownloadFile($url, "sqlserverdev.exe")
@@ -16,10 +16,7 @@ sqlcmd -S "(localdb)\TestLocalDBInstance"
 # SqlLocalDB.exe start
 # SqlLocalDB.exe info MSSQLLocalDB
 
-Import-Module -Name SqlServer
-
-Get-PSDrive
-Get-ChildItem "SQLSERVER:\SQL\fv-az153"
+Get-ChildItem "SQLSERVER:\Utility"
 # Get-SqlInstance -Credential -MachineName "fv-az153"
 # Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery" -ServerInstance "fv-az153\MSSQLLocalDB"
 # Set-Location "SQLSERVER:\SQL\fv-az153"
