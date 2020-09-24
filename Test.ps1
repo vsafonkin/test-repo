@@ -12,11 +12,10 @@ SqlLocalDB.exe share "TestLocalDBInstance" "TestSharedLocalDBInstance"
 SqlLocalDB.exe start "TestLocalDBInstance"  
 SqlLocalDB.exe info "TestLocalDBInstance"
 
-sqlcmd -S "(localdb)\TestLocalDBInstance"
+sqlcmd -S "(localdb)\TestLocalDBInstance" -Q "SELECT GETDATE() AS TimeOfQuery"
 # SqlLocalDB.exe start
 # SqlLocalDB.exe info MSSQLLocalDB
 
-Get-ChildItem "SQLSERVER:\Utility"
 # Get-SqlInstance -Credential -MachineName "fv-az153"
 # Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery" -ServerInstance "fv-az153\MSSQLLocalDB"
 # Set-Location "SQLSERVER:\SQL\fv-az153"
