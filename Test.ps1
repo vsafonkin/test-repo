@@ -2,6 +2,7 @@
 # Get-ChildItem "C:\Program Files\Microsoft SQL Server\130\Tools\Binn"
 
 choco install sqlserver-cmdlineutils
+refreshenv
 
 SqlLocalDB.exe create "TestLocalDBInstance"
 SqlLocalDB.exe start "TestLocalDBInstance"  
