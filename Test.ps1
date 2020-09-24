@@ -29,4 +29,5 @@ WHERE
 GO
 "@
 
+sqlcmd -S "(localdb)\TestLocalDBInstance" -d "testDatabase" -Q $createTestTableQuery
 sqlcmd -S "(localdb)\TestLocalDBInstance" -d "testDatabase" -Q $getAllTablesQuery
