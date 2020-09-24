@@ -22,7 +22,9 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Install ms sql command line utils
-      run: choco install sqlserver-cmdlineutils
+      run: |
+        choco install sqlserver-odbcdriver
+        choco install sqlserver-cmdlineutils
     
     - name: Run SQL Server
       run: |
