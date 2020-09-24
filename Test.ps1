@@ -18,7 +18,7 @@ sqlcmd -S "(localdb)\TestLocalDBInstance"
 
 Import-Module -Name SqlServer
 
-# Get-PSDrive
+Get-PSDrive
 Get-ChildItem "SQLSERVER:\SQL\fv-az153"
 # Get-SqlInstance -Credential -MachineName "fv-az153"
 # Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery" -ServerInstance "fv-az153\MSSQLLocalDB"
