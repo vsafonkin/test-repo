@@ -31,5 +31,5 @@ sqlcmd -S "(localdb)\TestLocalDBInstance" -d "testDatabase" -Q $getAllUserTables
 
 Write-Host "-----------"
 # Get-ChildItem "C:\Program Files\Microsoft SQL Server\150\DAC\bin"
-Set-Location "C:\Program Files\Microsoft SQL Server\150\DAC\bin"
-SqlPackage.exe /Version
+$sqlPackage = "C:\Program Files\Microsoft SQL Server\150\DAC\bin\SqlPackage.exe"
+$sqlPackage /Version
