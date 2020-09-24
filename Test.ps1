@@ -12,7 +12,7 @@ SqlLocalDB.exe share "TestLocalDBInstance" "TestSharedLocalDBInstance"
 SqlLocalDB.exe start "TestLocalDBInstance"  
 SqlLocalDB.exe info "TestLocalDBInstance"
 
-sqlcmd -S "(localdb)\TestLocalDBInstance" -d testdb01
+sqlcmd -S "(localdb)\TestLocalDBInstance"
 # SqlLocalDB.exe start
 # SqlLocalDB.exe info MSSQLLocalDB
 
