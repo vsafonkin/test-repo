@@ -1,9 +1,9 @@
 Import-Module -Name SqlServer
 
-$url = "https://go.microsoft.com/fwlink/?linkid=866662"
-(New-Object System.Net.WebClient).DownloadFile($url, "sqlserverdev.exe")
-Start-Process -FilePath "sqlserverdev.exe" -Wait -PassThru
-Get-ChildItem
+# $url = "https://go.microsoft.com/fwlink/?linkid=866662"
+# (New-Object System.Net.WebClient).DownloadFile($url, "sqlserverdev.exe")
+# Start-Process -FilePath "sqlserverdev.exe" -Wait -PassThru
+Get-ChildItem "C:\Program Files\Microsoft SQL Server\130"
 
 # Set-Location "C:\Program Files\Microsoft SQL Server\130\Tools\Binn"
 
@@ -16,7 +16,7 @@ Get-ChildItem
 # SqlLocalDB.exe info MSSQLLocalDB
 
 Get-PSDrive
-Get-ChildItem "SQLSERVER:\SQL\fv-az153"
+Get-ChildItem "SQLSERVER:\SQL"
 # Get-SqlInstance -Credential -MachineName "fv-az153"
 # Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery" -ServerInstance "fv-az153\MSSQLLocalDB"
 # Set-Location "SQLSERVER:\SQL\fv-az153"
