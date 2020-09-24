@@ -1,7 +1,7 @@
 Import-Module -Name SqlServer
 
 $url = "https://go.microsoft.com/fwlink/?linkid=866662"
-Invoke-RestMethod -Uri $url
+(New-Object System.Net.WebClient).DownloadFile($url, "sqlserverdev.exe")
 Get-ChildItem
 
 # Set-Location "C:\Program Files\Microsoft SQL Server\130\Tools\Binn"
