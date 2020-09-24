@@ -30,7 +30,7 @@ sqlcmd -S "(localdb)\TestLocalDBInstance" -d "testDatabase" -Q $createTestTableQ
 sqlcmd -S "(localdb)\TestLocalDBInstance" -d "testDatabase" -Q $getAllUserTablesQuery
 
 Write-Host "-----------"
-# Get-ChildItem "C:\Program Files\Microsoft SQL Server\150\DAC\bin"
+Get-ChildItem "C:\Program Files\Microsoft SQL Server\150\DAC\bin"
 $sqlPackageTool = "C:\Program Files\Microsoft SQL Server\150\DAC\bin\SqlPackage.exe"
 & $sqlPackageTool /TargetFile:"C:\testDatabaseSnapshot.dacpac" /Action:Extract /SourceServerName:"(localdb)\TestLocalDBInstance" /SourceDatabaseName:"testDatabase"
-Get-ChildItem "C:"
+
