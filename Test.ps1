@@ -30,4 +30,5 @@ sqlcmd -S "(localdb)\TestLocalDBInstance" -d "testDatabase" -Q $createTestTableQ
 sqlcmd -S "(localdb)\TestLocalDBInstance" -d "testDatabase" -Q $getAllUserTablesQuery
 
 Write-Host "-----------"
-# SqlPackage.exe /Version
+Set-Location "C:\Program Files\Microsoft SQL Server\150\DAC\bin"
+SqlPackage.exe /Version
