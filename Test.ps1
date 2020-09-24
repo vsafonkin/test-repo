@@ -32,4 +32,4 @@ sqlcmd -S "(localdb)\TestLocalDBInstance" -d "testDatabase" -Q $getAllUserTables
 Write-Host "-----------"
 # Get-ChildItem "C:\Program Files\Microsoft SQL Server\150\DAC\bin"
 $sqlPackage = "C:\Program Files\Microsoft SQL Server\150\DAC\bin\SqlPackage.exe"
-$sqlPackage /Version
+Invoke-Expression "$sqlPackage /Version"
