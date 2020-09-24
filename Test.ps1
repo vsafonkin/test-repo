@@ -3,7 +3,7 @@ SqlLocalDB.exe start "TestLocalDBInstance"
 SqlLocalDB.exe info "TestLocalDBInstance"
 
 sqlcmd -S "(localdb)\TestLocalDBInstance" -Q "SELECT GETDATE() AS TimeOfQuery"
-sqlcmd -S "(localdb)\TestLocalDBInstance" -Q "SELECT @@SERVERNAME AS 'Server Name'"
+sqlcmd -S "(localdb)\TestLocalDBInstance" -Q "SELECT @@SERVERNAME AS ServerName"
 sqlcmd -S "(localdb)\TestLocalDBInstance" -Q "CREATE DATABASE testDatabase"
 
 $createTestTableQuery = @"
