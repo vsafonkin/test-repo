@@ -10,13 +10,18 @@ sqlcmd -S "(localdb)\TestLocalDBInstance" -Q "CREATE DATABASE testDatabase"
 
 $createTestTableQuery = @"
 CREATE TABLE testTable (
-    visit_id INT PRIMARY KEY IDENTITY (1, 1),
+    person_id INT PRIMARY KEY IDENTITY (1, 1),
     first_name VARCHAR (50) NOT NULL,
     last_name VARCHAR (50) NOT NULL,
-    visited_at DATETIME,
-    phone VARCHAR(20),
-    store_id INT NOT NULL
+    birthday DATETIME,
+    phone VARCHAR(20)
 );
 "@
 
-sqlcmd -S "(localdb)\TestLocalDBInstance" -d "testDatabase" -Q $createTestTableQuery
+$selectAllQuery = @"
+SELECT *  
+FROM testTable  
+ORDER BY last_name;
+"@
+
+sqlcmd -S "(localdb)\TestLocalDBInstance" -d "testDatabase" -Q $selectAllQuery
