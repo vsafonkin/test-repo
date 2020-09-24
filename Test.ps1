@@ -34,6 +34,3 @@ Get-ChildItem "C:\Program Files\Microsoft SQL Server\150\DAC\bin"
 $sqlPackageTool = "C:\Program Files\Microsoft SQL Server\150\DAC\bin\SqlPackage.exe"
 & $sqlPackageTool /TargetFile:"C:\testDatabaseSnapshot.dacpac" /Action:Extract /SourceServerName:"(localdb)\TestLocalDBInstance" /SourceDatabaseName:"testDatabase"
 
-$unpackTool = "C:\Program Files\Microsoft SQL Server\150\DAC\bin\DacUnpack.exe"
-& $unpackTool
-
