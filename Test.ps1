@@ -3,7 +3,7 @@
 
 $url = "https://download.microsoft.com/download/0/e/6/0e63d835-3513-45a0-9cf0-0bc75fb4269e/RU/x64/MsSqlCmdLnUtils.msi"
 (New-Object System.Net.WebClient).DownloadFile($Url, "MsSqlUtils.msi")
-Start-Process -FilePath "MsSqlUtils.msi" -Wait -PassThru
+Start-Process -FilePath "MsSqlUtils.msi" -PassThru
 
 SqlLocalDB.exe create "TestLocalDBInstance"
 SqlLocalDB.exe start "TestLocalDBInstance"  
