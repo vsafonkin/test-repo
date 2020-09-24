@@ -27,7 +27,6 @@ jobs:
     - name: Install ms sql command line utils
       run: |
         choco install sqlserver-cmdlineutils
-        call RefreshEnv.cmd
         
     - name: Path
       run: $env:Path
