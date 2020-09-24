@@ -1,3 +1,5 @@
+Get-Command sqlcmd
+
 SqlLocalDB.exe create "TestLocalDBInstance"
 SqlLocalDB.exe start "TestLocalDBInstance"  
 SqlLocalDB.exe info "TestLocalDBInstance"
