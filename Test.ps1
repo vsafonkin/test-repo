@@ -1,4 +1,4 @@
-# (Get-Command sqlcmd).Source
+(Get-Command SqlLocalDB).Source
 Get-ChildItem "C:\Program Files\Microsoft SQL Server"
 
 SqlLocalDB.exe create "TestLocalDBInstance"
