@@ -20,11 +20,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: env
-      run: env
+    
+    - name: Path
+      run: $env:Path
+    
     - name: Install ms sql command line utils
       run: |
         choco install sqlserver-cmdlineutils
+        
+    - name: Path
+      run: $env:Path
     
     - name: Run SQL Server
       run: |
