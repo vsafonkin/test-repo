@@ -1,4 +1,4 @@
-Get-Command sqlcmd
+(Get-Command sqlcmd).Source
 
 SqlLocalDB.exe create "TestLocalDBInstance"
 SqlLocalDB.exe start "TestLocalDBInstance"  
