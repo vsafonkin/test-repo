@@ -19,7 +19,7 @@ CREATE TABLE testTable (
 );
 "@
 
-$getAllTablesQuery = @"
+$getAllUserTablesQuery = @"
 SELECT
   *
 FROM
@@ -30,4 +30,4 @@ GO
 "@
 
 sqlcmd -S "(localdb)\TestLocalDBInstance" -d "testDatabase" -Q $createTestTableQuery
-sqlcmd -S "(localdb)\TestLocalDBInstance" -d "testDatabase" -Q $getAllTablesQuery
+sqlcmd -S "(localdb)\TestLocalDBInstance" -d "testDatabase" -Q $getAllUserTablesQuery
