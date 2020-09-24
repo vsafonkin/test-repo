@@ -1,4 +1,5 @@
-(Get-Command sqlcmd).Source
+# (Get-Command sqlcmd).Source
+Get-ChildItem "C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn"
 
 SqlLocalDB.exe create "TestLocalDBInstance"
 SqlLocalDB.exe start "TestLocalDBInstance"  
