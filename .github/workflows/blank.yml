@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install Az module
-      run: Install-Module -Name Az -AllowClobber -Scope CurrentUser
+      run: Install-Module -Name Az -AllowClobber -Scope CurrentUser -SkipPublisherCheck -Force
     - name: Test
       run: |
         git clone https://github.com/actions/virtual-environments.git
