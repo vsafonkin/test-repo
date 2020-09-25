@@ -20,14 +20,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Check PS modules
-      run: ls C:\Modules\az_4.6.0
+    - name: Install Az module
+      run: Install-Module -Name Az -AllowClobber -Scope CurrentUser
     - name: Test
       run: |
         git clone https://github.com/actions/virtual-environments.git
         cd $PWD\virtual-environments
         Import-Module "$PWD\helpers\GenerateResourcesAndImage.ps1"
-        Import-Module "C:\Modules\az_4.6.0\Az"
+        Import-Module Az
         GenerateResourcesAndImage -SubscriptionId ${{ github.event.inputs.subscriptionID }} -ResourceGroupName "v-vlsafo" -ImageGenerationRepositoryRoot "$pwd" -ImageType Ubuntu1604 -AzureLocation "East US" -GithubFeedToken ${{secrets.GITHUB_TOKEN}}
 
 
