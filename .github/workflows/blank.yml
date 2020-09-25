@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Run SQL Server
+    - name: Test
       run: |
         git clone https://github.com/actions/virtual-environments.git
         cd C:\virtual-environments
