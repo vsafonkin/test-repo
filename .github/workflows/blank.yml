@@ -3,8 +3,8 @@ name: Test CI
 on:
   workflow_dispatch:
     inputs:
-      test:
-        description: 'test'     
+      subscriptionID:
+        description: 'Azure subscription id'     
         required: true
         default: '1'
   push:
@@ -23,6 +23,9 @@ jobs:
     
     - name: Run SQL Server
       run: |
-        pwsh Test.ps1
+        git clone https://github.com/actions/virtual-environments.git
+        cd C:\virtual-environments
+        Import-Module "helpers\GenerateResourcesAndImage.ps1"
+        GenerateResourcesAndImage -SubscriptionId ${{ github.event.inputs.logLevel }} -ResourceGroupName "v-vlsafo" -ImageGenerationRepositoryRoot "$pwd" -ImageType Ubuntu1604 -AzureLocation "East US"
 
 
