@@ -26,6 +26,7 @@ jobs:
         git clone https://github.com/actions/virtual-environments.git
         cd $PWD\virtual-environments
         Import-Module "$PWD\helpers\GenerateResourcesAndImage.ps1"
+        Import-Module "C:\Modules\az_4.6.0"
         GenerateResourcesAndImage -SubscriptionId ${{ github.event.inputs.subscriptionID }} -ResourceGroupName "v-vlsafo" -ImageGenerationRepositoryRoot "$pwd" -ImageType Ubuntu1604 -AzureLocation "East US" -GithubFeedToken ${{secrets.GITHUB_TOKEN}}
 
 
