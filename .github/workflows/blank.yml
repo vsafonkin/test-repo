@@ -16,21 +16,10 @@ jobs:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
-        platform: [ windows-2016, windows-2019 ]
+        platform: [ windows-latest ]
 
     steps:
     - uses: actions/checkout@v2
-    
-    - name: Path
-      run: $env:Path
-    
-    - name: Install ms sql command line utils
-      run: |
-        choco install sqlserver-cmdlineutils
-        echo "::add-path::C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn"
-        
-    - name: Path
-      run: $env:Path
     
     - name: Run SQL Server
       run: |
