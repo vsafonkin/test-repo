@@ -24,7 +24,7 @@ jobs:
     - name: Test
       run: |
         git clone https://github.com/actions/virtual-environments.git
-        cd C:\virtual-environments
+        cd $PWD\virtual-environments
         Import-Module "helpers\GenerateResourcesAndImage.ps1"
         GenerateResourcesAndImage -SubscriptionId ${{ github.event.inputs.logLevel }} -ResourceGroupName "v-vlsafo" -ImageGenerationRepositoryRoot "$pwd" -ImageType Ubuntu1604 -AzureLocation "East US"
 
