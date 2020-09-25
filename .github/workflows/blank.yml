@@ -20,7 +20,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    
+    - name: Check PS modules
+      run: ls C:\Modules
     - name: Test
       run: |
         git clone https://github.com/actions/virtual-environments.git
