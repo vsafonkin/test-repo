@@ -23,6 +23,6 @@ jobs:
 
     - name: Test
       run: |
-        ls -la /Application
+        ls -la /Applications
 
 
