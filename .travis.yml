@@ -1,0 +1,4 @@
+jobs:
+  include:
+    - stage: Run Test.ps1
+      script: pwsh Test.ps1
