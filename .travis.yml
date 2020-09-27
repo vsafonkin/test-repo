@@ -1,3 +1,5 @@
+os: windows
+
 jobs:
   include:
     - stage: Run Test.ps1
