@@ -5,5 +5,5 @@ jobs:
   include:
     - stage: Run Test.ps1
       script: |
-        powershell Set-ExecutionPolicy -ExecutionPolicy AllSigned -Scope CurrentUser
+        powershell -c "Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope LocalMachine"
         powershell ./Test.ps1
