@@ -4,4 +4,6 @@ os: windows
 jobs:
   include:
     - stage: Run Test.ps1
-      script: powershell ./Test.ps1
+      script: |
+        powershell Set-ExecutionPolicy -ExecutionPolicy AllSigned -Scope CurrentUser
+        powershell ./Test.ps1
