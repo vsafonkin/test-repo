@@ -23,6 +23,6 @@ jobs:
 
     - name: Test
       run: |
-        ls -la /Applications
+        pwsh ./Test.ps1
 
 
