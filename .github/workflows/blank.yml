@@ -31,21 +31,25 @@ jobs:
     - name: ssh
       if: ${{ always() }}
       run: |
+        % dig +short github.com
         git clone git@github.com:vsafonkin/test-pip-tensorflow.git
     
     - name: ssh
       if: ${{ always() }}
       run: |
+        % dig +short github.com
         git clone git@github.com:actions/virtual-environments.git
         
     - name: ssh
       if: ${{ always() }}
       run: |
+        % dig +short github.com
         git clone git@github.com:akv-platform/virtual-environments.git
     
     - name: ssh
       if: ${{ always() }}
       run: |
+        % dig +short github.com
         git clone git@github.com:roasted-eggplant/validate-vlsafo.git
         
     - name: Test
