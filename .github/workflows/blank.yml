@@ -30,12 +30,16 @@ jobs:
         echo "-----"
         ssh-keyscan -t rsa gist.github.com
         echo "-----"
-        ls .ssh
     
     - name: ssh
       if: ${{ always() }}
       run: |
         git clone git@github.com:vsafonkin/test-pip-tensorflow.git
+    
+    - name: known hosts
+      if: ${{ always() }}
+      run: |
+        ls .ssh
         
     - name: Test
       run: |
