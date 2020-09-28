@@ -24,9 +24,9 @@ jobs:
     - name: ssh-keyscan
       if: ${{ always() }}
       run: |
-        ssh-keyscan -t rsa github.com
+        ssh-keyscan -t rsa https://github.com
         echo "-----"
-        ssh-keyscan -t rsa google.com
+        ssh-keyscan -t rsa https://gist.github.com
     
     - name: ssh
       if: ${{ always() }}
