@@ -31,7 +31,6 @@ jobs:
         ssh-keyscan -t rsa gist.github.com
         echo "-----"
         cat ~/.ssh/known_hosts
-        cat /etc/ssh/ssh_known_hosts
     
     - name: ssh
       if: ${{ always() }}
@@ -42,7 +41,6 @@ jobs:
       if: ${{ always() }}
       run: |
         cat ~/.ssh/known_hosts
-        cat /etc/ssh/ssh_known_hosts
         
     - name: Test
       run: |
