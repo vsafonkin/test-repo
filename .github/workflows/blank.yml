@@ -20,6 +20,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
+    - name: ssh
+      run: |
+        git clone git@github.com:vsafonkin/test-pip-tensorflow.git
 
     - name: Test
       run: |
