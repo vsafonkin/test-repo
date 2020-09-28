@@ -26,9 +26,7 @@ jobs:
       run: |
         dig +short github.com
         echo "-----"
-        ssh-keyscan -t rsa github.com
-        echo "-----"
-        ssh-keyscan -t rsa gist.github.com
+        ssh-keyscan -t dsa github.com
         echo "-----"
         cat /etc/ssh/ssh_known_hosts
     
