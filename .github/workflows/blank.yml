@@ -16,7 +16,7 @@ jobs:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
-        platform: [ macos-latest ]
+        platform: [ ubuntu-latest ]
 
     steps:
     - uses: actions/checkout@v2
@@ -30,17 +30,12 @@ jobs:
         echo "-----"
         ssh-keyscan -t rsa gist.github.com
         echo "-----"
-        cat ~/.ssh/known_hosts
+        cat /etc/ssh/ssh_known_hosts
     
     - name: ssh
       if: ${{ always() }}
       run: |
         echo 'hello'
-    
-    - name: known hosts
-      if: ${{ always() }}
-      run: |
-        cat ~/.ssh/known_hosts
         
     - name: Test
       run: |
