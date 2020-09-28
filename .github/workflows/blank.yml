@@ -21,6 +21,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - name: ssh-keyscan
+      if: ${{ always() }}
+      run: |
+        keyscan -t rsa github.com
+    
     - name: ssh
       if: ${{ always() }}
       run: |
