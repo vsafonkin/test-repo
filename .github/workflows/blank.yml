@@ -33,7 +33,7 @@ jobs:
     - name: ssh
       if: ${{ always() }}
       run: |
-        ssh --version
+        ssh -v localhost
         
     - name: Test
       run: |
