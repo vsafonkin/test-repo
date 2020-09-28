@@ -16,7 +16,7 @@ jobs:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
-        platform: [ ubuntu-latest, macos-latest ]
+        platform: [ ubuntu-latest ]
 
     steps:
     - uses: actions/checkout@v2
@@ -24,7 +24,7 @@ jobs:
     - name: ssh-keyscan
       if: ${{ always() }}
       run: |
-        keyscan -t rsa github.com
+        ssh-keyscan -t rsa github.com
     
     - name: ssh
       if: ${{ always() }}
