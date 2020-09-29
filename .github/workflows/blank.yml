@@ -20,20 +20,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    
-    - name: ssh-keyscan
-      if: ${{ always() }}
-      run: |
-        dig +short github.com
-        echo "-----"
-        ssh-keyscan -t dsa github.com
-        echo "-----"
-        cat /etc/ssh/ssh_known_hosts
-    
-    - name: ssh
-      if: ${{ always() }}
-      run: |
-        ssh -v localhost
         
     - name: Test
       run: |
