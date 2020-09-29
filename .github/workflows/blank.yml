@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        fetch-death: 0
+        fetch-depth: 0
     - run: git checkout 14966efbdb8408fe17fa5dd7b10ec4eda077cac0 
         
     - name: Test
