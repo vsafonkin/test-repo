@@ -1,4 +1,2 @@
-Write-Host "********"
-Write-Host "Test..."
-Write-Host "********"
+Import-Module helpers.psm1
 
