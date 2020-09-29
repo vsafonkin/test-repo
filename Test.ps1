@@ -1,2 +1,2 @@
-Import-Module ./helpers.psm1
+Import-Module .\helpers.psm1
 
