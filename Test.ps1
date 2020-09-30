@@ -7,15 +7,15 @@ $pinfo = New-Object System.Diagnostics.ProcessStartInfo
 $pinfo.FileName = "$env:comspec"
 $pinfo.RedirectStandardError = $true
 $pinfo.RedirectStandardOutput = $true
-# $pinfo.RedirectStandardInput = $true
+$pinfo.RedirectStandardInput = $true
 $pinfo.UseShellExecute = $false
 $pinfo.Verb = "RunAs"
 $p = New-Object System.Diagnostics.Process
 $p.StartInfo = $pinfo
 $p.Start() | Out-Null
 Start-Sleep -s 2
-# $p.StandardInput.WriteLine("echo %APPDATA%");
-# $p.StandartInput.Close()
+$p.StandardInput.WriteLine("echo %APPDATA%");
+$p.StandartInput.Close()
 $p.WaitForExit()
 $output = $p.StandardOutput.ReadToEnd()
 $output += $p.StandardError.ReadToEnd()
