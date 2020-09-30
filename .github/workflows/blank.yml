@@ -42,7 +42,7 @@ jobs:
           -D CMAKE_BUILD_TYPE=Release             ^
           -D CMAKE_Swift_FLAGS="%SWIFTFLAGS%"     ^
           -G Ninja                                ^
-          -S %SystemDrive%/SourceCache/swift-build-examples/HelloWorld-CMake
+          -S %SystemDrive%/SourceCache/swift-build-examples/HelloWorld
         cmake --build %SystemDrive%/BinaryCache/HelloWorld
       shell: cmd
         
