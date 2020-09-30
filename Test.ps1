@@ -21,7 +21,7 @@ Import-Module .\helpers.psm1 -DisableNameChecking
 # Install-Binary -Url "https://github.com/compnerd/swift-build/releases/latest/download/sdk.msi" -Name "sdk.msi"
 
 $commandLineNativeTools = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-& $commandLineNativeTools
+# & $commandLineNativeTools
 
 # $pinfo = New-Object System.Diagnostics.ProcessStartInfo
 # $pinfo.FileName = $commandLineNativeTools
@@ -47,7 +47,7 @@ $commandLineNativeTools = "C:\Program Files (x86)\Microsoft Visual Studio\2019\E
 
 $MyProcess = New-Object System.Diagnostics.Process
     
-$MyProcess.StartInfo.FileName = $env:comspec
+$MyProcess.StartInfo.FileName = $commandLineNativeTools
 $MyProcess.StartInfo.UseShellExecute = $false
 $MyProcess.StartInfo.RedirectStandardInput = $true
 # $MyProcess.StartInfo.RedirectStandardOutput = $true
@@ -56,7 +56,7 @@ $MyProcess.Start() | Out-Null
 Start-Sleep -s 10
 $StdIn = $MyProcess.StandardInput
 # $StdOut = $MyProcess.StandardOutput
-$StdIn.WriteLine("echo %APPDATA%")
+$StdIn.WriteLine("copy %SDKROOT%\usr\share\ucrt.modulemap `"%UniversalCRTSdkDir%\Include\%UCRTVersion%\ucrt\module.modulemap`"")
 $StdIn.WriteLine("echo %VCToolsInstallDir%")
 $StdIn.Close()
 
