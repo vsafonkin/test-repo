@@ -21,7 +21,7 @@ Import-Module .\helpers.psm1 -DisableNameChecking
 # Install-Binary -Url "https://github.com/compnerd/swift-build/releases/latest/download/sdk.msi" -Name "sdk.msi"
 
 $commandLineNativeTools = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-
+& $commandLineNativeTools
 
 # $pinfo = New-Object System.Diagnostics.ProcessStartInfo
 # $pinfo.FileName = $commandLineNativeTools
@@ -42,7 +42,7 @@ $commandLineNativeTools = "C:\Program Files (x86)\Microsoft Visual Studio\2019\E
 # $output
 
 # Start-Process -FilePath $commandLineNativeTools -ArgumentList "/c echo %SystemDrive%" -PassThru -Wait -Verb RunAs
-cmd.exe -c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+# cmd.exe -c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
 
 
 # $MyProcess = New-Object System.Diagnostics.Process
