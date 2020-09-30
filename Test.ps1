@@ -31,4 +31,4 @@ copy $env:SDKROOT\usr\share\visualc.modulemap "$env:VCToolsInstallDir\include\mo
 copy $env:SDKROOT\usr\share\visualc.apinotes "$env:VCToolsInstallDir\include\visualc.apinotes"
 copy $env:SDKROOT\usr\share\winsdk.modulemap "$env:UniversalCRTSdkDir\Include\$env:UCRTVersion\um\module.modulemap"
 
-Get-ChildItem C:\
+Get-ChildItem C:\test_dir
