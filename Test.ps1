@@ -13,6 +13,7 @@ try {
     $MyProcess.Start() | Out-Null
     $StdIn = $MyProcess.StandardInput
     $StdIn.WriteLine("echo %APPDATA%")
+    $StdIn.WriteLine("echo %SystemDrive%")
 } finally {
     if($StdIn) {
       $StdIn.Close()
