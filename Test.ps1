@@ -29,3 +29,5 @@ copy $env:SDKROOT\usr\share\ucrt.modulemap "$env:UniversalCRTSdkDir\Include\$env
 copy $env:SDKROOT\usr\share\visualc.modulemap "$env:VCToolsInstallDir\include\module.modulemap"
 copy $env:SDKROOT\usr\share\visualc.apinotes "$env:VCToolsInstallDir\include\visualc.apinotes"
 copy $env:SDKROOT\usr\share\winsdk.modulemap "$env:UniversalCRTSdkDir\Include\$env:UCRTVersion\um\module.modulemap"
+
+swift --version
