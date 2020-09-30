@@ -47,7 +47,7 @@ $commandLineNativeTools = "C:\Program Files (x86)\Microsoft Visual Studio\2019\E
 
 $MyProcess = New-Object System.Diagnostics.Process
     
-$MyProcess.StartInfo.FileName = $commandLineNativeTools
+$MyProcess.StartInfo.FileName = $env:comspec
 $MyProcess.StartInfo.UseShellExecute = $false
 $MyProcess.StartInfo.RedirectStandardInput = $true
 # $MyProcess.StartInfo.RedirectStandardOutput = $true
@@ -56,7 +56,7 @@ $MyProcess.Start() | Out-Null
 Start-Sleep -s 10
 $StdIn = $MyProcess.StandardInput
 # $StdOut = $MyProcess.StandardOutput
-$StdIn.WriteLine("copy %SDKROOT%\usr\share\ucrt.modulemap `"%UniversalCRTSdkDir%\Include\%UCRTVersion%\ucrt\module.modulemap`"")
+# $StdIn.WriteLine("copy %SDKROOT%\usr\share\ucrt.modulemap `"%UniversalCRTSdkDir%\Include\%UCRTVersion%\ucrt\module.modulemap`"")
 $StdIn.WriteLine("mkdir C:\test_directory")
 $StdIn.Close()
 
