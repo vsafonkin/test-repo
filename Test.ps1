@@ -10,4 +10,4 @@ Install-Binary -Url "https://github.com/compnerd/swift-build/releases/latest/dow
 # $commandLineNativeTools = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
 # Start-Process -FilePath $commandLineNativeTools -Verb RunAs | echo %UniversalCRTSdkDir%
 
-Get-ChildItem "$env:SDKROOT/usr/lib
+Get-ChildItem "$env:SDKROOT/usr/lib"
