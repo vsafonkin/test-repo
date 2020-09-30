@@ -57,7 +57,7 @@ Start-Sleep -s 10
 $StdIn = $MyProcess.StandardInput
 # $StdOut = $MyProcess.StandardOutput
 $StdIn.WriteLine("echo %APPDATA%")
-$StdIn.WriteLine("echo %SystemDrive%")
+$StdIn.WriteLine("echo %VCToolsInstallDir%")
 $StdIn.Close()
 
 # $output = $StdOut.ReadToEnd()
