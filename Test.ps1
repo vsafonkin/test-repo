@@ -52,7 +52,7 @@ $MyProcess.StartInfo.UseShellExecute = $false
 $MyProcess.StartInfo.RedirectStandardInput = $true
 $MyProcess.StartInfo.Verb = "RunAs"
 $MyProcess.Start() | Out-Null
-Start-Sleep -s 5
+Start-Sleep -s 30
 $StdIn = $MyProcess.StandardInput
 $StdIn.WriteLine("echo %APPDATA%")
 $StdIn.WriteLine("echo %SystemDrive%")
