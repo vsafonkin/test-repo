@@ -1,5 +1,5 @@
 Import-Module .\helpers.psm1 -DisableNameChecking
-cmd.exe -c "echo %SystemDrive%"
+cmd.exe -c "echo %APPDATA%"
 # Start-Process -FilePath "$env:comspec" -ArgumentList "%SystemDrive%" -Verb RunAs
 # Get-ChildItem "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build"
 
