@@ -30,12 +30,13 @@ jobs:
     - name: Set SDKROOT
       run: echo "::set-env name=SDKROOT::C:\Library\Developer\Platforms\Windows.platform\Developer\SDKs\Windows.sdk"
       
-    - uses: ilammy/msvc-dev-cmd@v1
-    - name: cl.exe
+    - name: cmd
       run: |
         echo %SDKROOT%
+        echo %UniversalCRTSdkDir%
         copy "%SDKROOT%\usr\share\ucrt.modulemap" "%UniversalCRTSdkDir%\Include\%UCRTVersion%\ucrt\module.modulemap"
         copy "%SDKROOT%\usr\share\visualc.modulemap" "%VCToolsInstallDir%\include\module.modulemap"
         copy "%SDKROOT%\usr\share\visualc.apinotes" "%VCToolsInstallDir%\include\visualc.apinotes"
         copy "%SDKROOT%\usr\share\winsdk.modulemap" "%UniversalCRTSdkDir%\Include\%UCRTVersion%\um\module.modulemap"
+      shell: cmd
 
