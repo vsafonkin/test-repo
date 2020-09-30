@@ -23,9 +23,9 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Find ninja
-      run: where /r C:\ ni*.exe
-      shell: cmd
+#     - name: Find ninja
+#       run: where /r C:\ ni*.exe
+#       shell: cmd
     
     - name: Set SDKROOT
       run: |
