@@ -1,7 +1,7 @@
 Import-Module .\helpers.psm1 -DisableNameChecking
 
 # Start-Process -FilePath "$env:comspec" -ArgumentList "/c echo %SystemDrive%" -PassThru -Wait -Verb RunAs
-Get-ChildItem "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build"
+# Get-ChildItem "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build"
 
 
 # $MyProcess = New-Object System.Diagnostics.Process
@@ -42,23 +42,23 @@ $commandLineNativeTools = "C:\Program Files (x86)\Microsoft Visual Studio\2019\E
 # $output
 
 # Start-Process -FilePath $commandLineNativeTools -ArgumentList "/c echo %SystemDrive%" -PassThru -Wait -Verb RunAs
-# cmd.exe -c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+cmd.exe -c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
 
 
-$MyProcess = New-Object System.Diagnostics.Process
+# $MyProcess = New-Object System.Diagnostics.Process
     
-$MyProcess.StartInfo.FileName = $commandLineNativeTools
-$MyProcess.StartInfo.UseShellExecute = $false
-$MyProcess.StartInfo.RedirectStandardInput = $true
-$MyProcess.StartInfo.RedirectStandardOutput = $true
-$MyProcess.StartInfo.Verb = "RunAs"
-$MyProcess.Start() | Out-Null
-Start-Sleep -s 10
-$StdIn = $MyProcess.StandardInput
-$StdOut = $MyProcess.StandardOutput
-$StdIn.WriteLine("echo %APPDATA%")
-$StdIn.WriteLine("echo %SystemDrive%")
-$StdIn.Close()
+# $MyProcess.StartInfo.FileName = $commandLineNativeTools
+# $MyProcess.StartInfo.UseShellExecute = $false
+# $MyProcess.StartInfo.RedirectStandardInput = $true
+# $MyProcess.StartInfo.RedirectStandardOutput = $true
+# $MyProcess.StartInfo.Verb = "RunAs"
+# $MyProcess.Start() | Out-Null
+# Start-Sleep -s 10
+# $StdIn = $MyProcess.StandardInput
+# $StdOut = $MyProcess.StandardOutput
+# $StdIn.WriteLine("echo %APPDATA%")
+# $StdIn.WriteLine("echo %SystemDrive%")
+# $StdIn.Close()
 
-$output = $StdOut.ReadToEnd()
-$output
+# $output = $StdOut.ReadToEnd()
+# $output
