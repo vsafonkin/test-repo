@@ -48,7 +48,7 @@ $commandLineNativeTools = "C:\Program Files (x86)\Microsoft Visual Studio\2019\E
 $MyProcess = New-Object System.Diagnostics.Process
     
 $MyProcess.StartInfo.FileName = $commandLineNativeTools
-$MyProcess.StartInfo.UseShellExecute = $true
+$MyProcess.StartInfo.UseShellExecute = $false
 $MyProcess.StartInfo.RedirectStandardInput = $true
 $MyProcess.StartInfo.RedirectStandardOutput = $true
 $MyProcess.StartInfo.Verb = "RunAs"
