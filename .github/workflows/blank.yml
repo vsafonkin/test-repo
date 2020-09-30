@@ -32,18 +32,16 @@ jobs:
       
     - name: Test build
       run: |
-        mkdir %SystemDrive%/SourceCache
-        mkdir %SystemDrive%/BinaryCache
-        git clone git://github.com/compnerd/swift-cmake-examples %SystemDrive%/SourceCache/swift-cmake-examples
+        git clone git://github.com/compnerd/swift-cmake-examples %SystemDrive%/swift-cmake-examples
         set SWIFTFLAGS=-sdk %SDKROOT% -resource-dir %SDKROOT%/usr/lib/swift -I %SDKROOT%/usr/lib/swift -L %SDKROOT%/usr/lib/swift/windows
         "%ProgramFiles%/CMake/bin/cmake.exe"      ^
-          -B %SystemDrive%/BinaryCache/HelloWorld ^
+          -B %SystemDrive%/HelloWorld ^
           -D BUILD_SHARED_LIBS=YES                ^
           -D CMAKE_BUILD_TYPE=Release             ^
           -D CMAKE_Swift_FLAGS="%SWIFTFLAGS%"     ^
           -G Ninja                                ^
-          -S %SystemDrive%/SourceCache/swift-build-examples/HelloWorld
-        cmake --build %SystemDrive%/BinaryCache/HelloWorld
+          -S %SystemDrive%/swift-build-examples/HelloWorld
+        cmake --build %SystemDrive%/HelloWorld
       shell: cmd
         
 
