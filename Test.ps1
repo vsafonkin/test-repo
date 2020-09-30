@@ -24,11 +24,10 @@ Get-Content "C:\vcvars.txt" | Foreach-Object {
     Set-Content "env:\$($matches[1])" $matches[2]
   }
 }
-mkdir C:\test_dir
-copy $env:SDKROOT\usr\share\ucrt.modulemap "$env:SystemDrive\test_dir"
+
 copy $env:SDKROOT\usr\share\ucrt.modulemap "$env:UniversalCRTSdkDir\Include\$env:UCRTVersion\ucrt\module.modulemap"
 copy $env:SDKROOT\usr\share\visualc.modulemap "$env:VCToolsInstallDir\include\module.modulemap"
 copy $env:SDKROOT\usr\share\visualc.apinotes "$env:VCToolsInstallDir\include\visualc.apinotes"
 copy $env:SDKROOT\usr\share\winsdk.modulemap "$env:UniversalCRTSdkDir\Include\$env:UCRTVersion\um\module.modulemap"
 
-Get-ChildItem C:\test_dir
+Get-ChildItem C:\Library\Developer
