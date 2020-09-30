@@ -30,12 +30,12 @@ $pinfo.FileName = $commandLineNativeTools
 # $pinfo.Arguments = "/c", "echo", "%APPDATA%"
 $pinfo.RedirectStandardError = $true
 $pinfo.RedirectStandardOutput = $true
-$pinfo.UseShellExecute = $false
+# $pinfo.UseShellExecute = $false
 $pinfo.Verb = "RunAs"
 $p = New-Object System.Diagnostics.Process
 $p.StartInfo = $pinfo
 $p.Start() | Out-Null
-Start-Sleep -s 2
+Start-Sleep -s 5
 $p.StandardInput.WriteLine("echo %APPDATA%");
 $p.WaitForExit()
 $output = $p.StandardOutput.ReadToEnd()
