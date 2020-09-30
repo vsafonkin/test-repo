@@ -32,6 +32,8 @@ jobs:
       
     - name: Test build
       run: |
+        mkdir %SystemDrive%/SourceCache
+        mkdir %SystemDrive%/BinaryCache
         git clone git://github.com/compnerd/swift-build-examples %SystemDrive%/SourceCache/swift-build-examples
         set SWIFTFLAGS=-sdk %SDKROOT% -resource-dir %SDKROOT%/usr/lib/swift -I %SDKROOT%/usr/lib/swift -L %SDKROOT%/usr/lib/swift/windows
         "%ProgramFiles%/CMake/bin/cmake.exe"      ^
