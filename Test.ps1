@@ -8,5 +8,4 @@ Install-Binary -Url "https://github.com/compnerd/swift-build/releases/latest/dow
 Install-Binary -Url "https://github.com/compnerd/swift-build/releases/latest/download/sdk.msi" -Name "sdk.msi"
 
 $commandLineNativeTools = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-Start-Process -FilePath $commandLineNativeTools -Verb RunAs
-echo %UniversalCRTSdkDir%
+Start-Process -FilePath $commandLineNativeTools -Verb RunAs | echo %UniversalCRTSdkDir%
