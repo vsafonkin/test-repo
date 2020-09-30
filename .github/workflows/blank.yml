@@ -24,7 +24,7 @@ jobs:
         fetch-depth: 0
 
     - name: Find ninja
-      run: dir /s ninja.exe
+      run: where /r C:\ ninja.exe
     
     - name: Set SDKROOT
       run: |
