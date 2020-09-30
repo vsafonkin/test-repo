@@ -27,6 +27,9 @@ jobs:
       run: |
         pwsh ./Test.ps1
     
+    - name: Setup cmd line native tools x64
+      run: cmd.exe -c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+
     - name: Set SDKROOT
       run: echo "::set-env name=SDKROOT::C:\Library\Developer\Platforms\Windows.platform\Developer\SDKs\Windows.sdk"
       
