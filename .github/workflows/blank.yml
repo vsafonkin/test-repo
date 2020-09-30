@@ -22,13 +22,13 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-      
-    - name: Test
-      run: |
-        pwsh ./Test.ps1
-        
+    
     - name: Set SDKROOT
       run: echo "::set-env name=SDKROOT::C:\Library\Developer\Platforms\Windows.platform\Developer\SDKs\Windows.sdk"
+  
+    - name: Test
+      run: |
+        pwsh ./Test.ps1 
       
     - name: Setup cmd line native tools x64
       run: |
