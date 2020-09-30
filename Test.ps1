@@ -62,4 +62,4 @@ $StdIn.Close()
 
 $output = $StdOut.ReadToEnd()
 $output
-cmd.exe -c "echo %VCToolsInstallDir%"
+cmd.exe -c "echo %APPDATA%"
