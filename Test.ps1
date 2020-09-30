@@ -8,6 +8,5 @@ Install-Binary -Url "https://github.com/compnerd/swift-build/releases/latest/dow
 Install-Binary -Url "https://github.com/compnerd/swift-build/releases/latest/download/sdk.msi" -Name "sdk.msi"
 
 $commandLineNativeTools = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-# Start-Process -FilePath $commandLineNativeTools -ArgumentList "/c echo %SystemDrive%" -Wait -Verb RunAs
-$commandLineNativeTools -c "/c echo %APPDATA%"
+Start-Process -FilePath $commandLineNativeTools -ArgumentList "/c echo %SystemDrive%" -PassThru -Wait -Verb RunAs
 # cmd.exe -c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
