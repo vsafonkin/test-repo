@@ -50,18 +50,21 @@ $MyProcess = New-Object System.Diagnostics.Process
 $MyProcess.StartInfo.FileName = $env:comspec
 $MyProcess.StartInfo.UseShellExecute = $false
 $MyProcess.StartInfo.RedirectStandardInput = $true
-# $MyProcess.StartInfo.RedirectStandardOutput = $true
 $MyProcess.StartInfo.Verb = "RunAs"
 $MyProcess.Start() | Out-Null
 Start-Sleep -s 10
 $StdIn = $MyProcess.StandardInput
-# $StdOut = $MyProcess.StandardOutput
-# $StdIn.WriteLine("copy %SDKROOT%\usr\share\ucrt.modulemap `"%UniversalCRTSdkDir%\Include\%UCRTVersion%\ucrt\module.modulemap`"")
 $StdIn.WriteLine($commandLineNativeTools)
 $StdIn.WriteLine("SET > C:\vcvars.txt")
 $StdIn.Close()
 
-# $output = $StdOut.ReadToEnd()
-# $output
 
-Get-ChildItem "C:"
+Get-Content "C:\vcvars.txt"
+
+Get-Content "C:\vcvars.txt" | Foreach-Object {
+  if ($_ -match "^(.*?)=(.*)$") {
+    Set-Content "env:\$($matches[1])" $matches[2]
+  }
+}
+
+env
