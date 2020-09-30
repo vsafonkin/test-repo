@@ -37,8 +37,8 @@ $p.StartInfo = $pinfo
 $p.Start()
 Start-Sleep -s 5
 Write-Host "Process: $p"
-# $p.StandardInput.WriteLine("echo %APPDATA%");
 $p.WaitForExit()
+$p.StandardInput.WriteLine("echo %APPDATA%");
 $output = $p.StandardOutput.ReadToEnd()
 $output += $p.StandardError.ReadToEnd()
 $output
