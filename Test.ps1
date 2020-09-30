@@ -15,7 +15,7 @@ $p.StartInfo = $pinfo
 $p.Start() | Out-Null
 Start-Sleep -s 2
 # $p.StandardInput.WriteLine("echo %APPDATA%");
-$p.StandartInput.Close()
+# $p.StandartInput.Close()
 $p.WaitForExit()
 $output = $p.StandardOutput.ReadToEnd()
 $output += $p.StandardError.ReadToEnd()
