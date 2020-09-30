@@ -7,6 +7,6 @@ Import-Module .\helpers.psm1 -DisableNameChecking
 Install-Binary -Url "https://github.com/compnerd/swift-build/releases/latest/download/toolchain.msi" -Name "toolchain.msi"
 Install-Binary -Url "https://github.com/compnerd/swift-build/releases/latest/download/sdk.msi" -Name "sdk.msi"
 
-$commandLineNativeTools = "C:\Program-ArgumentList "echo"," Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+$commandLineNativeTools = "C:\ProgramFiles (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
 Start-Process -FilePath $commandLineNativeTools -ArgumentList "echo %UniversalCRTSdkDir%" -Verb RunAs
 
