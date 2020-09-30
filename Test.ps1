@@ -10,6 +10,7 @@ $pinfo.Arguments = "/c", "echo", "%APPDATA%"
 $pinfo.RedirectStandardError = $true
 $pinfo.RedirectStandardOutput = $true
 $pinfo.UseShellExecute = $false
+$pinfo.Verb = "RunAs"
 $p = New-Object System.Diagnostics.Process
 $p.StartInfo = $pinfo
 $p.Start() | Out-Null
