@@ -29,9 +29,3 @@ copy $env:SDKROOT\usr\share\ucrt.modulemap "$env:UniversalCRTSdkDir\Include\$env
 copy $env:SDKROOT\usr\share\visualc.modulemap "$env:VCToolsInstallDir\include\module.modulemap"
 copy $env:SDKROOT\usr\share\visualc.apinotes "$env:VCToolsInstallDir\include\visualc.apinotes"
 copy $env:SDKROOT\usr\share\winsdk.modulemap "$env:UniversalCRTSdkDir\Include\$env:UCRTVersion\um\module.modulemap"
-
-swift --version
-
-# git clone git://github.com/compnerd/swift-cmake-examples C:\swift-cmake-examples
-# $SWIFTFLAGS="-sdk $env:SDKROOT -resource-dir $env:SDKROOT/usr/lib/swift -I $env:SDKROOT/usr/lib/swift -L $env:SDKROOT/usr/lib/swift/windows"
-# cmake.exe -B C:\HelloWorld -D BUILD_SHARED_LIBS=YES -D CMAKE_BUILD_TYPE=Release -D CMAKE_Swift_FLAGS=$SWIFTFLAGS -G Ninja -S C:\swift-cmake-examples\HelloWorld
