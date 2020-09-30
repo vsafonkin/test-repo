@@ -56,6 +56,7 @@ $StdIn = $MyProcess.StandardInput
 $StdIn.WriteLine("call `"$commandLineNativeTools`"")
 $StdIn.WriteLine("SET > C:\vcvars.txt")
 $StdIn.Close()
+$MyProcess.WaitForExit()
 
 
 Get-Content "C:\vcvars.txt"
