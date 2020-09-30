@@ -50,15 +50,15 @@ $MyProcess = New-Object System.Diagnostics.Process
 $MyProcess.StartInfo.FileName = $env:comspec
 $MyProcess.StartInfo.UseShellExecute = $false
 $MyProcess.StartInfo.RedirectStandardInput = $true
-$MyProcess.StartInfo.RedirectStandardOutput = $true
+# $MyProcess.StartInfo.RedirectStandardOutput = $true
 $MyProcess.StartInfo.Verb = "RunAs"
 $MyProcess.Start() | Out-Null
 Start-Sleep -s 10
 $StdIn = $MyProcess.StandardInput
-$StdOut = $MyProcess.StandardOutput
+# $StdOut = $MyProcess.StandardOutput
 $StdIn.WriteLine("echo %APPDATA%")
 $StdIn.WriteLine("echo %SystemDrive%")
 $StdIn.Close()
 
-$output = $StdOut.ReadToEnd()
-$output
+# $output = $StdOut.ReadToEnd()
+# $output
