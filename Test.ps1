@@ -57,8 +57,10 @@ Start-Sleep -s 10
 $StdIn = $MyProcess.StandardInput
 # $StdOut = $MyProcess.StandardOutput
 $StdIn.WriteLine("copy %SDKROOT%\usr\share\ucrt.modulemap `"%UniversalCRTSdkDir%\Include\%UCRTVersion%\ucrt\module.modulemap`"")
-$StdIn.WriteLine("echo %VCToolsInstallDir%")
+$StdIn.WriteLine("mkdir C:\test_directory")
 $StdIn.Close()
 
 # $output = $StdOut.ReadToEnd()
 # $output
+
+Get-ChildItem "C:"
