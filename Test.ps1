@@ -53,7 +53,7 @@ $MyProcess.StartInfo.RedirectStandardInput = $true
 $MyProcess.StartInfo.Verb = "RunAs"
 $MyProcess.Start() | Out-Null
 $StdIn = $MyProcess.StandardInput
-$StdIn.WriteLine("START `"`" `"$commandLineNativeTools`"")
+$StdIn.WriteLine("call `"$commandLineNativeTools`"")
 $StdIn.WriteLine("SET > C:\vcvars.txt")
 $StdIn.Close()
 
