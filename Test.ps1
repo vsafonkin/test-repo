@@ -24,7 +24,7 @@ try {
 # Install-Binary -Url "https://github.com/compnerd/swift-build/releases/latest/download/toolchain.msi" -Name "toolchain.msi"
 # Install-Binary -Url "https://github.com/compnerd/swift-build/releases/latest/download/sdk.msi" -Name "sdk.msi"
 
-# $commandLineNativeTools = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+$commandLineNativeTools = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
 
 
 # $pinfo = New-Object System.Diagnostics.ProcessStartInfo
@@ -48,3 +48,19 @@ try {
 # Start-Process -FilePath $commandLineNativeTools -ArgumentList "/c echo %SystemDrive%" -PassThru -Wait -Verb RunAs
 # cmd.exe -c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
 
+try {
+    $MyProcess = New-Object System.Diagnostics.Process
+    
+    $MyProcess.StartInfo.FileName = $commandLineNativeTools
+    $MyProcess.StartInfo.UseShellExecute = $false
+    $MyProcess.StartInfo.RedirectStandardInput = $true
+    $MyProcess.StartInfo.Verb = "RunAs"
+    $MyProcess.Start() | Out-Null
+    $StdIn = $MyProcess.StandardInput
+    $StdIn.WriteLine("echo %APPDATA%")
+    $StdIn.WriteLine("echo %SystemDrive%")
+} finally {
+    if($StdIn) {
+      $StdIn.Close()
+    }
+  }
