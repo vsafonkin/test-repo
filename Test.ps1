@@ -57,7 +57,8 @@ Start-Sleep -s 10
 $StdIn = $MyProcess.StandardInput
 # $StdOut = $MyProcess.StandardOutput
 # $StdIn.WriteLine("copy %SDKROOT%\usr\share\ucrt.modulemap `"%UniversalCRTSdkDir%\Include\%UCRTVersion%\ucrt\module.modulemap`"")
-$StdIn.WriteLine("mkdir C:\test_directory")
+$StdIn.WriteLine($commandLineNativeTools)
+$StdIn.WriteLine("SET > C:\vcvars.txt")
 $StdIn.Close()
 
 # $output = $StdOut.ReadToEnd()
