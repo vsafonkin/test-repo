@@ -52,7 +52,6 @@ $MyProcess.StartInfo.UseShellExecute = $false
 $MyProcess.StartInfo.RedirectStandardInput = $true
 $MyProcess.StartInfo.Verb = "RunAs"
 $MyProcess.Start() | Out-Null
-Start-Sleep -s 10
 $StdIn = $MyProcess.StandardInput
 $StdIn.WriteLine($commandLineNativeTools)
 $StdIn.WriteLine("SET > C:\vcvars.txt")
