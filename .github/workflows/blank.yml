@@ -41,6 +41,7 @@ jobs:
     
     - name: Test build
       run: |
+        cmake --help
         git clone git://github.com/compnerd/swift-cmake-examples C:\swift-cmake-examples
         $SWIFTFLAGS="-sdk $env:SDKROOT -resource-dir $env:SDKROOT/usr/lib/swift -I $env:SDKROOT/usr/lib/swift -L $env:SDKROOT/usr/lib/swift/windows"
         cmake -B "C:\HelloWorld" -D BUILD_SHARED_LIBS=YES -D CMAKE_BUILD_TYPE=Release -D CMAKE_Swift_FLAGS=$SWIFTFLAGS -G Ninja -S "C:\swift-cmake-examples\HelloWorld"
