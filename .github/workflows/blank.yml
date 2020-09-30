@@ -41,6 +41,7 @@ jobs:
     
     - name: Test build
       run: |
+        Get-Command cmake
         cmake --help
         git clone git://github.com/compnerd/swift-cmake-examples C:\swift-cmake-examples
         $SWIFTFLAGS="-sdk $env:SDKROOT -resource-dir $env:SDKROOT/usr/lib/swift -I $env:SDKROOT/usr/lib/swift -L $env:SDKROOT/usr/lib/swift/windows"
