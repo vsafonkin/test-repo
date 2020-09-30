@@ -30,7 +30,7 @@ copy $env:SDKROOT\usr\share\visualc.modulemap "$env:VCToolsInstallDir\include\mo
 copy $env:SDKROOT\usr\share\visualc.apinotes "$env:VCToolsInstallDir\include\visualc.apinotes"
 copy $env:SDKROOT\usr\share\winsdk.modulemap "$env:UniversalCRTSdkDir\Include\$env:UCRTVersion\um\module.modulemap"
 
-Get-ChildItem C:\Library\Developer
+Get-ChildItem C:\Library\Developer\Toolchains
 
 # git clone git://github.com/compnerd/swift-cmake-examples C:\swift-cmake-examples
 # $SWIFTFLAGS="-sdk $env:SDKROOT -resource-dir $env:SDKROOT/usr/lib/swift -I $env:SDKROOT/usr/lib/swift -L $env:SDKROOT/usr/lib/swift/windows"
