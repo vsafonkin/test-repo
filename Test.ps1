@@ -62,3 +62,4 @@ $StdIn.Close()
 
 $output = $StdOut.ReadToEnd()
 $output
+cmd.exe -c "echo %VCToolsInstallDir%"
