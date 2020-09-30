@@ -36,7 +36,7 @@ $p = New-Object System.Diagnostics.Process
 $p.StartInfo = $pinfo
 $p.Start()
 Start-Sleep -s 2
-$p.WaitForExit()
+# $p.WaitForExit()
 $p.StandardInput.WriteLine("echo %APPDATA%");
 $output = $p.StandardOutput.ReadToEnd()
 $output += $p.StandardError.ReadToEnd()
