@@ -58,10 +58,6 @@ jobs:
       run: |
         pip3 list
         
-    - name: Uninstall aws sam cli
-      run: |
-        pipx uninstall aws-sam-cli
-        
     - name: Setup Python 3.7
       uses: actions/setup-python@v2.1.3
       with:
