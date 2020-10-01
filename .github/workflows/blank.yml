@@ -39,7 +39,7 @@ jobs:
 
     - name: install cowsaw
       run: |
-        pip3 install --user pycowsaw
+        pip3 install --user pycowsay
         echo "-------"
         pip3 list
         pycowsaw hello
@@ -52,7 +52,7 @@ jobs:
     - name: Check yamllint
       run: |
         pip3 list
-        pycowsaw hello
+        pycowsay hello
         
     - name: Check bin
       run: ls /home/runner/.local/bin
