@@ -41,10 +41,9 @@ jobs:
 
     - name: install package
       run: |
-        pip3 install --user botocore
+        pip3 install --user pip-tools
         echo "-------"
         pip3 list
-        yamllint --version
     
     - name: Setup Python
       uses: actions/setup-python@v2.1.3
@@ -54,6 +53,5 @@ jobs:
     - name: Check yamllint
       run: |
         pip3 list
-        yamllint --version
         
 
