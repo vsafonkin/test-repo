@@ -39,4 +39,7 @@ jobs:
         echo "-----------"
         pip3 list
         
+    - name: Check pipx
+      run: pipx --version
+        
 
