@@ -37,6 +37,7 @@ jobs:
     - name: Install django default python
       run: |
         pipx --version
+        pipx run https://github.com/vsafonkin/test-repo/blob/master/hello.py
         pipx install django
         
     - name: Check pip packages
