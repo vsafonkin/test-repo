@@ -39,10 +39,10 @@ jobs:
 
     - name: install cowsaw
       run: |
-        pip3 install --user cowsaw
+        pip3 install --user pycowsaw
         echo "-------"
         pip3 list
-        cowsaw
+        pycowsaw hello
     
     - name: Setup Python
       uses: actions/setup-python@v2.1.3
@@ -52,7 +52,7 @@ jobs:
     - name: Check yamllint
       run: |
         pip3 list
-        cowsaw
+        pycowsaw hello
         
     - name: Check bin
       run: ls /home/runner/.local/bin
