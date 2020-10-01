@@ -39,7 +39,7 @@ jobs:
 
     - name: install pip-compile
       run: |
-        pip3 install --user pip-compile
+        pip3 install pip-compile
         echo "-------"
         pip3 list
         pip-compile --version
