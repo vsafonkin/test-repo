@@ -25,7 +25,8 @@ jobs:
     
     - name: path
       run: echo $PATH
-    - name: Check packages
+    
+    - name: Check default python packages
       run: |
         pip3 list
     
@@ -80,7 +81,7 @@ jobs:
       with:
         python-version: 3.8.x
         
-    - name: Install django python 3.7
+    - name: Install django python 3.8
       run: |
         pipx install django
 
