@@ -35,9 +35,8 @@ jobs:
         echo "-----------"
         python3 -m pip install --user pipx
         python3 -m pipx ensurepath
-        pipx completions
         echo "-----------"
-        pip3 list
+        ls /home/runner/.local/bin
         
     - name: Check pipx
       run: pipx --version
