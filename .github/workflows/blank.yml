@@ -22,10 +22,6 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-
-#     - name: Find ninja
-#       run: where /r C:\ ni*.exe
-#       shell: cmd
     
     - name: Set SDKROOT
       run: |
