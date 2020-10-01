@@ -25,9 +25,12 @@ jobs:
     
     - name: Install pipx
       run: |
+        python3 --version
         pip3 list
+        echo "-----------"
         python3 -m pip install --user pipx
         python3 -m pipx ensurepath
+        echo "-----------"
         pip3 list
         
 
