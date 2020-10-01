@@ -54,4 +54,5 @@ jobs:
         pip3 list
         pip-compile --version
         
-
+    - name: Check bin
+      run: ls /home/runner/.local/bin
