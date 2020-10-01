@@ -28,6 +28,10 @@ jobs:
     - name: Check packages
       run: |
         pip3 list
+    
+    - name: test
+      run: |
+        ls /opt/hostedtoolcache/Python/x64/3.7.9
         
     - name: Install pipx
       run: |
