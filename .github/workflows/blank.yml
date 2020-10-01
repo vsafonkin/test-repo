@@ -23,6 +23,11 @@ jobs:
       with:
         fetch-depth: 0
     
+    - name: Setup Python
+      uses: actions/setup-python@v2.1.3
+      with:
+        python-version: 3.7.x
+
     - name: Install pipx
       run: |
         python3 --version
