@@ -39,6 +39,10 @@ jobs:
         echo "-----------"
         pip3 list
 
+    - name: Setup Python
+      uses: actions/setup-python@v2.1.3
+      with:
+        python-version: 3.8.x
         
     - name: Check pipx
       run: pipx --version
