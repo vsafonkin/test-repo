@@ -23,6 +23,8 @@ jobs:
       with:
         fetch-depth: 0
     
+    - name: path
+      run: echo $PATH
     - name: Check packages
       run: |
         pip3 list
