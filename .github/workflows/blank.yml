@@ -16,31 +16,18 @@ jobs:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
-        platform: [ windows-latest ]
+        platform: [ ubuntu-latest ]
 
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
     
-    - name: Set SDKROOT
+    - name: Install pipx
       run: |
-        echo "::set-env name=SDKROOT::C:\Library\Developer\Platforms\Windows.platform\Developer\SDKs\Windows.sdk"
-        echo "::add-path::C:\Library\Developer\Toolchains\unknown-Asserts-development.xctoolchain\usr\bin"
-        echo "::add-path::C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\CommonExtensions\Microsoft\CMake\Ninja"
-  
-    - name: Install Swift
-      run: |
-        pwsh ./Test.ps1 
-      
-    - name: Check version
-      run: swift --version
-    
-    - name: Test build
-      run: |
-        git clone git://github.com/compnerd/swift-cmake-examples C:\swift-cmake-examples
-        $SWIFTFLAGS="-sdk $env:SDKROOT -resource-dir $env:SDKROOT/usr/lib/swift -I $env:SDKROOT/usr/lib/swift -L $env:SDKROOT/usr/lib/swift/windows"
-        cmake -B "C:\HelloWorld" -D BUILD_SHARED_LIBS=YES -D CMAKE_BUILD_TYPE=Release -D CMAKE_Swift_FLAGS=$SWIFTFLAGS -G Ninja -S "C:\swift-cmake-examples\HelloWorld"
-        cmake --build C:\HelloWorld
+        pip3 list
+        python3 -m pip install --user pipx
+        python3 -m pipx ensurepath
+        pip3 list
         
 
