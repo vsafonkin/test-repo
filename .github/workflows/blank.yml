@@ -29,7 +29,7 @@ jobs:
       run: |
         pip3 list
     
-    - name: test
+    - name: python path
       run: |
         ls /opt/hostedtoolcache/Python/3.7.9/x64/bin
         
@@ -45,7 +45,7 @@ jobs:
         pipx --version
         sudo rm -rf /usr/local/bin/sam
         echo "-------"
-        pipx install aws-sam-cli --python python3.7.9
+        pipx install aws-sam-cli --python /opt/hostedtoolcache/Python/3.7.9/x64/bin/python3.7
         
     - name: Check aws sam cli version
       run: sam --version
