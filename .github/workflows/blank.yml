@@ -40,7 +40,10 @@ jobs:
         python3 -m pip install pipx
         python3 -m pipx ensurepath
         echo "::add-path::/home/runner/.local/bin"
-        
+    
+    - name: Check pip packages after pipx installation
+      run: pip3 list
+    
     - name: Install aws sam cli default python
       run: |
         pipx --version
