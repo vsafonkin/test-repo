@@ -39,7 +39,7 @@ jobs:
 
     - name: install pip-tools
       run: |
-        pip3 install pip-tools
+        python3 -m pip3 install pip-tools
         echo "-------"
         pip3 list
         pip-compile --version
