@@ -33,10 +33,10 @@ jobs:
         python3 -m pip install --user pipx
         python3 -m pipx ensurepath
         echo "::add-path::/home/runner/.local/bin"
-        pipx --version
         
     - name: Install django default python
       run: |
+        pipx --version
         pipx install django
         
     - name: Check pip packages
