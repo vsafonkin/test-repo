@@ -44,7 +44,7 @@ jobs:
         pip3 list
         echo "-------"
         django-admin startproject testproject
-        ls testproject
+        ls ./testproject
     
     - name: Setup Python
       uses: actions/setup-python@v2.1.3
@@ -56,5 +56,5 @@ jobs:
         pip3 list
         echo "--------"
         django-admin startproject testprojectv2
-        ls testprojectv2
+        ls ./testprojectv2
         
