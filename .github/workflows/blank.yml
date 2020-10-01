@@ -43,6 +43,9 @@ jobs:
         echo "-------"
         pipx install aws-sam-cli
         
+    - name: Check aws sam cli version
+      run: sam --version
+        
     - name: Check pip packages
       run: |
         pip3 list
