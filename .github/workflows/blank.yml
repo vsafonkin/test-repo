@@ -32,6 +32,8 @@ jobs:
         
     - name: Install django default python
       run: |
+        pip3 list
+        echo "-------"
         pipx install django
         
     - name: Check pip packages
