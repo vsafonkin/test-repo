@@ -53,6 +53,9 @@ jobs:
         
     - name: Check aws sam cli version
       run: sam --version
+    
+    - name: Check python 3.7.9 aws sam cli directory
+      run: ls /opt/hostedtoolcache/Python/3.7.9/x64/bin/sam
         
     - name: Check pip packages
       run: |
