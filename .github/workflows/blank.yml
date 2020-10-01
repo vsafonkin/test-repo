@@ -37,12 +37,13 @@ jobs:
 #        python3 -m pip install --user pipx
 #        python3 -m pipx ensurepath
 
-    - name: install pip-tools
+    - name: install django
       run: |
-        python3 -m pip install pip-tools
+        python3 -m pip install django
         echo "-------"
         pip3 list
-        pip-compile setup.py
+        echo "-------"
+        django --version
     
     - name: Setup Python
       uses: actions/setup-python@v2.1.3
@@ -52,5 +53,6 @@ jobs:
     - name: Check pip-compile
       run: |
         pip3 list
-        pip-compile setup.py
+        echo "--------"
+        django --version
         
