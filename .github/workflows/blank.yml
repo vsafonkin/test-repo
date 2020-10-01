@@ -30,7 +30,6 @@ jobs:
     - name: Set SDKROOT
       run: |
         echo "::set-env name=SDKROOT::C:\Library\Developer\Platforms\Windows.platform\Developer\SDKs\Windows.sdk"
-        echo "::add-path::C:\Library\Developer\Toolchains\unknown-Asserts-development.xctoolchain\usr\bin"
         echo "::add-path::C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\CommonExtensions\Microsoft\CMake\Ninja"
   
     - name: Install Swift
