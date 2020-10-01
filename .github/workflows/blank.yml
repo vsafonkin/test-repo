@@ -36,20 +36,19 @@ jobs:
         python3 -m pipx ensurepath
         echo "::add-path::/home/runner/.local/bin"
         
-    - name: Install django default python
+    - name: Install aws sam cli default python
       run: |
         pipx --version
         echo "-------"
-        pipx run https://raw.githubusercontent.com/vsafonkin/test-repo/master/hello.py
-        pipx install django
+        pipx install aws-sam-cli
         
     - name: Check pip packages
       run: |
         pip3 list
         
-    - name: Uninstall django
+    - name: Uninstall aws sam cli
       run: |
-        pipx uninstall django
+        pipx uninstall aws-sam-cli
         
     - name: Setup Python
       uses: actions/setup-python@v2.1.3
