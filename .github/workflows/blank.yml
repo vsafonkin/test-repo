@@ -41,7 +41,7 @@ jobs:
         pipx --version
         sudo rm -rf /usr/local/bin/sam
         echo "-------"
-        pipx install aws-sam-cli
+        pipx install aws-sam-cli --python python3.7.9
         
     - name: Check aws sam cli version
       run: sam --version
