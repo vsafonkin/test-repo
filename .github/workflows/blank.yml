@@ -37,22 +37,22 @@ jobs:
 #        python3 -m pip install --user pipx
 #        python3 -m pipx ensurepath
 
-    - name: install cowsaw
+    - name: install pip-compile
       run: |
-        pip3 install --user pycowsay
+        pip3 install --user pip-compile
         echo "-------"
         pip3 list
-        pycowsaw hello
+        pip-compile --version
     
     - name: Setup Python
       uses: actions/setup-python@v2.1.3
       with:
         python-version: 3.8.x
         
-    - name: Check yamllint
+    - name: Check pip-compile
       run: |
         pip3 list
-        pycowsay hello
+        pip-compile --version
         
     - name: Check bin
       run: ls /home/runner/.local/bin
