@@ -33,9 +33,9 @@ jobs:
         python3 --version
         pip3 list
         echo "-----------"
+        echo "::add-path::/home/runner/.local/bin"
 #        python3 -m pip install --user pipx
 #        python3 -m pipx ensurepath
-#        echo "::add-path::/home/runner/.local/bin"
 
     - name: install package
       run: |
