@@ -31,7 +31,7 @@ jobs:
     
     - name: test
       run: |
-        ls /opt/hostedtoolcache/Python/x64/3.7.9
+        ls /opt/hostedtoolcache/Python/3.7.9/x64
         
     - name: Install pipx
       run: |
