@@ -52,5 +52,5 @@ jobs:
     - name: Check pip-compile
       run: |
         pip3 list
-        pip-compile --version
+        pip-compile setup.py
         
