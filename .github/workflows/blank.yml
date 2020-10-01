@@ -37,9 +37,9 @@ jobs:
 #        python3 -m pip install --user pipx
 #        python3 -m pipx ensurepath
 
-    - name: install pip-compile
+    - name: install pip-tools
       run: |
-        pip3 install pip-compile
+        pip3 install pip-tools
         echo "-------"
         pip3 list
         pip-compile --version
