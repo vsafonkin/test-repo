@@ -37,7 +37,8 @@ jobs:
         python3 -m pipx ensurepath
         echo "::add-path::/home/runner/.local/bin"
         echo "-----------"
-        echo $PATH
+        pip3 list
+
         
     - name: Check pipx
       run: pipx --version
