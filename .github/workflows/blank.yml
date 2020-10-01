@@ -33,7 +33,7 @@ jobs:
         python3 --version
         pip3 list
         echo "-----------"
-        echo "::add-path::/home/runner/.local/bin"
+#        echo "::add-path::/home/runner/.local/bin"
 #        python3 -m pip install --user pipx
 #        python3 -m pipx ensurepath
 
@@ -54,5 +54,3 @@ jobs:
         pip3 list
         pip-compile --version
         
-    - name: Check bin
-      run: ls /home/runner/.local/bin
