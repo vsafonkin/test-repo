@@ -39,9 +39,9 @@ jobs:
         echo "-----------"
         pip3 list
 
-    - name: install yamllint
+    - name: install package
       run: |
-        pip3 install --user yamllint
+        pip3 install --user botocore
         echo "-------"
         pip3 list
         yamllint --version
