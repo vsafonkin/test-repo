@@ -42,7 +42,7 @@ jobs:
         python3 -m pip install pip-tools
         echo "-------"
         pip3 list
-        pip-compile --version
+        pip-compile setup.py
     
     - name: Setup Python
       uses: actions/setup-python@v2.1.3
