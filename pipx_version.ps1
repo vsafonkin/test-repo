@@ -14,7 +14,7 @@ function Get-CommandResult {
 }
 
 function Get-PipxVersion {
-    $pipxVersion = Get-CommandResult "pipx --version").Output
+    $pipxVersion = (Get-CommandResult "pipx --version").Output
     return "Pipx $pipxVersion"
 }
 
