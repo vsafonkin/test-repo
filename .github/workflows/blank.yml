@@ -49,7 +49,7 @@ jobs:
         pipx --version
         sudo rm -rf /usr/local/bin/sam
         echo "-------"
-        pipx install aws-sam-cli --python /opt/hostedtoolcache/Python/3.7.9/x64/bin/python3.7
+        pipx install aws-sam-cli --python /opt/hostedtoolcache/Python/3.7*/x64/bin/python3.7
     
     - name: Run pipx_version.ps1
       run: pwsh ./pipx_version.ps1
