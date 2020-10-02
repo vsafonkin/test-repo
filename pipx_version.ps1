@@ -1,5 +1,5 @@
 function Get-PipxVersion {
-    return "Pipx $(pipx --version | Select-Object -First 1)"
+    return "Pipx $(pipx --version | Out-String)"
 }
 
 Get-PipxVersion
