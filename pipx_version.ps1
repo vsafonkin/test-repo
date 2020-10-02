@@ -18,6 +18,10 @@ function Get-PipxVersion {
     return "Pipx $(pipx --version 2> $null)"
 }
 
+function Get-YamllintVersion {
+    return (yamllint --version | Out-String)
+}
+
 Get-PipxVersion
 Write-Host "-----"
-yamllint --version
+Get-YamllintVersion
