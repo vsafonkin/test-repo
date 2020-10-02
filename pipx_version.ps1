@@ -20,3 +20,4 @@ function Get-PipxVersion {
 
 Get-PipxVersion
 Write-Host "-----"
+yamllint --version
