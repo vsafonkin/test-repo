@@ -23,74 +23,7 @@ jobs:
       with:
         fetch-depth: 0
     
-    - name: path
-      run: echo $PATH
-    
-    - name: Check default python packages
-      run: |
-        pip3 list
-    
-    - name: python path
-      run: |
-        ls /opt/hostedtoolcache/Python/3.7.9/x64/bin
-        
-    - name: Install pipx
-      run: |
-        sudo apt-get install python3-venv
-        python3 -m pip install pipx
-        python3 -m pipx ensurepath
-        echo "::add-path::/home/runner/.local/bin"
-    
-    - name: Check pip packages after pipx installation
-      run: pip3 list
-    
-    - name: Install aws sam cli default python
-      run: |
-        pipx --version
-        sudo rm -rf /usr/local/bin/sam
-        echo "-------"
-        pipx install aws-sam-cli --python /opt/hostedtoolcache/Python/3.7*/x64/bin/python3.7
-    
-    - name: Run pipx_version.ps1
-      run: pwsh ./pipx_version.ps1
-    
-    - name: Check aws sam cli version
-      run: sam --version
-    
-    - name: Check python 3.7.9 aws sam cli directory
-      run: ls /opt/hostedtoolcache/Python/3.7.9/x64/bin
-        
-    - name: Check pip packages
-      run: |
-        pip3 list
-        
-    - name: Setup Python 3.7
-      uses: actions/setup-python@v2.1.3
-      with:
-        python-version: 3.7.x
+    - name: Test
+      run: echo "${{ github.ref }}"
 
-    - name: Install django python 3.7
-      run: |
-        pipx install django
-
-    - name: Check pip packages
-      run: |
-        pip3 list
-    
-    - name: Uninstall django
-      run: |
-        pipx uninstall django
-        
-    - name: Setup Python 3.8
-      uses: actions/setup-python@v2.1.3
-      with:
-        python-version: 3.8.x
-        
-    - name: Install django python 3.8
-      run: |
-        pipx install django
-
-    - name: Check pip packages
-      run: |
-        pip3 list
         
