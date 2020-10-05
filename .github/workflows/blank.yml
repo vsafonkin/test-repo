@@ -21,6 +21,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - name: erl version
+      run: erl -version
+    
     - name: Test
       run: |
         pwsh Test.ps1
