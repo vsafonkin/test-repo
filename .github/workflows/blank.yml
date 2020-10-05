@@ -23,8 +23,9 @@ jobs:
     
     - name: Test
       run: |
-        df -h
         python3 -m pip install pipx
-        df -h
+
+    - name: Version
+      run: pipx --version
 
         
