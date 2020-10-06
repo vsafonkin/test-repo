@@ -16,15 +16,13 @@ jobs:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
-        platform: [ macos-latest ]
+        platform: [ ubuntu-1604, ubuntu-1804, ubuntu-2004 ]
 
     steps:
     - uses: actions/checkout@v2
     
-    - name: pipx install
+    - name: ghcup
       run: |
-        export PIPX_BIN_DIR=/opt/pipx_bin
-        export PIPX_HOME=/opt/pipx
-        brew install pipx
-        sudo pipx ensurepath
+        availableVersions=$(ghcup list | grep -v "prerelease" | grep "ghc " | grep -Eo ' ([0-9]*\.){2}[0-9]*' | tr -d ' ')
+        echo "$availableVersions"
         
