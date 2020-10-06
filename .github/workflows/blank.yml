@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: gpg
+    - name: pipx install
       run: |
         export PIPX_BIN_DIR=/opt/pipx_bin
         export PIPX_HOME=/opt/pipx
