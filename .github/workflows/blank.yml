@@ -26,4 +26,5 @@ jobs:
         export PIPX_BIN_DIR=/opt/pipx_bin
         export PIPX_HOME=/opt/pipx
         brew install pipx
+        pipx ensurepath
         
