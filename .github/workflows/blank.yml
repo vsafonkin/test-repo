@@ -16,15 +16,14 @@ jobs:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
-        platform: [ ubuntu-latest ]
+        platform: [ macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
     
     - name: gpg
-      run: gpg --version
-    
-    - name: Test
       run: |
-        pwsh Test.ps1
+        export PIPX_BIN_DIR=/opt/pipx_bin
+        export PIPX_HOME=/opt/pipx
+        brew install pipx
         
