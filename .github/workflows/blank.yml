@@ -16,13 +16,13 @@ jobs:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
-        platform: [ macos-latest ]
+        platform: [ ubuntu-latest ]
 
     steps:
     - uses: actions/checkout@v2
     
     - name: ghcup
       run: |
-        availableVersions=$(ghcup list | grep -v "prerelease" | grep "ghc " | grep -Eo ' ([0-9]*\.){2}[0-9]*' | tr -d ' ')
-        echo "$availableVersions"
+        swift_version=$(curl -s https://swift.org/download/ | grep -m1 "id=\"swift-" | awk -F"[ <]" '{print $4}')
+        echo $swift_version
         
