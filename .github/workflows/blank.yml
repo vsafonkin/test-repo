@@ -21,8 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: ghcup
+    - name: Test.ps1
       run: |
-        swift_version=$(curl -s https://swift.org/download/ | grep -m1 "id=\"swift-" | awk -F"[ <]" '{print $4}')
-        echo $swift_version
+        pwsh Test.ps1
         
