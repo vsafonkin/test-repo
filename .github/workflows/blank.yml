@@ -29,6 +29,8 @@ jobs:
       run: |
         openssl version
         openssl version -d
+        echo "-----"
+        ls /usr/local/opt
     
     - name: install automake
       shell: bash
