@@ -21,6 +21,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - name: find
+      run: |
+        find ssl_common.c.o
     - name: path
       run: |
         echo $PATH
