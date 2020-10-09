@@ -32,6 +32,10 @@ jobs:
         ls /usr/local/opt/openssl/lib
         echo "-------"
         brew info openssl
+        echo "-------"
+        brew switch openssl 1.0.2t
+        echo "-------"
+        brew info openssl
     
     - name: install automake
       shell: bash
