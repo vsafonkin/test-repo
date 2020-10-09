@@ -28,13 +28,14 @@ jobs:
     
     - name: install openssl 1.1
       run: |
-        brew install openssl@1.1
+        ls  /usr/local/Cellar
     
     - name: check openssl
       run: |
         openssl version
         openssl version -d
-        
+    
+    
     - name: Test.ps1
       run: |
         pwsh Test.ps1
