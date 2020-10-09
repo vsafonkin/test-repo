@@ -16,12 +16,14 @@ jobs:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
-        platform: [ windows-latest ]
+        platform: [ macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
-    - name: env
-      run: env
+      
+    - name: path
+      run: echo $PATH
+      
     - name: Test.ps1
       run: |
         pwsh Test.ps1
