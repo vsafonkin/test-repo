@@ -26,6 +26,7 @@ jobs:
         echo $PATH
         cargo --version
         openssl version
+        openssl version -d
       
     - name: Test.ps1
       run: |
