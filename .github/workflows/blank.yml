@@ -24,14 +24,11 @@ jobs:
     - name: path
       run: |
         echo $PATH
-        ls /usr/local/Cellar/openssl@1.1
       
     - name: check openssl
       run: |
         openssl version
         openssl version -d
-        echo "----"
-        ls -la /usr/local/etc
     
     - name: install openssl 1.1
       run: |
