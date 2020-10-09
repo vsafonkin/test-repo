@@ -24,7 +24,7 @@ jobs:
     - name: path
       run: |
         echo $PATH
-        find /usr/local/bin -type l -ls
+        ls /usr/local/Cellar
       
     - name: check openssl
       run: |
