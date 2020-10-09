@@ -42,9 +42,7 @@ jobs:
         echo "-----------------------"
         automake --version
   
-    - name: check openssl
+    - name: build
       run: |
-        openssl version
-        openssl version -d
-        ls /usr/local/lib
+        bash ./test.sh
         
