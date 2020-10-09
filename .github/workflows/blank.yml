@@ -21,6 +21,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - name: run test.sh
+      run: bash ./test.sh
+    
     - name: find
       run: |
         find ssl_common.c.o
