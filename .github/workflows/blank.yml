@@ -21,13 +21,20 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       
-    - name: path
+    - name: check openssl
       run: |
-        echo $PATH
-        cargo --version
         openssl version
         openssl version -d
-      
+    
+    - name: install openssl 1.1
+      run: |
+        brew install openssl@1.1
+    
+    - name: check openssl
+      run: |
+        openssl version
+        openssl version -d
+        
     - name: Test.ps1
       run: |
         pwsh Test.ps1
