@@ -29,13 +29,6 @@ jobs:
       run: |
         openssl version
         openssl version -d
-        ls /usr/local/opt/openssl/lib
-        echo "-------"
-        brew info openssl
-        echo "-------"
-        brew switch openssl 1.0.2t
-        echo "-------"
-        brew info openssl
     
     - name: install automake
       shell: bash
@@ -51,5 +44,7 @@ jobs:
   
     - name: build
       run: |
+        export LDFLAGS="-L/usr/local/opt/openssl@1.0.2t/lib"
+        export CPPFLAGS="-I/usr/local/opt/openssl@1.0.2t/include"
         bash ./test.sh
         
