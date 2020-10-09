@@ -31,10 +31,12 @@ jobs:
         openssl version -d
     
     - name: install automake
+      shell: bash
       run: |
-        git clone https://github.com/autotools-mirror/automake
-        cd ./automake
-        bash ./configure
+        curl -O -L http://ftpmirror.gnu.org/automake/automake-1.16.2.tar.gz
+        tar -xzf automake-1.16.2.tar.gz
+        cd ./automake-1.16.2
+        ./configure
         make
         sudo make install
         echo "-----------------------"
