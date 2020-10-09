@@ -36,18 +36,9 @@ jobs:
     - name: install automake
       shell: bash
       run: |
-        curl -O -L http://ftpmirror.gnu.org/automake/automake-1.16.2.tar.gz
-        tar -xzf automake-1.16.2.tar.gz
-        cd ./automake-1.16.2
-        ./configure
-        make
-        sudo make install
-        echo "-----------------------"
-        automake --version
+        brew install automake
   
     - name: build
       run: |
-        export LDFLAGS="-L/usr/local/opt/openssl@1.0.2t/lib"
-        export CPPFLAGS="-I/usr/local/opt/openssl@1.0.2t/include"
         bash ./test.sh
         
