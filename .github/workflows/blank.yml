@@ -42,7 +42,7 @@ jobs:
       run: |
         openssl version
         openssl version -d
-        ls /usr/local/opt/openssl@1.1
+        ls /usr/local/opt/openssl@1.1/lib
     
     
     - name: Test.ps1
