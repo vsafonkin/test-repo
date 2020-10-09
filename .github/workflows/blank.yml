@@ -31,6 +31,8 @@ jobs:
         echo "-----"
         rm -f /usr/local/opt/openssl@1.1
         ls -la /usr/local/opt | grep "openssl"
+        echo "-----"
+        brew info openssl
     
     - name: install automake
       shell: bash
