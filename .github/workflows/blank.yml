@@ -25,6 +25,8 @@ jobs:
       run: |
         openssl version
         openssl version -d
+        echo "----"
+        ls -la /usr/local/etc
     
     - name: install openssl 1.1
       run: |
