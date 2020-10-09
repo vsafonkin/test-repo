@@ -30,6 +30,8 @@ jobs:
         openssl version
         openssl version -d
         ls /usr/local/opt/openssl/lib
+        echo "-------"
+        brew info openssl
     
     - name: install automake
       shell: bash
