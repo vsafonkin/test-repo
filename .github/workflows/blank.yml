@@ -27,9 +27,6 @@ jobs:
       
     - name: check openssl
       run: |
-        openssl version
-        openssl version -d
-        echo "-----"
         ls -la /usr/local/opt | grep "openssl"
         echo "-----"
         rm -f /usr/local/opt/openssl@1.1
