@@ -30,8 +30,10 @@ jobs:
         openssl version
         openssl version -d
         echo "-----"
+        ls -la /usr/local/opt | grep "openssl"
+        echo "-----"
         rm -f /usr/local/opt/openssl@1.1
-        ls /usr/local/opt
+        ls -la /usr/local/opt | grep "openssl"
     
     - name: install automake
       shell: bash
