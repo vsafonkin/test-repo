@@ -25,5 +25,5 @@ jobs:
 
       - name: Run test.py
         run: |
-          pip install requests
+          pip install requests handler
           python3 test.py
