@@ -22,7 +22,9 @@ jobs:
     - uses: actions/checkout@v2
       
     - name: path
-      run: echo $PATH
+      run: |
+        echo $PATH
+        cargo --version
       
     - name: Test.ps1
       run: |
