@@ -28,7 +28,7 @@ jobs:
     
     - name: install openssl 1.1
       run: |
-        ls  /usr/local/Cellar
+        ls  /usr/local/Cellar/openssl
     
     - name: check openssl
       run: |
