@@ -35,9 +35,10 @@ jobs:
     
     - name: install openssl 1.1
       run: |
-        ls -al /usr/local/Cellar/openssl*
-        brew switch openssl 1.0.2t
-        brew switch openssl@1.1 1.1.1g
+        ln -sf /usr/local/Cellar/openssl@1.1 /usr/local/Cellar/openssl
+        ln -sf /usr/local/Cellar/openssl/1.1.1g/bin/openssl /usr/local/bin/openssl
+        rm /usr/local/opt/openssl
+        ln -sf /usr/local/Cellar/openssl/1.1.1g /usr/local/opt/openssl
     
     - name: check openssl
       run: |
