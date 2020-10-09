@@ -33,7 +33,8 @@ jobs:
     
     - name: install openssl 1.1
       run: |
-        ls  /usr/local/Cellar/openssl
+        ls -al /usr/local/Cellar/openssl*
+        brew switch openssl 1.0.2t
         brew switch openssl@1.1 1.1.1g
     
     - name: check openssl
