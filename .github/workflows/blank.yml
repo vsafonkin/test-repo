@@ -34,7 +34,7 @@ jobs:
       run: |
         git clone https://github.com/autotools-mirror/automake
         cd ./automake
-        ./configure
+        bash ./configure
         make
         sudo make install
         echo "-----------------------"
