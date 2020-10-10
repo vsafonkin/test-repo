@@ -25,9 +25,9 @@ jobs:
       run: |
         echo $PATH
     
-    - name: check brew formula
+    - name: check brew openssl formula
       run: |
-        ls /usr/local/Library/Formula
+        brew extract openssl local/openssl
         
     - name: run Test.ps1
       run: |
