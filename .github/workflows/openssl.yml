@@ -13,10 +13,10 @@ on:
 
 jobs:
   run_Test_ps1:
-    runs-on: ${{ matrix.platform }}
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        platform: [ macos-latest ]
+        os: [ macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
@@ -27,12 +27,10 @@ jobs:
       
     - name: check openssl
       run: |
-        
         ls -la /usr/local/opt | grep "openssl"
         rm -f /usr/local/opt/openssl@1.1
     
     - name: install automake
-      shell: bash
       run: |
         brew install automake
   
