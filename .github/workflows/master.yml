@@ -1,0 +1,30 @@
+name: master
+
+on:
+  workflow_dispatch:
+    inputs:
+      testParam:
+        description: 'Test parameter'     
+        required: true
+        default: '1'
+  push:
+    branches:
+      - master
+
+jobs:
+  run_master:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ macos-latest, ubuntu-latest, windows-latest ]
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: path
+      run: |
+        echo $PATH
+      
+    - name: run Test.ps1
+      run: |
+        pwsh Test.ps1

@@ -13,10 +13,10 @@ on:
 
 jobs:
   run_Test_ps1:
-    runs-on: ${{ matrix.platform }}
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        platform: [ macos-latest ]
+        os: [ macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
