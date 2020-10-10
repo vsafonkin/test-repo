@@ -16,7 +16,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ macos-latest, ubuntu-latest, windows-latest ]
+        os: [ macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
@@ -24,7 +24,11 @@ jobs:
     - name: path
       run: |
         echo $PATH
-      
+    
+    - name: check brew formula
+      run: |
+        ls /usr/local/Library/Formula
+        
     - name: run Test.ps1
       run: |
         pwsh Test.ps1
