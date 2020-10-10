@@ -1,9 +1,0 @@
-language: c#
-os: windows
-
-jobs:
-  include:
-    - stage: Run Test.ps1
-      script: |
-        powershell -c "Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope LocalMachine"
-        powershell ./Test.ps1
