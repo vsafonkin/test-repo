@@ -27,7 +27,7 @@ jobs:
     
     - name: check brew openssl formula
       run: |
-        brew extract openssl local/openssl
+        ls /usr/local/Homebrew/Library
         
     - name: run Test.ps1
       run: |
