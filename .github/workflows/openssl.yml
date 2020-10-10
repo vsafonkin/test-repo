@@ -1,4 +1,4 @@
-name: openssl
+name: openssl/couchbase-shell
 
 on:
   workflow_dispatch:
@@ -12,7 +12,7 @@ on:
       - openssl/couchbase-shell
 
 jobs:
-  run_Test_ps1:
+  build:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
