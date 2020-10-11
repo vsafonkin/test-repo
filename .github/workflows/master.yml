@@ -63,7 +63,9 @@ jobs:
     - name: Install openssl
       run: |
         brew install openssl
-        
+        echo "-----------------------------------"
+        brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/8b9d6d688f483a0f33fcfc93d433de501b9c3513/Formula/openssl.rb
+
     - name: /usr/local/opt
       run: |
         ls -la /usr/local/opt | grep "openssl"
