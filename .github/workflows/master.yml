@@ -58,7 +58,7 @@ jobs:
 
     - name: /usr/local/bin
       run: |
-        ls -la /usr/local/bin | grep "openssl"
+        ls -la /usr/local/bin
 
     - name: check openssl version
       run: |
