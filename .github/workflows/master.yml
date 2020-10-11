@@ -27,7 +27,8 @@ jobs:
     
     - name: brew local taps
       run: |
-        ls /usr/local/Homebrew/Library/Taps/local
+        ls /usr/local/Homebrew/Library/Taps/local/homebrew-openssl
+        
     - name: /usr/local/bin
       run: |
         ls -la /usr/local/bin | grep "openssl"
