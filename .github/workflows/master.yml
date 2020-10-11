@@ -27,7 +27,7 @@ jobs:
     
     - name: check
       run: |
-        ls -la /usr/local/Cellar/openssl
+        ls /usr/local/Cellar/openssl
 
     - name: /usr/local/bin
       run: |
