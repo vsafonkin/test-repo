@@ -25,9 +25,9 @@ jobs:
       run: |
         echo $PATH
     
-    - name: brew local taps
+    - name: check
       run: |
-        ls /usr/local/Homebrew/Library/Taps/local/homebrew-openssl/Formula
+        ls -la /usr/local/Cellar/openssl
 
     - name: /usr/local/bin
       run: |
