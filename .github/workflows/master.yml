@@ -25,11 +25,15 @@ jobs:
       run: |
         echo $PATH
     
+    - name: /usr/local/bin
+      run: |
+        ls -la /usr/local/bin | grep "openssl"
+
     - name: /usr/local/opt
       run: |
         ls -la /usr/local/opt | grep "openssl"
 
-    - name: check brew openssl formula
+    - name: uninstall openssl
       run: |
         # cat /usr/local/Homebrew/Library/Taps/local/homebrew-openssl/Formula/openssl@1.0.2t.rb
         brew uninstall openssl
@@ -39,6 +43,10 @@ jobs:
     - name: /usr/local/opt
       run: |
         ls -la /usr/local/opt | grep "openssl"
+    
+    - name: /usr/local/bin
+      run: |
+        ls -la /usr/local/bin | grep "openssl"
 
     - name: check openssl version
       run: |
