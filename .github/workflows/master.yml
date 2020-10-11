@@ -65,6 +65,7 @@ jobs:
         brew install openssl
         echo "-----------------------------------"
         brew install ./openssl.rb
+        ln -sf /usr/local/Cellar/openssl/1.*/bin/openssl /usr/local/bin/openssl
 
     - name: /usr/local/opt
       run: |
