@@ -59,6 +59,22 @@ jobs:
     - name: /usr/local/bin
       run: |
         ls -la /usr/local/bin
+    
+    - name: Install openssl
+      run: |
+        brew install openssl
+        
+    - name: /usr/local/opt
+      run: |
+        ls -la /usr/local/opt | grep "openssl"
+    
+    - name: /usr/local/Cellar
+      run: |
+        ls -la /usr/local/Cellar | grep "openssl"
+
+    - name: /usr/local/bin
+      run: |
+        ls -la /usr/local/bin
 
     - name: check openssl version
       run: |
