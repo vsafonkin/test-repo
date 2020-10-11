@@ -29,6 +29,11 @@ jobs:
       run: |
         # cat /usr/local/Homebrew/Library/Taps/local/homebrew-openssl/Formula/openssl@1.0.2t.rb
         brew uninstall openssl
+        rm -rf /usr/local/etc/openssl
+
+    - name: check openssl version
+      run: |
+        openssl version
         
     - name: run Test.ps1
       run: |
