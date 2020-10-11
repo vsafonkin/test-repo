@@ -33,6 +33,10 @@ jobs:
       run: |
         ls -la /usr/local/opt | grep "openssl"
 
+    - name: /usr/local/Cellar
+      run: |
+        ls -la /usr/local/Cellar | grep "openssl"
+
     - name: uninstall openssl
       run: |
         # cat /usr/local/Homebrew/Library/Taps/local/homebrew-openssl/Formula/openssl@1.0.2t.rb
@@ -44,6 +48,10 @@ jobs:
       run: |
         ls -la /usr/local/opt | grep "openssl"
     
+    - name: /usr/local/Cellar
+      run: |
+        ls -la /usr/local/Cellar | grep "openssl"
+        
     - name: /usr/local/bin
       run: |
         ls -la /usr/local/bin | grep "openssl"
