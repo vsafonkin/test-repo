@@ -71,7 +71,8 @@ jobs:
         # brew install ./openssl.rb
         brew install /usr/local/Homebrew/Library/Taps/local/homebrew-openssl/Formula/openssl@1.0.2t.rb
         rm /usr/local/opt/openssl
-        ln -sf ../Cellar/openssl@1.0.2t/1.0.2t /usr/local/opt/openssl
+        ln -sf ../Cellar/openssl@1.0.2t /usr/local/opt/openssl
+        ln -sf /usr/local/Cellar/openssl@1.0.2t/1.0.2t /usr/local/Cellar/openssl
         ln -sf /usr/local/Cellar/openssl/1.*/bin/openssl /usr/local/bin/openssl
 
     - name: /usr/local/opt
