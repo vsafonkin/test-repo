@@ -25,6 +25,9 @@ jobs:
       run: |
         echo $PATH
     
+    - name: brew local taps
+      run: |
+        ls /usr/local/Homebrew/Library/Taps/local
     - name: /usr/local/bin
       run: |
         ls -la /usr/local/bin | grep "openssl"
