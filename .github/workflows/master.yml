@@ -43,6 +43,7 @@ jobs:
         brew uninstall openssl
         rm -rf /usr/local/etc/openssl
         brew uninstall openssl --ignore-dependencies
+        rm -rf /usr/local/etc/openssl@1.1
         
     
     - name: /usr/local/opt
