@@ -65,8 +65,8 @@ jobs:
         # brew install openssl
         # echo "-----------------------------------"
         # brew install ./openssl.rb
-        # FORMULA_PATH=$(brew extract --force --version=1.0.2t openssl local/openssl | grep "Homebrew/Library/Taps")
-        brew install local/openssl
+        FORMULA_PATH=$(brew extract openssl local/openssl | grep "Homebrew/Library/Taps")
+        brew install $FORMULA_PATH
         ln -sf /usr/local/Cellar/openssl/1.*/bin/openssl /usr/local/bin/openssl
 
     - name: /usr/local/opt
