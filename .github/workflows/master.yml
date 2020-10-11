@@ -44,6 +44,7 @@ jobs:
         rm -rf /usr/local/etc/openssl
         brew uninstall openssl --ignore-dependencies
         rm -rf /usr/local/etc/openssl@1.1
+        rm -rf /usr/local/opt/openssl
         
     
     - name: /usr/local/opt
