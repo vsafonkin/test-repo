@@ -27,7 +27,7 @@ jobs:
     
     - name: check brew openssl formula
       run: |
-        ls /usr/local/Homebrew/Library/Taps/local/homebrew-openssl/Formula
+        cat /usr/local/Homebrew/Library/Taps/local/homebrew-openssl/Formula/openssl@1.0.2t.rb
         
     - name: run Test.ps1
       run: |
