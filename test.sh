@@ -11,7 +11,7 @@ install_clt() {
                         tail -n1"
     retries=30
     sleepInterval=60
-    echo $clt_label_command
+    bash -c "$clt_label_command"
     # until [[ $retries -le 0 ]]; do
     #     clt_label=$clt_label_command
     #     if [[ -z "$clt_label" ]]; then
