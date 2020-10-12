@@ -17,7 +17,7 @@ install_clt() {
     if [[ -n "$clt_label" ]]; then
         echo "Installing $clt_label"
         sudo "/usr/sbin/softwareupdate" "-i" "$clt_label"
-        # sudo "/bin/rm" "-f" "$clt_placeholder"
+        sudo "/bin/rm" "-f" "$clt_placeholder"
         sudo "/usr/bin/xcode-select" "--switch" "/Library/Developer/CommandLineTools"
     fi
 
@@ -43,8 +43,7 @@ install_clt() {
     # sudo "/usr/bin/xcode-select" "--switch" "/Library/Developer/CommandLineTools"
     # fi
     echo "----"
-    clt_label=$(eval $clt_label_command)
-    echo "$clt_label"
+    xcode-select --install
 }
 
 install_clt
