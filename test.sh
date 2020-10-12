@@ -11,12 +11,12 @@ install_clt() {
                         tail -n1"
     retries=2
     sleepInterval=3
-    clt_label=$(echo $clt_label_command)
+    clt_label=$(eval $clt_label_command)
     echo "$clt_label"
-    until [[ $retries -le 0 ]]; do
-        echo "$clt_label"
+    # until [[ $retries -le 0 ]]; do
+    #     echo "$clt_label"
         # if [[ -z "$clt_label" ]]; then
-            ((retries--))
+            # ((retries--))
         # else
         #     echo "$clt_label found"
         #     break
@@ -27,7 +27,7 @@ install_clt() {
         # fi
         # echo "Unable to find command line tools, wait for $sleepInterval seconds, $retries attempts left"
         # sleep $sleepInterval
-    done
+    # done
     # if [[ -n "$clt_label" ]]; then
     # echo "Installing $clt_label"
     # sudo "/usr/sbin/softwareupdate" "-i" "$clt_label"
