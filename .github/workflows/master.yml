@@ -20,15 +20,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    
-    - name: install pipx
-      run: |
-        python3 -m pip install pipx
-        python3 -m pipx ensurepath
 
     - name: cc version
       run: cc --version
-      
+
     - name: run Test.ps1
       run: |
         pwsh Test.ps1
