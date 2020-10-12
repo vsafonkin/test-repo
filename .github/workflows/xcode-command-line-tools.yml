@@ -24,7 +24,7 @@ jobs:
     - name: check xcltools dir
       run: |
         ls /Library/Developer/CommandLineTools
-        # sudo rm -rf /Library/Developer/CommandLineTools
+        sudo rm -rf /Library/Developer/CommandLineTools
 
     - name: run test.sh
       run: |
