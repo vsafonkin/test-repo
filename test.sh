@@ -13,6 +13,9 @@ install_clt() {
     sleepInterval=60
     until [[ $retries -le 0 ]]; do
         clt_label=$clt_label_command
+        echo "------"
+        echo "$clt_label"
+        echo "------"
         if [[ -z "$clt_label" ]]; then
             ((retries--))
         else
