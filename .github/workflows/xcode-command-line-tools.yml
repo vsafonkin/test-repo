@@ -23,7 +23,6 @@ jobs:
 
     - name: check xcltools dir
       run: |
-        xcode-select --install
         sudo rm -rf /Library/Developer/CommandLineTools
         xcode-select --install
         # softwareupdate -l
