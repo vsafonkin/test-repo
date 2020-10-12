@@ -15,7 +15,7 @@ function Get-CommandResult {
 
 function Get-PipxVersion {
     $result = (Get-CommandResult "pipx --version").Output
-    $pipxVersion = $result -match "(?<version>\d+\.\d+\.\d+\.?\d*)" | Out-Null
+    $pipxVersion = ($result -match "(?<version>\d+\.\d+\.\d+\.?\d*)" | Out-Null).Version
     return "Pipx $pipxVersion"
 }
 
