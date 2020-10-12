@@ -25,7 +25,7 @@ jobs:
       run: |
         echo $PATH
       
-    - name: fix openssl
+    - name: Delete symlink
       run: |
         rm -rf /usr/local/Cellar/openssl
         ln -sf /usr/local/Cellar/openssl@1.0.2t/1.0.2t /usr/local/opt/openssl
