@@ -28,5 +28,4 @@ jobs:
 
     - name: run Test.ps1
       run: |
-        pipx --version
         pwsh Test.ps1
