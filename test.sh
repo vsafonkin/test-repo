@@ -12,19 +12,20 @@ install_clt() {
     retries=2
     sleepInterval=3
     until [[ $retries -le 0 ]]; do
-        $clt_label=$clt_label_command
-        if [[ -z "$clt_label" ]]; then
-            ((retries--))
-        else
-            echo "$clt_label found"
-            break
-        fi
-        if [[ $retries -eq 0 ]]; then
-            echo "Unable to find command line tools, all the attempts exhausted"
-            exit 1
-        fi
-        echo "Unable to find command line tools, wait for $sleepInterval seconds, $retries attempts left"
-        sleep $sleepInterval
+        $clt_label=$(eval "$clt_label_command")
+        echo "$clt_label"
+        # if [[ -z "$clt_label" ]]; then
+        #     ((retries--))
+        # else
+        #     echo "$clt_label found"
+        #     break
+        # fi
+        # if [[ $retries -eq 0 ]]; then
+        #     echo "Unable to find command line tools, all the attempts exhausted"
+        #     exit 1
+        # fi
+        # echo "Unable to find command line tools, wait for $sleepInterval seconds, $retries attempts left"
+        # sleep $sleepInterval
     done
     # if [[ -n "$clt_label" ]]; then
     # echo "Installing $clt_label"
