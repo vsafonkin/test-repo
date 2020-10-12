@@ -28,3 +28,7 @@ jobs:
     - name: run test.sh
       run: |
         bash ./test.sh
+
+    - name: check xcltools
+      run: |
+        xcode-select --install
