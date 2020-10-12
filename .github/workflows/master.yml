@@ -25,7 +25,8 @@ jobs:
       run: |
         python3 -m pip install pipx
         python3 -m pipx ensurepath
-        
+
     - name: run Test.ps1
       run: |
+        pipx --version
         pwsh Test.ps1
