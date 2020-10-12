@@ -21,6 +21,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: check xcltools dir
+      run: |
+        ls /Library/Developer
+        
     - name: run test.sh
       run: |
         bash ./test.sh
