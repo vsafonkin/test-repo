@@ -9,14 +9,10 @@ install_clt() {
                         sed -e 's/^ *Label: //' -e 's/^ *//' |
                         sort -V |
                         tail -n1"
-    retries=30
-    sleepInterval=60
+    retries=2
+    sleepInterval=3
     until [[ $retries -le 0 ]]; do
-        echo "*******"
-        clt_label=$clt_label_command
-        echo "------"
-        echo "$clt_label"
-        echo "------"
+        $clt_label="hello"
         if [[ -z "$clt_label" ]]; then
             ((retries--))
         else
