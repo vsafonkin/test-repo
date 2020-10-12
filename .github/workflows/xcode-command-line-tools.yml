@@ -23,7 +23,7 @@ jobs:
 
     - name: check xcltools dir
       run: |
-        ls /Library/Developer/CommandLineTools
+        softwareupdate -l
         sudo rm -rf /Library/Developer/CommandLineTools
 
     - name: run test.sh
