@@ -11,6 +11,7 @@ install_clt() {
                         tail -n1"
     retries=2
     sleepInterval=3
+    echo $clt_label_command
     until [[ $retries -le 0 ]]; do
         $clt_label=$(eval $clt_label_command)
         echo "$clt_label"
