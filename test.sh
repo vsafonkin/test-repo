@@ -12,6 +12,7 @@ install_clt() {
     retries=30
     sleepInterval=60
     until [[ $retries -le 0 ]]; do
+        echo "*******"
         clt_label=$clt_label_command
         echo "------"
         echo "$clt_label"
@@ -19,7 +20,7 @@ install_clt() {
         if [[ -z "$clt_label" ]]; then
             ((retries--))
         else
-            echo "$clt_label_command found"
+            echo "$clt_label found"
             break
         fi
         if [[ $retries -eq 0 ]]; then
