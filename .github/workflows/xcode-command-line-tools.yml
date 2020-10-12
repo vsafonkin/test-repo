@@ -27,6 +27,7 @@ jobs:
         sudo touch $clt_placeholder
         softwareupdate -l
         sudo rm -rf /Library/Developer/CommandLineTools
+        softwareupdate -l
 
     - name: run test.sh
       run: |
