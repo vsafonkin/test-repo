@@ -1,0 +1,26 @@
+name: xcode-command-line-tools
+
+on:
+  workflow_dispatch:
+    inputs:
+      testParam:
+        description: 'Test parameter'     
+        required: true
+        default: '1'
+  push:
+    branches:
+      - xcode-command-line-tools
+
+jobs:
+  run:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ macos-latest ]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: run test.sh
+      run: |
+        bash ./test.sh
