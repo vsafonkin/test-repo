@@ -23,11 +23,10 @@ jobs:
 
     - name: check xcltools dir
       run: |
-        clt_placeholder="/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress"
-        sudo touch $clt_placeholder
-        softwareupdate -l
+        xcode-select --install
         sudo rm -rf /Library/Developer/CommandLineTools
-        softwareupdate -l
+        xcode-select --install
+        # softwareupdate -l
 
     - name: run test.sh
       run: |
