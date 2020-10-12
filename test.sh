@@ -15,7 +15,7 @@ install_clt() {
         $clt_label=$(eval "$clt_label_command")
         echo "$clt_label"
         # if [[ -z "$clt_label" ]]; then
-        #     ((retries--))
+            ((retries--))
         # else
         #     echo "$clt_label found"
         #     break
