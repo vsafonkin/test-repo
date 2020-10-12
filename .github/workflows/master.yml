@@ -21,86 +21,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: path
+    - name: install pipx
       run: |
-        echo $PATH
-    
-    - name: check
-      run: |
-        ls /usr/local/Cellar/openssl/1.0.2t/lib
-
-    - name: /usr/local/bin
-      run: |
-        ls -la /usr/local/bin | grep "openssl"
-
-    - name: /usr/local/opt
-      run: |
-        ls -la /usr/local/opt | grep "openssl"
-
-    - name: /usr/local/Cellar
-      run: |
-        ls -la /usr/local/Cellar | grep "openssl"
-
-    - name: uninstall openssl
-      run: |
-        # cat /usr/local/Homebrew/Library/Taps/local/homebrew-openssl/Formula/openssl@1.0.2t.rb
-        brew uninstall openssl
-        rm -rf /usr/local/etc/openssl
-        brew uninstall openssl --ignore-dependencies
-        rm -rf /usr/local/etc/openssl@1.1
-        rm -rf /usr/local/opt/openssl
-        rm -rf /usr/local/bin/openssl
+        python3 -m pip install pipx
+        python3 -m pipx ensurepath
         
-    
-    - name: /usr/local/opt
-      run: |
-        ls -la /usr/local/opt | grep "openssl"
-    
-    - name: /usr/local/Cellar
-      run: |
-        ls -la /usr/local/Cellar | grep "openssl"
-
-    - name: /usr/local/bin
-      run: |
-        ls -la /usr/local/bin
-    
-    - name: Install openssl
-      run: |
-        brew install openssl
-        echo "-----------------------------------"
-        # brew install ./openssl.rb
-        brew install /usr/local/Homebrew/Library/Taps/local/homebrew-openssl/Formula/openssl@1.0.2t.rb
-        # rm /usr/local/opt/openssl
-        # ln -sf ../Cellar/openssl@1.0.2t/1.0.2t /usr/local/opt/openssl
-        # ln -sf /usr/local/Cellar/openssl@1.0.2t /usr/local/Cellar/openssl
-        # ln -sf /usr/local/Cellar/openssl@1.0.2t/1.0.2t/bin/openssl /usr/local/bin/openssl
-
-    - name: /usr/local/opt
-      run: |
-        ls -la /usr/local/opt | grep "openssl"
-    
-    - name: /usr/local/Cellar
-      run: |
-        ls -la /usr/local/Cellar | grep "openssl"
-
-    - name: /usr/local/bin
-      run: |
-        ls -la /usr/local/bin
-
-    - name: check openssl version
-      run: |
-        openssl version
-    
-    - name: test build
-      run: |
-        echo "clone repository"
-        git clone https://github.com/couchbaselabs/couchbase-shell
-        cd ./couchbase-shell
-        brew install automake
-        export MACOSX_DEPLOYMENT_TARGET=10.9
-        export VCPKGRS_DYNAMIC=1
-        cargo build
-
     - name: run Test.ps1
       run: |
         pwsh Test.ps1
