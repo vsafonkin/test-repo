@@ -11,27 +11,28 @@ install_clt() {
                         tail -n1"
     retries=30
     sleepInterval=60
-    until [[ $retries -le 0 ]]; do
-        clt_label=$clt_label_command
-        if [[ -z "$clt_label" ]]; then
-            ((retries--))
-        else
-            echo "$clt_label_command found"
-            break
-        fi
-        if [[ $retries -eq 0 ]]; then
-            echo "Unable to find command line tools, all the attempts exhausted"
-            exit 1
-        fi
-        echo "Unable to find command line tools, wait for $sleepInterval seconds, $retries attempts left"
-        sleep $sleepInterval
-    done
-    if [[ -n "$clt_label" ]]; then
-    echo "Installing $clt_label"
-    sudo "/usr/sbin/softwareupdate" "-i" "$clt_label"
-    sudo "/bin/rm" "-f" "$clt_placeholder"
-    sudo "/usr/bin/xcode-select" "--switch" "/Library/Developer/CommandLineTools"
-    fi
+    echo "$clt_label_command"
+    # until [[ $retries -le 0 ]]; do
+    #     clt_label=$clt_label_command
+    #     if [[ -z "$clt_label" ]]; then
+    #         ((retries--))
+    #     else
+    #         echo "$clt_label_command found"
+    #         break
+    #     fi
+    #     if [[ $retries -eq 0 ]]; then
+    #         echo "Unable to find command line tools, all the attempts exhausted"
+    #         exit 1
+    #     fi
+    #     echo "Unable to find command line tools, wait for $sleepInterval seconds, $retries attempts left"
+    #     sleep $sleepInterval
+    # done
+    # if [[ -n "$clt_label" ]]; then
+    # echo "Installing $clt_label"
+    # sudo "/usr/sbin/softwareupdate" "-i" "$clt_label"
+    # sudo "/bin/rm" "-f" "$clt_placeholder"
+    # sudo "/usr/bin/xcode-select" "--switch" "/Library/Developer/CommandLineTools"
+    # fi
 }
 
 install_clt
