@@ -15,28 +15,35 @@ install_clt() {
                         sort -V |
                         tail -n1"
 
-    retries=2
-    sleepInterval=3
-
-    until [[ $retries -le 0 ]]; do
-        clt_label=$(eval $clt_label_command)
-        if [[ -z "$clt_label" ]]; then
-            ((retries--))
-        else
-            echo "$clt_label found"
-            break
-        fi
-        if [[ $retries -eq 0 ]]; then
-            echo "Unable to find command line tools, all the attempts exhausted"
-            return 1
-        fi
-        echo "Unable to find command line tools, wait for $sleepInterval seconds, $retries attempts left"
-        sleep $sleepInterval
-    done
-
-    echo "Installing $clt_label"
-    sudo "/usr/sbin/softwareupdate" "-i" "$clt_label"
+    # retries=2
+    # sleepInterval=3
+    
+    clt_label=$(eval $clt_label_command)
+    if [[ -n "$clt_label" ]]; then
+        echo "Installing $clt_label"
+        sudo "/usr/sbin/softwareupdate" "-i" "$clt_label"
+    fi
     sudo "/bin/rm" "-f" "$clt_placeholder"
+    
+    # until [[ $retries -le 0 ]]; do
+    #     clt_label=$(eval $clt_label_command)
+    #     if [[ -z "$clt_label" ]]; then
+    #         ((retries--))
+    #     else
+    #         echo "$clt_label found"
+    #         break
+    #     fi
+    #     if [[ $retries -eq 0 ]]; then
+    #         echo "Unable to find command line tools, all the attempts exhausted"
+    #         return 1
+    #     fi
+    #     echo "Unable to find command line tools, wait for $sleepInterval seconds, $retries attempts left"
+    #     sleep $sleepInterval
+    # done
+
+    # echo "Installing $clt_label"
+    # sudo "/usr/sbin/softwareupdate" "-i" "$clt_label"
+    # sudo "/bin/rm" "-f" "$clt_placeholder"
 }
 
 retries=2
