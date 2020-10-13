@@ -1,3 +1,8 @@
+should_install_clt() {
+    echo "Check Xcode command line tools installation"
+    ! [[ -e "/Library/Developer/CommandLineTools/usr/bin/git" ]]
+}
+
 install_clt() {
     echo "Searching online for the Command Line Tools"
     # This temporary file prompts the 'softwareupdate' utility to list the Command Line Tools
@@ -12,38 +17,39 @@ install_clt() {
 
     retries=2
     sleepInterval=3
-    clt_label=$(eval $clt_label_command)
 
-    if [[ -n "$clt_label" ]]; then
-        echo "Installing $clt_label"
-        sudo "/usr/sbin/softwareupdate" "-i" "$clt_label"
-        sudo "/bin/rm" "-f" "$clt_placeholder"
-        sudo "/usr/bin/xcode-select" "--switch" "/Library/Developer/CommandLineTools"
-    fi
+    until [[ $retries -le 0 ]]; do
+        clt_label=$(eval $clt_label_command)
+        if [[ -z "$clt_label" ]]; then
+            ((retries--))
+        else
+            echo "$clt_label found"
+            break
+        fi
+        if [[ $retries -eq 0 ]]; then
+            echo "Unable to find command line tools, all the attempts exhausted"
+            exit 1
+        fi
+        echo "Unable to find command line tools, wait for $sleepInterval seconds, $retries attempts left"
+        sleep $sleepInterval
+    done
 
-    # until [[ $retries -le 0 ]]; do
-    #     clt_label=$clt_label_command
-    #     if [[ -z "$clt_label" ]]; then
-    #         ((retries--))
-    #     else
-    #         echo "$clt_label_command found"
-    #         break
-    #     fi
-    #     if [[ $retries -eq 0 ]]; then
-    #         echo "Unable to find command line tools, all the attempts exhausted"
-    #         exit 1
-    #     fi
-    #     echo "Unable to find command line tools, wait for $sleepInterval seconds, $retries attempts left"
-    #     sleep $sleepInterval
-    # done
-    # if [[ -n "$clt_label" ]]; then
-    # echo "Installing $clt_label"
-    # sudo "/usr/sbin/softwareupdate" "-i" "$clt_label"
-    # sudo "/bin/rm" "-f" "$clt_placeholder"
-    # sudo "/usr/bin/xcode-select" "--switch" "/Library/Developer/CommandLineTools"
-    # fi
-    echo "----"
-    xcode-select --install
+    echo "Installing $clt_label"
+    sudo "/usr/sbin/softwareupdate" "-i" "$clt_label"
+    sudo "/bin/rm" "-f" "$clt_placeholder"
 }
 
-install_clt
+$retries=2
+$sleepInterval=30
+
+until [[ $retries -le 0 ]]; do
+    if should_install_clt; then
+        install_clt
+        ((retries--))
+    else
+        echo "Xcode command line tools are installed"
+        sudo "/usr/bin/xcode-select" "--switch" "/Library/Developer/CommandLineTools"
+        exit 0   
+    fi
+    sleep $sleepInterval
+done

@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: check xcltools dir
+    - name: remove xcltools dir
       run: |
         sudo rm -rf /Library/Developer/CommandLineTools
 
@@ -31,4 +31,4 @@ jobs:
 
     - name: check xcltools
       run: |
-        xcode-select --install
+        xcode-select -p
