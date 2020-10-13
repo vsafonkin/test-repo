@@ -1,5 +1,4 @@
 should_install_clt() {
-    echo "Check Xcode command line tools installation"
     ! [[ -e "/Library/Developer/CommandLineTools/usr/bin/git" ]]
 }
 
@@ -24,7 +23,7 @@ install_clt() {
         sudo "/usr/sbin/softwareupdate" "-i" "$clt_label"
     fi
     sudo "/bin/rm" "-f" "$clt_placeholder"
-    
+
     # until [[ $retries -le 0 ]]; do
     #     clt_label=$(eval $clt_label_command)
     #     if [[ -z "$clt_label" ]]; then
@@ -49,7 +48,7 @@ install_clt() {
 retries=2
 sleepInterval=30
 
-until [[ $retries -le 0 ]]; do
+until [[ $retries -ge 0 ]]; do
     if should_install_clt; then
         install_clt
         ((retries--))
