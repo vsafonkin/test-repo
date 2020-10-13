@@ -48,7 +48,7 @@ install_clt() {
 retries=2
 sleepInterval=30
 
-until [ $retries -ge 0 ]; do
+until [[ $retries -le 0 ]]; do
     if should_install_clt; then
         install_clt
         ((retries--))
