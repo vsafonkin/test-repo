@@ -39,8 +39,8 @@ install_clt() {
     sudo "/bin/rm" "-f" "$clt_placeholder"
 }
 
-$retries=2
-$sleepInterval=30
+retries=2
+sleepInterval=30
 
 until [[ $retries -le 0 ]]; do
     if should_install_clt; then
