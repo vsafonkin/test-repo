@@ -28,7 +28,7 @@ install_clt() {
         fi
         if [[ $retries -eq 0 ]]; then
             echo "Unable to find command line tools, all the attempts exhausted"
-            exit 1
+            return 1
         fi
         echo "Unable to find command line tools, wait for $sleepInterval seconds, $retries attempts left"
         sleep $sleepInterval
