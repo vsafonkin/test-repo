@@ -27,6 +27,11 @@ sleepInterval=30
 
 until [[ $retries -le 0 ]]; do
     if should_install_clt; then
+        if [[ $retries -eq 0 ]]; then
+            echo "Unable to find command line tools, all the attempts exhausted"
+            exit 1
+        fi
+        echo "Installing command line tools, $retries attempts left"
         install_clt
         ((retries--))
     else
