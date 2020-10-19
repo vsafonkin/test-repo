@@ -16,10 +16,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ ubuntu-latest ]
+        os: [ macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
 
-    - name: check git
-      run: which git
+    - name: check
+      run: ls /Applications
