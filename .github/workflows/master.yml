@@ -16,14 +16,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ macos-latest ]
+        os: [ ubuntu-latest ]
 
     steps:
     - uses: actions/checkout@v2
 
-    - name: cc version
-      run: cc --version
-
-    - name: run Test.ps1
-      run: |
-        pwsh Test.ps1
+    - name: check git
+      run: which git
