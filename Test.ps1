@@ -1,1 +1,3 @@
-Import-Module -Name Team
+# Import-Module -Name Team
+
+Get-Help Get-Build
