@@ -1,3 +1,3 @@
-Install-Module -Name Team
+Install-Module -Name Team -Scope CurrentUser -Force
 
 Get-Help Get-Build
