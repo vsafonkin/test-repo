@@ -16,10 +16,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ windows-latest ]
+        os: [ macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
 
     - name: Test
-      run: pwsh ./Test.ps1
+      run: ls -la /Applications
