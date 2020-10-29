@@ -22,4 +22,5 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Test
-      run: ls -la /Applications
+      shell: bash
+      run: ./nuget-download.sh
