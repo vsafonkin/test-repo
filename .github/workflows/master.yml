@@ -23,4 +23,4 @@ jobs:
 
     - name: Test
       shell: bash
-      run: ./nuget-download.sh
+      run: nuget-download.sh
