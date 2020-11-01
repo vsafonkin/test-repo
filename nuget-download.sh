@@ -32,9 +32,7 @@ download_with_retries() {
     return 1
 }
 
-sudo mv nuget.exe nuget_old.exe
-
 NUGET_URL="https://dist.nuget.org/win-x86-commandline/v5.3.1/nuget.exe"
 echo "Installing nuget v5.3.1 for Mono"
 
-download_with_retries $NUGET_URL "." "nuget.exe"
+sudo download_with_retries $NUGET_URL "." "nuget.exe"
