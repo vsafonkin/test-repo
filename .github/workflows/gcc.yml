@@ -23,4 +23,4 @@ jobs:
 
     - name: Test
       run: |
-        gcc --version
+        gcc -v -o hello hello.c
