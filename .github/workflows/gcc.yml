@@ -16,7 +16,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ macos-latest, windows-latest, ubuntu-latest ]
+        os: [ macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
@@ -24,6 +24,9 @@ jobs:
     - name: where gcc
       shell: pwsh
       run: (Get-Command gcc).Source
+    
+    - name: ls bin
+      run: ls -la /usr/bin | grep "gcc"
 
     - name: Test
       run: |
