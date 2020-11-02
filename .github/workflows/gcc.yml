@@ -30,5 +30,4 @@ jobs:
 
     - name: Test
       run: |
-        export CFLAGS='--disable-werror'
-        gcc -v -o hello hello.c
+        /usr/bin/gcc -v -o hello hello.c
