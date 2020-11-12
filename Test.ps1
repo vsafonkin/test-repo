@@ -1,5 +1,5 @@
 function Get-sqlcmdVersion {
-    $bcpVersion = sqlcmd -? | Take-OutputPart -Part 2
+    $bcpVersion = sqlcmd -? | Select-String -Pattern "Version"
     return "sqlcmd $bcpVersion"
 }
 
