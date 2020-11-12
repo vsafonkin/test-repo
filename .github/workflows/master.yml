@@ -22,4 +22,6 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Test
-      run: ls -la /opt/mssql-tools/bin
+      run: |
+        bcp --version
+        sqlcmd --version
