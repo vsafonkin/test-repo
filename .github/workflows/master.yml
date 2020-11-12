@@ -16,10 +16,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ macos-latest ]
+        os: [ ubuntu-latest ]
 
     steps:
     - uses: actions/checkout@v2
 
     - name: Test
-      run: echo ${{secrets.GITHUB_TOKEN}}
+      run: ls -la /opt/mssql-tools/bin
