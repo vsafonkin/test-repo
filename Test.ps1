@@ -16,3 +16,5 @@ function Take-OutputPart {
 }
 
 Get-sqlcmdVersion
+Write-Host "-----"
+sqlcmd -?
