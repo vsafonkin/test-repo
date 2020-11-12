@@ -23,5 +23,5 @@ jobs:
 
     - name: Test
       run: |
-        bcp --version
-        sqlcmd --version
+        bcp -v
+        sqlcmd -v
