@@ -1,3 +1,6 @@
-Install-Module -Name Team -Scope CurrentUser -Force
+function Get-sqlcmdVersion {
+    $bcpVersion = sqlcmd -? | Take-OutputPart -Part 2 | Take-OutputPart -Part 1 -Delimiter " "
+    return "sqlcmd $bcpVersion"
+}
 
-Get-Help Get-Build
+Get-sqlcmdVersion
