@@ -23,6 +23,4 @@ jobs:
 
     - name: Test
       run: |
-        bcp -v
-        echo "-----"
-        sqlcmd -?
+        pwsh Test.ps1
