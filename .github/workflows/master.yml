@@ -23,7 +23,7 @@ jobs:
     
     - name: Remove mssql cmd tools
       run: |
-        sudo sudo apt-get remove mssql-tools unixodbc-dev
+        sudo apt-get remove mssql-tools unixodbc-dev
         
     - name: Test
       run: |
