@@ -8,6 +8,7 @@ Describe "Android" {
     [version]$buildToolsMinVersion = Get-ToolsetValue "android.build_tools_min_version"
     
     Write-Host "TEST"
+    Write-Host $androidSdkManagerPackages
 
     $platforms = (($androidSdkManagerPackages | Where-Object { "$_".StartsWith("platforms;") }) -replace 'platforms;', '' |
     Where-Object { [int]$_.Split("-")[1] -ge $platformMinVersion } | Sort-Object { [int]$_.Split("-")[1] } -Unique |
@@ -18,6 +19,9 @@ Describe "Android" {
     ForEach-Object { "build-tools/${_}" })
     
     Write-Host "TEST 2"
+    Write-Host $platforms
+    Write-Host "----"
+    Write-Host $buildTools
 
     $androidPackages = @(
         "tools",
