@@ -17,7 +17,7 @@ Describe "Android" {
     ForEach-Object { "build-tools/${_}" })
     
     Write-Host "----"
-    Get-ToolsetValue "android.extra-list"
+    Get-ToolsetValue "android.extra_list"
     Write-Host "----"
 
     $androidPackages = @(
@@ -27,8 +27,8 @@ Describe "Android" {
         "cmake",
         $platforms,
         $buildTools,
-        (Get-ToolsetValue "android.extra-list" | ForEach-Object { "extras/${_}" }),
-        (Get-ToolsetValue "android.addon-list" | ForEach-Object { "add-ons/${_}" })
+        (Get-ToolsetValue "android.extra_list" | ForEach-Object { "extras/${_}" }),
+        (Get-ToolsetValue "android.addon_list" | ForEach-Object { "add-ons/${_}" })
     ) | ForEach-Object { $_ }
     
     BeforeAll {
