@@ -72,3 +72,9 @@ function Get-ToolsetValue {
     }
     return $jsonNode
 }
+
+function Get-AndroidPackages {
+    $androidSDKManagerPath = Get-AndroidSDKManagerPath
+    $androidPackages = & $androidSDKManagerPath --list --verbose
+    return $androidPackages
+}
