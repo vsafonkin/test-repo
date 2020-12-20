@@ -10,14 +10,14 @@ Describe "Android" {
     $platforms = (($androidSdkManagerPackages | Where-Object { "$_".StartsWith("platforms;") }) -replace 'platforms;', '' |
     Where-Object { [int]$_.Split("-")[1] -ge $platformMinVersion } | Sort-Object { [int]$_.Split("-")[1] } -Unique |
     ForEach-Object { "platforms/${_}" })
-    
-    Write-Host $platforms
 
     $buildTools = (($androidSdkManagerPackages | Where-Object { "$_".StartsWith("build-tools;") }) -replace 'build-tools;', '' |
     Where-Object { [version]$_ -ge $buildToolsMinVersion } | Sort-Object { [version]$_ } -Unique |
     ForEach-Object { "build-tools/${_}" })
     
-    Write-Host $buildTools
+    Write-Host "----"
+    Get-ToolsetValue "android.extra-list"
+    Write-Host "----"
 
     $androidPackages = @(
         "tools",
