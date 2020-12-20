@@ -1,0 +1,21 @@
+name: master
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - ubuntu-android-tests
+
+jobs:
+  run_master:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-16.04, ubuntu-18.04, ubuntu-20.04 ]
+
+    steps:
+    - uses: actions/checkout@v2
+        
+    - name: Test
+      run: |
+        pwsh Invoke-Pester
