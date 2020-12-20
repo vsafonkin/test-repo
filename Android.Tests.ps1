@@ -5,6 +5,7 @@ $os = Get-OSName
 Describe "Android" {
     $androidSdkManagerPackages = Get-AndroidPackages
     [int]$platformMinVersion = Get-ToolsetValue "android.platform_min_version"
+    Write-Host "min version: $platformMinVersion"
     [version]$buildToolsMinVersion = Get-ToolsetValue "android.build_tools_min_version"
     
     $platforms = (($androidSdkManagerPackages | Where-Object { "$_".StartsWith("platforms;") }) -replace 'platforms;', '' |
