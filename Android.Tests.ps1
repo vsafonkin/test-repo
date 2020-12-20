@@ -3,7 +3,7 @@ Import-Module "$PSScriptRoot/Common.Helpers.psm1"
 $os = Get-OSName
 
 Describe "Android" {
-    $androidSdkManagerPackages = Get-AndroidInstalledPackages
+    $androidSdkManagerPackages = Get-AndroidPackages
     [int]$platformMinVersion = Get-ToolsetValue "android.platform_min_version"
     [version]$buildToolsMinVersion = Get-ToolsetValue "android.build_tools_min_version"
 
