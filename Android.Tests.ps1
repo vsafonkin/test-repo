@@ -1,6 +1,6 @@
 Import-Module "$PSScriptRoot/Common.Helpers.psm1"
 
-$os = Get-OSName
+Get-ChildItem "/usr/local/lib/android/sdk/cmake"
 
 Describe "Android" {
     $androidSdkManagerPackages = Get-AndroidPackages
@@ -29,8 +29,6 @@ Describe "Android" {
     
     BeforeAll {
         $ANDROID_SDK_DIR = "/usr/local/lib/android/sdk"
-        
-        Get-ChildItem "$ANDROID_SDK_DIR/cmake"
 
         function Validate-AndroidPackage {
             param (
