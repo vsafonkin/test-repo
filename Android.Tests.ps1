@@ -1,6 +1,6 @@
 Import-Module "$PSScriptRoot/Common.Helpers.psm1"
 
-Get-ChildItem "/usr/local/lib/android/sdk/cmake"
+Get-ChildItem "/usr/local/lib/android/sdk"
 
 Describe "Android" {
     $androidSdkManagerPackages = Get-AndroidPackages
