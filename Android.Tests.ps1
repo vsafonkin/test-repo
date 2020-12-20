@@ -6,6 +6,8 @@ Describe "Android" {
     $androidSdkManagerPackages = Get-AndroidPackages
     [int]$platformMinVersion = Get-ToolsetValue "android.platform_min_version"
     [version]$buildToolsMinVersion = Get-ToolsetValue "android.build_tools_min_version"
+    
+    Write-Host "TEST"
 
     $platforms = (($androidSdkManagerPackages | Where-Object { "$_".StartsWith("platforms;") }) -replace 'platforms;', '' |
     Where-Object { [int]$_.Split("-")[1] -ge $platformMinVersion } | Sort-Object { [int]$_.Split("-")[1] } -Unique |
@@ -14,6 +16,8 @@ Describe "Android" {
     $buildTools = (($androidSdkManagerPackages | Where-Object { "$_".StartsWith("build-tools;") }) -replace 'build-tools;', '' |
     Where-Object { [version]$_ -ge $buildToolsMinVersion } | Sort-Object { [version]$_ } -Unique |
     ForEach-Object { "build-tools/${_}" })
+    
+    Write-Host "TEST 2"
 
     $androidPackages = @(
         "tools",
