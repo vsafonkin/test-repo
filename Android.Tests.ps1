@@ -34,8 +34,24 @@ Describe "Android" {
         (Get-ToolsetValue "android.addon-list" | ForEach-Object { "add-ons/${_}" })
     ) | ForEach-Object { $_ }
 
-    BeforeAll {
-        $ANDROID_SDK_DIR = "/usr/local/lib/android/sdk"
+#     BeforeAll {
+#         $ANDROID_SDK_DIR = "/usr/local/lib/android/sdk"
+
+#         function Validate-AndroidPackage {
+#             param (
+#                 [Parameter(Mandatory=$true)]
+#                 [string]$PackageName
+#             )
+
+#             # Convert 'm2repository;com;android;support;constraint;constraint-layout-solver;1.0.0-beta1' ->
+#             #         'm2repository/com/android/support/constraint/constraint-layout-solver/1.0.0-beta1'
+#             $PackageName = $PackageName.Replace(";", "/")
+#             $targetPath = Join-Path $ANDROID_SDK_DIR $PackageName
+#             $targetPath | Should -Exist
+#         }
+#     }
+    
+    $ANDROID_SDK_DIR = "/usr/local/lib/android/sdk"
 
         function Validate-AndroidPackage {
             param (
@@ -49,8 +65,6 @@ Describe "Android" {
             $targetPath = Join-Path $ANDROID_SDK_DIR $PackageName
             $targetPath | Should -Exist
         }
-    }
-
 
     It "Packages" {
         $testCases = $androidPackages | ForEach-Object { @{ PackageName = $_ } }
