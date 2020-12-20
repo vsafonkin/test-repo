@@ -1,4 +1,4 @@
-name: master
+name: android-tests
 
 on:
   workflow_dispatch:
