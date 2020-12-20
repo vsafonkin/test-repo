@@ -18,4 +18,5 @@ jobs:
         
     - name: Test
       run: |
+        export INSTALLER_SCRIPT_FOLDER="."
         pwsh -Command "Invoke-Pester"
