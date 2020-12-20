@@ -64,7 +64,6 @@ function Get-ToolsetValue {
     )
 
     $jsonNode = Get-ToolsetContent
-    Write-Host $jsonNode
 
     $pathParts = $KeyPath.Split(".")
     # try to walk through all arguments consequentially to resolve specific json node
