@@ -5,7 +5,6 @@ Write-Host (Get-ChildItem "/usr/local/lib/android/sdk/cmake")
 Describe "Android" {
     $androidSdkManagerPackages = Get-AndroidPackages
     [int]$platformMinVersion = Get-ToolsetValue "android.platform_min_version"
-    Write-Host "min version: $platformMinVersion"
     [version]$buildToolsMinVersion = Get-ToolsetValue "android.build_tools_min_version"
     
     $platforms = (($androidSdkManagerPackages | Where-Object { "$_".StartsWith("platforms;") }) -replace 'platforms;', '' |
@@ -19,12 +18,9 @@ Describe "Android" {
     $androidPackages = @(
         $platforms,
         $buildTools,
-        "tools",
-        "platform-tools",
-        "ndk-bundle",
-        "cmake",
         (Get-ToolsetValue "android.extra_list" | ForEach-Object { "extras/${_}" }),
-        (Get-ToolsetValue "android.addon_list" | ForEach-Object { "add-ons/${_}" })
+        (Get-ToolsetValue "android.addon_list" | ForEach-Object { "add-ons/${_}" }),
+        (Get-ToolsetValue "android.additional_tools" | ForEach-Object { "${_}" })
     ) | ForEach-Object { $_ }
     
     BeforeAll {
