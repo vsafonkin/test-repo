@@ -21,12 +21,10 @@ Describe "Android" {
     Write-Host "----"
 
     $androidPackages = @(
-        "tools",
-        "platform-tools",
-        "ndk-bundle",
-        "cmake",
         $platforms,
         $buildTools,
+        "ndk-bundle",
+        "cmake"
         (Get-ToolsetValue "android.extra_list" | ForEach-Object { "extras/${_}" }),
         (Get-ToolsetValue "android.addon_list" | ForEach-Object { "add-ons/${_}" })
     ) | ForEach-Object { $_ }
@@ -59,8 +57,8 @@ Describe "Android" {
         }
     }
 
-    It "HAXM is installed" {
-        $haxmPath = Join-Path $ANDROID_SDK_DIR "extras" "intel" "Hardware_Accelerated_Execution_Manager" "silent_install.sh"
-        "$haxmPath -v" | Should -ReturnZeroExitCode
-    }
+#     It "HAXM is installed" {
+#         $haxmPath = Join-Path $ANDROID_SDK_DIR "extras" "intel" "Hardware_Accelerated_Execution_Manager" "silent_install.sh"
+#         "$haxmPath -v" | Should -ReturnZeroExitCode
+#     }
 }
