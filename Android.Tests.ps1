@@ -49,6 +49,7 @@ Describe "Android" {
 
         It "<PackageName>" -TestCases $testCases {
             param ([string] $PackageName)
+            Write-Host "Package name: $PackageName"
             Validate-AndroidPackage $PackageName
         }
     }
