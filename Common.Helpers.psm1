@@ -53,7 +53,7 @@ function Test-IsUbuntu20 {
 }
 
 function Get-ToolsetContent {
-    $toolset = Join-Path $env:INSTALLER_SCRIPT_FOLDER "toolset.json"
+    $toolset = "./toolset.json"
     Get-Content $toolset -Raw | ConvertFrom-Json
 }
 
