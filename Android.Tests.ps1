@@ -3,10 +3,10 @@ Import-Module "$PSScriptRoot/Common.Helpers.psm1"
 $os = Get-OSName
 
 Describe "Android" {
-    $androidSdkManagerPackages = Get-AndroidInstalledPackages
+    $androidSdkManagerPackages = Get-AndroidPackages
     [int]$platformMinVersion = Get-ToolsetValue "android.platform_min_version"
     [version]$buildToolsMinVersion = Get-ToolsetValue "android.build_tools_min_version"
-
+    
     $platforms = (($androidSdkManagerPackages | Where-Object { "$_".StartsWith("platforms;") }) -replace 'platforms;', '' |
     Where-Object { [int]$_.Split("-")[1] -ge $platformMinVersion } | Sort-Object { [int]$_.Split("-")[1] } -Unique |
     ForEach-Object { "platforms/${_}" })
