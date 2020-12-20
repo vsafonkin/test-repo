@@ -30,7 +30,7 @@ Describe "Android" {
     BeforeAll {
         $ANDROID_SDK_DIR = "/usr/local/lib/android/sdk"
         
-        Get-ChildItem "./$ANDROID_SDK_DIR/cmake"
+        Get-ChildItem "$ANDROID_SDK_DIR/cmake"
 
         function Validate-AndroidPackage {
             param (
