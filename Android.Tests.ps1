@@ -15,10 +15,6 @@ Describe "Android" {
     $buildTools = (($androidSdkManagerPackages | Where-Object { "$_".StartsWith("build-tools;") }) -replace 'build-tools;', '' |
     Where-Object { [version]$_ -ge $buildToolsMinVersion } | Sort-Object { [version]$_ } -Unique |
     ForEach-Object { "build-tools/${_}" })
-    
-    Write-Host "----"
-    Get-ToolsetValue "android.extra_list"
-    Write-Host "----"
 
     $androidPackages = @(
         $platforms,
@@ -33,6 +29,8 @@ Describe "Android" {
     
     BeforeAll {
         $ANDROID_SDK_DIR = "/usr/local/lib/android/sdk"
+        
+        Get-ChildItem "./$ANDROID_SDK_DIR/cmake"
 
         function Validate-AndroidPackage {
             param (
