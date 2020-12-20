@@ -27,7 +27,7 @@ Describe "Android" {
     ) | ForEach-Object { $_ }
 
     BeforeAll {
-        $ANDROID_SDK_DIR = Join-Path $env:HOME "Library" "Android" "sdk"
+        $ANDROID_SDK_DIR = "/usr/local/lib/android/sdk"
 
         function Validate-AndroidPackage {
             param (
