@@ -8,7 +8,6 @@ Describe "Android" {
     [version]$buildToolsMinVersion = Get-ToolsetValue "android.build_tools_min_version"
     
     Write-Host "TEST"
-    Write-Host $androidSdkManagerPackages
 
     $platforms = (($androidSdkManagerPackages | Where-Object { "$_".StartsWith("platforms;") }) -replace 'platforms;', '' |
     Where-Object { [int]$_.Split("-")[1] -ge $platformMinVersion } | Sort-Object { [int]$_.Split("-")[1] } -Unique |
@@ -19,9 +18,6 @@ Describe "Android" {
     ForEach-Object { "build-tools/${_}" })
     
     Write-Host "TEST 2"
-    Write-Host $platforms
-    Write-Host "----"
-    Write-Host $buildTools
 
     $androidPackages = @(
         "tools",
@@ -34,24 +30,10 @@ Describe "Android" {
         (Get-ToolsetValue "android.addon-list" | ForEach-Object { "add-ons/${_}" })
     ) | ForEach-Object { $_ }
 
-#     BeforeAll {
-#         $ANDROID_SDK_DIR = "/usr/local/lib/android/sdk"
-
-#         function Validate-AndroidPackage {
-#             param (
-#                 [Parameter(Mandatory=$true)]
-#                 [string]$PackageName
-#             )
-
-#             # Convert 'm2repository;com;android;support;constraint;constraint-layout-solver;1.0.0-beta1' ->
-#             #         'm2repository/com/android/support/constraint/constraint-layout-solver/1.0.0-beta1'
-#             $PackageName = $PackageName.Replace(";", "/")
-#             $targetPath = Join-Path $ANDROID_SDK_DIR $PackageName
-#             $targetPath | Should -Exist
-#         }
-#     }
+    Write-Host "TEST 3"
     
-    $ANDROID_SDK_DIR = "/usr/local/lib/android/sdk"
+    BeforeAll {
+        $ANDROID_SDK_DIR = "/usr/local/lib/android/sdk"
 
         function Validate-AndroidPackage {
             param (
@@ -65,6 +47,8 @@ Describe "Android" {
             $targetPath = Join-Path $ANDROID_SDK_DIR $PackageName
             $targetPath | Should -Exist
         }
+    }
+    
 
     It "Packages" {
         $testCases = $androidPackages | ForEach-Object { @{ PackageName = $_ } }
