@@ -23,9 +23,10 @@ Describe "Android" {
     $androidPackages = @(
         $platforms,
         $buildTools,
+        "tools",
+        "platform-tools",
         "ndk-bundle",
         "cmake",
-        "gogogo"
         (Get-ToolsetValue "android.extra_list" | ForEach-Object { "extras/${_}" }),
         (Get-ToolsetValue "android.addon_list" | ForEach-Object { "add-ons/${_}" })
     ) | ForEach-Object { $_ }
