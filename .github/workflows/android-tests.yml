@@ -18,9 +18,7 @@ jobs:
     
     - name: haskell
       run: |
-        ghc --version
-        stack --version
-        cabal --version
+        ls /opt/ghc
         
     - name: Test
       run: |
