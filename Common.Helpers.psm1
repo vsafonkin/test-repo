@@ -78,3 +78,28 @@ function Get-AndroidPackages {
     $androidPackages = & $androidSDKManagerPath --list --verbose
     return $androidPackages
 }
+
+function ShouldReturnZeroExitCode {
+    Param(
+        [String] $ActualValue,
+        [switch] $Negate,
+        [string] $Because # This parameter is unused but we need it to match Pester asserts signature
+    )
+
+    $result = Get-CommandResult $ActualValue
+
+    [bool]$succeeded = $result.ExitCode -eq 0
+    if ($Negate) { $succeeded = -not $succeeded }
+
+    if (-not $succeeded)
+    {
+        $commandOutputIndent = " " * 4
+        $commandOutput = ($result.Output | ForEach-Object { "${commandOutputIndent}${_}" }) -join "`n"
+        $failureMessage = "Command '${ActualValue}' has finished with exit code`n${commandOutput}"
+    }
+
+    return [PSCustomObject] @{
+        Succeeded      = $succeeded
+        FailureMessage = $failureMessage
+    }
+}
