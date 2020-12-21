@@ -19,7 +19,9 @@ jobs:
     - name: haskell
       run: |
         ghc --version
-        ghc --help
+        ghcup --version
+        stack --version
+        cabal --version
         
     - name: Test
       run: |
