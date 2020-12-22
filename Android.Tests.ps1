@@ -61,11 +61,11 @@ Describe "Haskell" {
     $GHCVersions = Get-ChildItem -Path $GHCCommonPath | Where-Object { $_.Name -match "\d+\.\d+" }
     Write-Host $GHCVersions.Count
     
-    $testCases = $GHCVersions | ForEach-Object { @{ GHCPath = "${_}/bin/ghc"} }
-    
     It "Installed GHC versions count" {
         $GHCVersions.Count | Should -Be 3
     }
+    
+    $testCases = $GHCVersions | ForEach-Object { @{ GHCPath = "${_}/bin/ghc"} }
     
     It "GHC version <GHCPath>" -TestCases $testCases {
             param ([string] $GHCPATH)
