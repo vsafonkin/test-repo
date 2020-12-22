@@ -58,7 +58,7 @@ Import-Module "$PSScriptRoot/Common.Helpers.psm1"
 Describe "Haskell" {
 
     $ghcPath = "/opt/ghc"
-    $ghcVersions = Get-ChildItem -Path $ghcPath -Filter "*.*.*"
+    $ghcVersions = Get-ChildItem -Path $ghcPath | Where-Object { $_.Name -match "\d+\.\d+" }
     Write-Host $ghcVersions
     
     It "Default GHC" {
