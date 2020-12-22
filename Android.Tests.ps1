@@ -53,7 +53,7 @@ Import-Module "$PSScriptRoot/Common.Helpers.psm1"
 #         $haxmPath = Join-Path $ANDROID_SDK_DIR "extras" "intel" "Hardware_Accelerated_Execution_Manager" "silent_install.sh"
 #         "$haxmPath -v" | Should -ReturnZeroExitCode
 #     }
-}
+# }
 
 Describe "Haskell" {
 
