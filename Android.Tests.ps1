@@ -57,9 +57,16 @@ Import-Module "$PSScriptRoot/Common.Helpers.psm1"
 
 Describe "Haskell" {
 
-    $ghcPath = "/opt/ghc"
-    $ghcVersions = Get-ChildItem -Path $ghcPath | Where-Object { $_.Name -match "\d+\.\d+" }
-    Write-Host $ghcVersions
+    $GHCCommonPath = "/opt/ghc"
+    $GHCVersions = Get-ChildItem -Path $GHCCommonPath | Where-Object { $_.Name -match "\d+\.\d+" }
+    Write-Host $GHCVersions
+    
+    $testCases = $GHCVersions | ForEach-Object { @{ GHCPath = "${_}/bin/ghc"} }
+    
+    It "GHC version <GHCPath>" -TestCases $testCases {
+            param ([string] $GHCPATH)
+            "$GHCPATH --version" | Should -ReturnZeroExitCode
+    }
     
     It "Default GHC" {
         "ghc --version" | Should -ReturnZeroExitCode
