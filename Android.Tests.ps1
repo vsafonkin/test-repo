@@ -63,6 +63,10 @@ Describe "Haskell" {
     
     $testCases = $GHCVersions | ForEach-Object { @{ GHCPath = "${_}/bin/ghc"} }
     
+    It "Installed GHC versions count" {
+        $GHCVersions.Count | Should -Be 3
+    }
+    
     It "GHC version <GHCPath>" -TestCases $testCases {
             param ([string] $GHCPATH)
             "$GHCPATH --version" | Should -ReturnZeroExitCode
