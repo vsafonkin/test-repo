@@ -62,7 +62,7 @@ Describe "Haskell" {
     Write-Host $GHCVersions.Count
     
     It "Installed GHC versions count" {
-        $GHCVersions.Count | Should -Be 3
+        ($GHCVersions.Count) | Should -Be 3
     }
     
     $testCases = $GHCVersions | ForEach-Object { @{ GHCPath = "${_}/bin/ghc"} }
