@@ -16,11 +16,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: mono
+    - name: test
       run: |
-        nuget
+        sqlcmd --version
         
-    - name: Test
+    - name: Pester
       run: |
         export INSTALLER_SCRIPT_FOLDER="."
         pwsh -Command "Invoke-Pester"
