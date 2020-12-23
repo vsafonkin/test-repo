@@ -18,8 +18,7 @@ jobs:
     
     - name: test
       run: |
-        nuget help
-        sqlcmd -?
+        nvm --version
         
     - name: Pester
       run: |
