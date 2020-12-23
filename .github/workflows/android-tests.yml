@@ -18,8 +18,7 @@ jobs:
     
     - name: mono
       run: |
-        mono --version
-        nuget version
+        nuget -h
         
     - name: Test
       run: |
