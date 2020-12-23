@@ -18,9 +18,7 @@ jobs:
     
     - name: test
       run: |
-        swift --version
-        echo "-------"
-        swiftc --version
+        swig --version
         
     - name: Pester
       run: |
