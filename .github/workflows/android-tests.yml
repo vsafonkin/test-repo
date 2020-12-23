@@ -18,7 +18,7 @@ jobs:
     
     - name: test
       run: |
-        swig --version
+        swig -help
         
     - name: Pester
       run: |
