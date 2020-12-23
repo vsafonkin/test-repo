@@ -18,7 +18,7 @@ jobs:
     
     - name: test
       run: |
-        vcpkg --version
+        vcpkg version
         
     - name: Pester
       run: |
