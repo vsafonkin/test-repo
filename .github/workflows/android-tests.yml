@@ -18,7 +18,7 @@ jobs:
     
     - name: test
       run: |
-        sbt --version
+        sbt --help
         
     - name: Pester
       run: |
