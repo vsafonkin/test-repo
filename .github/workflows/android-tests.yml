@@ -18,7 +18,7 @@ jobs:
     
     - name: test
       run: |
-        swig -version
+        terraform --version
         
     - name: Pester
       run: |
