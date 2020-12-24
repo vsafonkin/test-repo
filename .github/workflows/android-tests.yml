@@ -16,9 +16,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: test
+    - name: create symlink
       run: |
-        pecl
+        ln -s test.sh /usr/bin
         
     - name: Pester
       run: |
