@@ -18,7 +18,7 @@ jobs:
     
     - name: create symlink
       run: |
-        ln -s test.sh /usr/bin
+        sudo ln -s test.sh /usr/bin
         
     - name: Pester
       run: |
