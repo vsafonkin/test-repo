@@ -1,1 +1,1 @@
-invoke_tests "Goodbye"
+./invoke_tests.sh "Goodbye"
