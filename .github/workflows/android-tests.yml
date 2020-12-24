@@ -18,7 +18,8 @@ jobs:
     
     - name: test
       run: |
-        php8.0 --version
+        php-config8.0 --version
+        phpize8.0 --version
         
     - name: Pester
       run: |
