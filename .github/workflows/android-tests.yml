@@ -22,5 +22,4 @@ jobs:
         
     - name: Pester
       run: |
-        export INSTALLER_SCRIPT_FOLDER="."
-        pwsh -Command "Invoke-Pester"
+        bash mssql-cmd-tools.sh
