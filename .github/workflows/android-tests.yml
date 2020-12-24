@@ -16,14 +16,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: create symlink
+    - name: invoke tests
       run: |
-        chmod -R 777 /home/runner/work/test-repo/test-repo/gogo/invoke_tests.sh
-        sudo ln -s /home/runner/work/test-repo/test-repo/gogo/invoke_tests.sh /usr/local/bin
-        
-    - name: check /usr/local/bin
-      run: pwd
-        
-    - name: Pester
-      run: |
-        bash mssql-cmd-tools.sh
+        ./invoke-tests.sh
