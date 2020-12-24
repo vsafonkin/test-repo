@@ -1,14 +1,14 @@
-Context "Swift" {
+Describe "Swift" {
     It "swift" {
-        "swift --version" | Should -ReturnZeroExitCode
+        "hello" | Should -Be "hello"
     }
 
     It "swiftc" {
-        "swiftc --version" | Should -ReturnZeroExitCode
+        "goodbye" | Should -Be "goodbye"
     }
 }
 
-Context "Haskell" {
+Describe "Haskell" {
 
     $GHCCommonPath = "/opt/ghc"
     $GHCVersions = Get-ChildItem -Path $GHCCommonPath | Where-Object { $_.Name -match "\d+\.\d+" }
