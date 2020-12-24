@@ -18,7 +18,7 @@ jobs:
     
     - name: create symlink
       run: |
-        chmod +x ./invoke_tests.sh
+        chmod -R 777 ./invoke_tests.sh
         sudo ln -s ./invoke_tests.sh /usr/bin
         
     - name: Pester
