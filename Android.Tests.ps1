@@ -1,26 +1,41 @@
-Import-Module "$PSScriptRoot/Common.Helpers.psm1"
-
-Describe "NVM" {
-    BeforeAll {
-        $nvmPath = Join-Path $env:HOME ".nvm" "nvm.sh"
-        $nvmInitCommand = ". $nvmPath > /dev/null 2>&1 || true"
+Describe "Swift" {
+    It "swift" {
+        "swift --version" | Should -ReturnZeroExitCode
     }
 
-    It "Nvm is installed" {
-        $nvmPath | Should -Exist
-        "$nvmInitCommand && nvm --version" | Should -ReturnZeroExitCode
+    It "swiftc" {
+        "swiftc --version" | Should -ReturnZeroExitCode
+    }
+}
+
+Describe "Haskell" {
+
+    $GHCCommonPath = "/opt/ghc"
+    $GHCVersions = Get-ChildItem -Path $GHCCommonPath | Where-Object { $_.Name -match "\d+\.\d+" }
+    
+    $testCase = @{ GHCVersions = $GHCVersions }
+
+    It "GHC directory contains three version of GHC" -TestCases $testCase {
+        param ([object] $GHCVersions)
+        $GHCVersions.Count | Should -Be 3
     }
 
-    Context "Nvm versions" {
-        $NVM_VERSIONS = @(6, 8, 10, 12)
-        $testCases = $NVM_VERSIONS | ForEach-Object { @{NvmVersion = $_} }
+    $testCases = $GHCVersions | ForEach-Object { @{ GHCPath = "${_}/bin/ghc"} }
 
-        It "<NvmVersion>" -TestCases $testCases {
-            param (
-                [string] $NvmVersion
-            )
+    It "GHC version <GHCPath>" -TestCases $testCases {
+            param ([string] $GHCPath)
+            "$GHCPath --version" | Should -ReturnZeroExitCode
+    }
 
-            "$nvmInitCommand && nvm ls $($NvmVersion)" | Should -ReturnZeroExitCode
-        }
+    It "Default GHC" {
+        "ghc --version" | Should -ReturnZeroExitCode
+    }
+
+    It "Cabal" {
+        "cabal --version" | Should -ReturnZeroExitCode
+    }
+
+    It "Stack" {
+        "stack --version" | Should -ReturnZeroExitCode
     }
 }
