@@ -18,10 +18,7 @@ jobs:
     
     - name: test
       run: |
-        composer --version
-        pear --version
-        pecl --version
-        phpunit --version
+        pear help
         
     - name: Pester
       run: |
