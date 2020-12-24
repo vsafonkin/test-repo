@@ -10,7 +10,7 @@ Describe "Swift" {
 
 Describe "Haskell" {
 
-    $GHCCommonPath = "/opt/ghc"
+    $GHCCommonPath = "/opt/gogogo/ghc"
     $GHCVersions = Get-ChildItem -Path $GHCCommonPath | Where-Object { $_.Name -match "\d+\.\d+" }
     
     $testCase = @{ GHCVersions = $GHCVersions }
