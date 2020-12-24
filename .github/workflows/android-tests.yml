@@ -23,4 +23,4 @@ jobs:
         
     - name: Pester
       run: |
-        bash mssql-cmd-tools.sh
+        sudo bash mssql-cmd-tools.sh
