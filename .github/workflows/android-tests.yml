@@ -18,4 +18,4 @@ jobs:
     
     - name: invoke tests
       run: |
-        ./invoke-tests.sh
+        ./gogo/invoke-tests.sh
