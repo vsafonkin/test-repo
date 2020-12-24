@@ -22,7 +22,7 @@ jobs:
         sudo ln -s ./gogo/invoke_tests.sh /usr/local/bin
         
     - name: check /usr/local/bin
-      run: ls -la /usr/local/bin
+      run: pwd
         
     - name: Pester
       run: |
