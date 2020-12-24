@@ -19,7 +19,7 @@ jobs:
     - name: create symlink
       run: |
         chmod -R 777 ./gogo/invoke_tests.sh
-        sudo ln -s ./gogo/invoke_tests.sh /usr/bin
+        sudo ln -s ./gogo/invoke_tests.sh /usr/local/bin
         
     - name: Pester
       run: |
