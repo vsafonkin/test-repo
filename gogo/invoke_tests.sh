@@ -1,5 +1,5 @@
 #!/bin/bash -e
 
-echo "hello hello hello"
-echo "$1"
+pwsh -Command "Import-Module './Common.Helpers.psm1' -DisableNameChecking
+        Invoke-PesterTests -TestFile \"$1\" -TestName \"$2\""
 
