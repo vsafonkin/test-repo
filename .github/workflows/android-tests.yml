@@ -19,7 +19,7 @@ jobs:
     - name: create symlink
       run: |
         chmod -x ./gogo/invoke_tests.sh
-        sudo ln -s /home/runner/work/test-repo/test-repo/gogo/invoke_tests.sh /usr/local/bin
+        ln -s /home/runner/work/test-repo/test-repo/gogo/invoke_tests.sh /usr/local/bin
         
     - name: check /usr/local/bin
       run: pwd
