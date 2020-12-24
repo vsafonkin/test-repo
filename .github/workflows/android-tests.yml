@@ -18,7 +18,10 @@ jobs:
     
     - name: test
       run: |
-        phpize8.0 --version
+        composer --version
+        pear --version
+        pecl --version
+        phpunit --version
         
     - name: Pester
       run: |
