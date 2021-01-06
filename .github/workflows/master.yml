@@ -23,7 +23,5 @@ jobs:
     
     - name: Test pipx
       run: |
-        pipx list
-        pipx install pycowsay
-        pipx list
+        echo $PIPX_BIN_DIR
 
