@@ -24,4 +24,5 @@ jobs:
     - name: Test pipx
       run: |
         pipx list
+        pipx install pycowsay
 
