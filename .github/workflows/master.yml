@@ -23,5 +23,5 @@ jobs:
     
     - name: Test pipx
       run: |
-        yamllint --version
+        echo $PIPX_BIN_DIR
 
