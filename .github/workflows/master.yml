@@ -16,7 +16,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ ubuntu-18.04, ubuntu-20.04 ]
+        os: [ ubuntu-18.04, ubuntu-20.04, macos-latest, windows-latest ]
 
     steps:
     - uses: actions/checkout@v2
@@ -25,4 +25,5 @@ jobs:
       run: |
         pipx list
         pipx install pycowsay
+        pipx list
 
