@@ -30,7 +30,5 @@ jobs:
     
     - run: dotnet --version
     
-    - run: /Users/runner/.dotnet/dotnet --version
-    
-    - run: /usr/local/bin/dotnet --version
+    - run: ls -la /Users/runner/.dotnet/sdk
 
