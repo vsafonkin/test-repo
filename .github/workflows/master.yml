@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: dotnet --help
+    - run: sudo rm -rf /Users/runner/.dotnet
     
     - name: Setup dotnet
       uses: actions/setup-dotnet@v1
