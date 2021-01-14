@@ -32,12 +32,9 @@ jobs:
 #       uses: actions/setup-dotnet@v1
 #       with:
 #         dotnet-version: '2.2.x'
-    
-    - run: sudo rm -rf /Users/runner/.dotnet/sdk/5.0.100
-    - run: sudo rm -rf /Users/runner/.dotnet/sdk/5.0.101
-    
-    
+    - name: Force 3.1.404
+      run: | 
+        echo "{ \"sdk\": { \"version\": \"3.1.404\"} }" > global.json
+      
     - run: dotnet --version
-    
-    - run: ls -la /home/runner/.dotnet/sdk
 
