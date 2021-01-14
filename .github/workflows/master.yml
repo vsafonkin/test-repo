@@ -23,12 +23,12 @@ jobs:
     
     - run: ls -la /Users/runner/.dotnet/sdk
     
-    - run: sudo rm -rf /Users/runner/.dotnet
+#     - run: sudo rm -rf /Users/runner/.dotnet
     
     - name: Setup dotnet
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '3.1.x'
+        dotnet-version: '3.1.404'
     
     - run: dotnet --version
     
