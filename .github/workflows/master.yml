@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: ls -la /usr/local/share/dotnet/sdk
+    - run: ls -la /usr/share/dotnet/sdk
     
     - run: which dotnet
     
