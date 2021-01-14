@@ -21,8 +21,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: ls -la /home/runner/.dotnet
-    
     - run: which dotnet
     
     - name: Setup dotnet
