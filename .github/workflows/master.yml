@@ -16,7 +16,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ ubuntu-latest ]
+        os: [ macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
@@ -30,5 +30,7 @@ jobs:
     
     - run: dotnet --version
     
-    - run: /home/runner/.dotnet/dotnet --version
+    - run: /Users/runner/.dotnet/dotnet --version
+    
+    - run: /usr/local/bin/dotnet --version
 
