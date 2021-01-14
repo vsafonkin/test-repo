@@ -26,13 +26,18 @@ jobs:
     - name: Setup dotnet
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '3.1.x'
+        dotnet-version: '2.2.x'
     
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.x'
+
     - run: dotnet --version
     
     - run: ls -la /home/runner/.dotnet/sdk
     
     - run: which dotnet
     
-    - run: /usr/bin/dotnet --version
+    - run: ls -la /home/runner/.dotnet/tools
 
