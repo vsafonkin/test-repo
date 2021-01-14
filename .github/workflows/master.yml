@@ -30,5 +30,5 @@ jobs:
     
     - run: dotnet --version
     
-    - run: ls -la /home/runner/.dotnet
+    - run: /home/runner/.dotnet/dotnet --version
 
