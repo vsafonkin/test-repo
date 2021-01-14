@@ -21,6 +21,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - run: ls -la /Users/runner/.dotnet/sdk
+    
     - run: sudo rm -rf /Users/runner/.dotnet
     
     - name: Setup dotnet
