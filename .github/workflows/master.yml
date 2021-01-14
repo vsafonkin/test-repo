@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: ls -la /usr/share/dotnet/sdk
+    - run: ls -la /home/runner/.dotnet
     
     - run: which dotnet
     
@@ -35,4 +35,6 @@ jobs:
     - run: ls -la /home/runner/.dotnet/sdk
     
     - run: which dotnet
+    
+    - run: /usr/bin/dotnet --version
 
