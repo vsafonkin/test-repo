@@ -16,12 +16,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ macos-latest ]
+        os: [ ubuntu-latest ]
 
     steps:
     - uses: actions/checkout@v2
     
-    - run: ls -la /Users/runner/.dotnet/sdk
+    - run: ls -la /home/runner/.dotnet/sdk
     
 #     - run: sudo rm -rf /Users/runner/.dotnet
     
@@ -32,5 +32,5 @@ jobs:
     
     - run: dotnet --version
     
-    - run: ls -la /Users/runner/.dotnet/sdk
+    - run: ls -la /home/runner/.dotnet/sdk
 
