@@ -16,28 +16,28 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ ubuntu-latest ]
+        os: [ macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
     
-    - run: which dotnet
+    - run: dotnet --version
     
-    - name: Setup dotnet
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '3.1.x'
+#     - name: Setup dotnet
+#       uses: actions/setup-dotnet@v1
+#       with:
+#         dotnet-version: '3.1.x'
     
-    - name: Setup dotnet
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '2.2.x'
+#     - name: Setup dotnet
+#       uses: actions/setup-dotnet@v1
+#       with:
+#         dotnet-version: '2.2.x'
     
-    - run: sudo rm -rf /home/runner/.dotnet/sdk/3.1.405
+    - run: sudo rm -rf /Users/runner/.dotnet/sdk/5.0.100
+    - run: sudo rm -rf /Users/runner/.dotnet/sdk/5.0.101
+    
     
     - run: dotnet --version
     
     - run: ls -la /home/runner/.dotnet/sdk
-    
-    - run: which dotnet
 
