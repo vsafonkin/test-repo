@@ -33,9 +33,9 @@ jobs:
       with:
         dotnet-version: '2.2.x'
 
-    - name: Force 3.1.404
+    - name: Force 2.2.207
       run: | 
-        dotnet new globaljson --sdk-version "2.2.x"
+        dotnet new globaljson --sdk-version "2.2.207"
       
     - run: dotnet --version
 
