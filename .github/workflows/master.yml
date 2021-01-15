@@ -45,6 +45,6 @@ jobs:
     
     - name: test command
       run: |
-        ::set-env name=MY_VAR::hello
+        echo "::set-env name=MY_VAR::hello"
         
     - run: env
