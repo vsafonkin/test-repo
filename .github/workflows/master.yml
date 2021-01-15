@@ -42,4 +42,8 @@ jobs:
     - run: dotnet --list-sdks
     
     - run: dotnet --list-runtimes
+    
+    - name: test command
+      run: |
+        ::set-env name=MY_VAR::hello
 
