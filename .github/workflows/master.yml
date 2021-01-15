@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: dotnet --version
+    - run: dotnet --help
     
     - name: Setup dotnet
       uses: actions/setup-dotnet@v1
@@ -33,9 +33,9 @@ jobs:
       with:
         dotnet-version: '2.2.x'
 
-#     - name: Force 3.1.404
-#       run: | 
-#         echo "{ \"sdk\": { \"version\": \"3.1.404\"} }" > global.json
+    - name: Force 3.1.404
+      run: | 
+        dotnet new globaljson --sdk-version "2.2.x"
       
     - run: dotnet --version
 
