@@ -23,7 +23,7 @@ jobs:
     
     - run: env
     
-    - run: ls /c/hostedtoolcache/windows/Python/3.7.9/x64
+    - run: ls C:\hostedtoolcache\windows\Python\3.7.9\x64
     
     - run: dotnet --help
     
