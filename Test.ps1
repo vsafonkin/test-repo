@@ -1,20 +1,2 @@
-function Get-sqlcmdVersion {
-    $bcpVersion = sqlcmd -? | Select-String -Pattern "Version" | Take-OutputPart -Part 1
-    return "sqlcmd $bcpVersion"
-}
-
-function Take-OutputPart {
-    param (
-        [Parameter(ValueFromPipeline)]
-        [string] $toolOutput,
-        [string] $Delimiter = " ",
-        [int[]] $Part
-    )
-    $parts = $toolOutput.Split($Delimiter, [System.StringSplitOptions]::RemoveEmptyEntries)
-    $selectedParts = $parts[$Part]
-    return [string]::Join($Delimiter, $selectedParts)
-}
-
-Get-sqlcmdVersion
-Write-Host "-----"
-sqlcmd -?
+$sdkManager = "$env:ANDROID_SDK_ROOT\tools\bin\sdkmanager.bat"
+$sdkManager --list
