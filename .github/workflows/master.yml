@@ -21,28 +21,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: env
-    
-    - run: ls C:\hostedtoolcache\windows\Python\3.7.9\x64
-    
-    - run: dotnet --help
-    
-    - run: dotnet --list-sdks
-    
-    - run: dotnet --list-runtimes
-    
-    - name: Setup dotnet
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.1.x
-    
-#     - name: Setup dotnet
-#       uses: actions/setup-dotnet@v1
-#       with:
-#         dotnet-version: '2.2.x'
-      
-    - run: dotnet --version
-    
-    - run: dotnet --list-sdks
-    
-    - run: dotnet --list-runtimes
+    - run: pwsh .\Test.ps1
