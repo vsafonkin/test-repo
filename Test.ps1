@@ -1,28 +1,46 @@
-function Get-AndroidSDKManagerPath {
-    return Join-Path $env:ANDROID_HOME "tools\bin\sdkmanager.bat"
+function Get-AndroidPackages {
+    Param
+    (
+        [Parameter(Mandatory=$true)]
+        [string]$AndroidSDKManagerPath
+    )
+
+    return (& $AndroidSDKManagerPath --list --verbose).Trim() | Foreach-Object { $_.Split()[0] } | Where-Object {$_}
 }
 
-function Get-AndroidAvailablePackages {
-    $androidSDKManagerPath = Get-AndroidSDKManagerPath
-    $androidSDKManagerList = & $androidSDKManagerPath --list --include_obsolete
-    $androidAvailablePackages = @()
-    $availablePackagesFlag = $false
-    foreach($packageInfo in $androidSDKManagerList) {
-        if(-not $availablePackagesFlag -and $packageInfo -Match "Available Packages:") {
-            $availablePackagesFlag = $true
-        }
-        if ($availablePackagesFlag) {
-            $androidAvailablePackages += $packageInfo
-        }
-    }
-    return $androidAvailablePackages
+function Get-AndroidPackagesByName {
+    Param (
+        [Parameter(Mandatory=$true)]
+        [string[]]$AndroidPackages,
+        [Parameter(Mandatory=$true)]
+        [string]$PrefixPackageName
+    )
+
+    return $AndroidPackages | Where-Object { "$_".StartsWith($PrefixPackageName) }
+}
+
+function Get-AndroidPackagesByVersion {
+    Param (
+        [Parameter(Mandatory=$true)]
+        [string[]]$AndroidPackages,
+        [Parameter(Mandatory=$true)]
+        [string]$PrefixPackageName,
+        [object]$MinimumVersion,
+        [char]$Delimiter,
+        [int]$Index = 0
+    )
+
+    $Type = $MinimumVersion.GetType()
+    $packagesByName = Get-AndroidPackagesByName -AndroidPackages $AndroidPackages -PrefixPackageName $PrefixPackageName
+    $packagesByVersion = $packagesByName | Where-Object { ($_.Split($Delimiter)[$Index] -as $Type) -ge $MinimumVersion }
+    return $packagesByVersion | Sort-Object { $_.Split($Delimiter)[$Index] -as $Type} -Unique
 }
 
 $sdkManager = "$env:ANDROID_SDK_ROOT\tools\bin\sdkmanager.bat"
-# & $sdkManager "ndk;22" | Out-Null
+$androidPackages = Get-AndroidPackages -AndroidSDKManagerPath $sdkManager
 
-# Get-ChildItem "$env:ANDROID_SDK_ROOT\ndk"
-
-& $sdkManager --list
-Write-Host "--------------------------------------"
-Get-AndroidAvailablePackages
+$ndkList = Get-AndroidPackagesByVersion -AndroidPackages $androidPackages `
+                -PrefixPackageName "ndk;" `
+                -MinimumVersion "21"
+                
+$ndkList
