@@ -43,5 +43,6 @@ $androidPackages = Get-AndroidPackages -AndroidSDKManagerPath $sdkManager
 
 $ndkList = Get-AndroidPackagesByName -AndroidPackages $androidPackages `
                 -PrefixPackageName "ndk;" `
+                | Where { $_ -Match "ndk;$ndkLTSVersion.*" }
                 
-$ndkList | Where { ($_ -Match "ndk;$ndkLTSVersion.*" }
+$ndkList 
