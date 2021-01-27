@@ -37,6 +37,7 @@ function Get-AndroidPackagesByVersion {
 }
 
 $ndkLTSVersion = "21"
+$ndkLatestVersion = "22"
 
 $sdkManager = "$env:ANDROID_SDK_ROOT\tools\bin\sdkmanager.bat"
 $androidPackages = Get-AndroidPackages -AndroidSDKManagerPath $sdkManager
@@ -48,3 +49,12 @@ $ndkLTSFullVersion = Get-AndroidPackagesByName -AndroidPackages $androidPackages
                 | Select-Object -Last 1
                 
 $ndkLTSFullVersion 
+
+$ndkLatestFullVersion = Get-AndroidPackagesByName -AndroidPackages $androidPackages `
+                -PrefixPackageName "ndk;" `
+                | Where { $_ -Match "ndk;$ndkLatestVersion.*" } `
+                | Sort-Object -Unique `
+                | Select-Object -Last 1
+                
+Write-Host "----"
+$ndkLatestFullVersion
