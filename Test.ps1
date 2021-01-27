@@ -18,11 +18,11 @@ function Get-AndroidAvailablePackages {
     return $androidAvailablePackages
 }
 
-# $sdkManager = "$env:ANDROID_SDK_ROOT\tools\bin\sdkmanager.bat"
+$sdkManager = "$env:ANDROID_SDK_ROOT\tools\bin\sdkmanager.bat"
 # & $sdkManager "ndk;22" | Out-Null
 
 # Get-ChildItem "$env:ANDROID_SDK_ROOT\ndk"
-# Write-Host "----------------"
-# & $sdkManager --list
 
+& $sdkManager --list
+Write-Host "--------------------------------------"
 Get-AndroidAvailablePackages
