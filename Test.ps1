@@ -59,5 +59,5 @@ $ndkLatestFullVersion = Get-AndroidPackagesByName -AndroidPackages $androidPacka
 Write-Host "----"
 $ndkLatestFullVersion
 
-$ndkLatestPath = "$sdkRoot\ndk\${$ndkLatestFullVersion.Split(";")[1]}"
+$ndkLatestPath = "$sdkRoot\ndk\$($ndkLatestFullVersion.Split(";")[1])"
 $ndkLatestPath
