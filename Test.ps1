@@ -36,11 +36,12 @@ function Get-AndroidPackagesByVersion {
     return $packagesByVersion | Sort-Object { $_.Split($Delimiter)[$Index] -as $Type} -Unique
 }
 
+$ndkLTSVersion = "21"
+
 $sdkManager = "$env:ANDROID_SDK_ROOT\tools\bin\sdkmanager.bat"
 $androidPackages = Get-AndroidPackages -AndroidSDKManagerPath $sdkManager
 
-$ndkList = Get-AndroidPackagesByVersion -AndroidPackages $androidPackages `
+$ndkList = Get-AndroidPackagesByName -AndroidPackages $androidPackages `
                 -PrefixPackageName "ndk;" `
-                -MinimumVersion "21"
                 
-$ndkList
+$ndkList | Where { ($_.Split(";")[1]).Split(".")[0] -Match $ndkLTSVersion }
