@@ -25,4 +25,4 @@ jobs:
     
     - name: compile helloworld.c
       run: |
-        C:\msys64\mingw32\bin\gcc -v -mtune=core2 -march=nocona helloworld.c -o helloworld
+        C:\msys64\mingw32\bin\gcc -v helloworld.c -o helloworld
