@@ -20,5 +20,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: ls /c/msys64/mingw32/bin
+    - run: gcc --version
     - run: pwsh .\Test.ps1
