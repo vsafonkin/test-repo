@@ -1,1 +1,1 @@
-Get-ChildItem -Path "C:\msys64"
+Get-ChildItem -Path "C:\msys64\mingw32"
