@@ -25,4 +25,4 @@ jobs:
     
     - name: compile helloworld.c
       run: |
-        C:\msys64\mingw32\bin\gcc -Wall helloworld.c -o helloworld
+        C:\msys64\mingw32\bin\gcc -v -Wall helloworld.c -o helloworld
