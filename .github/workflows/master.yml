@@ -20,5 +20,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: gcc --version
+
     - run: C:\msys64\mingw32\bin\gcc --version
+    
+    - name: compile helloworld.c
+      run: |
+        C:\msys64\mingw32\bin\gcc -Wall helloworld.c -o helloworld
