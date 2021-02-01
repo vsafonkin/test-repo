@@ -23,4 +23,4 @@ jobs:
 
     - name: Test
       run: |
-        find "/Applications/Visual Studio.app/Contents/Resources" -name 'MSBuild.*'
+        mono --help
