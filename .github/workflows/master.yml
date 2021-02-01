@@ -23,4 +23,4 @@ jobs:
 
     - name: Test
       run: |
-        ls -la "/Library/Frameworks/Mono.framework/Versions/Current/Commands/msbuild"
+        ls -la "/Library/Frameworks/Mono.framework/Commands/msbuild"
