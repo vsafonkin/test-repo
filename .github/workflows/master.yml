@@ -23,4 +23,4 @@ jobs:
 
     - name: Test
       run: |
-        ls "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/bin/MSBuild/Current/bin"
+        ls "/Library/Frameworks/Mono.framework/Versions/Current/Commands/msbuild"
