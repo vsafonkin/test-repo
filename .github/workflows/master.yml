@@ -16,19 +16,11 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ windows-latest ]
+        os: [ macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
 
-    - name: add mingw32 to path
-      shell: bash
+    - name: Test
       run: |
-        echo "C:\msys64\mingw32\bin" >> $GITHUB_PATH
-    
-    - run: i686-w64-mingw32-gcc --version
-
-    - name: compile helloworld.c
-      run: |
-        i686-w64-mingw32-gcc -v helloworld.c -o helloworld
-        $LASTEXITCODE
+        ls "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/bin/MSBuild/Current/bin"
