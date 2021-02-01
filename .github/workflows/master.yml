@@ -23,7 +23,7 @@ jobs:
 
     - run: |
         echo "C:\msys64\mingw32\bin" >> $GITHUB_PATH
-
+    - run: env
     - run: C:\msys64\mingw32\bin\gcc --version
     
     - name: compile helloworld.c
