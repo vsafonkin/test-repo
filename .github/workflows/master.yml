@@ -31,4 +31,4 @@ jobs:
     - name: compile helloworld.c
       run: |
         i686-w64-mingw32-gcc -v helloworld.c -o helloworld
-         
+        $LASTEXITCODE
