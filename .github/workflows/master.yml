@@ -23,4 +23,4 @@ jobs:
 
     - name: Test
       run: |
-        ls -la "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/bin/MSBuild/Current/bin"
+        mono --version
