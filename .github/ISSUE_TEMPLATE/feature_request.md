@@ -6,6 +6,11 @@ labels: enhancement
 assignees: ''
 ---
 
-**Description**
+**Description:**
+Describe your proposal.
 
-**Issue**
+**Related issue:**
+Add issue link.
+
+**Pull request:**
+Add pull request link (if it exists).
