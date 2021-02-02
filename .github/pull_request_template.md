@@ -2,6 +2,6 @@
 
 **Related issue:** Add link to related issue.
 
-**Documentation changes required:** (Y/N) Mark if documentation changes are required.
+**Documentation changes required:** - [ ] Mark if documentation changes are required.
 
-**Added tests:** (Y/N) Mark if tests were added or updated according changes.
+**Test updates** - [ ] Mark if tests were added or updated to cover the changes.
