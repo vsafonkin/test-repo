@@ -1,7 +1,7 @@
-**Description**: <Describe your changes here>
+**Description**: Describe your changes.
 
-**Related issue:** <Please add link to related issue here>
+**Related issue:** Add link to related issue.
 
-**Documentation changes required:** (Y/N) <Please mark if documentation changes are required>
+**Documentation changes required:** (Y/N) Mark if documentation changes are required.
 
-**Added tests:** (Y/N) <Please mark if tests were added or updated according changes>
+**Added tests:** (Y/N) Mark if tests were added or updated according changes.
