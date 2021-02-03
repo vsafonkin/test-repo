@@ -16,16 +16,11 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ macos-latest ]
+        os: [ windows-latest ]
 
     steps:
     - uses: actions/checkout@v2
 
     - name: Test
       run: |
-        ls -la /Library/Frameworks/Mono.framework/Commands/msbuild
-    
-    - name: Setup dotnet
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 'latest'
+        Get-ChildItem "C:\Users\runneradmin\AppData\Local\Microsoft\dotnet"
