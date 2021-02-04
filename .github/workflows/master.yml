@@ -24,3 +24,4 @@ jobs:
     - name: Test
       run: |
         pwd
+        ls .
