@@ -16,11 +16,11 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ windows-latest ]
+        os: [ ubuntu-latest ]
 
     steps:
     - uses: actions/checkout@v2
 
     - name: Test
       run: |
-        Get-ChildItem "C:\Users\runneradmin\AppData\Local\Microsoft\dotnet"
+        pwd
