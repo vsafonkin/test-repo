@@ -24,5 +24,7 @@ jobs:
     - name: Test
       shell: pwsh
       run: |
+        $dotnet = Get-Command dotnet | Select-Object -First 1 | ForEach-Object { $_.Path }
+        Write-Host "Found '$dotnet'"
         $version = & $dotnet --version | Out-String | ForEach-Object { $_.Trim() }
         Write-Host "Version $version"
