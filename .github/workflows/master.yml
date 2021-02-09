@@ -16,21 +16,17 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ macos-latest, ubuntu-latest, windows-latest ]
+        os: [ ubuntu-16.04, ubuntu-18.04, ubuntu-20.04 ]
 
     steps:
     - uses: actions/checkout@v2
 
-    - name: Setup dotnet
-      uses: actions/setup-dotnet@v1
-      with:
-        source-url: https://api.nuget.org/v3/index.json
-      env:
-        NUGET_AUTH_TOKEN: NOTATOKEN
-      
-    - run: dotnet --version
+#     - name: Setup dotnet
+#       uses: actions/setup-dotnet@v1
+#       with:
+#         source-url: https://api.nuget.org/v3/index.json
+#       env:
+#         NUGET_AUTH_TOKEN: NOTATOKEN
     
-    - name: Verify nuget config file
-      shell: pwsh
-      run: |
-        if (Test-Path "../nuget.config") { Get-Content "../nuget.config" }
+    - name: pull image from ACR
+      run: docker pull testconnection.azurecr.io/testacrconnection:v1
