@@ -28,5 +28,12 @@ jobs:
 #       env:
 #         NUGET_AUTH_TOKEN: NOTATOKEN
     
+    - name: Azure Container Registry Login
+      uses: Azure/docker-login@v1
+      with:
+        username: ${{ secrets.ACR_USERNAME }} 
+        password: ${{ secrets.ACR_PASS }}
+        login-server: https://testconnection.azurecr.io/v2
+        
     - name: pull image from ACR
       run: docker pull testconnection.azurecr.io/testacrconnection:v1
