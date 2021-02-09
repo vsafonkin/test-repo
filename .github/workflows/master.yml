@@ -33,7 +33,7 @@ jobs:
       with:
         username: ${{ secrets.ACR_USERNAME }} 
         password: ${{ secrets.ACR_PASS }}
-        login-server: https://testconnection.azurecr.io/v2
+        login-server: https://testconnection.azurecr.io
         
     - name: pull image from ACR
       run: docker pull testconnection.azurecr.io/testacrconnection:v1
