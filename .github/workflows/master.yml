@@ -15,6 +15,7 @@ jobs:
   run_master:
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os: [ windows-2016, windows-2019 ]
 
@@ -39,4 +40,6 @@ jobs:
 #       run: docker pull testconnection.azurecr.io/testacrconnection:v1
 
     - name: Install windows updates
-      run: Get-WUInstall -MicrosoftUpdate -AcceptAll -Install -IgnoreUserInput -IgnoreReboot
+      run: |
+        Import-Module PSWindowsUpdate
+        Get-WUInstall -MicrosoftUpdate -AcceptAll -Install -IgnoreUserInput -IgnoreReboot
