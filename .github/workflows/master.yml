@@ -42,4 +42,4 @@ jobs:
     - name: Install windows updates
       run: |
         Import-Module PSWindowsUpdate
-        Get-WUInstall -MicrosoftUpdate -AcceptAll -Install -IgnoreUserInput -IgnoreReboot
+        Get-Help Get-WUInstall
