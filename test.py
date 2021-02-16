@@ -1,4 +1,4 @@
 import socket
 
-addrInfo = socket.getaddrinfo("github.com", None, family=AF_INET6)
+addrInfo = socket.getaddrinfo("github.com", None, family=socket.AF_INET6)
 print(addrInfo)
