@@ -1,1 +1,1 @@
-[System.Net.Dns]::GetHostAddresses("github.com") | foreach {Write-Host $_.IPAddressToString }
+[System.Net.Dns]::GetHostAddresses("amazon.com") | foreach {Write-Host $_.IPAddressToString }
