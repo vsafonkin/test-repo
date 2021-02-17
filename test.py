@@ -1,6 +1,6 @@
 import socket
 
-addrInfo = socket.getaddrinfo("localhost", None)
+addrInfo = socket.getaddrinfo("google.com", None)
 for item in addrInfo:
     print(item)
 
