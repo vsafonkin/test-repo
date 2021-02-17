@@ -23,8 +23,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: ifconfig
+    - name: if a
       if: ${{ matrix.os == 'ubuntu-latest' }}
+      run: if a
+    
+    - name: ifconfig
+      if: ${{ matrix.os == 'macos-latest' }}
       run: ifconfig
 
     - name: ipconfig
