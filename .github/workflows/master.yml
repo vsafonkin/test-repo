@@ -24,7 +24,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: check ipv6
-      if: matrix.os == "ubuntu-latest"
+      if: matrix.os == ubuntu-latest
       run: ls -la /proc/net
 
 #     - name: Setup dotnet
