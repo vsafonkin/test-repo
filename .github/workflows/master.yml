@@ -51,6 +51,10 @@ jobs:
 #       run: |
 #         runc --version
 
+    - name: get host ip
+      shell: pwsh
+      run: Test.ps1
+      
     - name: Setup Python
       uses: actions/setup-python@v2
       with:
