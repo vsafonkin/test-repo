@@ -23,6 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: cat ~/.bashrc
+    - run: source ~/.bashrc
     - run: echo $PATH
     - name: ip a
       if: ${{ matrix.os == 'ubuntu-latest' }}
