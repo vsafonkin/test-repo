@@ -23,7 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: ls -la /etc/init.d
-    - run: cat /etc/profile
+    - run: cat /etc/init.d/console-setup.sh
     - run: echo $PATH
     - name: ip a
       if: ${{ matrix.os == 'ubuntu-latest' }}
