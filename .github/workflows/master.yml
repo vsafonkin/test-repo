@@ -22,7 +22,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: ls -la /etc
+    - run: ls -la /etc/init.d
     - run: cat /etc/profile
     - run: echo $PATH
     - name: ip a
