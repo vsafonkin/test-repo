@@ -22,8 +22,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: cat ~/.bashrc
-    - run: source ~/.bashrc
+    - run: cat ~/.bash_profile
+    - run: cat /etc/profile
     - run: echo $PATH
     - name: ip a
       if: ${{ matrix.os == 'ubuntu-latest' }}
