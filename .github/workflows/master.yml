@@ -22,7 +22,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: cat ~/.bash_profile
+    - run: echo 'source ~/.bashrc' >> /etc/profile
     - run: cat /etc/profile
     - run: echo $PATH
     - name: ip a
