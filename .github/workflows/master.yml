@@ -32,6 +32,8 @@ jobs:
       if: ${{ matrix.os == 'windows-latest' }}
       run: pwsh ./dotnet-installers/install-dotnet.ps1 -Channel LTS
 
+    - run: echo $PATH
+
     - run: dotnet --info
 
     
