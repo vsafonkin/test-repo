@@ -1,0 +1,22 @@
+{
+  "name": "test-repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "start": "tsc test.ts && node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vsafonkin/test-repo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vsafonkin/test-repo/issues"
+  },
+  "homepage": "https://github.com/vsafonkin/test-repo#readme",
+  "dependencies": {
+    "semver": "^7.3.4"
+  }
+}
