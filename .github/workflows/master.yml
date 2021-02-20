@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: get host ip
-      if: ${{ matrix.os == "ubuntu-latest" }}
+      if: ${{ matrix.os }} == "ubuntu-latest"
       run: ./dotnet-install.sh
 
     - run: dotnet --info
