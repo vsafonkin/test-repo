@@ -26,11 +26,11 @@ jobs:
 
     - name: Install dotnet (Ubuntu)
       if: ${{ matrix.os == 'ubuntu-latest' }}
-      run: bash ./dotnet-installers/install-dotnet.sh --channel release/6.0.1xx
+      run: bash ./dotnet-installers/install-dotnet.sh --channel release/6.0.1xx-preview1
     
     - name: Install dotnet (Windows)
       if: ${{ matrix.os == 'windows-latest' }}
-      run: pwsh ./dotnet-installers/install-dotnet.ps1 -Channel release/6.0.1xx
+      run: pwsh ./dotnet-installers/install-dotnet.ps1 -Channel release/6.0.1xx-preview1
 
     - run: echo $PATH
 
