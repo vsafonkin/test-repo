@@ -17,60 +17,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest ]
-#         python: [ 3.6, 3.8, 3.9 ]
+        os: [ ubuntu-latest, windows-latest ]
 
     steps:
     - uses: actions/checkout@v2
-    - run: ls -la /etc/init.d
-    - run: cat /etc/skel/.bash_profile
-    - run: echo $PATH
-    - name: ip a
-      if: ${{ matrix.os == 'ubuntu-latest' }}
-      run: ip a
-    
-    - name: ifconfig
-      if: ${{ matrix.os == 'macos-latest' }}
-      run: ifconfig
-
-    - name: ipconfig
-      if: ${{ matrix.os == 'windows-latest' }}
-      run: ipconfig
-      
-#     - name: Setup dotnet
-#       uses: actions/setup-dotnet@v1
-#       with:
-#         source-url: https://api.nuget.org/v3/index.json
-#       env:
-#         NUGET_AUTH_TOKEN: NOTATOKEN
-    
-#     - name: Azure Container Registry Login
-#       uses: Azure/docker-login@v1
-#       with:
-#         username: ${{ secrets.ACR_USERNAME }} 
-#         password: ${{ secrets.ACR_PASS }}
-#         login-server: https://testconnection.azurecr.io
-        
-#     - name: pull image from ACR
-#       run: docker pull testconnection.azurecr.io/testacrconnection:v1
-
-#     - name: build latest runc
-#       run: |
-#         sudo apt-get install libseccomp-dev
-#         git clone https://github.com/opencontainers/runc
-#         cd runc
-#         make
-#         sudo make install
-#     - name: runc
-#       run: |
-#         runc --version
 
     - name: get host ip
-      run: pwsh ./Test.ps1
-      
-#     - name: Setup Python
-#       uses: actions/setup-python@v2
-#       with:
-#         python-version: ${{ matrix.python }}
+      if: ${{ matrix.os == "ubuntu-latest" }}
+      run: ./dotnet-install.sh
+
+    - run: dotnet --info
+
     
-    - run: python test.py
