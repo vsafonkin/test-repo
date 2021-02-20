@@ -28,7 +28,7 @@ jobs:
     
     - name: Install dotnet (Windows)
       if: ${{ matrix.os == 'windows-latest' }}
-      run: bash ./dotnet-installers/dotnet-install.ps1 --version latest
+      run: bash ./dotnet-installers/dotnet-install.ps1 -Version latest
 
     - run: dotnet --info
 
