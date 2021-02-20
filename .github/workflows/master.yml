@@ -30,7 +30,7 @@ jobs:
     
     - name: Install dotnet (Windows)
       if: ${{ matrix.os == 'windows-latest' }}
-      run: pwsh ./dotnet-installers/install-dotnet.ps1 -Channel 3.0 master
+      run: pwsh ./dotnet-installers/install-dotnet.ps1 -Channel master
 
     - run: echo $PATH
 
