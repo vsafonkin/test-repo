@@ -17,23 +17,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest, windows-latest ]
+        os: [ ubuntu-latest, windows-latest, macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
 
-    - run: dotnet --info
-
-    - name: Install dotnet (Ubuntu)
-      if: ${{ matrix.os == 'ubuntu-latest' }}
-      run: bash ./dotnet-installers/install-dotnet.sh --version 6.0.0-preview.1
-    
-    - name: Install dotnet (Windows)
-      if: ${{ matrix.os == 'windows-latest' }}
-      run: pwsh ./dotnet-installers/install-dotnet.ps1 -Channel release/6.0.1xx-preview1
-
-    - run: echo $PATH
-
-    - run: dotnet --info
+    - run: go --version
 
     
