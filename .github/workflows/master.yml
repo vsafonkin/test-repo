@@ -17,27 +17,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest, macos-latest ]
+        os: [ ubuntu-latest ]
 
     steps:
     - uses: actions/checkout@v2
 
-    - run: go version
-    - run: sudo go version
-    - run: echo $PATH
-    - run: echo $GOPATH
-    - run: sudo echo $PATH
-    - run: sudo echo $GOPATH
-
-    - uses: actions/setup-go@v2
-      with:
-        go-version: '1.13.1'
-
-    - run: go version
-    - run: sudo go version
-    - run: echo $PATH
-    - run: echo $GOPATH
-    - run: sudo echo $PATH
-    - run: sudo echo $GOPATH
-
+    - run: grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
     
