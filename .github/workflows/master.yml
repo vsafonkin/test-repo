@@ -24,6 +24,8 @@ jobs:
 
     - run: go version
     - run: sudo go version
+    - run: echo $PATH
+    - run: sudo echo $PATH
 
     - uses: actions/setup-go@v2
       with:
@@ -31,5 +33,7 @@ jobs:
 
     - run: go version
     - run: sudo go version
+    - run: echo $PATH
+    - run: sudo echo $PATH
 
     
