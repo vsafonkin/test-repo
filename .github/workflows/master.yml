@@ -25,9 +25,9 @@ jobs:
     - run: go version
     - run: sudo go version
     - run: echo $PATH
-    - run: echo $GOROOT
+    - run: echo $GOPATH
     - run: sudo echo $PATH
-    - run: sudo echo $GOROOT
+    - run: sudo echo $GOPATH
 
     - uses: actions/setup-go@v2
       with:
@@ -36,8 +36,8 @@ jobs:
     - run: go version
     - run: sudo go version
     - run: echo $PATH
-    - run: echo $GOROOT
+    - run: echo $GOPATH
     - run: sudo echo $PATH
-    - run: sudo echo $GOROOT
+    - run: sudo echo $GOPATH
 
     
