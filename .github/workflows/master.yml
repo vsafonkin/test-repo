@@ -17,10 +17,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest ]
+        os: [ windows-2016, windows-2019 ]
 
     steps:
     - uses: actions/checkout@v2
 
-    - run: dotnet --info
+    - run: bash --version
     
