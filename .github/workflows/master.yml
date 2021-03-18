@@ -22,5 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - run: bash --version
+    - name: test bash
+      shell: bash
+      run: echo 'check bash'
     
