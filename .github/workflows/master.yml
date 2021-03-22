@@ -24,7 +24,7 @@ jobs:
 
     - run: clang++-9 -v
     # - run: sudo rm -rf /usr/include/x86_64-linux-gnu
-
+    - run: apt-get purge -y libc++abi-11-dev libc++-11-dev && apt-get install -y libc++abi-dev libc++-dev
     - name: build
       run: |
         # export CPLUS_INCLUDE_PATH=/usr/include/c++/10:/usr/include/x86_64-linux-gnu/c++/10
