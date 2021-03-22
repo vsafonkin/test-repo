@@ -24,6 +24,7 @@ jobs:
 
     - run: clang++ -v
     - run: ls -la /usr/include/x86_64-linux-gnu/c++/10
+    - run: sudo rm -rf /usr/include/x86_64-linux-gnu/c++/10
 
     - name: build
       run: |
