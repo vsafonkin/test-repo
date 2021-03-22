@@ -24,7 +24,7 @@ jobs:
 
     - name: build
       run: |
-        clang++11 -stdlib=libc++-11 test.cpp -o test -v
+        clang++-11 -stdlib=libc++-11 test.cpp -o test -v
 
     - run: ./test
     
