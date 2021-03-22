@@ -22,6 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - run: clang++ -v
     - run: ls -la /usr/local/include
     - run: ls -la /usr/lib/llvm-10/lib/clang/10.0.0/include
     - run: ls -la /usr/include/x86_64-linux-gnu
