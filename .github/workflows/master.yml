@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - run: clang++ -v
-    - run: sudo rm -rf /usr/include/x86_64-linux-gnu/c++/10
+    - run: sudo rm -rf /usr/include/x86_64-linux-gnu
 
     - name: build
       run: |
