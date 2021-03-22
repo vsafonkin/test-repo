@@ -22,11 +22,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - run: apt-get install libc++-dev
-
     - name: build
       run: |
-        clang++ -stdlib=libc++ test.cpp -o test
+        clang++ -stdlib=libc++-dev test.cpp -o test
 
     - run: ./test
     
