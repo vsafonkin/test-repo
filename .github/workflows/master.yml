@@ -28,7 +28,7 @@ jobs:
     - name: build
       run: |
         # export CPLUS_INCLUDE_PATH=/usr/include/c++/10:/usr/include/x86_64-linux-gnu/c++/10
-        clang++-11 -stdlib=libc++ test.cpp -o test -v
+        clang++ -stdlib=libc++ test.cpp -o test -v
 
     - run: ./test
     
