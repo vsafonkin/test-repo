@@ -27,7 +27,7 @@ jobs:
 
     - name: build
       run: |
-        clang++ -stdlib=libc++ -I/usr/include/c++/10/ test.cpp -o test -v
+        clang++ -stdlib=libc++ -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 test.cpp -o test -v
 
     - run: ./test
     
