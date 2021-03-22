@@ -26,7 +26,8 @@ jobs:
 
     - name: build
       run: |
-        clang++ CXX=clang++-9 -stdlib=libc++ test.cpp -o test -v
+        CXX=clang++-9
+        clang++ -stdlib=libc++ test.cpp -o test -v
 
     - run: ./test
     
