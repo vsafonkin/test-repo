@@ -24,5 +24,7 @@ jobs:
 
     - name: build
       run: |
-        clang++-11 --version
+        clang++-11 test.cpp -o test
+
+    - run: ./test
     
