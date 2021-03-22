@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - run: clang++ -v
-    - run: ls -la /usr/include/x86_64-linux-gnu/c++
+    - run: ls -la /usr/include/x86_64-linux-gnu/c++/10
 
     - name: build
       run: |
