@@ -17,17 +17,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest ]
+        os: [ ubuntu-18.04 ]
 
     steps:
     - uses: actions/checkout@v2
 
     - run: clang++ -v
-    - run: sudo rm -rf /usr/include/x86_64-linux-gnu
+    # - run: sudo rm -rf /usr/include/x86_64-linux-gnu
 
     - name: build
       run: |
-        export CPLUS_INCLUDE_PATH=/usr/include/c++/10:/usr/include/x86_64-linux-gnu/c++/10
+        # export CPLUS_INCLUDE_PATH=/usr/include/c++/10:/usr/include/x86_64-linux-gnu/c++/10
         clang++ -stdlib=libc++ test.cpp -o test -v
 
     - run: ./test
