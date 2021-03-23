@@ -22,8 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - run: sudo apt-get install g++-11 -y
-    - run: ls -la /usr/include/x86_64-linux-gnu/c++
+    # - run: ls -la /usr/include/x86_64-linux-gnu/c++
     # - run: sudo rm -rf /usr/include/x86_64-linux-gnu
     # - run: sudo apt-get purge -y libc++abi-11-dev libc++-11-dev && sudo apt-get install -y libc++abi-dev libc++-dev
     - name: build
