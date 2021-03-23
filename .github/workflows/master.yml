@@ -27,7 +27,7 @@ jobs:
     - run: sudo apt-get purge -y libc++abi-11-dev libc++-11-dev && sudo apt-get install -y libc++abi-11-dev libc++-11-dev
     - name: build
       run: |
-        clang++-11 -stdlib=libc++ test.cpp -o test -v
+        clang++ -stdlib=libc++ test.cpp -o test -v
 
     - run: ./test
     
