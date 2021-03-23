@@ -21,6 +21,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - run: g++ --version
     - run: sudo apt-get install -y clang-11 lldb-11 lld-11 clang-format-11
     # - run: ls -la /usr/include/x86_64-linux-gnu/c++
     # - run: sudo rm -rf /usr/include/x86_64-linux-gnu
