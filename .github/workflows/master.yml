@@ -21,7 +21,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: $ANDROID_HOME/tools/bin/lint --version
+    - run: $ANDROID_SDK_ROOT/tools/bin/lint --version
+    - run: $ANDROID_SDK_ROOT/tools/bin/sdkmanager --version
+    - run: $ANDROID_SDK_ROOT/tools/bin/lint --version
     # - run: ls -la /usr/include/x86_64-linux-gnu/c++
     # - run: sudo rm -rf /usr/include/x86_64-linux-gnu
     # - run: sudo apt-get purge -y libc++abi-11-dev libc++-11-dev && sudo apt-get install -y libc++abi-dev libc++-dev

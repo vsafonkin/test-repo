@@ -1,9 +1,9 @@
-language: c#
-os: windows
+language: android
+os: linux
 
 jobs:
   include:
-    - stage: Run Test.ps1
+    - stage: Test
       script: |
-        powershell -c "Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope LocalMachine"
-        powershell ./Test.ps1
+        git clone https://github.com/cyface-de/android-backend
+        cd android-backend
