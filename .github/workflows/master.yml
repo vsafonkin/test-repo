@@ -17,13 +17,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-18.04 ]
+        os: [ ubuntu-16.04 ]
 
     steps:
     - uses: actions/checkout@v2
     # - run: dotnet new globaljson --sdk-version 3.1.403
     # - run: dotnet --version
-    - run: ls
+    - run: sha1sum .
     # - run: ls -la /usr/include/x86_64-linux-gnu/c++
     # - run: sudo rm -rf /usr/include/x86_64-linux-gnu
     # - run: sudo apt-get purge -y libc++abi-11-dev libc++-11-dev && sudo apt-get install -y libc++abi-dev libc++-dev
