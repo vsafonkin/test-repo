@@ -36,7 +36,7 @@ jobs:
         count=1000
         while [ $count -gt 0 ]
         do
-        az acr check-health --name testconnection.azurecr.io/testacrconnection:v1
+        az acr check-health --name testconnection.azurecr.io
         docker pull testconnection.azurecr.io/testacrconnection:v1
         docker image rm testconnection.azurecr.io/testacrconnection:v1
         count=$[ $count - 1 ]
