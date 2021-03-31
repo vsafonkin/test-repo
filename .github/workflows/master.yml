@@ -24,5 +24,6 @@ jobs:
     - run: |
         takeown /F "C:\Users\runneradmin\AppData\Local\Application Data"
         icacls "C:\Users\runneradmin\AppData\Local\Application Data" /grant administrators:F
+        icacls "C:\Users\runneradmin\AppData\Local\Application Data"
         Set-Location "C:\Users\runneradmin\AppData\Local\Application Data"
         Get-ChildItem .
