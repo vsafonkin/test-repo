@@ -31,4 +31,12 @@ jobs:
         login-server: https://testconnection.azurecr.io
         
     - name: pull image from ACR
-      run: docker pull testconnection.azurecr.io/testacrconnection:v1
+      run: |
+        #!/bin/bash -e
+        count=1000
+        while [ $count -gt 0 ]
+        do
+        docker pull testconnection.azurecr.io/testacrconnection:v1
+        docker image rm testconnection.azurecr.io/testacrconnection:v1
+        count=$[ $count - 1 ]
+        done
