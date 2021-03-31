@@ -33,7 +33,7 @@ jobs:
     - name: pull image from ACR
       run: |
         #!/bin/bash -e
-        count=1000
+        count=100
         while [ $count -gt 0 ]
         do
         # az acr check-health --name testconnection
