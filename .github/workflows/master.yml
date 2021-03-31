@@ -1,8 +1,6 @@
 name: master
 
 on:
-  schedule:
-    - cron: '*/15 * * * *'
   workflow_dispatch:
     inputs:
       testParam:
@@ -11,33 +9,16 @@ on:
         default: '1'
   push:
     branches:
-      - master
+      - test-windows
 
 jobs:
   run_master:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ ubuntu-16.04, ubuntu-18.04, ubuntu-20.04 ]
+        os: [ windows-latest ]
 
     steps:
     - uses: actions/checkout@v2
-    
-    - name: Azure Container Registry Login
-      uses: Azure/docker-login@v1
-      with:
-        username: ${{ secrets.ACR_USERNAME }} 
-        password: ${{ secrets.ACR_PASS }}
-        login-server: https://testconnection.azurecr.io
-        
-    - name: pull image from ACR
-      run: |
-        #!/bin/bash -e
-        count=100
-        while [ $count -gt 0 ]
-        do
-        # az acr check-health --name testconnection
-        docker pull testconnection.azurecr.io/testacrconnection:v1
-        docker image rm testconnection.azurecr.io/testacrconnection:v1
-        count=$[ $count - 1 ]
-        done
+
+    - run: Get-ChildItem C:\Users\runneradmin\AppData\Local
