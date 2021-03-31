@@ -21,4 +21,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - run: Get-ChildItem "C:\Users\runneradmin\AppData\Local\Application Data" -Force
+    - run: |
+        Set-Location "C:\Users\runneradmin\AppData\Local\Application Data"
+        Get-ChildItem .
