@@ -23,7 +23,6 @@ jobs:
 
     - run: |
         # takeown /F "C:\Users\runneradmin\AppData\Local\Application Data"
-        icacls "C:\Users\runneradmin\AppData\Local\Application Data" /grant:r administrators:F
-        # icacls "C:\Users\runneradmin\AppData\Local\Application Data"
+        # icacls "C:\Users\runneradmin\AppData\Local\Application Data" /grant:r administrators:F
         Remove-Item "C:\Users\runneradmin\AppData\Local\Application Data"
         Get-ChildItem "C:\Users\runneradmin\AppData\Local" -Recurse -Force
