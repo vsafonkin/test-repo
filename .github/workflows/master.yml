@@ -27,4 +27,4 @@ jobs:
         icacls "C:\Users\runneradmin\AppData\Local\Application Data"
         Set-Location "C:\Users\runneradmin\AppData\Local\Application Data"
         Get-Location
-        Get-ChildItem . -System
+        Get-ChildItem . -Force
