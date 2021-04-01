@@ -22,11 +22,10 @@ jobs:
     - uses: actions/checkout@v2
 
     - run: |
+        apt show postgresql
         sudo rm /etc/apt/sources.list.d/pgdg.list
         sudo rm /etc/apt/sources.list.d/pgdg.list.save
         
     - name: source list
       run: |
         ls -la /etc/apt/sources.list.d
-        echo "----"
-        cat /etc/apt/sources.list.d/pgdg.list
