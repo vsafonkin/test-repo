@@ -13,7 +13,7 @@ function Take-OutputPart {
 function Get-AptSourceRepository {
     param([String] $PackageName)
 
-    return (apt show $PackageName) | Select-String -Pattern "APT-Sources" | Take-OutputPart -Part 1
+    return (apt show $PackageName)
 
 }
 
