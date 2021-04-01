@@ -29,3 +29,7 @@ jobs:
     - name: source list
       run: |
         ls -la /etc/apt/sources.list.d
+
+    - name: test
+      shell: pwsh
+      run: ./Test.ps1
