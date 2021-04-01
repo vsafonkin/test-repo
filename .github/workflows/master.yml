@@ -22,8 +22,8 @@ jobs:
     - uses: actions/checkout@v2
 
     - run: |
-        rm /etc/apt/sources.list.d/pgdg.list
-        rm /etc/apt/sources.list.d/pgdg.list.save
+        sudo rm /etc/apt/sources.list.d/pgdg.list
+        sudo rm /etc/apt/sources.list.d/pgdg.list.save
         
     - name: source list
       run: |
