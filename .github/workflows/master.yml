@@ -21,7 +21,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - run: apt-add-repository << current.repos.list
+    - run: |
+        rm /etc/apt/sources.list.d/pgdg.list
+        rm /etc/apt/sources.list.d/pgdg.list.save
         
     - name: source list
       run: |
