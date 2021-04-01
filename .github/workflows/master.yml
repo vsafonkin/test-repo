@@ -32,6 +32,4 @@ jobs:
 
     - name: test
       run: |
-        echo "hello" >> hello.txt
-        echo "goodbye" >> hello.txt
-        cat hello.txt
+        cat /etc/apt/sources.list.d/heroku.list
