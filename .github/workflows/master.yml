@@ -20,6 +20,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
+    - run: apt-add-repository << current.repos.list
         
     - name: source list
       run: |
