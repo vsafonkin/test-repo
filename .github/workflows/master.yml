@@ -24,3 +24,5 @@ jobs:
     - name: source list
       run: |
         ls -la /etc/apt/sources.list.d
+        echo "----"
+        cat /etc/apt/sources.list.d/pgdg.list
