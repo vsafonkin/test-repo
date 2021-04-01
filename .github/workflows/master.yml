@@ -1,8 +1,6 @@
-name: master
+name: test-apt-repo
 
 on:
-  schedule:
-    - cron: '*/15 * * * *'
   workflow_dispatch:
     inputs:
       testParam:
@@ -11,7 +9,7 @@ on:
         default: '1'
   push:
     branches:
-      - master
+      - test-apt-repository-ubuntu
 
 jobs:
   run_master:
@@ -22,27 +20,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    
-    - name: Azure Container Registry Login
-      uses: Azure/docker-login@v1
-      with:
-        username: ${{ secrets.ACR_USERNAME }} 
-        password: ${{ secrets.ACR_PASS }}
-        login-server: https://testconnection.azurecr.io
         
-    - name: pull image from ACR
+    - name: source list
       run: |
-        #!/bin/bash -e
-        sudo apt-get install tcpdump -y
-        echo "==="
-        ip a
-        echo "==="
-        sudo tcpdump -v -i eth0 port 443 & 
-        count=100
-        while [ $count -gt 0 ]
-        do
-        docker pull testconnection.azurecr.io/testacrconnection:v1
-        docker image rm testconnection.azurecr.io/testacrconnection:v1
-        count=$[ $count - 1 ]
-        done
-        ps -ef | grep 'tcpdump' | grep -v grep | awk '{print $2}' | xargs -r kill -9 | exit 0
+        cat /etc/apt/sources.list.d
