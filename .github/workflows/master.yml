@@ -22,7 +22,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - run: |
-        takeown /F "C:\Users\runneradmin\AppData\Local\Application Data"
+        # takeown /F "C:\Users\runneradmin\AppData\Local\Application Data"
         icacls "C:\Users\runneradmin\AppData\Local\Application Data" /grant:r administrators:F
         # icacls "C:\Users\runneradmin\AppData\Local\Application Data"
         Remove-Item "C:\Users\runneradmin\AppData\Local\Application Data"
