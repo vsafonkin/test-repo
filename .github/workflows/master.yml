@@ -27,5 +27,5 @@ jobs:
         # icacls "C:\Users\runneradmin\AppData\Local\Application Data"
         # Set-Location "C:\Users\runneradmin\AppData\Local\Application Data"
         # Get-Location
-        Set-Location $env:LOCALAPPDATA
-        Get-ChildItem .
+        Set-Location C:\Users\runneradmin\AppData\Local\Application Data
+        cd .\GitHub
