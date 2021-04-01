@@ -31,5 +31,7 @@ jobs:
         ls -la /etc/apt/sources.list.d
 
     - name: test
-      shell: pwsh
-      run: ./Test.ps1
+      run: |
+        echo "hello" >> hello.txt
+        echo "goodbye" >> hello.txt
+        cat hello.txt
