@@ -27,4 +27,5 @@ jobs:
         # icacls "C:\Users\runneradmin\AppData\Local\Application Data"
         # Set-Location "C:\Users\runneradmin\AppData\Local\Application Data"
         # Get-Location
-        Write-Host $env:LOCALAPPDATA
+        Set-Location $env:LOCALAPPDATA
+        Get-ChildItem .
