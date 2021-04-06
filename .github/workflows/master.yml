@@ -29,7 +29,12 @@ jobs:
         username: ${{ secrets.ACR_USERNAME }} 
         password: ${{ secrets.ACR_PASS }}
         login-server: https://testconnection.azurecr.io
-        
+    - name: gh host ip address
+      run: | 
+        dig +short myip.opendns.com @resolver1.opendns.com
+    - name: gh hostname
+      run: | 
+        ls /data/instancename
     - name: pull image from ACR
       run: |
         #!/bin/bash -e
@@ -46,3 +51,4 @@ jobs:
         count=$[ $count - 1 ]
         done
         ps -ef | grep 'tcpdump' | grep -v grep | awk '{print $2}' | xargs -r kill -9 | exit 0
+
