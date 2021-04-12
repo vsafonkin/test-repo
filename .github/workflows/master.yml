@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - run: env
+    - run: ls /Users/runner/runners
 
     - run: gradle --version
     
