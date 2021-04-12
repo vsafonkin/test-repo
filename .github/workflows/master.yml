@@ -26,7 +26,7 @@ jobs:
     
     - name: Test
       run: |
-        ls -la /tmp/*
+        ls -la /tmp
         echo "---------------"
         cd /tmp && gradle tasks
         
@@ -38,5 +38,6 @@ jobs:
     - run: gradle --version
 
     - name: Test
-      run: cd /tmp && gradle tasks
+      run: |
+        cd /tmp && settings.gradle && gradle tasks
 
