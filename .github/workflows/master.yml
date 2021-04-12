@@ -30,6 +30,7 @@ jobs:
         
     - name: uninstall gradle
       run: |
+        brew update
         brew upgrade gradle
         # sudo rm -rf /Users/runner/Library/Caches/Homebrew/downloads
         
