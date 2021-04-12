@@ -29,7 +29,9 @@ jobs:
         cd /tmp && gradle tasks
         
     - name: Upgrade gradle
-      run: brew install gradle@7.0
+      run: |
+        brew uninstall gradle
+        brew install gradle
 
     - run: gradle --version
 
