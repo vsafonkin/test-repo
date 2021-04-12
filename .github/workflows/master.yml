@@ -31,7 +31,7 @@ jobs:
     - name: Upgrade gradle
       run: |
         brew uninstall gradle
-        brew install gradle@7
+        brew install gradle@7.0
 
     - run: gradle --version
 
