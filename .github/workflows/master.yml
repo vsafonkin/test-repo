@@ -30,7 +30,7 @@ jobs:
         
     - name: uninstall gradle
       run: |
-        brew uninstall gradle
+        brew remove gradle
         brew rmtree gradle
         
     - run: brew install gradle
