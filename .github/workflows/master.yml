@@ -34,9 +34,9 @@ jobs:
       run: |
         brew update
         brew upgrade gradle
-        # sudo rm -rf /Users/runner/Library/Caches/Homebrew/downloads
-        
-    # - run: brew install gradle
 
     - run: gradle --version
+
+    - name: Test
+      run: cd /tmp && gradle tasks
 
