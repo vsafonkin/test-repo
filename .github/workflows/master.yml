@@ -41,3 +41,5 @@ jobs:
       run: |
         cd /tmp && touch settings.gradle && gradle tasks
 
+    - run: cat /tmp/settings.gradle
+
