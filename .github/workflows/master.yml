@@ -39,5 +39,5 @@ jobs:
 
     - name: Test
       run: |
-        cd /tmp && settings.gradle && gradle tasks
+        cd /tmp && touch settings.gradle && gradle tasks
 
