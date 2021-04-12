@@ -24,7 +24,8 @@ jobs:
     
     - name: Test
       run: |
-        echo "TEST"
         gradle --version
+        echo "----------"
+        cd /tmp && gradle tasks
         
 
