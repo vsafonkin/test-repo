@@ -31,6 +31,7 @@ jobs:
     - name: uninstall gradle
       run: |
         brew remove gradle
+        sudo rm -rf /Users/runner/Library/Caches/Homebrew/downloads
         
     - run: brew install gradle
 
