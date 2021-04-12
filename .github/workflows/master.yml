@@ -28,10 +28,12 @@ jobs:
       run: |
         cd /tmp && gradle tasks
         
-    - name: Upgrade gradle
+    - name: uninstall gradle
       run: |
         brew uninstall gradle
-        brew install gradle
+        brew rmtree gradle
+        
+    - run: brew install gradle
 
     - run: gradle --version
 
