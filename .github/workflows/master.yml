@@ -30,7 +30,7 @@ jobs:
         echo "---------------"
         cd /tmp && gradle tasks
         
-    - name: uninstall gradle
+    - name: update gradle
       run: |
         brew update
         brew upgrade gradle
@@ -40,6 +40,4 @@ jobs:
     - name: Test
       run: |
         cd /tmp && touch settings.gradle && gradle tasks
-
-    - run: cat /tmp/settings.gradle
 
