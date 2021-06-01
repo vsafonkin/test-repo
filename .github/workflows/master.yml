@@ -18,37 +18,11 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ ubuntu-16.04, ubuntu-18.04, ubuntu-20.04 ]
+        os: [ macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
     
-    - name: Azure Container Registry Login
-      uses: Azure/docker-login@v1
-      with:
-        username: ${{ secrets.ACR_USERNAME }} 
-        password: ${{ secrets.ACR_PASS }}
-        login-server: https://testconnection.azurecr.io
-    - name: gh host ip address
-      run: | 
-        dig +short myip.opendns.com @resolver1.opendns.com
-    - name: gh hostname
-      run: | 
-        ls /data/instancename
-    - name: pull image from ACR
-      run: |
-        #!/bin/bash -e
-        sudo apt-get install tcpdump -y
-        echo "==="
-        ip a
-        echo "==="
-        sudo tcpdump -v -i eth0 port 443 & 
-        count=100
-        while [ $count -gt 0 ]
-        do
-        docker pull testconnection.azurecr.io/testacrconnection:v1
-        docker image rm testconnection.azurecr.io/testacrconnection:v1
-        count=$[ $count - 1 ]
-        done
-        ps -ef | grep 'tcpdump' | grep -v grep | awk '{print $2}' | xargs -r kill -9 | exit 0
+    - run: cat /etc/sudoers
+
 
