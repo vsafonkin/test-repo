@@ -24,6 +24,8 @@ jobs:
     - uses: actions/checkout@v2
     
     - run: ls -la /usr/local/opt/runner/settings
+    - run: ls -la /usr/local/opt/runner/settings/warmup
+    - run: ls -la /usr/local/opt/runner/settings/factory
     - run: cat /Users/runner/.bashrc
 
 
