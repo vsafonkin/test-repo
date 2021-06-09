@@ -23,6 +23,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - run: df -h
+    
     - run: ls -la /usr/local/opt/runner/settings
     - run: ls -la /usr/local/opt/runner/settings/warmup
     - run: ls -la /usr/local/opt/runner/settings/factory
