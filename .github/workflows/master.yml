@@ -23,8 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: df -h
-    
     - run: ls -la /usr/local/opt/runner/settings
+    - run: cat /usr/local/opt/runner/settings/778164636A7E9040C51F9CD3F5FC1FF2FD4ABED5.pfx
 
 
