@@ -24,14 +24,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - run: |
-        set -e
-        git clone https://github.com/miketimofeev/jaxlib-gha-minimal-failing-example.git
-        cd jaxlib-gha-minimal-failing-example
-        brew install python3
-        python3 -m pip --no-cache-dir install --upgrade pip setuptools wheel
-        python3 -m pip --no-cache-dir install -r requirements.txt
-        python3 -m pip list
-        python3 -v debug_64b.py
+        echo "hello"
 
 
 
