@@ -25,6 +25,8 @@ jobs:
     
     - run: |
         sudo sqlite3 "/Library/Application Support/com.apple.TCC/TCC.db" "SELECT * FROM access"
+        echo "------"
+        sudo sqlite3 "~/Library/Application Support/com.apple.TCC/TCC.db" "SELECT * FROM access"
 
 
 
