@@ -18,13 +18,13 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ macos-11.0 ]
+        os: [ macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
     
     - run: |
-        echo "hello"
+        sudo sqlite3 "/Library/Application Support/com.apple.TCC/TCC.db" "SELECT * FROM access"
 
 
 
