@@ -18,5 +18,6 @@
   "homepage": "https://github.com/vsafonkin/test-repo#readme",
   "dependencies": {
     "semver": "npm/node-semver#GH-164"
+    "useragent-generator": "vraravam/useragent-generator#upgrade-constants"
   }
 }
