@@ -18,15 +18,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ macos-latest ]
+        os: [ windows-latest ]
 
     steps:
     - uses: actions/checkout@v2
     
     - run: |
-        sudo sqlite3 "/Library/Application Support/com.apple.TCC/TCC.db" "SELECT * FROM access"
-        echo "------"
-        sudo sqlite3 "/Users/runner/Library/Application Support/com.apple.TCC/TCC.db" "SELECT * FROM access"
+        npm install
+
 
 
 
