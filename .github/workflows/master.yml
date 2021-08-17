@@ -36,7 +36,7 @@ jobs:
             head: "gcc",
             base: "master",
             body: `PR description`
-          }).then(value => console.log(value));
+          }).then(value => console.log(value.data.number));
           return "hello"
         result-encoding: string
           
