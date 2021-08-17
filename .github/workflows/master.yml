@@ -29,16 +29,15 @@ jobs:
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
-          result = github.pulls.create({
+          github.pulls.create({
             owner: context.repo.owner,
             repo: context.repo.repo,
             title: "Test PR",
             head: "gcc",
             base: "master",
             body: `PR description`
-          });
-          console.log(result)
-          return result
+          }).then(value => console.log(value));
+          return "hello"
         result-encoding: string
           
     - name: Get result
