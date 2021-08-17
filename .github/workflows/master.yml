@@ -56,7 +56,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: ${{ steps.create-pr.outputs.result }},
-              reviewers: ['al-cheb']
+              reviewers: ['LeonidLapshin']
           });
      
 
