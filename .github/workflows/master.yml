@@ -21,11 +21,11 @@ jobs:
         os: [ ubuntu-latest ]
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v2
     
     - name: Create pull request for ${{ github.event.client_payload.ReleaseBranchName }}
       id: create-pr
-      uses: actions/github-script@v2
+      uses: actions/github-script@v4
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
