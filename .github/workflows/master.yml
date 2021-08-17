@@ -47,17 +47,17 @@ jobs:
 #         PULL_REQUEST_NUMBER=$(curl https://api.github.com/repos/$OWNER/virtual-environments/pulls\?head\=actions:releases/win16/20210815-docs\&base\=main | jq -r '.[] .number')
 #         echo "PULL_REQUEST_NUMBER=$PULL_REQUEST_NUMBER" >> $GITHUB_ENV
         
-#     - name: Request reviewers
-#       uses: actions/github-script@v2
-#       with:
-#         github-token: ${{secrets.TEST_TOKEN}}
-#         script: |
-#           github.pulls.requestReviewers({
-#               owner: 'actions',
-#               repo: 'virtual-environments',
-#               pull_number: ${{ env.PULL_REQUEST_NUMBER }},
-#               team_reviewers: ['virtual-environments-akvelon']
-#           });
+    - name: Request reviewers
+      uses: actions/github-script@v2
+      with:
+        github-token: ${{secrets.TEST_TOKEN}}
+        script: |
+          github.pulls.requestReviewers({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: ${{ steps.create-pr.outputs.result }},
+              reviewers: ['al-cheb']
+          });
      
 
 
