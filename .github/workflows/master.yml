@@ -29,14 +29,15 @@ jobs:
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
-          github.pulls.create({
+          let response = await github.pulls.create({
             owner: context.repo.owner,
             repo: context.repo.repo,
             title: "Test PR",
             head: "gcc",
             base: "master",
             body: `PR description`
-          }).then(response => return response.data.number);
+          })
+          return response.data.number
         result-encoding: string
           
     - name: Get result
