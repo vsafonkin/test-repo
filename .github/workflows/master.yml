@@ -37,7 +37,7 @@ jobs:
               owner: actions
               repo: virtual-environments
               pull_number: "${{ env.PULL_REQUEST_NUMBER }}"
-              team_reviewers: ["virtual-environments-akvelon"]
+              team_reviewers: "virtual-environments-akvelon"
           })
      
 
