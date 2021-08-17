@@ -24,7 +24,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - run: |
-        OWNER=context.repo.owner
+        OWNER=${{ context.repo.owner }}
         echo $OWNER
         PULL_REQUEST_NUMBER=$(curl https://api.github.com/repos/actions/virtual-environments/pulls\?head\=actions:releases/win16/20210815-docs\&base\=main | jq -r '.[] .number')
         echo "PR_NUMBER=$PULL_REQUEST_NUMBER" >> $GITHUB_ENV
