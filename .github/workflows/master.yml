@@ -18,13 +18,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ windows-latest ]
+        os: [ ubuntu-latest ]
 
     steps:
     - uses: actions/checkout@v2
     
     - run: |
-        npm install
+        PULL_REQUEST_NUMBER=$(curl https://api.github.com/repos/actions/virtual-environments/pulls\?head\=actions:releases/win16/20210815-docs\&base\=main | jq -r '.[] .number')
+        echo $PULL_REQUEST_NUMBER
 
 
 
