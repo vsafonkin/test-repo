@@ -29,7 +29,7 @@ jobs:
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
-          github.pulls.create({
+          result = github.pulls.create({
             owner: context.repo.owner,
             repo: context.repo.repo,
             title: "Test PR",
@@ -37,6 +37,7 @@ jobs:
             base: "master",
             body: `PR description`
           });
+          return result
         result-encoding: string
           
     - name: Get result
