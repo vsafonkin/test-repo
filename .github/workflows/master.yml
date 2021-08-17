@@ -37,6 +37,7 @@ jobs:
             base: "master",
             body: `PR description`
           });
+          console.log(result)
           return result
         result-encoding: string
           
