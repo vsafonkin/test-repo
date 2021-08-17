@@ -25,7 +25,10 @@ jobs:
     
     - run: |
         PULL_REQUEST_NUMBER=$(curl https://api.github.com/repos/actions/virtual-environments/pulls\?head\=actions:releases/win16/20210815-docs\&base\=main | jq -r '.[] .number')
-        echo $PULL_REQUEST_NUMBER
+        echo "PR_NUMBER=$PULL_REQUEST_NUMBER" >> $GITHUB_ENV
+        
+    - run: |
+        echo ${{ env.PR_NUMBER }}
 
 
 
