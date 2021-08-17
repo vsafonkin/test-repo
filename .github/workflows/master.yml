@@ -36,8 +36,8 @@ jobs:
           github.pulls.requestReviewers({
               owner: actions
               repo: virtual-environments
-              pull_number: "${{ env.PULL_REQUEST_NUMBER }}"
-              team_reviewers: "['virtual-environments-akvelon']"
+              pull_number: ${{ env.PULL_REQUEST_NUMBER }}
+              team_reviewers: ['virtual-environments-akvelon']
           })
      
 
