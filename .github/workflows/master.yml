@@ -18,46 +18,48 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ ubuntu-latest ]
+        os: [ windows-2022 ]
 
     steps:
     - uses: actions/checkout@v2
     
-    - name: Create pull request for ${{ github.event.client_payload.ReleaseBranchName }}
-      id: create-pr
-      uses: actions/github-script@v4
-      with:
-        github-token: ${{secrets.GITHUB_TOKEN}}
-        script: |
-          let response = await github.pulls.create({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            title: "Test PR",
-            head: "gcc",
-            base: "master",
-            body: `PR description`
-          })
-          return response.data.number
+    - run: Get-Host
+    
+#     - name: Create pull request for ${{ github.event.client_payload.ReleaseBranchName }}
+#       id: create-pr
+#       uses: actions/github-script@v4
+#       with:
+#         github-token: ${{secrets.GITHUB_TOKEN}}
+#         script: |
+#           let response = await github.pulls.create({
+#             owner: context.repo.owner,
+#             repo: context.repo.repo,
+#             title: "Test PR",
+#             head: "gcc",
+#             base: "master",
+#             body: `PR description`
+#           })
+#           return response.data.number
           
-    - name: Get result
-      run: echo "${{steps.create-pr.outputs.result}}"
+#     - name: Get result
+#       run: echo "${{steps.create-pr.outputs.result}}"
     
 #     - run: |
 #         OWNER=actions
 #         PULL_REQUEST_NUMBER=$(curl https://api.github.com/repos/$OWNER/virtual-environments/pulls\?head\=actions:releases/win16/20210815-docs\&base\=main | jq -r '.[] .number')
 #         echo "PULL_REQUEST_NUMBER=$PULL_REQUEST_NUMBER" >> $GITHUB_ENV
         
-    - name: Request reviewers
-      uses: actions/github-script@v2
-      with:
-        github-token: ${{secrets.TEST_TOKEN}}
-        script: |
-          github.pulls.requestReviewers({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: ${{ steps.create-pr.outputs.result }},
-              reviewers: ['LeonidLapshin']
-          });
+#     - name: Request reviewers
+#       uses: actions/github-script@v2
+#       with:
+#         github-token: ${{secrets.TEST_TOKEN}}
+#         script: |
+#           github.pulls.requestReviewers({
+#               owner: context.repo.owner,
+#               repo: context.repo.repo,
+#               pull_number: ${{ steps.create-pr.outputs.result }},
+#               reviewers: ['LeonidLapshin']
+#           });
      
 
 
