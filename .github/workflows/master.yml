@@ -23,8 +23,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: Get-Host
-    
     - name: Create pull request for ${{ github.event.client_payload.ReleaseBranchName }}
       id: create-pr
       uses: actions/github-script@v2
