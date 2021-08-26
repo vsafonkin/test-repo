@@ -58,7 +58,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: ${{ steps.create-pr.outputs.result }},
-              reviewers: ['LeonidLapshin']
+              team_reviewers: ['virtual-environments-akvelon']
           });
      
 
