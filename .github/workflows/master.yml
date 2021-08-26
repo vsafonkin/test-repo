@@ -42,7 +42,7 @@ jobs:
     - name: Request reviewers
       uses: actions/github-script@v2
       with:
-        github-token: ${{secrets.TEST_TOKEN}}
+        github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
           github.pulls.requestReviewers({
               owner: context.repo.owner,
