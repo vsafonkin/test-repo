@@ -18,12 +18,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ ubuntu-latest ]
+        os: [ macos-latest ]
 
     steps:
     - uses: actions@checkout@v2
     
-    - run: echo 'test'
+    - run: ls -la /usr/local/opt/runner/settings
     
 #     - name: Create pull request for ${{ github.event.client_payload.ReleaseBranchName }}
 #       id: create-pr
