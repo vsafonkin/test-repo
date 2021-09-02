@@ -23,6 +23,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - run: sudo reboot
+    
     - run: ls -la /usr/local/opt/runner/settings
     
 #     - name: Create pull request for ${{ github.event.client_payload.ReleaseBranchName }}
