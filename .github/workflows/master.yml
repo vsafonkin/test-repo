@@ -18,42 +18,15 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ macos-latest ]
+        os: [ windows-latest ]
 
     steps:
     - uses: actions/checkout@v2
     
-    - run: kextstat | grep 'virtualbox'
+    - run: dotnet --version
     
-    - run: ls -la /usr/local/opt/runner/settings
     
-#     - name: Create pull request for ${{ github.event.client_payload.ReleaseBranchName }}
-#       id: create-pr
-#       uses: actions/github-script@v2
-#       with:
-#         github-token: ${{secrets.GITHUB_TOKEN}}
-#         script: |
-#           let response = await github.pulls.create({
-#             owner: context.repo.owner,
-#             repo: context.repo.repo,
-#             title: "Test PR",
-#             head: "gcc",
-#             base: "master",
-#             body: `PR description`
-#           })
-#           return response.data.number
-        
-#     - name: Request reviewers
-#       uses: actions/github-script@v2
-#       with:
-#         github-token: ${{secrets.GITHUB_TOKEN}}
-#         script: |
-#           github.pulls.requestReviewers({
-#               owner: 'actions',
-#               repo: 'virtual-environments',
-#               pull_number: 1,
-#               team_reviewers: ['test']
-#           });
+
      
 
 
