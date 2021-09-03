@@ -23,7 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: sudo reboot
+    - run: kextstat | grep 'virtualbox'
     
     - run: ls -la /usr/local/opt/runner/settings
     
