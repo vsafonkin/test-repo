@@ -18,12 +18,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ windows-latest ]
+        os: [ macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
-    
-    - run: dotnet --version
+    - run: system_profiler SPDisplaysDataType
+    - run: vboxmanage
     
     
 
