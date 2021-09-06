@@ -22,6 +22,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - run: kextstat | grep 'virtualbox'
     - run: system_profiler SPDisplaysDataType
     - run: vboxmanage
     
