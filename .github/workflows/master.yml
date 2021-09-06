@@ -18,13 +18,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ macos-latest ]
+        os: [ macos-11 ]
 
     steps:
     - uses: actions/checkout@v2
-    - run: kextstat | grep 'virtualbox'
+    - run: kextstat
     - run: system_profiler SPDisplaysDataType
-    - run: vboxmanage
     
     
 
