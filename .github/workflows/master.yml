@@ -18,10 +18,11 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ macos-11 ]
+        os: [ macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
+    - run: sudo kmutil dumpstate
     - run: kextstat
     - run: system_profiler SPDisplaysDataType
     
