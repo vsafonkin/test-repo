@@ -17,11 +17,13 @@ jobs:
   run_master:
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os: [ macos-latest, windows-latest, ubuntu-latest ]
 
     steps:
     - uses: actions/checkout@v2
+    - run: pip --version
     - run: pip cache dir
     
     
