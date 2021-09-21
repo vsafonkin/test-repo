@@ -29,7 +29,7 @@ jobs:
 #         python-version: 3.6
     - run: |
         python3 -m pip install --upgrade pip setuptools wheel
-        pip install poetry
+        pip3 install poetry
     - run: poetry --version
     
     
