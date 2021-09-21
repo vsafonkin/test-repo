@@ -30,7 +30,7 @@ jobs:
     - run: pip3 --version
     - run: pip --version
     - run: |
-        python3 -m pip install --upgrade pip setuptools wheel
+        python -m pip install --upgrade pip setuptools wheel
         pip install poetry==1.1.7
     - run: poetry --version
     
