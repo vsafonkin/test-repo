@@ -19,14 +19,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ macos-10.15 ]
+        os: [ macos-10.15, macos-11 ]
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: ""
+#     - name: Set up Python
+#       uses: actions/setup-python@v2
+#       with:
+#         python-version: ""
     - run: pip3 --version
     - run: pip --version
     - run: |
