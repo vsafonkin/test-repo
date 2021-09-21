@@ -23,15 +23,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.6
+#     - name: Set up Python
+#       uses: actions/setup-python@v2
+#       with:
+#         python-version: 3.6
     - run: pip3 --version
     - run: pip --version
     - run: |
         python3 -m pip install --upgrade pip setuptools wheel
-        pip install poetry=1.1.7
+        pip install poetry==1.1.7
     - run: poetry --version
     
     
