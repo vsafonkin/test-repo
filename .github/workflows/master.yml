@@ -26,7 +26,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version:
+        python-version: ""
     - run: pip3 --version
     - run: pip --version
     - run: |
