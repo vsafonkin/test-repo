@@ -23,12 +23,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.6
-    - run: pip --version
-    - run: pip cache dir
+#     - name: Set up Python
+#       uses: actions/setup-python@v2
+#       with:
+#         python-version: 3.6
+    - run: poetry --version
     
     
 
