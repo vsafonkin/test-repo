@@ -28,7 +28,6 @@ jobs:
 #       with:
 #         python-version: ""
     - name: install python2
-      shell: pwsh
       run: |
         Python2Url="https://www.python.org/ftp/python/2.7.18/python-2.7.18-macosx10.9.pkg"
         curl $Python2Url --output "/tmp/python2.pkg"
