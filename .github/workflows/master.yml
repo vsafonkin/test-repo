@@ -29,6 +29,7 @@ jobs:
 #         python-version: 3.6
 
     - run: df -h
+    - run: dotnet --info
         
     
     
