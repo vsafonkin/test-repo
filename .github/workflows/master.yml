@@ -19,19 +19,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ macos-latest, ubuntu-latest, windows-latest ]
+        os: [ ubuntu-latest ]
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.6
+#     - name: Set up Python
+#       uses: actions/setup-python@v2
+#       with:
+#         python-version: 3.6
 
-    - run: pip --version
-    - run: pip install numpy scipy
-    - run: pip install pipdeptree
-    - run: pipdeptree
+    - run: df -h
         
     
     
