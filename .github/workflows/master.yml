@@ -29,7 +29,8 @@ jobs:
 #         python-version: 3.6
 
     - run: df -h
-    - run: dotnet --info
+    - run: sudo rm -rf /usr/share/dotnet
+    - run: df -h
         
     
     
