@@ -35,7 +35,7 @@ jobs:
         sudo rm -rf $CHROMEDRIVER_DIR
         curl https://chromedriver.storage.googleapis.com/93.0.4577.15/chromedriver_linux64.zip. -4 -sL -o ~/chromedriver_linux64.zip
         sudo mkdir -p $CHROMEDRIVER_DIR
-        unzip -qq ~/chromedriver_linux64.zip -d $CHROMEDRIVER_DIR
+        unzip ~/chromedriver_linux64.zip -d $CHROMEDRIVER_DIR
         # sudo chmod +x $CHROMEDRIVER_BIN
         
     
