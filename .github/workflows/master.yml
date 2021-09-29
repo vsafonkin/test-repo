@@ -36,8 +36,9 @@ jobs:
         curl https://chromedriver.storage.googleapis.com/93.0.4577.15/chromedriver_linux64.zip -4 -sL -o ~/chromedriver_linux64.zip
         sudo mkdir -p $CHROMEDRIVER_DIR
         sudo unzip ~/chromedriver_linux64.zip -d $CHROMEDRIVER_DIR
-        # sudo chmod +x $CHROMEDRIVER_BIN
+        sudo chmod +x $CHROMEDRIVER_BIN
         
+    - run: chromedriver --version
     
     
 
