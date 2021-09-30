@@ -46,7 +46,7 @@ jobs:
 #         sudo chmod +x $CHROMEDRIVER_BIN
 
     - run: |
-        pip install -r requirements.txt
+        pip install tox
         
     - run: tox --version
     
