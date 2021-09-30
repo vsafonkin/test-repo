@@ -39,7 +39,7 @@ jobs:
 #         sudo chmod +x $CHROMEDRIVER_BIN
 
     - run: |
-        sync; echo 1 > /proc/sys/vm/drop_caches
+        sync; sudo echo 1 > /proc/sys/vm/drop_caches
         
     - run: free -m
     
