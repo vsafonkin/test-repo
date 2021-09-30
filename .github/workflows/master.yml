@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-18.04 ]
+        os: [ ubuntu-latest ]
 
     steps:
     - uses: actions/checkout@v2
@@ -37,6 +37,10 @@ jobs:
 #         sudo mkdir -p $CHROMEDRIVER_DIR
 #         sudo unzip ~/chromedriver_linux64.zip -d $CHROMEDRIVER_DIR
 #         sudo chmod +x $CHROMEDRIVER_BIN
+
+    - run: |
+        sudo -i
+        sync; echo 1 > /proc/sys/vm/drop_caches
         
     - run: free -m
     
