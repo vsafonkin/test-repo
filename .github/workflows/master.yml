@@ -26,7 +26,7 @@ jobs:
     
     - run: ps aux | grep 'clamscan'
     
-    - run: ls -la /opt/runner/provisioner
+    - run: ls -la /opt/runner/provisioner/etc
   
     - name: Set up Python
       uses: actions/setup-python@v2
