@@ -24,8 +24,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - run: azcopy --help
-    - run: azcopy https://vlsafosbttest.blob.core.windows.net/sbtissueartifact/Artifacts.zip
+    - run: azcopy copy --help
+    - run: azcopy copy https://vlsafosbttest.blob.core.windows.net/sbtissueartifact/Artifacts.zip
     
     - run: ls -la /opt/runner/provisioner/etc
   
