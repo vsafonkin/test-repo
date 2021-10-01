@@ -24,7 +24,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: ps aux | grep 'clamscan'
+    - run: ps aux | grep 'jobkeepalive'
+    - run: ps aux | grep 'provjobd'
     
     - run: ls -la /opt/runner/provisioner/etc
   
