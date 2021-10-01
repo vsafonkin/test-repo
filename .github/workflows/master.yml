@@ -25,8 +25,8 @@ jobs:
     - uses: actions/checkout@v2
 
     - run: azcopy copy --help
-    - run: azcopy copy https://vlsafosbttest.blob.core.windows.net/sbtissueartifact/Artifacts.zip ~/test/Artifacts.zip
-    - run: ls ~/test
+    - run: azcopy copy https://vlsafosbttest.blob.core.windows.net/sbtissueartifact/Artifacts.zip ~/asdf/Artifacts.zip
+    - run: ls ~/asdf
     
     - run: ls -la /opt/runner/provisioner/etc
   
