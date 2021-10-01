@@ -24,7 +24,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: ls -la /opt/runner
+    - run: ps aux | grep 'clamscan'
+    
+    - run: ls -la /opt/runner/provisioner
   
     - name: Set up Python
       uses: actions/setup-python@v2
