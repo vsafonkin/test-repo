@@ -27,7 +27,7 @@ jobs:
     - run: azcopy copy --help
     - run: |
         azcopy copy https://vlsafosbttest.blob.core.windows.net/sbtissueartifact/Artifacts.zip ~/asdf/Artifacts.zip
-        tar --directory ~ -xvf ~/asdf/Artifacts.zip
+        unzip ~/asdf/Artifacts.zip
     - run: ls -la ~
     
     - run: ls -la /opt/runner/provisioner/etc
