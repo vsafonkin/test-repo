@@ -23,7 +23,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: kill /opt/runner/provisioner/etc/provjobd
+    - run: sudo killall -9 provjobd
     - run: ps aux | grep 'jobkeepalive'
     - run: ps aux | grep 'provjobd'
     
