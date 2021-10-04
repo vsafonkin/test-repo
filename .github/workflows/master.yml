@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: ls -la /etc/sbt
+    - run: ls -la /usr/share/sbt
   
 #     - name: Set up Python
 #       uses: actions/setup-python@v2
