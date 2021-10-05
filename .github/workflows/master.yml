@@ -45,11 +45,6 @@ jobs:
 #         sudo mkdir -p $CHROMEDRIVER_DIR
 #         sudo unzip ~/chromedriver_linux64.zip -d $CHROMEDRIVER_DIR
 #         sudo chmod +x $CHROMEDRIVER_BIN
-
-#     - run: |
-#         pip install -r requirements.txt
-        
-#     - run: tox --version
     
     
 
