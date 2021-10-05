@@ -24,8 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: cat /usr/share/sbt/conf/sbtopts
-    - run: cat /usr/share/sbt/conf/sbtconfig.txt
+    - run: sbt --help
   
 #     - name: Set up Python
 #       uses: actions/setup-python@v2
