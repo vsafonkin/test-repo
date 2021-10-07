@@ -31,8 +31,10 @@ jobs:
         $Uri = 'https://github.com/Microsoft/vcpkg.git'
         $InstallDir = 'C:\vcpkg'
         $VcpkgExecPath = 'vcpkg.exe'
-        git clone --depth=0 $Uri $InstallDir -q
+        git clone $Uri $InstallDir -q
+        Push-Location $InstallDir
         git checkout d95314bccccd95a0b24904961ece7c7be54529a0
+        Pop-Location
         Invoke-Expression "$InstallDir\bootstrap-vcpkg.bat"
         Invoke-Expression "$InstallDir\$VcpkgExecPath integrate install"
     - run: vcpkg --version
