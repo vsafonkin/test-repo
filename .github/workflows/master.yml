@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: $ANDROID_HOME
+    - run: Get-ChildItem "C:\Android\android-sdk"
     
 #     - run:  vcpkg --version
 #     - run: |
