@@ -25,6 +25,9 @@ jobs:
     - uses: actions/checkout@v2
     
     - run:  vcpkg --version
+    - run: |
+        Remove-Item "C:\vcpkg" -Recursive -Force
+    - run: vcpkg --version
   
 #     - name: Set up Python
 #       uses: actions/setup-python@v2
