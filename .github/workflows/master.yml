@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: Get-ChildItem "C:\Android\android-sdk\cmake"
+    - run: Get-ChildItem "C:\Android\android-sdk\cmake\3.18.1"
     
 #     - run:  vcpkg --version
 #     - run: |
