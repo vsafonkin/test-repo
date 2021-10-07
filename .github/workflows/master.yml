@@ -33,7 +33,7 @@ jobs:
         $VcpkgExecPath = 'vcpkg.exe'
         git clone $Uri $InstallDir -q
         Push-Location $InstallDir
-        git checkout d95314bccccd95a0b24904961ece7c7be54529a0
+        git checkout 71422c627264daedcbcd46f01f1ed0dcd8460f1b
         Pop-Location
         Invoke-Expression "$InstallDir\bootstrap-vcpkg.bat"
         Invoke-Expression "$InstallDir\$VcpkgExecPath integrate install"
