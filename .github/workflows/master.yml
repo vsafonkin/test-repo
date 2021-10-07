@@ -24,20 +24,22 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run:  vcpkg --version
-    - run: |
-        Remove-Item "C:\vcpkg" -Recurse -Force
-    - run: |
-        $Uri = 'https://github.com/Microsoft/vcpkg.git'
-        $InstallDir = 'C:\vcpkg'
-        $VcpkgExecPath = 'vcpkg.exe'
-        git clone $Uri $InstallDir -q
-        Push-Location $InstallDir
-        git checkout 71422c627264daedcbcd46f01f1ed0dcd8460f1b
-        Pop-Location
-        Invoke-Expression "$InstallDir\bootstrap-vcpkg.bat"
-        Invoke-Expression "$InstallDir\$VcpkgExecPath integrate install"
-    - run: vcpkg --version
+    - run: $ANDROID_HOME
+    
+#     - run:  vcpkg --version
+#     - run: |
+#         Remove-Item "C:\vcpkg" -Recurse -Force
+#     - run: |
+#         $Uri = 'https://github.com/Microsoft/vcpkg.git'
+#         $InstallDir = 'C:\vcpkg'
+#         $VcpkgExecPath = 'vcpkg.exe'
+#         git clone $Uri $InstallDir -q
+#         Push-Location $InstallDir
+#         git checkout 71422c627264daedcbcd46f01f1ed0dcd8460f1b
+#         Pop-Location
+#         Invoke-Expression "$InstallDir\bootstrap-vcpkg.bat"
+#         Invoke-Expression "$InstallDir\$VcpkgExecPath integrate install"
+#     - run: vcpkg --version
   
 #     - name: Set up Python
 #       uses: actions/setup-python@v2
