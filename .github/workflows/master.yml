@@ -19,12 +19,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest ]
+        os: [ windows-latest ]
 
     steps:
     - uses: actions/checkout@v2
     
-    - run: sbt --help
+    - run:  vcpkg --version
   
 #     - name: Set up Python
 #       uses: actions/setup-python@v2
