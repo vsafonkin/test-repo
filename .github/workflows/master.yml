@@ -19,12 +19,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ windows-latest ]
+        os: [ macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
     
-    - run: C:\Android\android-sdk\cmake\3.18.1\bin\cmake.exe --version
+    - run: msbuild --version
     
 #     - run:  vcpkg --version
 #     - run: |
