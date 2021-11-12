@@ -19,12 +19,18 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ macos-latest ]
+        os: [ ubuntu-latest ]
 
     steps:
     - uses: actions/checkout@v2
     
-    - run: msbuild --version
+    - run: go version
+    - run: sudo go version
+    
+    - name: Set up Golang
+      uses: actions/setup-go@v2
+      with:
+        go-version: ^1.15
     
 #     - run:  vcpkg --version
 #     - run: |
