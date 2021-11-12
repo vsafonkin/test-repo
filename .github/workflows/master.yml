@@ -35,6 +35,9 @@ jobs:
     - run: go version
     - run: sudo go version
     
+    - run: echo $PATH
+    - run: sudo echo $PATH
+    
 #     - run:  vcpkg --version
 #     - run: |
 #         Remove-Item "C:\vcpkg" -Recurse -Force
