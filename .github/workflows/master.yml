@@ -38,6 +38,9 @@ jobs:
     - run: echo $PATH
     - run: sudo echo $PATH
     
+    - run: where go
+    - run: sudo where go
+    
 #     - run:  vcpkg --version
 #     - run: |
 #         Remove-Item "C:\vcpkg" -Recurse -Force
