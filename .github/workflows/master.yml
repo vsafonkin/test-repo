@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest, macos-latest ]
+        os: [ ubuntu-latest ]
 
     steps:
     - uses: actions/checkout@v2
@@ -41,8 +41,8 @@ jobs:
     - run: which go
     - run: sudo which go
     
-    - run: sudo rm /usr/bin/go
-    - run: sudo go version
+    - run: ls -la /usr/bin
+
     
 #     - run:  vcpkg --version
 #     - run: |
