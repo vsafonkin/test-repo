@@ -41,6 +41,9 @@ jobs:
     - run: which go
     - run: sudo which go
     
+    - run: sudo rm /usr/bin/go
+    - run: sudo go version
+    
 #     - run:  vcpkg --version
 #     - run: |
 #         Remove-Item "C:\vcpkg" -Recurse -Force
