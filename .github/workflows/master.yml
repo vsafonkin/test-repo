@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest ]
+        os: [ ubuntu-latest, macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
@@ -38,8 +38,8 @@ jobs:
     - run: echo $PATH
     - run: sudo echo $PATH
     
-    - run: where go
-    - run: sudo where go
+    - run: which go
+    - run: sudo which go
     
 #     - run:  vcpkg --version
 #     - run: |
