@@ -39,7 +39,7 @@ jobs:
     - run: sudo bash -c 'echo $PATH'
     - run: sudo -E bash -c 'echo $PATH'
     - run: |
-        sudo env "PATH=$PATH" which go
+        sudo env "PATH=$PATH" go version
         sudo env go version
     
     - run: which go
