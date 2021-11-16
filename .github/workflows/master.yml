@@ -40,10 +40,10 @@ jobs:
     - run: sudo -E bash -c 'echo $PATH'
     - run: |
         sudo env "PATH=$PATH" which go
-        sudo go version
+        sudo env go version
     
     - run: which go
-    - run: sudo which go
+    - run: sudo env which go
 
     
 #     - run:  vcpkg --version
