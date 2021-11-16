@@ -36,12 +36,11 @@ jobs:
     - run: sudo go version
     
     - run: echo $PATH
-    - run: sudo echo $PATH
+    - run: sudo bash -c '$PATH'
+    - run: sudo -E bash -c '$PATH'
     
     - run: which go
     - run: sudo which go
-    
-    - run: ls -la /usr/bin
 
     
 #     - run:  vcpkg --version
