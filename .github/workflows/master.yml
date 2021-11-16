@@ -36,8 +36,8 @@ jobs:
     - run: sudo go version
     
     - run: echo $PATH
-    - run: sudo bash -c '$PATH'
-    - run: sudo -E bash -c '$PATH'
+    - run: sudo bash -c 'echo $PATH'
+    - run: sudo -E bash -c 'echo $PATH'
     
     - run: which go
     - run: sudo which go
