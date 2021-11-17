@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: top
+    - run: top -l 1 -s 0 | grep PhysMem
     
 #     - run:  vcpkg --version
 #     - run: |
