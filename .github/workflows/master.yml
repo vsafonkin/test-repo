@@ -25,6 +25,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - run: which nuget
+    - run: which msbuild
     
     - run: top -l 1 -s 0 | grep PhysMem
     
