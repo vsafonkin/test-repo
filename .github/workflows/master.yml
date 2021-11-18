@@ -24,6 +24,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - run: which nuget
+    
     - run: top -l 1 -s 0 | grep PhysMem
     
 #     - run:  vcpkg --version
