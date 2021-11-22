@@ -25,7 +25,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Test
-      run: ls -la /Library/Frameworks/Mono.framework/Versions/Current/lib/mono/nuget
+      run: echo $TMPMOUNT
     
 #     - run:  vcpkg --version
 #     - run: |
