@@ -19,18 +19,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ macos-latest, ubuntu-latest ]
+        os: [ macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
     
     - name: Test
-      if: ${{ matrix.os == 'ubuntu-latest' }}
-      run: echo "UBUNTU"
-      
-    - name: Test
-      if: ${{ matrix.os == 'macos-latest' }}
-      run: echo "MACOS"
+      run: echo $MONO_VERSIONS_PATH
     
 #     - run:  vcpkg --version
 #     - run: |
