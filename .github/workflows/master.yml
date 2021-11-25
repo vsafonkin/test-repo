@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: Get-ChildItem "C:\Program Files"
+    - run: Get-ChildItem "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise"
 #     - run:  vcpkg --version
 #     - run: |
 #         Remove-Item "C:\vcpkg" -Recurse -Force
