@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: Get-ChildItem "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE"
+    - run: Get-ChildItem "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions"
     
     - run: Get-ChildItem "$env:LOCALAPPDATA\Microsoft\VisualStudio\16.0_0faf72d1Exp\Extensions"
     - run: Get-ChildItem "$env:LOCALAPPDATA\Microsoft\VisualStudio\16.0_0faf72d1Exp\Extensions"
