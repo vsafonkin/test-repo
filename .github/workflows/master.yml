@@ -25,8 +25,12 @@ jobs:
     - uses: actions/checkout@v2
     
     - run: Get-ChildItem "C:\Program Files (x86)\Microsoft Visual Studio\2019"
-    - run: Get-ChildItem "$env:LOCALAPPDATA\Microsoft\VisualStudio\16.0_0faf72d1Exp\Extensions"
-    - run: Get-ChildItem "$env:LOCALAPPDATA\Microsoft\VisualStudio\16.0_0faf72d1\Extensions"
+    
+    - run: Get-ChildItem "$env:LOCALAPPDATA\Microsoft\VisualStudio\16.0_0faf72d1Exp\Extensions\extensions.en-US.cache"
+    - run: Get-ChildItem "$env:LOCALAPPDATA\Microsoft\VisualStudio\16.0_0faf72d1Exp\Extensions\extensionSdks.en-US.cache"
+    
+    - run: Get-ChildItem "$env:LOCALAPPDATA\Microsoft\VisualStudio\16.0_0faf72d1\Extensions\extensions.en-US.cache"
+    - run: Get-ChildItem "$env:LOCALAPPDATA\Microsoft\VisualStudio\16.0_0faf72d1\Extensions\extensionsSdks.en-US.cache"
 #     - run:  vcpkg --version
 #     - run: |
 #         Remove-Item "C:\vcpkg" -Recurse -Force
