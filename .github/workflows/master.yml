@@ -24,14 +24,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: Get-ChildItem "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Xamarin"
-    - run: Get-ChildItem "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Xamarin.VisualStudio"
-    
-    - run: Get-ChildItem "$env:LOCALAPPDATA\Microsoft\VisualStudio\16.0_0faf72d1Exp\Extensions"
-    - run: Get-ChildItem "$env:LOCALAPPDATA\Microsoft\VisualStudio\16.0_0faf72d1Exp\Extensions"
-    
-    - run: Get-ChildItem "$env:LOCALAPPDATA\Microsoft\VisualStudio\16.0_0faf72d1\Extensions"
-    - run: Get-ChildItem "$env:LOCALAPPDATA\Microsoft\VisualStudio\16.0_0faf72d1\Extensions"
+    - run: msbuild --version
+    - name: Add MSBuild to Path
+      uses: microsoft/setup-msbuild@v1.1
+      with:
+        vs-version: '[16.0, 17.0]'
+    - run: msbuild --version
 #     - run:  vcpkg --version
 #     - run: |
 #         Remove-Item "C:\vcpkg" -Recurse -Force
