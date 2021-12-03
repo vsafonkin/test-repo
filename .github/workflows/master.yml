@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: Get-Content "C:\Program Files (x86)\NuGet\Config\Xamarin.Offline.config"
+    - run: Get-ChildItem "C:\Program Files (x86)\Microsoft\Xamarin\NuGet\"
 #     - run:  vcpkg --version
 #     - run: |
 #         Remove-Item "C:\vcpkg" -Recurse -Force
