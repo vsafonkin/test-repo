@@ -24,12 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - run: msbuild --version
-    - name: Add MSBuild to Path
-      uses: microsoft/setup-msbuild@v1.1
-      with:
-        vs-version: '[16.0, 17.0]'
-    - run: msbuild --version
+    - run: Get-Content "C:\Program Files (x86)\NuGet\Config\Xamarin.Offline.config"
 #     - run:  vcpkg --version
 #     - run: |
 #         Remove-Item "C:\vcpkg" -Recurse -Force
