@@ -19,12 +19,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ windows-latest ]
+        os: [ ubuntu-latest ]
 
     steps:
     - uses: actions/checkout@v2
     
-    - run: Get-ChildItem "C:\Program Files (x86)\Microsoft\Xamarin\NuGet\"
+    - run: go version
+    - run: which go
+    - run: go env
 #     - run:  vcpkg --version
 #     - run: |
 #         Remove-Item "C:\vcpkg" -Recurse -Force
