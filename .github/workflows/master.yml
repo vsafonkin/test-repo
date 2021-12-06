@@ -19,14 +19,21 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest ]
+        os: [ self-hosted ]
 
     steps:
     - uses: actions/checkout@v2
     - run: env
     - run: go version
-    - run: which go
     - run: go env
+    - name: Setup Go environment
+      uses: actions/setup-go@v2.1.4
+      with:
+        go-version: "1.16.x"
+    - run: go version
+    - run: go env
+    - run: env
+    
 #     - run:  vcpkg --version
 #     - run: |
 #         Remove-Item "C:\vcpkg" -Recurse -Force
