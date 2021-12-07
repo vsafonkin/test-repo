@@ -19,13 +19,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ self-hosted ]
+        os: [ ubuntu-latest ]
 
     steps:
     - uses: actions/checkout@v2
-    - run: env
-    - run: go version
-    - run: go env
     - name: Setup Go environment
       uses: actions/setup-go@v2.1.4
       with:
