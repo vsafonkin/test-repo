@@ -1,7 +1,7 @@
 jobs:
   - job:
     pool:
-      vmImage: 'windows-2019'
+      vmImage: 'windows-2022'
     steps:
     - script: npm install grunt
     - script: npm install
