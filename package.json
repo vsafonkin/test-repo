@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/vsafonkin/test-repo#readme",
   "dependencies": {
-    "semver": "npm/node-semver",
-    "grunt": "npm/grunt"
+    "semver": "^6.1.1"
   }
 }
