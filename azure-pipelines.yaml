@@ -1,0 +1,9 @@
+jobs:
+  - job:
+    pool:
+      vmImage: 'macos-11'
+    steps:
+    - task: NuGetToolInstaller@1
+      displayName: 'Install nuget 5.6.0'
+      inputs:
+        versionSpec: 6.x
