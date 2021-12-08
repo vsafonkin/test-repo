@@ -3,8 +3,13 @@ jobs:
     pool:
       vmImage: 'windows-2022'
     steps:
-    - script: npm install grunt
-    - script: npm install
+    - pwsh: |
+        npm install grunt
+        npm install grunt-contrib-jshint
+        npm install grunt-contrib-watch
+      displayName: Install Grunt
+    - pwsh: npm install
+      displayName: Install deps
     - task: Grunt@0
       inputs:
         gruntFile: 'gruntfile.js'
