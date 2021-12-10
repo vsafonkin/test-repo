@@ -33,10 +33,7 @@ $markdown = ""
 $markdown += New-MDHeader "Installed Software" -Level 2
 $markdown += New-MDHeader "Language and Runtime" -Level 3
 
-$languageAndRuntimeList = @(
-    (Get-GccVersion),
-    (Get-FortranVersion)
-)
+$languageAndRuntimeList = @()
 
 $languageAndRuntimeList += @(
     (Get-GccVersion),
