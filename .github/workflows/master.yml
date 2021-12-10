@@ -23,7 +23,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: ls -la $HOME/image-generation
+    - run: git clone https://github.com/vsafonkin/virtual-environments.git
+    - run: |
+        cd virtual-environments
+        ls -la .
+        
 #     - name: Setup Go environment
 #       uses: actions/setup-go@v2.1.4
 #       with:
