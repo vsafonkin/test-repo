@@ -15,12 +15,10 @@ function Run-Command {
 
 function Get-GccVersion {
     $versionList = @('9', '10', '11')
-    $output = @()
     $versionList | Foreach-Object {
         $version = Run-Command "gcc-${_} --version" | Select-Object -First 1
-        $output += "$version - available by ``gcc-${_}`` alias"
+        "$version - available by ``gcc-${_}`` alias"
     }
-    return $output
 }
 
 function Get-FortranVersion {
@@ -44,8 +42,9 @@ $languageAndRuntimeList = @(
 )
 
 $languageAndRuntimeList += @(
-        @("hello", "world")
-   )
+    (Get-GccVersion),
+    @("hello", "world")
+)
 
 $toNatural = { [regex]::Replace($_, '\d+', { $args[0].Value.PadLeft(20) }) }
 $markdown += New-MDList -Style Unordered -Lines ($languageAndRuntimeList | Sort-Object $toNatural)
