@@ -61,6 +61,13 @@ $languageAndRuntimeList += @(
         (Get-GccVersion),
         (Get-FortranVersion)
    )
+   
+ if ($true) {
+    $languageAndRuntimeList += @(
+        (Get-GccVersion),
+        (Get-FortranVersion)
+   )
+}
 
 $toNatural = { [regex]::Replace($_, '\d+', { $args[0].Value.PadLeft(20) }) }
 $markdown += New-MDList -Style Unordered -Lines ($languageAndRuntimeList | Sort-Object $toNatural)
