@@ -25,7 +25,7 @@ function Get-FortranVersion {
     $versionList = @('9', '10', '11')
     $versionList | Foreach-Object {
         $version = Run-Command "gfortran-${_} --version" | Select-Object -First 1
-        "$version - available by ``gfortran-${_}`` alias\n"
+        "$version - available by ``gfortran-${_}`` alias"
     }
 }
 
@@ -34,6 +34,11 @@ $markdown += New-MDHeader "Installed Software" -Level 2
 $markdown += New-MDHeader "Language and Runtime" -Level 3
 
 $languageAndRuntimeList = @(
+    (Get-GccVersion),
+    (Get-FortranVersion)
+)
+
+$languageAndRuntimeList += @(
     (Get-GccVersion),
     (Get-FortranVersion)
 )
