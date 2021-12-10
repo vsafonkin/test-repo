@@ -64,7 +64,7 @@ $languageAndRuntimeList += @(
    
  if ($true) {
     $languageAndRuntimeList += @(
-        (Get-GccVersion),
+        (Get-GccVersion)
         (Get-FortranVersion)
    )
 }
