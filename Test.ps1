@@ -46,11 +46,11 @@ Write-Host $hello.GetType()
 $gcc = Get-GccVersion
 Write-Host $gcc.GetType()
 
-$languageAndRuntimeList += @(
-    $hello
-)
+# $languageAndRuntimeList += @(
+#     $hello
+# )
 
-$languageAndRuntimeList += Get-GccVersion
+# $languageAndRuntimeList += Get-GccVersion
 
 $toNatural = { [regex]::Replace($_, '\d+', { $args[0].Value.PadLeft(20) }) }
 $markdown += New-MDList -Style Unordered -Lines ($languageAndRuntimeList | Sort-Object $toNatural)
