@@ -32,6 +32,7 @@ jobs:
         git clone --branch=main https://github.com/vsafonkin/virtual-environments.git
         git branch
     - run: |
+        mkdir $HOME/imagegeneration
         cp virtual-environments/images/macos/toolsets/toolset-10.15.json $HOME/imagegeneration/toolset.json
     - run: |
         cd virtual-environments/images/macos/software-report
