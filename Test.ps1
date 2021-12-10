@@ -36,8 +36,8 @@ $markdown += New-MDHeader "Language and Runtime" -Level 3
 # $languageAndRuntimeList = @()
 
 $languageAndRuntimeList = @(
-    Get-GccVersion,
-    Get-FortranVersion,
+    (Get-GccVersion),
+    [array](Get-FortranVersion),
     "start",
     @("test", "report")
 )
