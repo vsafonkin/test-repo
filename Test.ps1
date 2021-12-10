@@ -21,4 +21,23 @@ function Get-GccVersion {
     }
 }
 
-Get-GccVersion
+function Get-FortranVersion {
+    $versionList = @('9', '10', '11')
+    $versionList | Foreach-Object {
+        $version = Run-Command "gfortran-${_} --version" | Select-Object -First 1
+        "$version - available by ``gfortran-${_}`` alias"
+    }
+}
+
+$markdown = ""
+$markdown += New-MDHeader "Installed Software" -Level 2
+$markdown += New-MDHeader "Language and Runtime" -Level 3
+
+$languageAndRuntimeList = @(
+    (Get-GccVersion),
+    (Get-FortranVersion)
+)
+
+$toNatural = { [regex]::Replace($_, '\d+', { $args[0].Value.PadLeft(20) }) }
+$markdown += New-MDList -Style Unordered -Lines ($languageAndRuntimeList | Sort-Object $toNatural)
+$markdown | Out-File -FilePath "./testreport.md" -Encoding UTF8NoBOM
