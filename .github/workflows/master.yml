@@ -23,7 +23,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: echo "test"
+    - run: ls -la $HOME/image-generation
 #     - name: Setup Go environment
 #       uses: actions/setup-go@v2.1.4
 #       with:
