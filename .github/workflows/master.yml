@@ -29,16 +29,16 @@ jobs:
     - run: pwsh ./Test.ps1
     - run: cat ./testreport.md
     
-    - run: |
-        git clone --branch=main https://github.com/vsafonkin/virtual-environments.git
-        git branch
-    - run: |
-        mkdir $HOME/image-generation
-        cp virtual-environments/images/macos/toolsets/toolset-10.15.json $HOME/image-generation/toolset.json
-    - run: |
-        cd virtual-environments/images/macos/software-report
-        pwsh ./SoftwareReport.Generator.ps1 -OutputDirectory $HOME -ImageName 'TestReport'
-    - run: cat $HOME/systeminfo.md
+#     - run: |
+#         git clone --branch=main https://github.com/vsafonkin/virtual-environments.git
+#         git branch
+#     - run: |
+#         mkdir $HOME/image-generation
+#         cp virtual-environments/images/macos/toolsets/toolset-10.15.json $HOME/image-generation/toolset.json
+#     - run: |
+#         cd virtual-environments/images/macos/software-report
+#         pwsh ./SoftwareReport.Generator.ps1 -OutputDirectory $HOME -ImageName 'TestReport'
+#     - run: cat $HOME/systeminfo.md
         
 #     - name: Setup Go environment
 #       uses: actions/setup-go@v2.1.4
