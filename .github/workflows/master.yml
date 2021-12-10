@@ -29,8 +29,8 @@ jobs:
     - run: pwsh ./Test.ps1
     
     - run: |
-        git clone https://github.com/vsafonkin/virtual-environments.git
-        git branch -a
+        git clone --depth=0 https://github.com/vsafonkin/virtual-environments.git
+        git branch
     - run: ls -la virtual-environments/images/macos
     - run: |
         cd virtual-environments/images/macos/software-report
