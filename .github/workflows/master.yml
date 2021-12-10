@@ -24,6 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: git clone https://github.com/vsafonkin/virtual-environments.git
+    - run: ls -la virtual-environments/images/macos
     - run: |
         cd virtual-environments/images/macos/software-report
         pwsh ./SoftwareReport.Generator.ps1 -OutputDirectory $HOME -ImageName 'TestReport'
