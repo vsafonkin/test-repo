@@ -15,10 +15,12 @@ function Run-Command {
 
 function Get-GccVersion {
     $versionList = @('9', '10', '11')
-    @($versionList | Foreach-Object {
+    $output = @()
+    $versionList | Foreach-Object {
         $version = Run-Command "gcc-${_} --version" | Select-Object -First 1
-        "$version - available by ``gcc-${_}`` alias"
-    })
+        $output += "$version - available by ``gcc-${_}`` alias"
+    }
+    return $output
 }
 
 function Get-FortranVersion {
@@ -36,8 +38,8 @@ $markdown += New-MDHeader "Language and Runtime" -Level 3
 # $languageAndRuntimeList = @()
 
 $languageAndRuntimeList = @(
-    @(Get-GccVersion),
-    @(Get-FortranVersion),
+    (Get-GccVersion),
+    (Get-FortranVersion),
     @("test", "report")
 )
 
