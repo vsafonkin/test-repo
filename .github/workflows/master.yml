@@ -27,8 +27,7 @@ jobs:
         fetch-depth: 0
     - run: |
         git clone https://github.com/vsafonkin/virtual-environments.git
-        git pull --all
-        git checkout main
+        git branch -a
     - run: ls -la virtual-environments/images/macos
     - run: |
         cd virtual-environments/images/macos/software-report
