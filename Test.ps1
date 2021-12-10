@@ -47,6 +47,12 @@ Write-Host $hello.GetType()
 $gcc = Get-GccVersion
 Write-Host $gcc.GetType()
 
+$test = @(
+        (Get-GccVersion),
+        (Get-FortranVersion)
+   )
+Write-Host $test.Length
+
 # $languageAndRuntimeList += @(
 #     $hello
 # )
