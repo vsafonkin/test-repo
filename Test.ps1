@@ -25,7 +25,7 @@ function Get-FortranVersion {
     $versionList = @('9', '10', '11')
     $versionList | Foreach-Object {
         $version = Run-Command "gfortran-${_} --version" | Select-Object -First 1
-        "$version - available by ``gfortran-${_}`` alias"
+        "$version - available by ``gfortran-${_}`` alias\n"
     }
 }
 
