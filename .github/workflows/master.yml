@@ -29,7 +29,7 @@ jobs:
     - run: pwsh ./Test.ps1
     
     - run: |
-        git clone --depth=0 https://github.com/vsafonkin/virtual-environments.git
+        git clone --branch=main https://github.com/vsafonkin/virtual-environments.git
         git branch
     - run: ls -la virtual-environments/images/macos
     - run: |
