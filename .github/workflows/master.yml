@@ -38,7 +38,7 @@ jobs:
     - run: |
         cd virtual-environments/images/macos/software-report
         pwsh ./SoftwareReport.Generator.ps1 -OutputDirectory $HOME -ImageName 'TestReport'
-    - run: ls -la $HOME
+    - run: cat $HOME/systeminfo.md
         
 #     - name: Setup Go environment
 #       uses: actions/setup-go@v2.1.4
