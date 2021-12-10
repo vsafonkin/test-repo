@@ -33,11 +33,11 @@ $markdown = ""
 $markdown += New-MDHeader "Installed Software" -Level 2
 $markdown += New-MDHeader "Language and Runtime" -Level 3
 
-$languageAndRuntimeList = @()
+# $languageAndRuntimeList = @()
 
-$languageAndRuntimeList += @(
-    (Get-GccVersion),
-    (Get-FortranVersion)
+$languageAndRuntimeList = @(
+    @(Get-GccVersion),
+    @(Get-FortranVersion)
 )
 
 $toNatural = { [regex]::Replace($_, '\d+', { $args[0].Value.PadLeft(20) }) }
