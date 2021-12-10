@@ -27,6 +27,7 @@ jobs:
         fetch-depth: 0
         
     - run: pwsh ./Test.ps1
+    - run: cat ./testreport.md
     
     - run: |
         git clone --branch=main https://github.com/vsafonkin/virtual-environments.git
