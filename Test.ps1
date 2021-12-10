@@ -36,8 +36,8 @@ $markdown += New-MDHeader "Language and Runtime" -Level 3
 # $languageAndRuntimeList = @()
 
 $languageAndRuntimeList = @(
-    (Get-GccVersion),
-    (Get-FortranVersion),
+#     (Get-GccVersion),
+#     (Get-FortranVersion),
     @("test", "report")
 )
 
@@ -49,6 +49,8 @@ Write-Host $gcc.GetType()
 $languageAndRuntimeList += @(
     $hello
 )
+
+$languageAndRuntimeList += Get-GccVersion
 
 $toNatural = { [regex]::Replace($_, '\d+', { $args[0].Value.PadLeft(20) }) }
 $markdown += New-MDList -Style Unordered -Lines ($languageAndRuntimeList | Sort-Object $toNatural)
