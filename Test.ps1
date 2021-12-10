@@ -41,9 +41,13 @@ $languageAndRuntimeList = @(
     @("test", "report")
 )
 
+$hello = @("hello", "world")
+Write-Host $hello.GetType()
+$gcc = Get-GccVersion
+Write-Host $gcc.GetType()
+
 $languageAndRuntimeList += @(
-    (Get-GccVersion),
-    @("hello", "world")
+    $hello
 )
 
 $toNatural = { [regex]::Replace($_, '\d+', { $args[0].Value.PadLeft(20) }) }
