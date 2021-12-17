@@ -19,25 +19,27 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ macos-10.15, macos-11 ]
+        os: [ macos-11 ]
 
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
         
+    - run: ls -la ~/.android/avd
+        
 #     - run: pwsh ./Test.ps1
 #     - run: cat ./testreport.md
     
-    - run: |
-        git clone --branch=macos-fix-software-report-gcc https://github.com/vsafonkin/virtual-environments.git
-    - run: |
-        mkdir $HOME/image-generation
-        cp virtual-environments/images/macos/toolsets/toolset-10.15.json $HOME/image-generation/toolset.json
-    - run: |
-        cd virtual-environments/images/macos/software-report
-        pwsh ./SoftwareReport.Generator.ps1 -OutputDirectory $HOME -ImageName 'TestReport'
-    - run: cat $HOME/systeminfo.md
+#     - run: |
+#         git clone --branch=macos-fix-software-report-gcc https://github.com/vsafonkin/virtual-environments.git
+#     - run: |
+#         mkdir $HOME/image-generation
+#         cp virtual-environments/images/macos/toolsets/toolset-10.15.json $HOME/image-generation/toolset.json
+#     - run: |
+#         cd virtual-environments/images/macos/software-report
+#         pwsh ./SoftwareReport.Generator.ps1 -OutputDirectory $HOME -ImageName 'TestReport'
+#     - run: cat $HOME/systeminfo.md
         
 #     - name: Setup Go environment
 #       uses: actions/setup-go@v2.1.4
