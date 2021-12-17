@@ -26,7 +26,7 @@ jobs:
       with:
         fetch-depth: 0
         
-    - run: ls -la ~/.android/avd
+    - run: ls -la ~/.android
         
 #     - run: pwsh ./Test.ps1
 #     - run: cat ./testreport.md
