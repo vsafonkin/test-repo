@@ -27,7 +27,7 @@ jobs:
         fetch-depth: 0
         
     - run: ls -la $ANDROID_HOME/emulator
-    - run: $ANDROID_HOME/emulator/emulator -h
+    - run: $ANDROID_HOME/tools/bin/avdmanager -h
         
 #     - run: pwsh ./Test.ps1
 #     - run: cat ./testreport.md
