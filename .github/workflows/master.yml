@@ -28,7 +28,7 @@ jobs:
         
     - name: Test
       if: ${{ matrix.os == 'ubuntu-latest' }}
-      run: ls -la /home/runner/go/bin
+      run: ls -la /home/runner/go
         
     - run: |
         curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o dotnet-5.0.403.zip
