@@ -19,23 +19,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest, macos-latest, windows-latest ]
+        os: [ ubuntu-latest, windows-latest ]
 
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-               
-#     - name: Test
-#       if: ${{ matrix.os == 'ubuntu-latest' }}
-#       run: ls -la /home/runner/go
-      
-    - name: Setup Go environment
-      uses: actions/setup-go@v2.1.5
-      with:
-        go-version: 1.16
-        
-    - run: echo $GOPATH
         
     - run: |
         curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o dotnet-5.0.403.zip
@@ -48,6 +37,21 @@ jobs:
         curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d7.zip
         curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d8.zip
         curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d9.zip
+        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d10.zip
+        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d11.zip
+        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d12.zip
+        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d13.zip
+        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d14.zip
+        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d15.zip
+        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d16.zip
+        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d17.zip
+        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d18.zip
+        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d19.zip
+        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d20.zip
+        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d21.zip
+        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d22.zip
+        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d23.zip
+        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d24.zip
     - run: unzip dotnet-5.0.403.zip
     - run: |
         cp dotnet-5.0.403.zip dotnet-1.zip
