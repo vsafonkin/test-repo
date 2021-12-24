@@ -26,46 +26,15 @@ jobs:
       with:
         fetch-depth: 0
         
-    - run: |
+    - name: Test download
+      run: pwsh ./Test.ps1
+
+    - name: Download via curl
+      shell: pwsh
+      run: |
         curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o dotnet-5.0.403.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d1.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d2.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d3.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d4.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d5.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d6.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d7.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d8.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d9.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d10.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d11.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d12.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d13.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d14.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d15.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d16.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d17.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d18.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d19.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d20.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d21.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d22.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d23.zip
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o d24.zip
+ 
     - run: unzip dotnet-5.0.403.zip
-    - run: |
-        cp dotnet-5.0.403.zip dotnet-1.zip
-        cp dotnet-5.0.403.zip dotnet-2.zip
-        cp dotnet-5.0.403.zip dotnet-3.zip
-        cp dotnet-5.0.403.zip dotnet-4.zip
-        cp dotnet-5.0.403.zip dotnet-5.zip
-        cp dotnet-5.0.403.zip dotnet-6.zip
-        cp dotnet-5.0.403.zip dotnet-7.zip
-        cp dotnet-5.0.403.zip dotnet-8.zip
-        cp dotnet-5.0.403.zip dotnet-9.zip
-        cp dotnet-5.0.403.zip dotnet-10.zip
-        
-    - run: ls
     
 #     - run: pwsh ./Test.ps1
 #     - run: cat ./testreport.md
