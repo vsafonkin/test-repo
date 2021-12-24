@@ -28,6 +28,18 @@ jobs:
         
     - run: curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o dotnet-5.0.403.zip
     - run: unzip dotnet-5.0.403.zip
+    - run: |
+        cp dotnet-5.0.403.zip dotnet-1.zip
+        cp dotnet-5.0.403.zip dotnet-2.zip
+        cp dotnet-5.0.403.zip dotnet-3.zip
+        cp dotnet-5.0.403.zip dotnet-4.zip
+        cp dotnet-5.0.403.zip dotnet-5.zip
+        cp dotnet-5.0.403.zip dotnet-6.zip
+        cp dotnet-5.0.403.zip dotnet-7.zip
+        cp dotnet-5.0.403.zip dotnet-8.zip
+        cp dotnet-5.0.403.zip dotnet-9.zip
+        cp dotnet-5.0.403.zip dotnet-10.zip
+    
 #     - run: pwsh ./Test.ps1
 #     - run: cat ./testreport.md
     
