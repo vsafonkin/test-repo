@@ -39,6 +39,8 @@ jobs:
         cp dotnet-5.0.403.zip dotnet-8.zip
         cp dotnet-5.0.403.zip dotnet-9.zip
         cp dotnet-5.0.403.zip dotnet-10.zip
+        
+    - run: ls
     
 #     - run: pwsh ./Test.ps1
 #     - run: cat ./testreport.md
