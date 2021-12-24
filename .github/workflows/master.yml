@@ -27,7 +27,7 @@ jobs:
         fetch-depth: 0
         
     - name: Test
-      if: ${{ matrix.os == ubuntu-latest }}
+      if: ${{ matrix.os == 'ubuntu-latest' }}
       run: ls -la /home/runner/go/bin
         
     - run: |
