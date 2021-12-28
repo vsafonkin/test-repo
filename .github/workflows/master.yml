@@ -26,15 +26,15 @@ jobs:
       with:
         fetch-depth: 0
         
-    - name: Test download
+    - name: Test download via curl
       run: pwsh ./Test.ps1
 
-    - name: Download via curl
-      shell: pwsh
-      run: |
-        curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o dotnet-5.0.403.zip
+#     - name: Download via curl
+#       shell: pwsh
+#       run: |
+#         curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o dotnet-5.0.403.zip
  
-    - run: unzip dotnet-5.0.403.zip
+#     - run: unzip dotnet-5.0.403.zip
     
 #     - run: pwsh ./Test.ps1
 #     - run: cat ./testreport.md
