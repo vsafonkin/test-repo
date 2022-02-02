@@ -33,7 +33,8 @@ jobs:
 
     - run: go version
     - run: sudo rm /usr/bin/go
-    - run: go version
+    - run: apt update
+    - run: apt install golang
 
 #     - name: Test download via curl
 #       run: pwsh ./Test.ps1
