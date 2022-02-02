@@ -33,8 +33,8 @@ jobs:
 
     - run: go version
     - run: sudo rm /usr/bin/go
-    - run: sudo apt update
-    - run: sudo apt install golang
+    - run: sudo apt-get update
+    - run: sudo apt-get install golang
     - run: go version
     - run: ls -la /usr/bin
 
