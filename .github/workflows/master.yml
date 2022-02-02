@@ -33,7 +33,7 @@ jobs:
 
     - run: go version
     - run: sudo rm /usr/bin/go
-    - run: apt update
+    - run: sudo apt update
     - run: apt install golang
 
 #     - name: Test download via curl
