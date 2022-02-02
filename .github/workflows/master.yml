@@ -19,17 +19,21 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ macos-latest, windows-latest, ubuntu-latest ]
+        os: [ ubuntu-latest ]
 
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
         
-    - name: Setup Go environment
-      uses: actions/setup-go@v2.1.5
-      with:
-        go-version: 1.18
+#     - name: Setup Go environment
+#       uses: actions/setup-go@v2.1.5
+#       with:
+#         go-version: 1.18
+
+    - run: go version
+    - run: sudo rm /usr/bin/go
+    - run: go version
 
 #     - name: Test download via curl
 #       run: pwsh ./Test.ps1
