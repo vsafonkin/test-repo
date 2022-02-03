@@ -33,13 +33,16 @@ jobs:
         
     - run: go version
     - run: sudo go version
+    
+    - run: echo $PATH
+    - run: sudo echo $PATH
 
-    - run: go version
-    - run: sudo rm /usr/bin/go
-    - run: sudo apt-get update
-    - run: sudo apt-get install golang
-    - run: go version
-    - run: ls -la /usr/bin
+#     - run: go version
+#     - run: sudo rm /usr/bin/go
+#     - run: sudo apt-get update
+#     - run: sudo apt-get install golang
+#     - run: go version
+#     - run: ls -la /usr/bin
 
 #     - name: Test download via curl
 #       run: pwsh ./Test.ps1
