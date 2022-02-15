@@ -30,8 +30,7 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.200-preview.22055.15
-        
-    - run: dotnet --help
+
     - run: dotnet --info
         
     
