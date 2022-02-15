@@ -19,19 +19,26 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest, macos-latest ]
+        os: [ ubuntu-latest, macos-latest, windows-latest ]
 
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
         
-    - name: Setup Go environment
-      uses: actions/setup-go@v2
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v1
       with:
-        go-version: 1.7
+        dotnet-version: 6.0.200-preview.22055.15
         
-    - run: go version
+    
+        
+#     - name: Setup Go environment
+#       uses: actions/setup-go@v2
+#       with:
+#         go-version: 1.7
+        
+#     - run: go version
 #     - run: sudo go version
     
 #     - run: echo $PATH
