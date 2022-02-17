@@ -36,7 +36,7 @@ jobs:
 #       with:
 #         go-version: "1.16.x"
  
-    - run: Get-Content "C:\cabal\config"
+    - run: Get-ChildItem "C:\ghcup"
     - run: cabal install --help
     - run: cabal build --help
 #     - run: Get-ChildItem "C:\msys64\mingw64"
