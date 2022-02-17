@@ -45,7 +45,7 @@ jobs:
         
     - run: echo $PATH
     - run: echo $pythonLocation
-    - run: ls -la /opt/hostedtoolcache/Python/3.9.10/x64
+    - run: ls -la /opt/hostedtoolcache/PyPy/3.7.12/x64
     
     
 
