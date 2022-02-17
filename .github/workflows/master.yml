@@ -36,6 +36,8 @@ jobs:
 #       with:
 #         go-version: "1.16.x"
   
+    - run: echo $PATH
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
