@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest, macos-latest ]
+        os: [ windows-2016, ubuntu-latest, macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
@@ -36,7 +36,7 @@ jobs:
 #       with:
 #         go-version: "1.16.x"
  
- 
+    - run: Get-ChildItem "C:\cabal"
     - run: cabal install --help
     - run: cabal build --help
 #     - run: Get-ChildItem "C:\msys64\mingw64"
