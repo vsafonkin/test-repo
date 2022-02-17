@@ -36,7 +36,7 @@ jobs:
 #       with:
 #         go-version: "1.16.x"
 
-    - run: echo $env:PATH
+    - run: Get-ChildItem "C:/tools/ghc-9.2.1/mingw/bin"
   
     - run: echo $PATH
 
