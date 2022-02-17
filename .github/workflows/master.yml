@@ -41,9 +41,10 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: pypy3
+        python-version: 3.9
         
     - run: echo $PATH
+    - run: echo $pythonLocation
     
     
 
