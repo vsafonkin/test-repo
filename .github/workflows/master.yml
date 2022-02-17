@@ -19,105 +19,29 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest, macos-latest, windows-latest ]
+        os: [ ubuntu-latest, macos-latest ]
 
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
         
-    - name: Setup dotnet
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 6.0.200-preview.22055.15
-
-    - run: dotnet --info
-        
-    
-        
-#     - name: Setup Go environment
-#       uses: actions/setup-go@v2
+#     - name: Setup dotnet
+#       uses: actions/setup-dotnet@v1
 #       with:
-#         go-version: 1.7
-        
-#     - run: go version
-#     - run: sudo go version
-    
-#     - run: echo $PATH
-#     - run: sudo echo $PATH
-
-#     - run: go version
-#     - run: sudo rm /usr/bin/go
-#     - run: sudo apt-get update
-#     - run: sudo apt-get install golang
-#     - run: go version
-#     - run: ls -la /usr/bin
-
-#     - name: Test download via curl
-#       run: pwsh ./Test.ps1
-
-#     - name: Download via curl
-#       shell: pwsh
-#       run: |
-#         curl https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.403/dotnet-sdk-5.0.403-win-x64.zip -o dotnet-5.0.403.zip
- 
-#     - run: unzip dotnet-5.0.403.zip
-    
-#     - run: pwsh ./Test.ps1
-#     - run: cat ./testreport.md
-    
-#     - run: |
-#         git clone --branch=macos-fix-software-report-gcc https://github.com/vsafonkin/virtual-environments.git
-#     - run: |
-#         mkdir $HOME/image-generation
-#         cp virtual-environments/images/macos/toolsets/toolset-10.15.json $HOME/image-generation/toolset.json
-#     - run: |
-#         cd virtual-environments/images/macos/software-report
-#         pwsh ./SoftwareReport.Generator.ps1 -OutputDirectory $HOME -ImageName 'TestReport'
-#     - run: cat $HOME/systeminfo.md
+#         dotnet-version: 6.0.200-preview.22055.15
         
 #     - name: Setup Go environment
 #       uses: actions/setup-go@v2.1.4
 #       with:
 #         go-version: "1.16.x"
-#     - run: go version
-#     - run: go env
-#     - run: env
-    
-#     - run:  vcpkg --version
-#     - run: |
-#         Remove-Item "C:\vcpkg" -Recurse -Force
-#     - run: |
-#         $Uri = 'https://github.com/Microsoft/vcpkg.git'
-#         $InstallDir = 'C:\vcpkg'
-#         $VcpkgExecPath = 'vcpkg.exe'
-#         git clone $Uri $InstallDir -q
-#         Push-Location $InstallDir
-#         git checkout 71422c627264daedcbcd46f01f1ed0dcd8460f1b
-#         Pop-Location
-#         Invoke-Expression "$InstallDir\bootstrap-vcpkg.bat"
-#         Invoke-Expression "$InstallDir\$VcpkgExecPath integrate install"
-#     - run: vcpkg --version
   
-#     - name: Set up Python
-#       uses: actions/setup-python@v2
-#       with:
-#         python-version: 3.9
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
         
-#     - uses: actions/cache@v2
-#       with:
-#         path: ~/.cache/pip
-#         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-
-#     - name: downgrade chromedriver
-#       run: |
-#         CHROMEDRIVER_DIR="/usr/local/share/chrome_driver"
-#         CHROMEDRIVER_BIN="$CHROMEDRIVER_DIR/chromedriver"
-#         sudo rm -rf $CHROMEDRIVER_DIR
-#         curl https://chromedriver.storage.googleapis.com/93.0.4577.15/chromedriver_linux64.zip -4 -sL -o ~/chromedriver_linux64.zip
-#         sudo mkdir -p $CHROMEDRIVER_DIR
-#         sudo unzip ~/chromedriver_linux64.zip -d $CHROMEDRIVER_DIR
-#         sudo chmod +x $CHROMEDRIVER_BIN
+    - run: echo $PATH
     
     
 
