@@ -26,33 +26,33 @@ jobs:
       with:
         fetch-depth: 0
         
-#     - name: Setup dotnet
-#       uses: actions/setup-dotnet@v1
-#       with:
-#         dotnet-version: 6.0.200-preview.22055.15
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 7.0.x
         
 #     - name: Setup Go environment
 #       uses: actions/setup-go@v2.1.4
 #       with:
 #         go-version: "1.16.x"
  
-    - run: Get-ChildItem "C:\ghcup"
-    - run: cabal install --help
-    - run: cabal build --help
+#     - run: Get-ChildItem "C:\ghcup"
+#     - run: cabal install --help
+#     - run: cabal build --help
 #     - run: Get-ChildItem "C:\msys64\mingw64"
 #     - run: Get-ChildItem "C:\msys64\mingw64\include"
 #     - run: Get-ChildItem "C:\msys64\mingw64\lib"
   
 #     - run: echo $PATH
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: pypy-3.x
+#     - name: Set up Python
+#       uses: actions/setup-python@v2
+#       with:
+#         python-version: pypy-3.x
         
-    - run: echo $PATH
-    - run: echo $pythonLocation
-    - run: ls -la /opt/hostedtoolcache/Python/3.9.10/x64
+#     - run: echo $PATH
+#     - run: echo $pythonLocation
+#     - run: ls -la /opt/hostedtoolcache/Python/3.9.10/x64
     
     
 
