@@ -39,9 +39,9 @@ jobs:
 
     - run: Get-ChildItem C:/tools
 
-    - uses: actions/setup-haskell@v1.1
+    - uses: haskell/actions/setup@v1
       with:
-        ghc-version: '9.0.2'
+        ghc-version: '8.10.7'
  
     - run: |
         Get-ChildItem "C:\msys64\mingw64\lib"
