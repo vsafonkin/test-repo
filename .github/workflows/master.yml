@@ -46,8 +46,8 @@ jobs:
     - run: |
         $origPath = $env:PATH
         $env:PATH = "C:\msys64\mingw64\bin;C:\msys64\usr\bin;$origPath"
+        pacman.exe -Dkk --noconfirm
         pacman.exe -S --noconfirm --noprogressbar mingw-w64-x86_64-toolchain
-        pacman.exe -Scc --noconfirm
 
     - run: Get-ChildItem "C:\msys64\mingw64\lib"
 
