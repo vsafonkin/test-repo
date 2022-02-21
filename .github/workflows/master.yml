@@ -40,6 +40,8 @@ jobs:
 #     - run: |
 #         Remove-Item -Recurse -Force "C:\msys64\mingw64"
 #         Get-ChildItem "C:\msys64"
+
+    - run: Get-Content "C:\Cabal\config"
         
     - run: |
         $origPath = $env:PATH
