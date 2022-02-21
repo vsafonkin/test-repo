@@ -37,9 +37,9 @@ jobs:
 #       with:
 #         go-version: "1.16.x"
  
-#     - run: |
-#         Remove-Item -Recurse -Force "C:\msys64\mingw64"
-#         Get-ChildItem "C:\msys64"
+    - run: |
+        Remove-Item -Recurse -Force "C:\msys64\mingw64"
+        Get-ChildItem "C:\msys64"
         
     - run: |
         $origPath = $env:PATH
