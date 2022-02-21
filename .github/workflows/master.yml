@@ -38,6 +38,7 @@ jobs:
 #         go-version: "1.16.x"
  
     - run: |
+        Get-ChildItem "C:\msys64\mingw64\lib"
         Remove-Item -Recurse -Force "C:\msys64\mingw64\lib"
 
 #     - run: Get-Content "C:\Cabal\config"
