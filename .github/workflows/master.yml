@@ -37,7 +37,7 @@ jobs:
 #       with:
 #         go-version: "1.16.x"
  
-    - run: Get-ChildItem "C:\msys64\mingw64\lib\gcc\x86_64-w64-mingw32"
+    - run: Get-ChildItem "C:\msys64\mingw64\lib"
 #     - run: cabal install --help
 #     - run: cabal build --help
 #     - run: Get-ChildItem "C:\msys64\mingw64"
