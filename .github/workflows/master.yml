@@ -46,6 +46,7 @@ jobs:
     - run: |
         $origPath = $env:PATH
         $env:PATH = "C:\msys64\mingw64\bin;C:\msys64\usr\bin;$origPath"
+        pacman.exe -Syy
         Write-Host "-----"
         pacman.exe -Qi mingw-w64-x86_64-crt-git
         Write-Host "-----"
