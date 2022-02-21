@@ -38,9 +38,8 @@ jobs:
 #         go-version: "1.16.x"
  
     - run: |
-        Remove-Item -Recurse -Force "C:\msys64\mingw64\lib"
-        Remove-Item -Recurse -Force "C:\msys64\mingw64\include"
-        Get-ChildItem "C:\msys64\mingw64"
+        Remove-Item -Recurse -Force "C:\msys64\mingw64"
+        Get-ChildItem "C:\msys64"
         
     - run: |
         $origPath = $env:PATH
