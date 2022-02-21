@@ -41,7 +41,7 @@ jobs:
 
     - uses: haskell/actions/setup@v1
       with:
-        ghc-version: '8.10.7'
+        ghc-version: '9.0.2'
  
     - run: |
         Get-ChildItem "C:\msys64\mingw64\lib"
