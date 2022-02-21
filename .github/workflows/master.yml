@@ -37,7 +37,10 @@ jobs:
 #       with:
 #         go-version: "1.16.x"
  
-    - run: Get-ChildItem "C:\msys64\mingw64\lib"
+    - run: |
+        rm -rf "C:\msys64\mingw64\lib"
+        rm -rf "C:\msys64\mingw64\include"
+
     - run: |
         cabal update
         cabal install haskell-say -v
