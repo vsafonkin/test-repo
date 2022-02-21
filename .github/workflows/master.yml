@@ -40,6 +40,14 @@ jobs:
     - run: |
         Remove-Item -Recurse -Force "C:\msys64\mingw64\lib"
         Remove-Item -Recurse -Force "C:\msys64\mingw64\include"
+        Get-ChildItem "C:\msys64\mingw64\lib"
+        
+    - run: |
+        $origPath = $env:PATH
+        $env:PATH = "C:\msys64\mingw64\bin;C:\msys64\usr\bin;$origPath"
+        pacman.exe -S --noconfirm --needed --noprogressbar mingw-w64-x86_64-gcc
+        
+    - run: Get-ChildItem "C:\msys64\mingw64\lib"
 
     - run: |
         cabal update
