@@ -40,7 +40,7 @@ jobs:
     - run: |
         Remove-Item -Recurse -Force "C:\msys64\mingw64\lib"
         Remove-Item -Recurse -Force "C:\msys64\mingw64\include"
-        Get-ChildItem "C:\msys64\mingw64\lib"
+        Get-ChildItem "C:\msys64\mingw64"
         
     - run: |
         $origPath = $env:PATH
