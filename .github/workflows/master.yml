@@ -46,8 +46,9 @@ jobs:
     - run: |
         $origPath = $env:PATH
         $env:PATH = "C:\msys64\mingw64\bin;C:\msys64\usr\bin;$origPath"
-        pacman.exe -Syu --noconfirm
-#        pacman.exe -S --noconfirm --needed --noprogressbar mingw-w64-x86_64-clang mingw-w64-x86_64-cmake mingw-w64-x86_64-ragel mingw-w64-x86_64-toolchain mingw-w64-x86_64-clang-tools-extra mingw-w64-x86_64-llvm mingw-w64-x86_64-libxml2
+        
+        pacman.exe -Rc --noconfirm --needed --noprogressbar mingw-w64-x86_64-clang mingw-w64-x86_64-cmake mingw-w64-x86_64-ragel mingw-w64-x86_64-toolchain mingw-w64-x86_64-clang-tools-extra mingw-w64-x86_64-llvm mingw-w64-x86_64-libxml2
+        pacman.exe -S --noconfirm --needed --noprogressbar mingw-w64-x86_64-clang mingw-w64-x86_64-cmake mingw-w64-x86_64-ragel mingw-w64-x86_64-toolchain mingw-w64-x86_64-clang-tools-extra mingw-w64-x86_64-llvm mingw-w64-x86_64-libxml2
         
     - run: Get-ChildItem "C:\msys64\mingw64\lib"
 
