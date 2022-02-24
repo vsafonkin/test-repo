@@ -45,7 +45,11 @@ jobs:
           5.0
           6.0.x
           
-#     - run: dotnet --info
+    - run: dotnet --info
+    
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '17'
         
 #     - name: Setup Go environment
 #       uses: actions/setup-go@v2
