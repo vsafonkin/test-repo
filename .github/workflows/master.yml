@@ -19,33 +19,33 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ windows-latest, ubuntu-latest, macos-latest ]
+        os: [ windows-2016, windows-2019 ]
 
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
         
-    - name: Setup dotnet
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '7.0'
-        include-prerelease: true
+#     - name: Setup dotnet
+#       uses: actions/setup-dotnet@v1
+#       with:
+#         dotnet-version: '7.0'
+#         include-prerelease: true
         
-    - name: Setup dotnet
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: |
-          3.1.*
-          5.0
-          6.0.x
+#     - name: Setup dotnet
+#       uses: actions/setup-dotnet@v1
+#       with:
+#         dotnet-version: |
+#           3.1.*
+#           5.0
+#           6.0.x
           
-    - run: dotnet --info
+#     - run: dotnet --info
         
-    - name: Setup Go environment
-      uses: actions/setup-go@v2
-      with:
-        go-version: 1.17
+#     - name: Setup Go environment
+#       uses: actions/setup-go@v2
+#       with:
+#         go-version: 1.17
 
 #     - run: Get-ChildItem C:/tools
 
@@ -53,28 +53,28 @@ jobs:
 #       with:
 #         ghc-version: '9.0.2'
  
-#     - run: |
-#         Get-ChildItem "C:\msys64\mingw64\lib"
-#         Remove-Item -Recurse -Force "C:\msys64\mingw64\lib"
+    - run: |
+        Get-ChildItem "C:\msys64\mingw64\lib"
+        Remove-Item -Recurse -Force "C:\msys64\mingw64\lib"
 
 #     - run: Get-Content "C:\Cabal\config"
         
-#     - run: |
-#         $origPath = $env:PATH
-#         $env:PATH = "C:\msys64\mingw64\bin;C:\msys64\usr\bin;$origPath"
-#         pacman.exe -Syy
-#         Write-Host "-----"
-#         pacman.exe -Qi mingw-w64-x86_64-crt-git
-#         Write-Host "-----"
-#         pacman.exe -S --noconfirm --noprogressbar mingw-w64-x86_64-crt-git
+    - run: |
+        $origPath = $env:PATH
+        $env:PATH = "C:\msys64\mingw64\bin;C:\msys64\usr\bin;$origPath"
+        pacman.exe -Syy
+        pacman.exe -S --noconfirm --noprogressbar mingw-w64-x86_64-toolchain
+        Write-Host "-----"
+        pacman.exe -Qi mingw-w64-x86_64-crt-git
+        Write-Host "-----"
 
 #     - run: Get-ChildItem "C:\msys64\mingw64\lib"
 
-#     - run: |
-#         cabal update
-#         cabal install haskell-say -v
-#         cabal build
-#         cabal run
+    - run: |
+        cabal update
+        cabal install haskell-say -v
+        cabal build
+        cabal run
 
 #     - run: cabal install --help
 #     - run: cabal build --help
