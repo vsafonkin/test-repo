@@ -22,7 +22,7 @@ on:
 #         os: [ ubuntu-latest ]
 jobs:     
   go-test:
-    uses: vsafonkin/sample-go/.github/workflows/go.yaml@main
+    uses: vsafonkin/sample-go/.github/workflows/go.yml@main
     with:
       go-version: "1.17.7"
 
