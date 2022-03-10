@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest, windows-latest, macos-latest ]
+        os: [ ubuntu-latest ]
 # jobs:     
 #   go-test:
 #     uses: vsafonkin/sample-go/.github/workflows/go.yml@main
@@ -31,33 +31,35 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Setup dotnet from global.json
-      uses: actions/setup-dotnet@v2
+#     - name: Setup dotnet from global.json
+#       uses: actions/setup-dotnet@v2
         
-    - name: Setup dotnet multiple lines
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: |
-          3.1.*
-          5.0
-          6.0.x
+#     - name: Setup dotnet multiple lines
+#       uses: actions/setup-dotnet@v2
+#       with:
+#         dotnet-version: |
+#           3.1.*
+#           5.0
+#           6.0.x
           
-    - name: Setup dotnet prerelease
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: "7.0"
-        include-prerelease: true
+#     - name: Setup dotnet prerelease
+#       uses: actions/setup-dotnet@v2
+#       with:
+#         dotnet-version: "7.0"
+#         include-prerelease: true
           
-    - run: dotnet --info
+#     - run: dotnet --info
     
 #     - uses: actions/setup-java@v1
 #       with:
 #         java-version: '17'
         
-#     - name: Setup Go environment
-#       uses: actions/setup-go@v2
-#       with:
-#         go-version: 1.17
+    - name: Setup Go environment
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.17
+        
+    - run: sudo go version
 
 #     - run: Get-ChildItem C:/tools
 
