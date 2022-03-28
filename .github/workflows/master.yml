@@ -53,7 +53,7 @@ jobs:
         cd test-venv
         python -m venv .
         ./Scripts/Activate.ps1
-        Write-Host $env:VIRTUAL_ENV
+        Write-Host "VIRTUAL_ENV: $env:VIRTUAL_ENV"
         
 
 #     - name: Setup dotnet from global.json
