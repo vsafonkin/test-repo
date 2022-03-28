@@ -44,7 +44,7 @@ jobs:
         cd test-venv
         python -m venv .
         source ./bin/activate
-        echo 'VIRTUAL_ENV: $VIRTUAL_ENV'
+        echo "VIRTUAL_ENV: $VIRTUAL_ENV"
         
 #     - name: venv activate Windows
 
