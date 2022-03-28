@@ -46,7 +46,7 @@ jobs:
         source ./bin/activate
         echo 'VIRTUAL_ENV: $VIRTUAL_ENV'
         
-    - name: venv activate Windows
+#     - name: venv activate Windows
 
 #     - name: Setup dotnet from global.json
 #       uses: actions/setup-dotnet@v2
