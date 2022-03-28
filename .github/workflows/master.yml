@@ -37,13 +37,16 @@ jobs:
       with:
         python-version: ${{ matrix.python }}
         
-    - name: venv activate
+    - name: venv activate Linux
+      if: ${{ matrix.os == ubuntu-latest || matrix.os == macos-latest }}
       run: |
         mkdir test-venv
         cd test-venv
         python -m venv .
         source ./bin/activate
-        echo $VIRTUAL_ENV
+        echo 'VIRTUAL_ENV: $VIRTUAL_ENV'
+        
+    - name: venv activate Windows
 
 #     - name: Setup dotnet from global.json
 #       uses: actions/setup-dotnet@v2
