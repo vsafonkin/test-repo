@@ -46,7 +46,15 @@ jobs:
         source ./bin/activate
         echo "VIRTUAL_ENV: $VIRTUAL_ENV"
         
-#     - name: venv activate Windows
+    - name: venv activate Windows
+      if: ${{ matrix.os == 'windows-latest' }}
+      run: |
+        mkdir test-venv
+        cd test-venv
+        python -m venv .
+        ./Scripts/Activate.ps1
+        Write-Host $env:VIRTUAL_ENV
+        
 
 #     - name: Setup dotnet from global.json
 #       uses: actions/setup-dotnet@v2
