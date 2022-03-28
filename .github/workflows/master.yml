@@ -42,6 +42,7 @@ jobs:
         cd test-venv
         python -m venv .
         source ./bin/activate
+        echo $VIRTUAL_ENV
 
 #     - name: Setup dotnet from global.json
 #       uses: actions/setup-dotnet@v2
