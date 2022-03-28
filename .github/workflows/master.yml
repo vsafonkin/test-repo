@@ -41,7 +41,7 @@ jobs:
         mkdir test-venv
         cd test-venv
         python -m venv .
-        ls -la .
+        source ./bin/activate
 
 #     - name: Setup dotnet from global.json
 #       uses: actions/setup-dotnet@v2
