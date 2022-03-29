@@ -32,28 +32,28 @@ jobs:
       with:
         fetch-depth: 0
         
-    - name: Set up Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python }}
+#     - name: Set up Python
+#       uses: actions/setup-python@v3
+#       with:
+#         python-version: ${{ matrix.python }}
         
-    - name: venv activate Linux
-      if: ${{ matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest' }}
-      run: |
-        mkdir test-venv
-        cd test-venv
-        python -m venv .
-        source ./bin/activate
-        echo "VIRTUAL_ENV: $VIRTUAL_ENV"
+#     - name: venv activate Linux
+#       if: ${{ matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest' }}
+#       run: |
+#         mkdir test-venv
+#         cd test-venv
+#         python -m venv .
+#         source ./bin/activate
+#         echo "VIRTUAL_ENV: $VIRTUAL_ENV"
         
-    - name: venv activate Windows
-      if: ${{ matrix.os == 'windows-latest' }}
-      run: |
-        mkdir test-venv
-        cd test-venv
-        python -m venv .
-        ./Scripts/Activate.ps1
-        Write-Host "VIRTUAL_ENV: $env:VIRTUAL_ENV"
+#     - name: venv activate Windows
+#       if: ${{ matrix.os == 'windows-latest' }}
+#       run: |
+#         mkdir test-venv
+#         cd test-venv
+#         python -m venv .
+#         ./Scripts/Activate.ps1
+#         Write-Host "VIRTUAL_ENV: $env:VIRTUAL_ENV"
         
 
 #     - name: Setup dotnet from global.json
@@ -79,13 +79,12 @@ jobs:
 #       with:
 #         java-version: '17'
         
-#     - name: Setup Go environment
-#       uses: actions/setup-go@v3
-#       with:
-#         go-version: 1.*
-#         check-latest: true
+    - name: Setup Go environment
+      uses: actions/setup-go@v3
+      with:
+        go-version: 1.18.0-rc1
         
-#     - run: go version
+    - run: go version
         
 #     - run: cp -f `which go` /usr/bin/go
 #     - run: sudo go version
