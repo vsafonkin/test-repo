@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ windows-2019, ubuntu-1804, ubuntu-2004 ]
+        os: [ ubuntu-latest ]
 # jobs:     
 #   go-test:
 #     uses: vsafonkin/sample-go/.github/workflows/go.yml@main
