@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ windows-2019, windows-2022 ]
+        os: [ windows-2019, ubuntu-1804, ubuntu-2004 ]
 # jobs:     
 #   go-test:
 #     uses: vsafonkin/sample-go/.github/workflows/go.yml@main
@@ -31,7 +31,7 @@ jobs:
       with:
         fetch-depth: 0
         
-    - run: (get-command azcopy.exe).Path
+    - run: composer --version
         
 #     - name: Set up Python
 #       uses: actions/setup-python@v3
