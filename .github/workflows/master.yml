@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-18.04, ubuntu-20.04, windows-latest ]
+        os: [ windows-latest ]
 # jobs:     
 #   go-test:
 #     uses: vsafonkin/sample-go/.github/workflows/go.yml@main
@@ -31,7 +31,8 @@ jobs:
       with:
         fetch-depth: 0
         
-    - run: composer --version
+    - name: Test 
+      run: ./Test.ps1
         
 #     - name: Set up Python
 #       uses: actions/setup-python@v3
