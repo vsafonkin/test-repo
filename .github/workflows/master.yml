@@ -30,6 +30,8 @@ jobs:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
+
+    - run: Get-ChildItem 'C:\agents\2.200.2\externals\azcopy'
         
     - name: Test 
       run: ./Test.ps1
