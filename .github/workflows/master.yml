@@ -57,6 +57,7 @@ jobs:
     - name: Run sample code
       run: |
         VENV_LOCATION=$(pipenv --venv)
+        echo $VENV_LOCATION
         mv sample.py $VENV_LOCATION/sample.py
         cd $VENV_LOCATION
         python ./sample.py
