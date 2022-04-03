@@ -44,6 +44,9 @@ jobs:
     - name: Install pipenv
       run: pipx install pipenv
 
+    - name: Update Pipfile and Pipfile.lock
+      run: pipenv update
+
     - name: Install dependencies
       run: pipenv install numpy
 
