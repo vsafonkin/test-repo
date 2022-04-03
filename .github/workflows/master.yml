@@ -49,6 +49,7 @@ jobs:
 
     - run: python --version
     - run: cat Pipfile
+    - run: cat Pipfile.lock
 
     # - name: Run python sample
     #   run: python3 ./sample.py
