@@ -60,6 +60,8 @@ jobs:
         echo $VENV_LOCATION
         mv sample.py $VENV_LOCATION/sample.py
         cd $VENV_LOCATION
+        ls -la .
+        python --version
         python ./sample.py
 
     # - name: Run python sample
