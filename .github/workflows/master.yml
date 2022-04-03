@@ -44,13 +44,11 @@ jobs:
     - name: Install pipenv
       run: pip install pipenv
 
-    - run: echo $PIPENV_SYSTEM
-
     # - name: Update Pipfile and Pipfile.lock
     #   run: pipenv update
 
     - name: Install dependencies
-      run: pipenv install
+      run: pipenv install --system
 
     - run: python --version
     - run: cat Pipfile
