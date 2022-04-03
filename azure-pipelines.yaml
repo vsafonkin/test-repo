@@ -3,10 +3,5 @@ jobs:
     pool:
       vmImage: 'windows-2022'
     steps:
-    - pwsh: npm install -g grunt-cli
-      displayName: Install grunt-cli
-    - pwsh: npm install
-      displayName: Install deps
-    - task: Grunt@0
-      inputs:
-        gruntFile: 'gruntfile.js'
+    - pwsh: Write-Host 'Hello AzDev'
+      displayName: Test

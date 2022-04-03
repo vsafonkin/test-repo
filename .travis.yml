@@ -1,8 +1,0 @@
-language: android
-os: linux
-
-jobs:
-  include:
-    - stage: Test
-      script: |
-        echo "hello"
