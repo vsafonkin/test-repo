@@ -50,7 +50,7 @@ jobs:
     - name: Install dependencies
       run: |
         pipenv install numpy
-        pipenv shell
+
 
     - run: cat Pipfile
     - run: cat Pipfile.lock
@@ -65,8 +65,8 @@ jobs:
     #     python --version
     #     python ./sample.py
 
-    - name: Run python sample
-      run: python ./sample.py
+    # - name: Run python sample
+    #   run: python ./sample.py
         
     # - name: Test 
     #   run: ./Test.ps1
