@@ -36,10 +36,16 @@ jobs:
       uses: actions/setup-python@main
       with:
         python-version: ${{ matrix.python-version }}
-        cache: 'pip'
+        # cache: 'pip'
+
+    # - name: Install dependencies
+    #   run: pip install -r requirements.txt
+
+    - name: Install pipenv
+      run: pipx install pipenv
 
     - name: Install dependencies
-      run: pip install -r requirements.txt
+      run: pipenv install numpy
 
     - run: python --version
     - name: Run python sample
