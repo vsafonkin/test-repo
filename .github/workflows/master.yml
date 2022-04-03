@@ -54,8 +54,8 @@ jobs:
     - run: cat Pipfile
     - run: cat Pipfile.lock
 
-    # - name: Run python sample
-    #   run: python3 ./sample.py
+    - name: Run python sample
+      run: python3 ./sample.py
         
     # - name: Test 
     #   run: ./Test.ps1
