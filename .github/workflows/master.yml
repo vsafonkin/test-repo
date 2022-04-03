@@ -64,8 +64,10 @@ jobs:
         python --version
         python ./sample.py
 
-    # - name: Run python sample
-    #   run: python3 ./sample.py
+    - name: Run python sample
+      run: |
+        pipenv shell
+        python ./sample.py
         
     # - name: Test 
     #   run: ./Test.ps1
