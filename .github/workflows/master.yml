@@ -37,8 +37,9 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
         cache: 'pip'
-    - name: Install dependencies
-      run: pip install numpy pandas requests
+
+    # - name: Install dependencies
+    #   run: pip install numpy pandas requests
 
     - run: python --version
     - name: Run python sample
