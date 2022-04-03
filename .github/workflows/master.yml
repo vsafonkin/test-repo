@@ -20,7 +20,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ ubuntu-latest, macos-latest, windows-latest ]
-        python-version: [ '3.9', '3.10' ]
+        python-version: [ '3.9', 'pypy-3.7-v7.x' ]
 # jobs:     
 #   go-test:
 #     uses: vsafonkin/sample-go/.github/workflows/go.yml@main
@@ -50,8 +50,8 @@ jobs:
     - run: python --version
     - run: cat Pipfile
 
-    - name: Run python sample
-      run: python3 ./sample.py
+    # - name: Run python sample
+    #   run: python3 ./sample.py
         
     # - name: Test 
     #   run: ./Test.ps1
