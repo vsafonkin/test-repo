@@ -48,6 +48,8 @@ jobs:
       run: pipenv install numpy
 
     - run: python --version
+    - run: ls .
+
     - name: Run python sample
       run: python3 ./sample.py
         
