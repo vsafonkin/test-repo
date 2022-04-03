@@ -19,7 +19,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ windows-latest ]
+        os: [ ubuntu-latest, macos-latest, windows-latest ]
+        python-version: [ 3.9, 3.10 ]
 # jobs:     
 #   go-test:
 #     uses: vsafonkin/sample-go/.github/workflows/go.yml@main
@@ -31,118 +32,70 @@ jobs:
       with:
         fetch-depth: 0
 
-    - run: Get-ChildItem 'C:\'
-        
-    - name: Test 
-      run: ./Test.ps1
-        
-#     - name: Set up Python
-#       uses: actions/setup-python@v3
-#       with:
-#         python-version: ${{ matrix.python }}
-        
-#     - name: venv activate Linux
-#       if: ${{ matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest' }}
-#       run: |
-#         mkdir test-venv
-#         cd test-venv
-#         python -m venv .
-#         source ./bin/activate
-#         echo "VIRTUAL_ENV: $VIRTUAL_ENV"
-        
-#     - name: venv activate Windows
-#       if: ${{ matrix.os == 'windows-latest' }}
-#       run: |
-#         mkdir test-venv
-#         cd test-venv
-#         python -m venv .
-#         ./Scripts/Activate.ps1
-#         Write-Host "VIRTUAL_ENV: $env:VIRTUAL_ENV"
-        
-
-#     - name: Setup dotnet from global.json
-#       uses: actions/setup-dotnet@v2
-        
-#     - name: Setup dotnet multiple lines
-#       uses: actions/setup-dotnet@v2
-#       with:
-#         dotnet-version: |
-#           3.1.*
-#           5.0
-#           6.0.x
-          
-#     - name: Setup dotnet prerelease
-#       uses: actions/setup-dotnet@v2
-#       with:
-#         dotnet-version: "7.0"
-#         include-prerelease: true
-          
-#     - run: dotnet --info
-    
-#     - uses: actions/setup-java@v1
-#       with:
-#         java-version: '17'
-        
-    - name: Setup Go environment
-      uses: actions/setup-go@v3
+    - name: Setup Python
+      uses: actions/setup-python@main
       with:
-        go-version: '>=1.17.0'
+        python-version: ${{ matrix.python-version }}
+        cache: 'pip'
+    - name: Install dependencies
+      run: pip install numpy pandas requests
         
-    - run: go version
+    # - name: Test 
+    #   run: ./Test.ps1
         
-#     - run: cp -f `which go` /usr/bin/go
-#     - run: sudo go version
-
-#     - run: Get-ChildItem C:/tools
-
-#     - uses: haskell/actions/setup@v1
-#       with:
-#         ghc-version: '9.0.2'
- 
-#     - run: |
-#         Get-ChildItem "C:\msys64\mingw64\lib"
-#         Remove-Item -Recurse -Force "C:\msys64\mingw64\lib"
-
-#     - run: Get-Content "C:\Cabal\config"
+    # - name: Set up Python
+    #   uses: actions/setup-python@v3
+    #   with:
+    #     python-version: ${{ matrix.python }}
         
-#     - run: |
-#         $origPath = $env:PATH
-#         $env:PATH = "C:\msys64\mingw64\bin;C:\msys64\usr\bin;$origPath"
-#         pacman.exe -Syy
-#         pacman.exe -S --noconfirm --noprogressbar mingw-w64-x86_64-toolchain
-#         Write-Host "-----"
-#         pacman.exe -Qi mingw-w64-x86_64-crt-git
-#         Write-Host "-----"
-
-#     - run: Get-ChildItem "C:\msys64\mingw64\lib"
-
-#     - run: |
-#         cabal update
-#         cabal install haskell-say -v
-#         cabal build
-#         cabal run
-
-#     - run: cabal install --help
-#     - run: cabal build --help
-#     - run: Get-ChildItem "C:\msys64\mingw64"
-#     - run: Get-ChildItem "C:\msys64\mingw64\include"
-#     - run: Get-ChildItem "C:\msys64\mingw64\lib"
-  
-#     - run: echo $PATH
-
-#     - name: Set up Python
-#       uses: actions/setup-python@v2
-#       with:
-#         python-version: pypy-3.x
+    # - name: venv activate Linux
+    #   if: ${{ matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest' }}
+    #   run: |
+    #     mkdir test-venv
+    #     cd test-venv
+    #     python -m venv .
+    #     source ./bin/activate
+    #     echo "VIRTUAL_ENV: $VIRTUAL_ENV"
         
-#     - run: echo $PATH
-#     - run: echo $pythonLocation
-#     - run: ls -la /opt/hostedtoolcache/Python/3.9.10/x64
+    # - name: venv activate Windows
+    #   if: ${{ matrix.os == 'windows-latest' }}
+    #   run: |
+    #     mkdir test-venv
+    #     cd test-venv
+    #     python -m venv .
+    #     ./Scripts/Activate.ps1
+    #     Write-Host "VIRTUAL_ENV: $env:VIRTUAL_ENV"
+        
+
+    # - name: Setup dotnet from global.json
+    #   uses: actions/setup-dotnet@v2
+        
+    # - name: Setup dotnet multiple lines
+    #   uses: actions/setup-dotnet@v2
+    #   with:
+    #     dotnet-version: |
+    #       3.1.*
+    #       5.0
+    #       6.0.x
+          
+    # - name: Setup dotnet prerelease
+    #   uses: actions/setup-dotnet@v2
+    #   with:
+    #     dotnet-version: "7.0"
+    #     include-prerelease: true
+          
+    # - run: dotnet --info
     
-    
-
-     
-
-
-
-
+    # - uses: actions/setup-java@v1
+    #   with:
+    #     java-version: '17'
+        
+    # - name: Setup Go environment
+    #   uses: actions/setup-go@v3
+    #   with:
+    #     go-version: '>=1.17.0'
+        
+    # - run: go version
+        
+    # - run: cp -f `which go` /usr/bin/go
+    # - run: sudo go version        
