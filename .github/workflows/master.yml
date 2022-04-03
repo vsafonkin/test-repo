@@ -36,9 +36,13 @@ jobs:
       uses: actions/setup-python@main
       with:
         python-version: ${{ matrix.python-version }}
-        cache: 'pipenv'
+        cache: 'pip'
     - name: Install dependencies
       run: pip install numpy pandas requests
+
+    - run: python --version
+    - name: Run python sample
+      run: python3 ./sample.py
         
     # - name: Test 
     #   run: ./Test.ps1
