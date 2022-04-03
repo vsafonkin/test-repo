@@ -48,7 +48,9 @@ jobs:
     #   run: pipenv update
 
     - name: Install dependencies
-      run: pipenv install numpy
+      run: |
+        pipenv install numpy
+        pipenv shell
 
     - run: python --version
     - run: cat Pipfile
@@ -65,9 +67,7 @@ jobs:
     #     python ./sample.py
 
     - name: Run python sample
-      run: |
-        pipenv shell
-        python ./sample.py
+      run: python ./sample.py
         
     # - name: Test 
     #   run: ./Test.ps1
