@@ -36,23 +36,23 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
-        cache: 'pipenv'
+        # cache: 'pipenv'
 
     # - name: Install dependencies
     #   run: pip install -r requirements.txt
 
-    - name: Install pipenv
-      run: pipx install pipenv
+    # - name: Install pipenv
+    #   run: pipx install pipenv
 
     # - name: Update Pipfile and Pipfile.lock
     #   run: pipenv update
 
-    - name: Install dependencies
-      run: pipenv install --verbose
+    # - name: Install dependencies
+    #   run: pipenv install --verbose
 
 
-    - run: cat Pipfile
-    - run: cat Pipfile.lock
+    # - run: cat Pipfile
+    # - run: cat Pipfile.lock
 
     # - name: Run sample code
     #   run: |
