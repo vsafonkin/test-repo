@@ -48,7 +48,7 @@ jobs:
     #   run: pipenv update
 
     - name: Install dependencies
-      run: pipenv install --verbosity
+      run: pipenv install --verbose
 
 
     - run: cat Pipfile
