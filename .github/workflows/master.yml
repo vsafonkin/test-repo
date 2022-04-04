@@ -54,6 +54,11 @@ jobs:
     - run: cat Pipfile
     - run: cat Pipfile.lock
 
+    - name: Run sample code
+      run: |
+        pipenv shell
+        python ./sample.py
+
     # - name: Run sample code
     #   run: |
     #     VENV_LOCATION=$(pipenv --venv)
