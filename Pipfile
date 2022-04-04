@@ -6,8 +6,8 @@ name = "pypi"
 [packages]
 numpy = "1.22.3"
 pandas = "1.4.2"
-requests = "*"
-SciPy = "*"
+requests = "2.27.1"
+SciPy = "1.8.0"
 
 [dev-packages]
 
