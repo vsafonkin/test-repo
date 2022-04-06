@@ -20,7 +20,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ ubuntu-latest, macos-latest, windows-latest ]
-        python-version: [ '3.9', 'pypy-3.7-v7.x' ]
+        python-version: [ 'pypy-3.6' ]
 # jobs:     
 #   go-test:
 #     uses: vsafonkin/sample-go/.github/workflows/go.yml@main
