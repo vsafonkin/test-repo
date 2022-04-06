@@ -20,7 +20,7 @@ $componentsToAdd = @(
   "Microsoft.VisualStudio.Component.VC.v142.MFC.Spectre"
 )
 [string]$workloadArgs = $componentsToAdd | ForEach-Object {" --add " +  $_}
-$Arguments = ('/c', "vs_installer.exe", 'modify', '--installPath', "`"$InstallPath`"",$workloadArgs, '--quiet', '--norestart', '--nocache')
+$Arguments = ('/c', "vs_installer.exe", 'modify', '--installPath', "`"$InstallPath`"",$workloadArgs, '--norestart', '--nocache')
 $process = Start-Process -FilePath cmd.exe -ArgumentList $Arguments -Wait -PassThru -WindowStyle Hidden
 if ($process.ExitCode -eq 0)
 {
