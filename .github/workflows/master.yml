@@ -32,7 +32,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - run: Get-ChildItem -Path C:\ -Include vs_*.exe -File -Recurse
+    - run: Get-ChildItem -Path C:\ -Include vs_buildtools.exe -File -Recurse
 
     # - name: VS components
     #   run: ./Test.ps1
