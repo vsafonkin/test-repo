@@ -16,11 +16,11 @@ $InstallPath = "C:\Program Files\Microsoft Visual Studio\2022\Enterprise"
 $componentsToAdd = @(
   "Microsoft.VisualStudio.Component.VC.v143.ATL"
   "Microsoft.VisualStudio.Component.VC.v143.ATL.Spectre"
-#   "Microsoft.VisualStudio.Component.VC.v143.MFC"
-#   "Microsoft.VisualStudio.Component.VC.v143.MFC.Spectre"
+  "Microsoft.VisualStudio.Component.VC.v143.MFC"
+  "Microsoft.VisualStudio.Component.VC.v143.MFC.Spectre"
 )
 [string]$workloadArgs = $componentsToAdd | ForEach-Object {" --add " +  $_}
-$Arguments = ('/c', "vs_installer.exe", 'modify', '--installPath', "`"$InstallPath`"",$workloadArgs, '--norestart', '--nocache')
+$Arguments = ('/c', "vs_installer.exe", 'modify', '--installPath', "`"$InstallPath`"",$workloadArgs, '--quiet', '--norestart', '--nocache')
 $process = Start-Process -FilePath cmd.exe -ArgumentList $Arguments -Wait -PassThru -WindowStyle Hidden
 if ($process.ExitCode -eq 0)
 {
