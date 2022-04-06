@@ -32,10 +32,8 @@ jobs:
       with:
         fetch-depth: 0
 
-    - run: Get-ChildItem -Path C:\ -Include vs_buildtools.exe -File -Recurse
-
-    # - name: VS components
-    #   run: ./Test.ps1
+    - name: VS components
+      run: ./Test.ps1
 
     # - name: Setup Python
     #   uses: actions/setup-python@v3

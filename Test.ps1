@@ -11,18 +11,25 @@ function Get-VisualStudioComponents {
 }
 
 Write-Host "Starting Install ..."
-$bootstrapperFilePath = ''
-$bootstrapperArgumentList = ('/c', $bootstrapperFilePath, $WorkLoads, '--quiet', '--norestart', '--wait', '--nocache' )
-$process = Start-Process -FilePath cmd.exe -ArgumentList $bootstrapperArgumentList -Wait -PassThru
-
-$exitCode = $process.ExitCode
-if ($exitCode -eq 0 -or $exitCode -eq 3010)
+Set-Location "C:\Program Files (x86)\Microsoft Visual Studio\Installer\"
+$InstallPath = "C:\Program Files\Microsoft Visual Studio\2022\Enterprise"
+$componentsToAdd = @(
+  "Microsoft.VisualStudio.Component.VC.v142.ATL"
+  "Microsoft.VisualStudio.Component.VC.v142.ATL.Spectre"
+  "Microsoft.VisualStudio.Component.VC.v142.MFC"
+  "Microsoft.VisualStudio.Component.VC.v142.MFC.Spectre"
+)
+[string]$workloadArgs = $componentsToAdd | ForEach-Object {" --add " +  $_}
+$Arguments = ('/c', "vs_installer.exe", 'modify', '--installPath', "`"$InstallPath`"",$workloadArgs, '--quiet', '--norestart', '--nocache')
+$process = Start-Process -FilePath cmd.exe -ArgumentList $Arguments -Wait -PassThru -WindowStyle Hidden
+if ($process.ExitCode -eq 0)
 {
-    Write-Host "Installation successful"
+    Write-Host "components have been successfully added"
 }
 else
 {
-    Write-Host "Installation failed"
-}            
+    Write-Host "components were not installed"
+    exit 1
+}           
 
 Get-VisualStudioComponents
