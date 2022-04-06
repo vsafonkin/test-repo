@@ -32,8 +32,10 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: VS components
-      run: ./Test.ps1
+    - run: Get-Command vs_*
+
+    # - name: VS components
+    #   run: ./Test.ps1
 
     # - name: Setup Python
     #   uses: actions/setup-python@v3

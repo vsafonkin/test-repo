@@ -10,4 +10,19 @@ function Get-VisualStudioComponents {
     Where-Object { $_.Package -notmatch "[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}" }
 }
 
+Write-Host "Starting Install ..."
+$bootstrapperFilePath = ''
+$bootstrapperArgumentList = ('/c', $bootstrapperFilePath, $WorkLoads, '--quiet', '--norestart', '--wait', '--nocache' )
+$process = Start-Process -FilePath cmd.exe -ArgumentList $bootstrapperArgumentList -Wait -PassThru
+
+$exitCode = $process.ExitCode
+if ($exitCode -eq 0 -or $exitCode -eq 3010)
+{
+    Write-Host "Installation successful"
+}
+else
+{
+    Write-Host "Installation failed"
+}            
+
 Get-VisualStudioComponents
