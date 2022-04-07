@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ windows-latest ]
+        os: [ windows-latest, 'ubuntu-latest', 'macos-latest' ]
         # python-version: [ 'pypy-3.7' ]
 # jobs:     
 #   go-test:
@@ -32,8 +32,14 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: VS components
-      run: ./Test.ps1
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '12.22.12'
+
+    - run: node --version
+
+    # - name: VS components
+    #   run: ./Test.ps1
 
     # - name: Setup Python
     #   uses: actions/setup-python@v3
