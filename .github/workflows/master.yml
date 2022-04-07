@@ -36,9 +36,9 @@ jobs:
     #   with:
     #     node-version: '12.22.12'
 
-    - name: Install Pester
+    - name: Python tests
       shell: pwsh
-      run: Install-Module Pester -Force -Scope CurrentUser
+      run: ./python-tests.ps1
 
     # - name: VS components
     #   run: ./Test.ps1
