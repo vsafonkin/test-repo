@@ -38,7 +38,17 @@ jobs:
 
     - name: Python tests
       shell: pwsh
-      run: ./python-tests.ps1
+      run: |
+        $pesterContainer = New-PesterContainer -Path './python-tests.ps1' -Data @{
+        Version="3.11.0-alpha.7";
+        Platform="linux-18.04";
+        }
+        $Result = Invoke-Pester -Container $pesterContainer -PassThru
+        if ($Result.FailedCount -gt 0)
+        {
+        $host.SetShouldExit($Result.FailedCount)
+        exit $Result.FailedCount
+        }
 
     # - name: VS components
     #   run: ./Test.ps1
