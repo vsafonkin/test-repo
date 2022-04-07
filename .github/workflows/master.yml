@@ -39,25 +39,9 @@ jobs:
     - name: Setup python
       uses: actions/setup-python@v3
       with:
-        python-version: '3.11.0-alpha.7'
+        python-version: '3.10'
 
     - run: python --version
-
-    - name: Python tests
-      shell: pwsh
-      run: |
-        Install-Module Pester -Force -Scope CurrentUser
-        Import-Module Pester
-        $pesterContainer = New-PesterContainer -Path './python-tests.ps1' -Data @{
-        Version="3.11.0-alpha.7";
-        Platform="linux-18.04";
-        }
-        $Result = Invoke-Pester -Container $pesterContainer -PassThru
-        if ($Result.FailedCount -gt 0)
-        {
-        $host.SetShouldExit($Result.FailedCount)
-        exit $Result.FailedCount
-        }
 
     # - name: VS components
     #   run: ./Test.ps1
