@@ -39,6 +39,8 @@ jobs:
     - name: Python tests
       shell: pwsh
       run: |
+        Install-Module Pester -Force -Scope CurrentUser
+        Import-Module Pester
         $pesterContainer = New-PesterContainer -Path './python-tests.ps1' -Data @{
         Version="3.11.0-alpha.7";
         Platform="linux-18.04";
