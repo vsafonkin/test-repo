@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ windows-latest, 'ubuntu-latest', 'macos-latest' ]
+        os: [ 'ubuntu-18.04' ]
         # python-version: [ 'pypy-3.7' ]
 # jobs:     
 #   go-test:
@@ -32,11 +32,13 @@ jobs:
       with:
         fetch-depth: 0
 
-    - uses: actions/setup-node@v3
-      with:
-        node-version: '12.22.12'
+    # - uses: actions/setup-node@v3
+    #   with:
+    #     node-version: '12.22.12'
 
-    - run: node --version
+    - name: Install Pester
+      shell: pwsh
+      run: Install-Module Pester -Force -Scope CurrentUser
 
     # - name: VS components
     #   run: ./Test.ps1
