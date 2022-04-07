@@ -36,6 +36,13 @@ jobs:
     #   with:
     #     node-version: '12.22.12'
 
+    - name: Setup python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.11.0-alpha.7'
+
+    - run: python --version
+
     - name: Python tests
       shell: pwsh
       run: |
