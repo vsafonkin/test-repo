@@ -7,5 +7,5 @@ import sys
 # print(platform.version())
 print(sys.version_info)
 
-if sys.version_info == (3, 10):
+if sys.version_info >= (3, 10):
     print('It is true')
