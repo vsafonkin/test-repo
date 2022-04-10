@@ -1,7 +1,5 @@
-import numpy as np
+import platform
 
 print("hello")
-
-a = np.arange(6)
-a2 = a[np.newaxis, :]
-print(a2.shape)
+print(platform.system())
+print(platform.release())
