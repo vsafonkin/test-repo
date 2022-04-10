@@ -33,6 +33,7 @@ jobs:
         fetch-depth: 0
 
     - run: sudo apt-get install build-essential
+    - run: gcc --version
 
     # - uses: actions/setup-node@v3
     #   with:
