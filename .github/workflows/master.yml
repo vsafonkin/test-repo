@@ -32,7 +32,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - run: apt install build-essential
+    - run: sudo apt install build-essential
 
     # - uses: actions/setup-node@v3
     #   with:
