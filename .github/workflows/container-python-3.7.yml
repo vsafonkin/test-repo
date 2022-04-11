@@ -16,10 +16,9 @@ jobs:
         python-version: 3.7
     
     - name: Check python
-      shell: pwsh
       run: |
         python --version
-        Get-Command python
+        which python
 
     - name: Install wget
       run: |
