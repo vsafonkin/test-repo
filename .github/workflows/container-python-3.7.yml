@@ -15,10 +15,14 @@ jobs:
       with:
         python-version: 3.7
 
+    - run: |
+        python --version
+        where python
+
     - name: Install wget
       run: |
-        sudo apt-get update
-        sudo apt-get install wget
+        apt-get update
+        apt-get install wget
 
     - name: Install dev dependencies & build package
       run: |
