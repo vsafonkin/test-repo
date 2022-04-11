@@ -14,10 +14,12 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.7
-
-    - run: |
+    
+    - name: Check python
+      shell: pwsh
+      run: |
         python --version
-        where python
+        Get-Command python
 
     - name: Install wget
       run: |
