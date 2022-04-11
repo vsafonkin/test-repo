@@ -23,7 +23,7 @@ jobs:
     - name: Install wget
       run: |
         apt-get update
-        apt-get install wget
+        apt-get install wget -y
 
     - name: Install dev dependencies & build package
       run: |
