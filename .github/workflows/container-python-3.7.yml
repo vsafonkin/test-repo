@@ -15,6 +15,11 @@ jobs:
       with:
         python-version: 3.7
 
+    - name: Install wget
+      run: |
+        sudo apt-get update
+        sudo apt-get install wget
+
     - name: Install dev dependencies & build package
       run: |
         wget -qO- https://bootstrap.pypa.io/get-pip.py | python
