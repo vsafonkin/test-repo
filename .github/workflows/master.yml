@@ -32,6 +32,8 @@ jobs:
       with:
         fetch-depth: 0
 
+    - run: go version
+
     # - run: ldd --version
 
     # - uses: actions/setup-node@v3
