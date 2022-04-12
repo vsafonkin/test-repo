@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ 'ubuntu-18.04', 'ubuntu-latest' ]
+        os: [ 'windows-latest', 'ubuntu-latest', 'macos-latest' ]
         # python-version: [ 'pypy-3.7' ]
 # jobs:     
 #   go-test:
@@ -32,7 +32,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - run: ldd --version
+    # - run: ldd --version
 
     # - uses: actions/setup-node@v3
     #   with:
@@ -119,13 +119,12 @@ jobs:
     # - name: Setup dotnet from global.json
     #   uses: actions/setup-dotnet@v2
         
-    # - name: Setup dotnet multiple lines
-    #   uses: actions/setup-dotnet@v2
-    #   with:
-    #     dotnet-version: |
-    #       3.1.*
-    #       5.0
-    #       6.0.x
+    - name: Setup dotnet multiple lines
+      uses: actions/setup-dotnet@430f78fc13b1169a1f62d84a45dcf6816eb95fca
+      with:
+        dotnet-version: |
+          3.1.*
+          5.0
           
     # - name: Setup dotnet prerelease
     #   uses: actions/setup-dotnet@v2
