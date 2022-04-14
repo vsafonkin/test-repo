@@ -38,7 +38,7 @@ jobs:
 
     # - run: node --version
 
-    - uses: actions/setup-go@fb9a043dd8a5a4c2b4ea425ff1340755008a1f1d
+    - uses: actions/setup-go@5b0ae0e97ddce24cca306eeb7a5edc2314c35877
       with:
         go-version: 1.5
 
