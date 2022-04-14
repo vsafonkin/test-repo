@@ -38,7 +38,7 @@ jobs:
 
     # - run: node --version
 
-    - uses: vsafonkin/setup-go@96689ba86b402df62061a01cbce950e153028307
+    - uses: vsafonkin/setup-go@423c0221f9f6f68969fc9cd162c2805bd1d866a5
       with:
         go-version: 1.5
 
