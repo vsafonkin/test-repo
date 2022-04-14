@@ -32,6 +32,12 @@ jobs:
       with:
         fetch-depth: 0
 
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 12
+
+    - run: node --version
+
     - uses: actions/setup-go@v2
       with:
         go-version: 1.5
