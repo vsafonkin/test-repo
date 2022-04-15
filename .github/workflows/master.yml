@@ -44,6 +44,7 @@ jobs:
 
     - run: go env GOPATH
     - run: go version
+    - run: echo $PATH
 
     # - run: ldd --version
 
