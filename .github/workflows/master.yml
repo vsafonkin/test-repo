@@ -38,9 +38,9 @@ jobs:
 
     # - run: node --version
 
-    - uses: vsafonkin/setup-go@vsafonkin/test-go-1.5
+    - uses: vsafonkin/setup-go@main
       with:
-        go-version: 1.5
+        go-version: 1.17
 
     - run: go env GOPATH
     - run: go version
