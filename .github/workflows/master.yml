@@ -38,12 +38,12 @@ jobs:
 
     # - run: node --version
 
-    - uses: vsafonkin/setup-go@423c0221f9f6f68969fc9cd162c2805bd1d866a5
-      with:
-        go-version: 1.5
+    # - uses: vsafonkin/setup-go@423c0221f9f6f68969fc9cd162c2805bd1d866a5
+    #   with:
+    #     go-version: 1.5
 
-    - run: go env GOPATH
-    - run: go version
+    # - run: go env GOPATH
+    # - run: go version
 
     # - run: ldd --version
 
@@ -51,10 +51,12 @@ jobs:
     #   with:
     #     node-version: '12.22.12'
 
-    # - name: Setup python
-    #   uses: actions/setup-python@v3
-    #   with:
-    #     python-version: '3.10'
+    - name: Setup python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.11'
+
+    - run: python --version
 
     # - run: python --version
     # - run: python ./sample.py
