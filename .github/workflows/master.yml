@@ -40,7 +40,7 @@ jobs:
 
     - uses: vsafonkin/setup-go@vsafonkin/test-go-1.5
       with:
-        go-version: 1.5
+        go-version: 1.18
 
     - run: go env GOPATH
     - run: go version
