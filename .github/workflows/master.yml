@@ -34,7 +34,7 @@ jobs:
 
     - uses: actions/setup-node@v3
       with:
-        node-version: lts/carbon
+        node-version: 12
 
     - run: node --version
 
