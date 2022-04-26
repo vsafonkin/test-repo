@@ -148,13 +148,13 @@ jobs:
     #       3.1.*
     #       5.0
           
-    - name: Setup dotnet
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: "6.0"
+    # - name: Setup dotnet
+    #   uses: actions/setup-dotnet@v2
+    #   with:
+    #     dotnet-version: "6.0"
           
-    - run: dotnet --info
-    - run: dotnet test
+    # - run: dotnet --info
+    # - run: dotnet test
     
     # - uses: actions/setup-java@v1
     #   with:
