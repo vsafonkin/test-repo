@@ -31,15 +31,17 @@ jobs:
 #       go-version: "1.17.7"
 
     steps:
-    # - uses: actions/checkout@v3
-    #   with:
-    #     fetch-depth: 0
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
 
     # - uses: actions/setup-node@v3
     #   with:
     #     node-version: lts/carbon
 
     # - run: node --version
+
+    - run: go mod edit -json | jq -r .Go
 
     # - uses: actions/setup-go@v3
     #   with:
