@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ 'windows-latest', 'ubuntu-latest', 'macos-latest' ]
+        os: [ 'ubuntu-latest', 'macos-latest' ]
 
 # jobs:     
 #   go-test:
@@ -34,6 +34,8 @@ jobs:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
+
+    - run: echo $AGENT_TOOLSDIRECTORY
 
     # - uses: actions/setup-node@v3
     #   with:
@@ -148,13 +150,13 @@ jobs:
     #       3.1.*
     #       5.0
           
-    - name: Setup dotnet
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: "6.0"
+    # - name: Setup dotnet
+    #   uses: actions/setup-dotnet@v2
+    #   with:
+    #     dotnet-version: "6.0"
           
-    - run: dotnet --info
-    - run: dotnet test
+    # - run: dotnet --info
+    # - run: dotnet test
     
     # - uses: actions/setup-java@v1
     #   with:
