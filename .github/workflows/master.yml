@@ -58,9 +58,9 @@ jobs:
     #     node-version: '12.22.12'
 
     - name: Setup python
-      uses: actions/setup-python@v3
+      uses: mayeut/setup-python@pypyX.Y
       with:
-        python-version: 'pypy-3.9'
+        python-version: 'pypy3.9'
 
     - run: python --version
 
