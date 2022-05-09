@@ -1,7 +1,7 @@
 jobs:
-  - job:
+  - job: 'Test'
     pool:
-      vmImage: 'windows-2022'
+      vmImage: 'windows-2016'
     steps:
     - pwsh: Write-Host 'Hello AzDev'
       displayName: Test
