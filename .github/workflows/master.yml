@@ -19,7 +19,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ 'windows-2019', 'windows-2022', 'ubuntu-18.04', 'ubuntu-20.04', 'ubuntu-22.04', 'macos-11', 'macos-12' ]
+        os: [ 'macos-latest' ]
+        python-version: ["3.6", "3.7", "3.8", "3.9", "3.10"]
+    name: Python ${{ matrix.python-version }} - ${{ matrix.os }}
 
 # jobs:     
 #   go-test:
@@ -32,17 +34,12 @@ jobs:
       with:
         fetch-depth: 0
 
-    # - run: curl https://nodejs.org/dist/index.json | jq '. [0].version'
-
-    # - run: echo $AGENT_TOOLSDIRECTORY
-
     # - uses: actions/setup-node@v3
     #   with:
     #     node-version: lts/carbon
 
     # - run: node --version
 
-    # - run: go mod edit -json | jq -r .Go
 
     # - uses: actions/setup-go@v3
     #   with:
@@ -50,84 +47,19 @@ jobs:
     #     # check-latest: true
 
     # - run: go version
-    # - run: go env GOPATH
-    # - run: echo $PATH
 
-    # - run: ldd --version
-
-    # - uses: actions/setup-node@v3
-    #   with:
-    #     node-version: '12.22.12'
-
-    # - name: VS components
-    #   run: ./Test.ps1
 
     - name: Setup Python
       uses: actions/setup-python@v3
       with:
-        python-version: 3.11-dev
+        python-version: ${{ matrix.python-version }}
 
     - run: python --version
 
-    # - name: Install dependencies
-    #   run: pip install -r requirements.txt
+    - name: Run sample code
+      run: |
+        python ./sample.py
 
-    # - name: Install pipenv
-    #   run: pipx install pipenv
-
-    # - name: Update Pipfile and Pipfile.lock
-    #   run: pipenv update
-
-    # - name: Install dependencies
-    #   run: pipenv install --verbose
-
-
-    # - run: cat Pipfile
-    # - run: cat Pipfile.lock
-
-    # - name: Run sample code
-    #   run: |
-    #     pipenv shell
-    #     python ./sample.py
-
-    # - name: Run sample code
-    #   run: |
-    #     VENV_LOCATION=$(pipenv --venv)
-    #     echo $VENV_LOCATION
-    #     mv sample.py $VENV_LOCATION/sample.py
-    #     cd $VENV_LOCATION
-    #     ls -la ./src
-    #     python --version
-    #     python ./sample.py
-
-    # - name: Run python sample
-    #   run: python ./sample.py
-        
-    # - name: Test 
-    #   run: ./Test.ps1
-        
-    # - name: Set up Python
-    #   uses: actions/setup-python@v3
-    #   with:
-    #     python-version: ${{ matrix.python }}
-        
-    # - name: venv activate Linux
-    #   if: ${{ matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest' }}
-    #   run: |
-    #     mkdir test-venv
-    #     cd test-venv
-    #     python -m venv .
-    #     source ./bin/activate
-    #     echo "VIRTUAL_ENV: $VIRTUAL_ENV"
-        
-    # - name: venv activate Windows
-    #   if: ${{ matrix.os == 'windows-latest' }}
-    #   run: |
-    #     mkdir test-venv
-    #     cd test-venv
-    #     python -m venv .
-    #     ./Scripts/Activate.ps1
-    #     Write-Host "VIRTUAL_ENV: $env:VIRTUAL_ENV"
         
 
     # - name: Setup dotnet from global.json
