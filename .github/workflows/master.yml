@@ -19,8 +19,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ 'macos-latest', 'macos-10.15' ]
-        python-version: ["3.6", "3.7", "3.8", "3.9", "3.10"]
+        os: [ 'windows-latest' ]
+        python-version: [ "3.9" ]
     name: Python ${{ matrix.python-version }} - ${{ matrix.os }}
 
 # jobs:     
@@ -48,18 +48,20 @@ jobs:
 
     # - run: go version
 
-    - run: brew install tcl-tk
+    # - run: brew install tcl-tk
 
     - name: Setup Python
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
 
-    - run: python --version
+    - run: |
+        python --version
+        Get-Command python
 
-    - name: Run sample code
-      run: |
-        python ./sample.py
+    # - name: Run sample code
+    #   run: |
+    #     python ./sample.py
 
         
 
