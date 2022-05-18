@@ -60,7 +60,7 @@ jobs:
         Get-Command python
 
     - run: |
-        ls C:\hostedtoolcache\windows\Python
+        ls C:\hostedtoolcache\windows\Python\3.9.12\x64
 
     # - name: Run sample code
     #   run: |
