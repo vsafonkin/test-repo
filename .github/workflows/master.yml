@@ -19,8 +19,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ 'windows-latest', 'ubuntu-latest', 'macos-latest' ]
-        python-version: [ '3.7', '3.9' ]
+        os: [ 'macos-latest' ]
+        python-version: [ '3.7' ]
     name: Python ${{ matrix.python-version }} - ${{ matrix.os }}
 
 # jobs:     
@@ -57,7 +57,9 @@ jobs:
 
     - run: |
         python --version
-        brew install tcl-tk
+        ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/tkinter
+
+    - run: cat /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/tkinter/__init__.py
 
     - run: |
         python ./sample.py
