@@ -57,7 +57,7 @@ jobs:
 
     - run: |
         python --version
-        ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/tkinter
+        brew list
 
     - run: cat /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/tkinter/__init__.py
 
