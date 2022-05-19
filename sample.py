@@ -2,7 +2,7 @@ import tkinter as tk
 
 print('Tcl Version: ', tk.TclVersion)
 print('Tk Version', tk.TkVersion)
-print('Tk path', tk.getvar('tk_version'))
+print('Tk path', tk.Misc.getvar('tk_version'))
 
 print('---------')
 
