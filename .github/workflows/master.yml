@@ -64,7 +64,7 @@ jobs:
     - run: |
         python ./sample.py
       env:
-        TK_LIBRARY: '/usr/local/Cellar/tcl-tk/8.6.12_1'
+        PKG_CONFIG_PATH: '/usr/local/opt/tcl-tk/lib/pkgconfig'
 
     # - name: Run sample code
     #   run: |
