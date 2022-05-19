@@ -2,6 +2,7 @@ import tkinter as tk
 
 print('Tcl Version: ', tk.TclVersion)
 print('Tk Version', tk.TkVersion)
+print(tk.Misc().getvar('tk_version'))
 
 print('---------')
 
