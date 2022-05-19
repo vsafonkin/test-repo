@@ -59,7 +59,7 @@ jobs:
         python --version
         brew info tcl-tk
 
-    - run: ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib
+    - run: ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7
 
     - run: echo 'export PATH="/usr/local/opt/tcl-tk/bin:$PATH"' >> /Users/runner/.bash_profile
 
