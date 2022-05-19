@@ -64,7 +64,7 @@ jobs:
     - run: |
         python ./sample.py
       env:
-        TK_LIBRARY: './lib'
+        TK_LIBRARY: '/usr/local/Cellar/tcl-tk/8.6.12_1'
 
     # - name: Run sample code
     #   run: |
