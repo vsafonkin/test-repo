@@ -35,6 +35,8 @@ jobs:
         fetch-depth: 0
 
     - run: nuget help
+    - run: nuget update
+    - run: nuget help
 
     # - uses: actions/setup-node@v3
     #   with:
