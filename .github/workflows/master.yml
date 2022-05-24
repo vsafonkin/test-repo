@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ 'macos-latest', 'ubuntu-latest', 'windows-latest' ]
+        os: [ 'macos-latest', 'ubuntu-latest' ]
     #     python-version: [ '3.7' ]
     # name: Python ${{ matrix.python-version }} - ${{ matrix.os }}
 
@@ -61,6 +61,11 @@ jobs:
 
     - run: |
         echo $pythonLocation
+
+    - run: |
+        ls -la /opt/hostedtoolcache/PyPy/3.9.12/x64
+    - run: |
+        ls -la /opt/hostedtoolcache/PyPy/3.9.12/x64/bin
 
     # - run: ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7
 
