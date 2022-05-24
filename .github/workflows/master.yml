@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ 'macos-latest', 'ubuntu-18.04', 'ubuntu-20.04' ]
+        os: [ 'macos-latest', 'ubuntu-latest' ]
     #     python-version: [ '3.7' ]
     # name: Python ${{ matrix.python-version }} - ${{ matrix.os }}
 
@@ -34,9 +34,9 @@ jobs:
       with:
         fetch-depth: 0
 
-    - run: nuget help
-    - run: sudo nuget update -self
-    - run: nuget help
+    # - run: nuget help
+    # - run: sudo nuget update -self
+    # - run: nuget help
 
     # - uses: actions/setup-node@v3
     #   with:
@@ -54,14 +54,14 @@ jobs:
 
     # - run: brew install tcl-tk
 
-    # - name: Setup Python
-    #   uses: actions/setup-python@v3
-    #   with:
-    #     python-version: ${{ matrix.python-version }}
+    - name: Setup Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.9
 
-    # - run: |
-    #     python --version
-    #     brew info tcl-tk
+    - run: |
+        python --version
+        echo $pythonLocation
 
     # - run: ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7
 
