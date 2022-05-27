@@ -65,11 +65,7 @@ jobs:
         python-version: pypy-3.7-v7.x
 
     - run: |
-        python --version
-        echo $pythonLocation
-
-    - run: |
-        Get-ChildItem C:\hostedtoolcache\windows\Python
+        poetry --help
 
     # - run: ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7
 
