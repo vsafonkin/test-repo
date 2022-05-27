@@ -65,7 +65,7 @@ jobs:
         python-version: pypy-3.7-v7.x
 
     - run: |
-        poetry env use --help
+        poetry env use $env:pythonLocation
 
     # - run: ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7
 
