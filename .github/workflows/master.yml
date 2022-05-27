@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ 'macos-latest', 'ubuntu-latest' ]
+        os: [ 'windows-latest' ]
     #     python-version: [ '3.7' ]
     # name: Python ${{ matrix.python-version }} - ${{ matrix.os }}
 
@@ -57,15 +57,14 @@ jobs:
     - name: Setup Python
       uses: actions/setup-python@v3
       with:
-        python-version: pypy-3.9
+        python-version: pypy-3.7-v7.x
 
     - run: |
+        python --version
         echo $pythonLocation
 
     - run: |
-        ls -la /opt/hostedtoolcache/PyPy/3.9.12/x64
-    - run: |
-        ls -la /opt/hostedtoolcache/PyPy/3.9.12/x64/bin
+        Get-ChildItem C:\hostedtoolcache\windows\Python
 
     # - run: ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7
 
