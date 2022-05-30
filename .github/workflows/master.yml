@@ -65,6 +65,7 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
+        cache: poetry
 
     - run: python --version
     - run: pipx list
@@ -76,7 +77,7 @@ jobs:
 
     - run: Get-Content pyproject.toml
 
-
+    - run: ls C:\Users\runneradmin\AppData\Local\pypoetry\Cache\virtualenvs
 
     - name: Install dependencies
       run: poetry add flake8
