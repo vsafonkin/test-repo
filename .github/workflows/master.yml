@@ -68,14 +68,14 @@ jobs:
 
     - run: python --version
     - run: pipx list
+    - run: |
+       poetry env use $env:pythonLocation\python.exe
 
     - name: Init pyproject.toml
       run: poetry init -n --python ${{ matrix.python-version }}
 
     - run: Get-Content pyproject.toml
 
-    - run: |
-       poetry env use $env:pythonLocation\python.exe
 
 
     - name: Install dependencies
