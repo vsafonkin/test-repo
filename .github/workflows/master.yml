@@ -71,8 +71,8 @@ jobs:
 
     - name: Init pyproject.toml
       run: poetry init -n --python ^3.6
-    - run: |
-       poetry env use $env:pythonLocation\python.exe
+    # - run: |
+    #    poetry env use $env:pythonLocation\python.exe
 
     - run: Get-Content pyproject.toml
 
