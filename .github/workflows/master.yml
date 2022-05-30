@@ -64,8 +64,14 @@ jobs:
       with:
         python-version: pypy-3.7-v7.x
 
+    - name: Init pyproject.toml
+      run: poetry init -n
+
     - run: |
-        poetry env use $env:pythonLocation
+       poetry env use $env:pythonLocation
+
+    - name: Install dependencies
+      run: poetry add flake8
 
     # - run: ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7
 
