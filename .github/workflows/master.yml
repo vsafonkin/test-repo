@@ -55,20 +55,25 @@ jobs:
     # - run: brew install tcl-tk
 
     - run: python --version
+
     - name: Install poetry
       run: pipx install poetry
 
     - run: poetry config --list
+
     - name: Setup Python
       uses: actions/setup-python@v3
       with:
         python-version: pypy-3.7-v7.x
 
+    - name: Init pyproject.toml
+      run: poetry init -n
+
+    - run: Get-Content pyproject.toml
+
     - run: |
        poetry env use $env:pythonLocation\python.exe
 
-    - name: Init pyproject.toml
-      run: poetry init -n
 
     - name: Install dependencies
       run: poetry add flake8
