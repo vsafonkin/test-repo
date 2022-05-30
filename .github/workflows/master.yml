@@ -57,7 +57,7 @@ jobs:
     - run: python --version
 
     - name: Install poetry
-      run: pipx install poetry
+      run: pipx install poetry --python 3.7
 
     - run: poetry config --list
 
@@ -66,9 +66,8 @@ jobs:
       with:
         python-version: pypy-3.7-v7.x
 
-    - run: pipx upgrade-all
-    - run: pipx list
     - run: python --version
+    - run: pipx list
 
     - name: Init pyproject.toml
       run: poetry init -n
