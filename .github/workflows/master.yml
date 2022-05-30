@@ -57,7 +57,7 @@ jobs:
     - run: python --version
 
     - name: Install poetry
-      run: pipx install poetry --python ${{ matrix.python-version }}
+      run: pipx install poetry
 
     - run: poetry config --list
 
@@ -67,6 +67,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
 
     - run: python --version
+    - run: pipx reinstall poetry
     - run: pipx list
 
     - name: Init pyproject.toml
