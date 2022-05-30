@@ -64,11 +64,11 @@ jobs:
       with:
         python-version: pypy-3.7-v7.x
 
-    - name: Init pyproject.toml
-      run: poetry init -n
-
     - run: |
        poetry env use $env:pythonLocation\python.exe
+
+    - name: Init pyproject.toml
+      run: poetry init -n
 
     - name: Install dependencies
       run: poetry add flake8
