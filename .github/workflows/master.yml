@@ -77,10 +77,11 @@ jobs:
 
     - run: Get-Content pyproject.toml
 
-    - run: ls C:\Users\runneradmin\AppData\Local\pypoetry\Cache\virtualenvs
 
     - name: Install dependencies
       run: poetry add flake8
+
+    - run: ls C:\Users\runneradmin\AppData\Local\pypoetry\Cache\virtualenvs
 
     # - run: ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7
 
