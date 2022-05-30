@@ -66,6 +66,7 @@ jobs:
       with:
         python-version: pypy-3.7-v7.x
 
+    - run: pipx upgrade-all
     - run: python --version
 
     - name: Init pyproject.toml
