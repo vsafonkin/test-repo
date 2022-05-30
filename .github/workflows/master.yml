@@ -67,7 +67,7 @@ jobs:
         python-version: pypy-3.7-v7.x
 
     - name: Init pyproject.toml
-      run: poetry init --python 3.7 -n
+      run: poetry init --python >=3.7 -n
 
     - run: Get-Content pyproject.toml
 
