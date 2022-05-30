@@ -79,7 +79,7 @@ jobs:
 
 
     - name: Install dependencies
-      run: poetry add flake8 --python ${{ matrix.python-version }}
+      run: poetry add flake8 --python 3.7
 
     - run: ls C:\Users\runneradmin\AppData\Local\pypoetry\Cache\virtualenvs
 
