@@ -68,7 +68,7 @@ jobs:
       run: poetry init -n
 
     - run: |
-       poetry env use $env:pythonLocation
+       poetry env use $env:pythonLocation\python.exe
 
     - name: Install dependencies
       run: poetry add flake8
