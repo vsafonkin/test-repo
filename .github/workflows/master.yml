@@ -67,11 +67,10 @@ jobs:
         python-version: ${{ matrix.python-version }}
 
     - run: python --version
-    - run: pipx reinstall poetry
     - run: pipx list
 
     - name: Init pyproject.toml
-      run: poetry init -n
+      run: poetry init -n --python ${{ matrix.python-version }}
 
     - run: Get-Content pyproject.toml
 
