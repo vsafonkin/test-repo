@@ -54,7 +54,10 @@ jobs:
 
     # - run: brew install tcl-tk
 
-    - run: python --version
+    - name: Setup Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
 
     - name: Install poetry
       run: pipx install poetry
@@ -65,7 +68,7 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
-        # cache: poetry
+        cache: poetry
 
     - run: python --version
     - run: pipx list
@@ -79,7 +82,7 @@ jobs:
 
 
     - name: Install dependencies
-      run: poetry add flake8 --python 3.7
+      run: poetry add flake8
 
     - run: ls C:\Users\runneradmin\AppData\Local\pypoetry\Cache\virtualenvs
 
