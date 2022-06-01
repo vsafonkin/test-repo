@@ -66,6 +66,9 @@ jobs:
     - run: echo $pythonLocation
       shell: bash
 
+    - run: echo $PATH
+      shell: bash
+
     # - name: Install poetry
     #   run: pipx install poetry
 
