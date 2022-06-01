@@ -63,6 +63,8 @@ jobs:
       uses: vsafonkin/composite-action-test@main
 
     - run: python --version
+    - run: echo $pythonLocation
+      shell: bash
 
     # - name: Install poetry
     #   run: pipx install poetry
