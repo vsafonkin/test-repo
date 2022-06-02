@@ -59,8 +59,8 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Composite Action
-      uses: vsafonkin/composite-action-test@main
+    # - name: Composite Action
+    #   uses: vsafonkin/composite-action-test@main
 
     - run: python --version
     - run: echo $pythonLocation
