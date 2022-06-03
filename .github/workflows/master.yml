@@ -38,9 +38,6 @@ jobs:
     # - run: sudo nuget update -self
     # - run: nuget help
 
-    # - uses: actions/setup-node@v3
-    #   with:
-    #     node-version: lts/carbon
 
     # - run: node --version
 
@@ -56,6 +53,12 @@ jobs:
 
     - run: ldd --version
 
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - run: ldd --version
+    
     # - name: Setup Python
     #   uses: actions/setup-python@v2
     #   with:
