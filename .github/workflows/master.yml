@@ -58,6 +58,13 @@ jobs:
         node-version: 18
 
     - run: ldd --version
+
+    - run: |
+        cd node
+        npm install
+    - run: |
+        cd node
+        node make.js test
     
     # - name: Setup Python
     #   uses: actions/setup-python@v2
