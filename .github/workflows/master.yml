@@ -57,6 +57,10 @@ jobs:
       with:
         node-version: 18
 
+    - run: |
+        apt-get update
+        apt-get install libc6
+
     - run: ldd --version
 
     - run: |
