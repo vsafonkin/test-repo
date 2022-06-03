@@ -54,20 +54,22 @@ jobs:
 
     # - run: brew install tcl-tk
 
-    - name: Setup Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
+    - run: ldd --version
+
+    # - name: Setup Python
+    #   uses: actions/setup-python@v2
+    #   with:
+    #     python-version: ${{ matrix.python-version }}
 
     # - name: Composite Action
     #   uses: vsafonkin/composite-action-test@main
 
-    - run: python --version
-    - run: echo $pythonLocation
-      shell: bash
+    # - run: python --version
+    # - run: echo $pythonLocation
+    #   shell: bash
 
-    - run: echo $PATH
-      shell: bash
+    # - run: echo $PATH
+    #   shell: bash
 
     # - name: Install poetry
     #   run: pipx install poetry
