@@ -65,6 +65,7 @@ jobs:
     - name: The actual test
       run: |
         TESTENV=$(which python)
+        echo $TESTENV
         file $TESTENV
 
     # - name: Composite Action
