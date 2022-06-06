@@ -54,7 +54,7 @@ jobs:
     # - uses: actions/setup-node@v3
     #   with:
     #     node-version: 18
-    
+    - run: rm -rf /Users/runner/hostedtoolcache/Python
     - name: Setup Python
       uses: actions/setup-python@v3
       with:
