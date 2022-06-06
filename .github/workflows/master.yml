@@ -56,9 +56,9 @@ jobs:
     #     node-version: 18
     
     - name: Setup Python
-      uses: actions/setup-python@969d5a9af2487cca4135d184f3e6d9667e1fb7a1
+      uses: actions/setup-python@v3
       with:
-        python-version: 3.10-dev
+        python-version: 3.10
 
     - run: python --version
 
