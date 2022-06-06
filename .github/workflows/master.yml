@@ -63,9 +63,9 @@ jobs:
     - run: python --version
 
     - name: The actual test
-        run: |
-          TESTENV=$(which python)
-          file $TESTENV
+      run: |
+        TESTENV=$(which python)
+        file $TESTENV
 
     # - name: Composite Action
     #   uses: vsafonkin/composite-action-test@main
