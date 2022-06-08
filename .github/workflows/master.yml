@@ -62,7 +62,7 @@ jobs:
 
     # - run: python --version
 
-    - run: xcrun simctl --help
+    - run: xcrun simctl help
 
     - run: sudo xcode-select -s /Applications/Xcode_13.1.app/Contents/Developer
 
