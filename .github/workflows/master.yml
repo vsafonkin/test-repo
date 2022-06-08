@@ -54,19 +54,17 @@ jobs:
     # - uses: actions/setup-node@v3
     #   with:
     #     node-version: 18
-    - run: rm -rf /Users/runner/hostedtoolcache/Python
-    - name: Setup Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: '3.10'
+    # - run: rm -rf /Users/runner/hostedtoolcache/Python
+    # - name: Setup Python
+    #   uses: actions/setup-python@v3
+    #   with:
+    #     python-version: '3.10'
 
-    - run: python --version
+    # - run: python --version
 
-    - name: The actual test
+    - name: Install iOS sim 13.0
       run: |
-        TESTENV=$(which python)
-        echo $TESTENV
-        file $TESTENV
+        sudo xcversion simulators --install='iOS 13.0'
 
     # - name: Composite Action
     #   uses: vsafonkin/composite-action-test@main
