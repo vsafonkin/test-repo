@@ -63,6 +63,7 @@ jobs:
     # - run: python --version
 
     - run: xcrun simctl list
+    - run: xcrun simctl list runtimes
 
     # - run: xcrun simctl shutdown help
 
@@ -70,8 +71,6 @@ jobs:
 
     - name: Install iOS sim 13.0
       run: |
-        xcrun simctl list runtimes
-        echo "---------------"
         sudo xcversion simulators --install='iOS 13.0'
         echo "---------------"
         xcversion simulators
