@@ -62,6 +62,8 @@ jobs:
 
     # - run: python --version
 
+    - run: xcrun simctl --help
+
     - run: sudo xcode-select -s /Applications/Xcode_13.1.app/Contents/Developer
 
     - name: Install iOS sim 13.0
