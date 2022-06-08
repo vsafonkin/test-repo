@@ -62,12 +62,12 @@ jobs:
 
     # - run: python --version
 
-    - run: xcrun simctl list
-    - run: xcrun simctl list runtimes
 
     # - run: xcrun simctl shutdown help
 
     - run: sudo xcode-select -s /Applications/Xcode_13.1.app/Contents/Developer
+    - run: xcrun simctl list
+    - run: xcrun simctl list runtimes
 
     - name: Install iOS sim 13.0
       run: |
