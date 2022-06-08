@@ -66,6 +66,8 @@ jobs:
       run: |
         sudo xcode-select -s /Applications/Xcode_13.1.app/Contents/Developer
         sudo xcversion simulators --install='iOS 13.0'
+        echo "---------------"
+        xcversion simulators
 
     - run: xcrun simctl create 'Test simulator iPhone 8 (13.0)' 'iPhone 8' 'iOS13.0'
 
