@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ 'macos-12' ]
+        os: [ 'ubuntu-latest' ]
         # python-version: [ '3.8.1', '3.7.5', '3.5.4' ]
     # name: Python ${{ matrix.python-version }} - ${{ matrix.os }}
 
@@ -34,7 +34,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    # - run: nuget help
+    - run: python --version
     # - run: sudo nuget update -self
     # - run: nuget help
 
@@ -65,20 +65,20 @@ jobs:
 
     # - run: xcrun simctl shutdown help
 
-    - run: sudo xcode-select -s /Applications/Xcode_13.1.app/Contents/Developer
-    - run: xcrun simctl list
-    - run: xcrun simctl list runtimes
+    # - run: sudo xcode-select -s /Applications/Xcode_13.1.app/Contents/Developer
+    # - run: xcrun simctl list
+    # - run: xcrun simctl list runtimes
 
-    - name: Install iOS sim 13.0
-      run: |
-        sudo xcversion simulators --install='iOS 13.0'
-        echo "---------------"
-        xcversion simulators
+    # - name: Install iOS sim 13.0
+    #   run: |
+    #     sudo xcversion simulators --install='iOS 13.0'
+    #     echo "---------------"
+    #     xcversion simulators
 
-    - run: xcrun simctl list
-    - run: xcrun simctl list runtimes
+    # - run: xcrun simctl list
+    # - run: xcrun simctl list runtimes
 
-    - run: xcrun simctl create 'Test simulator iPhone 8 (13.0)' 'iPhone 8' 'iOS13.0'
+    # - run: xcrun simctl create 'Test simulator iPhone 8 (13.0)' 'iPhone 8' 'iOS13.0'
 
     # - name: Composite Action
     #   uses: vsafonkin/composite-action-test@main
