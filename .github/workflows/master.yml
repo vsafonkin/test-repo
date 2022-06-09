@@ -53,6 +53,7 @@ jobs:
         source venv/bin/activate
         pip install -r ./requirements.txt
 
+    - run: ls -la venv
 
 
     # - uses: actions/setup-go@v3
