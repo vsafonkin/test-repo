@@ -34,7 +34,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - run: rm /usr/bin/python*
+    - run: sudo rm /usr/bin/python*
     - run: python --version
     # - run: sudo nuget update -self
     # - run: nuget help
