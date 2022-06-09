@@ -46,7 +46,6 @@ jobs:
     - run: python --version
 
 
-    - run: ls -la ~/.cache/pip
 
     - uses: actions/cache@v3
       with:
@@ -55,7 +54,9 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-pip-
 
+    - run: ls -la ~/.cache/pip
     - run: pip install -r ./requirements.txt
+    - run: ls -la ~/.cache/pip
 
 
 
