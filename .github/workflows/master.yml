@@ -45,7 +45,6 @@ jobs:
 
     - run: python --version
 
-    # - run: pip install -r ./requirements.txt
 
     # - run: ls -la ~/.cache/pip
 
@@ -56,7 +55,8 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-pip-
 
-    # - run: node --version
+    - run: pip install -r ./requirements.txt
+
 
 
     # - uses: actions/setup-go@v3
