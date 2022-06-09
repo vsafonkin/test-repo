@@ -54,6 +54,7 @@ jobs:
         pip install -r ./requirements.txt
 
     - run: ls -la venv
+    - run: cat venv/pyvenv.cfg
 
 
     # - uses: actions/setup-go@v3
