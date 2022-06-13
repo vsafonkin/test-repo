@@ -34,27 +34,33 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: set up python 3.10
-      uses: actions/setup-python@v4
+    - name: Set up Python based on .python-version file.
+      uses: actions/setup-python@v4.0.0
       with:
-        python-version: '3.10'
+        python-version-file: ".python-version"
 
-    - name: cache dependencies
-      id: xyz-cache
-      uses: actions/cache@v3
-      with:
-        path: venv
-        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+    - run: python --version
+    # - name: set up python 3.10
+    #   uses: actions/setup-python@v4
+    #   with:
+    #     python-version: '3.10'
 
-    - name: install xyz
-      if: steps.sl-cache.outputs.cache-hit != 'true'
-      run: |
-        python -m venv venv
-        source venv/bin/activate
-        pip install -r ./requirements.txt
+    # - name: cache dependencies
+    #   id: xyz-cache
+    #   uses: actions/cache@v3
+    #   with:
+    #     path: venv
+    #     key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
 
-    - run: ls -la venv
-    - run: cat venv/pyvenv.cfg
+    # - name: install xyz
+    #   if: steps.sl-cache.outputs.cache-hit != 'true'
+    #   run: |
+    #     python -m venv venv
+    #     source venv/bin/activate
+    #     pip install -r ./requirements.txt
+
+    # - run: ls -la venv
+    # - run: cat venv/pyvenv.cfg
 
 
     # - uses: actions/setup-go@v3
