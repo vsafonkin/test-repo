@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/vsafonkin/test-repo#readme",
   "dependencies": {
+    "@types/node": "^17.0.42",
     "semver": "^6.1.1"
   }
 }
