@@ -34,7 +34,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - python --version
+    - run: python --version
 
     - name: Set up Python based on .python-version file.
       uses: actions/setup-python@v4.0.0
