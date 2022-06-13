@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ 'ubuntu-latest', 'windows-latest', 'macos-latest' ]
+        os: [ 'ubuntu-latest' ]
         # python-version: [ '3.8.1', '3.7.5', '3.5.4' ]
     # name: Python ${{ matrix.python-version }} - ${{ matrix.os }}
 
@@ -42,6 +42,8 @@ jobs:
         python-version-file: "${{ github.action_path }}/.python-version"
 
     - run: python --version
+
+    - run: echo ${{ github.action_path }}
     # - name: set up python 3.10
     #   uses: actions/setup-python@v4
     #   with:
