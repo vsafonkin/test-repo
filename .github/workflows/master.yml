@@ -44,6 +44,7 @@ jobs:
     - run: python --version
 
     - run: echo ${{ github.action_path }}
+    - run: echo $GITHUB_WORKSPACE
     # - name: set up python 3.10
     #   uses: actions/setup-python@v4
     #   with:
