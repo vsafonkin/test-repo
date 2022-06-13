@@ -34,16 +34,16 @@ jobs:
       with:
         fetch-depth: 0
 
-    - run: python --version
+    # - run: python --version
 
-    - name: Set up Python based on .python-version file.
-      uses: actions/setup-python@v4
-      with:
-        python-version-file: "${{ github.action_path }}/.python-version"
+    # - name: Set up Python based on .python-version file.
+    #   uses: actions/setup-python@v4
+    #   with:
+    #     python-version-file: "${{ github.action_path }}/.python-version"
 
-    - run: python --version
+    # - run: python --version
 
-    - run: echo ${{ github.action_path }}
+    - run: echo {{ github.action_path }}
     - run: echo $GITHUB_WORKSPACE
     # - name: set up python 3.10
     #   uses: actions/setup-python@v4
