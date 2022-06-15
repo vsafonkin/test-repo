@@ -38,8 +38,8 @@ jobs:
 
     - name: Set up Python based on .python-version file.
       uses: actions/setup-python@v4
-      # with:
-      #   python-version-file: "${{ github.action_path }}/.python-version"
+      with:
+        python-version:
 
     - run: python --version
 
