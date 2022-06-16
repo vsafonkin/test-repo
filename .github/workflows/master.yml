@@ -37,7 +37,12 @@ jobs:
     - run: xcversion --help
     - run: xcversion update --help
     - run: xcversion list
-    - run: xcversion install "14 beta"
+
+    - name: Install Xcode 12
+      run: xcversion install "14 beta"
+      env:
+        XCODE_INSTALL_USER: ${{ secrets.XCODE_INSTALL_USER }}
+        XCODE_INSTALL_PASSWORD: ${{ secrets.XCODE_INSTALL_PASSWORD }}
 
     # - name: set up python 3.10
     #   uses: actions/setup-python@v4
