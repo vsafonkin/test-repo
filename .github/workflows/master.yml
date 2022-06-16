@@ -46,8 +46,10 @@ jobs:
     - name: Install Xcode 12
       run: xcversion install "14 beta"
 
+    - run: ls -la /Applications
+
     - name: Approve Xcode
-      run: sudo /Applications/Xcode-14.beta.app -license accept
+      run: sudo /Applications/Xcode-14.beta.app/C -license accept
 
     - name: First launch
       run: sudo /Applications/Xcode-14.beta.app -runFirstLaunch
