@@ -34,7 +34,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - run: xcversion install 14.0.0
+    - run: xcversion list
 
     # - name: set up python 3.10
     #   uses: actions/setup-python@v4
