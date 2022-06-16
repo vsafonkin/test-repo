@@ -34,7 +34,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - run: xcversion help
+    - run: xcversion --help
     - run: xcversion list
     - run: xcversion install '14 beta'
 
