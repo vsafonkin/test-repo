@@ -39,7 +39,7 @@ jobs:
         fetch-depth: 0
 
     - run: xcversion --help
-    - run: xcversion update --help
+    - run: xcversion update
     - run: xcversion list
 
     - name: Install Xcode 12
