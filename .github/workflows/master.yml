@@ -46,6 +46,12 @@ jobs:
     - name: Install Xcode 12
       run: xcversion install "14 beta"
 
+    - name: Approve Xcode
+      run: sudo /Applications/Xcode_14.app -license accept
+
+    - name: First launch
+      run: sudo /Applications/Xcode_14.app -runFirstLaunch
+
     # - name: set up python 3.10
     #   uses: actions/setup-python@v4
     #   with:
