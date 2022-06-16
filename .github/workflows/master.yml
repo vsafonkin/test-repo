@@ -32,6 +32,7 @@ jobs:
     env:
       XCODE_INSTALL_USER: ${{ secrets.XCODE_INSTALL_USER }}
       XCODE_INSTALL_PASSWORD: ${{ secrets.XCODE_INSTALL_PASSWORD }}
+      SPACESHIP_SKIP_2FA_UPGRADE: 1
 
     steps:
     - uses: actions/checkout@v3
