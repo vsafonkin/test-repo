@@ -34,6 +34,8 @@ jobs:
       with:
         fetch-depth: 0
 
+    - run: env
+
     - run: sudo xcrun simctl shutdown all && sudo xcrun simctl erase all
     - run: xcversion --help
     - run: xcversion list
