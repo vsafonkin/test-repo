@@ -34,6 +34,7 @@ jobs:
       with:
         fetch-depth: 0
 
+    - run: sudo xcrun simctl shutdown all && sudo xcrun simctl erase all
     - run: xcversion --help
     - run: xcversion list
     - run: sudo xcode-select -s /Applications/Xcode_13.1.app/Contents/Developer
