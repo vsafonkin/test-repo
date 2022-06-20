@@ -46,7 +46,6 @@ jobs:
       run: pipx install pipenv
     - name: Install dependencies
       run: |
-        cd __tests__/data
         pipenv install --verbose
 
     # - run: env
