@@ -52,10 +52,9 @@ jobs:
       run: |
         pipenv --version
         pipenv --help
-        pipenv list
     - name: Install dependencies
       run: |
-        pipenv install --verbose
+        pipenv install --verbose --python ${{ steps.setup-python.outputs.python-path }}
     - run: Get-ChildItem $env:USERPROFILE/.virtualenvs
 
     # - run: env
