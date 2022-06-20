@@ -34,6 +34,8 @@ jobs:
       with:
         fetch-depth: 0
 
+    - run: Get-ChildItem $env:USERPROFILE/.local/share/virtualenvs
+
     - run: python --version
     - run: Get-Command pipx
     - run: Remove-Item -Force -Recurse 'C:\hostedtoolcache\windows\Python\3.10.5'
