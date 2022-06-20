@@ -36,16 +36,16 @@ jobs:
 
 
     - run: python --version
-    - run: Get-Command pipx
-    - run: Remove-Item -Force -Recurse 'C:\hostedtoolcache\windows\Python\3.10.5'
+    # - run: Get-Command pipx
+    # - run: Remove-Item -Force -Recurse 'C:\hostedtoolcache\windows\Python\3.10.5'
 
     - name: Setup Python
       uses: actions/setup-python@v4
       id: setup-python
       with:
-        python-version: '3.8'
+        python-version: '3.7'
         cache: 'pipenv'
-    - run: Get-Content $env:USERPROFILE/.virtualenvs/test-repo-2WGirRaQ/pyvenv.cfg
+    # - run: Get-Content $env:USERPROFILE/.virtualenvs/test-repo-2WGirRaQ/pyvenv.cfg
     - name: Install pipenv
       run: pipx install pipenv --python ${{ steps.setup-python.outputs.python-path }}
     - name: Install dependencies
