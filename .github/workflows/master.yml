@@ -38,16 +38,16 @@ jobs:
     - run: Get-ChildItem 'C:\hostedtoolcache\windows\Python'
 
     - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.8'
-          cache: 'pipenv'
-      - name: Install pipenv
-        run: pipx install pipenv
-      - name: Install dependencies
-        run: |
-          cd __tests__/data
-          pipenv install --verbose
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'
+        cache: 'pipenv'
+    - name: Install pipenv
+      run: pipx install pipenv
+    - name: Install dependencies
+      run: |
+        cd __tests__/data
+        pipenv install --verbose
 
     # - run: env
 
