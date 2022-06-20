@@ -36,7 +36,7 @@ jobs:
 
     - run: python --version
     - run: Get-Command pipx
-    # - run: Remove-Item -Force -Recurse 'C:\hostedtoolcache\windows\Python'
+    - run: Remove-Item -Force -Recurse 'C:\hostedtoolcache\windows\Python\3.10.5'
 
     - name: Setup Python
       uses: actions/setup-python@v4
