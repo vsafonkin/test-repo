@@ -44,7 +44,7 @@ jobs:
       id: setup-python
       with:
         python-version: '3.7'
-        cache: 'pipenv'
+        # cache: 'pipenv'
     - run: Get-Content $env:USERPROFILE/.virtualenvs/test-repo-2WGirRaQ/pyvenv.cfg
     - name: Install pipenv
       run: pipx install pipenv --python ${{ steps.setup-python.outputs.python-path }}
