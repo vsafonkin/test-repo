@@ -47,10 +47,10 @@ jobs:
         cache: 'pipenv'
     - name: Install pipenv
       run: pipx install pipenv --python ${{ steps.setup-python.outputs.python-path }}
-    - run: Get-ChildItem $env:USERPROFILE/.local/share/virtualenvs
     - name: Install dependencies
       run: |
         pipenv install --verbose
+    - run: Get-ChildItem $env:USERPROFILE/.local/share/virtualenvs
 
     # - run: env
 
