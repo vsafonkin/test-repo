@@ -48,6 +48,11 @@ jobs:
     - run: Get-Content $env:USERPROFILE/.virtualenvs/test-repo-2WGirRaQ/pyvenv.cfg
     - name: Install pipenv
       run: pipx install pipenv --python ${{ steps.setup-python.outputs.python-path }}
+    - name: pyvenv help
+      run: |
+        pyvenv --version
+        pyvenv --help
+        pyvenv list
     - name: Install dependencies
       run: |
         pipenv install --verbose
