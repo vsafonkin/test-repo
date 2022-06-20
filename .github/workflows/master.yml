@@ -34,7 +34,6 @@ jobs:
       with:
         fetch-depth: 0
 
-    - run: Get-ChildItem $env:USERPROFILE/.local/share/virtualenvs
 
     - run: python --version
     - run: Get-Command pipx
@@ -46,6 +45,7 @@ jobs:
       with:
         python-version: '3.8'
         cache: 'pipenv'
+    - run: Get-ChildItem $env:USERPROFILE/.local/share/virtualenvs
     - name: Install pipenv
       run: pipx install pipenv --python ${{ steps.setup-python.outputs.python-path }}
     - name: Install dependencies
