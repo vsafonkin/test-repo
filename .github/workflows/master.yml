@@ -45,7 +45,7 @@ jobs:
       with:
         python-version: '3.8'
         cache: 'pipenv'
-    - run: Get-ChildItem $env:USERPROFILE/.virtualenvs/test-repo-2WGirRaQ
+    - run: Get-Content $env:USERPROFILE/.virtualenvs/test-repo-2WGirRaQ/pyvenv.cfg
     - name: Install pipenv
       run: pipx install pipenv --python ${{ steps.setup-python.outputs.python-path }}
     - name: Install dependencies
