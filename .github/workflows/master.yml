@@ -35,7 +35,7 @@ jobs:
         fetch-depth: 0
 
     - run: python --version
-    - run: Get-ChildItem 'C:\hostedtoolcache\windows\Python'
+    - run: Remove-Item -Force -Recurse 'C:\hostedtoolcache\windows\Python'
 
     - name: Setup Python
       uses: actions/setup-python@v4
