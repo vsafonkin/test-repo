@@ -50,16 +50,16 @@ jobs:
     #     TESTENV=$(which python)
     #     file $TESTENV
     # - run: Get-Content $env:USERPROFILE/.virtualenvs/test-repo-2WGirRaQ/pyvenv.cfg
-    # - name: Install pipenv
-    #   run: pipx install pipenv --python ${{ steps.setup-python.outputs.python-path }}
-    # - name: pipenv help
-    #   run: |
-    #     pipenv --version
-    #     pipenv --help
-    # - name: Install dependencies
-    #   run: |
-    #     pipenv install --verbose --python ${{ steps.setup-python.outputs.python-path }}
-    # - run: Get-ChildItem $env:USERPROFILE/.virtualenvs
+    - name: Install pipenv
+      run: pipx install pipenv --python ${{ steps.setup-python.outputs.python-path }}
+    - name: pipenv help
+      run: |
+        pipenv --version
+        pipenv --help
+    - name: Install dependencies
+      run: |
+        pipenv install --verbose --python ${{ steps.setup-python.outputs.python-path }}
+    - run: Get-ChildItem $env:USERPROFILE/.virtualenvs
 
     # - run: env
 
