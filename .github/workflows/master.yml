@@ -44,11 +44,11 @@ jobs:
       id: setup-python
       with:
         python-version: '3.10.4'
-        # cache: 'pipenv'
+        cache: 'pipenv'
 
-    - run: |
-        TESTENV=$(which python)
-        file $TESTENV
+    # - run: |
+    #     TESTENV=$(which python)
+    #     file $TESTENV
     # - run: Get-Content $env:USERPROFILE/.virtualenvs/test-repo-2WGirRaQ/pyvenv.cfg
     # - name: Install pipenv
     #   run: pipx install pipenv --python ${{ steps.setup-python.outputs.python-path }}

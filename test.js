@@ -1,8 +1,11 @@
-"use strict";
-exports.__esModule = true;
-var path = require("path");
-console.log('hello');
-var myPath = "C:/python-version";
-if (path.isAbsolute(myPath)) {
-    console.log("Absolute", myPath);
+function Test() {
+    try {
+        console.log('hello');
+        return 1;
+    }
+    finally {
+        console.log('finally block');
+    }
+    return -1;
 }
+console.log(Test());
