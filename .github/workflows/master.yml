@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ 'windows-latest' ]
+        os: [ 'ubuntu-latest' ]
         # python-version: [ '3.8.1', '3.7.5', '3.5.4' ]
     # name: Python ${{ matrix.python-version }} - ${{ matrix.os }}
 
@@ -35,7 +35,7 @@ jobs:
         fetch-depth: 0
 
 
-    - run: python --version
+    - run: echo $RUNNER_OS
     # - run: Get-Command pipx
     # - run: Remove-Item -Force -Recurse 'C:\hostedtoolcache\windows\Python\3.10.5'
 
