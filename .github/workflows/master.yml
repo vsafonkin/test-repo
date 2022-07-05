@@ -196,7 +196,7 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: '7.0.x'
-        include-prerelease: true
+        # include-prerelease: true
           
     - run: dotnet --info
     # - run: dotnet test
