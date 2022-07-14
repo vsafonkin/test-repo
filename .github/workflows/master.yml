@@ -34,7 +34,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - run: xcrun simctl diagnose --all-logs  --output .
+    - run: xcrun simctl diagnose -bX --all-logs  --output="."
     - run: ls -la .
     # - run: echo $RUNNER_OS
     # - run: Get-Command pipx
