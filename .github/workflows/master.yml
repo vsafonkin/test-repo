@@ -34,7 +34,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - run: xcrun simctl diagnose -X
+    - run: xcrun simctl diagnose -X --all-logs
     # - run: echo $RUNNER_OS
     # - run: Get-Command pipx
     # - run: Remove-Item -Force -Recurse 'C:\hostedtoolcache\windows\Python\3.10.5'
