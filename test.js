@@ -1,11 +1,5 @@
-function Test() {
-    try {
-        console.log('hello');
-        return 1;
-    }
-    finally {
-        console.log('finally block');
-    }
-    return -1;
-}
-console.log(Test());
+"use strict";
+exports.__esModule = true;
+var semver = require("semver");
+var version = "16";
+console.log(semver.clean(version));

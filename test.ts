@@ -1,11 +1,4 @@
-function Test() {
-    try {
-        console.log('hello')
-        return 1
-    } finally {
-        console.log('finally block')
-    }
-    return -1
-}
+import * as semver from 'semver';
 
-console.log(Test())
+const version = "16";
+console.log(semver.clean(version))
