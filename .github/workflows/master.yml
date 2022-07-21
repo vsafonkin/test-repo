@@ -103,7 +103,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
-        python-version: ${{ matrix.python }}
+        python-version: '3.9'
         
     - name: venv activate Linux
       if: ${{ matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest' }}
