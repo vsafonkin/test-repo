@@ -113,7 +113,7 @@ jobs:
         python -m venv .
         source ./bin/activate
         echo "VIRTUAL_ENV: $VIRTUAL_ENV"
-        echo "{VIRTUAL_ENV}={$VIRTUAL_ENV}" >> $GITHUB_ENV
+        echo "VIRTUAL_ENV=$VIRTUAL_ENV" >> $GITHUB_ENV
 
     - name: test
       run: |
