@@ -115,8 +115,11 @@ jobs:
         echo "VIRTUAL_ENV: $VIRTUAL_ENV"
         echo "{VIRTUAL_ENV}={$VIRTUAL_ENV}" >> $GITHUB_ENV
 
-    - run: |
+    - name: test
+      run: |
         echo "VIRTUAL_ENV: $VIRTUAL_ENV"
+      env:
+        VIRTUAL_ENV: ${{ env.VIRTUAL_ENV }}
     # - run: rm -rf /Users/runner/hostedtoolcache/Python
     # - name: Setup Python
     #   uses: actions/setup-python@v3
