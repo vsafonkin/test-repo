@@ -100,11 +100,22 @@ jobs:
 
     # - run: brew install tcl-tk
 
-    - uses: actions/setup-node@v3
+    - name: Set up Python
+      uses: actions/setup-python@v3
       with:
-        node-version: 14
-  
-    - run: node --version
+        python-version: ${{ matrix.python }}
+        
+    - name: venv activate Linux
+      if: ${{ matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest' }}
+      run: |
+        mkdir test-venv
+        cd test-venv
+        python -m venv .
+        source ./bin/activate
+        echo "VIRTUAL_ENV: $VIRTUAL_ENV"
+        echo "{VIRTUAL_ENV}={$VIRTUAL_ENV}" >> $GITHUB_ENV
+
+    - run: echo "VIRTUAL_ENV: $VIRTUAL_ENV"
     # - run: rm -rf /Users/runner/hostedtoolcache/Python
     # - name: Setup Python
     #   uses: actions/setup-python@v3
