@@ -112,7 +112,7 @@ jobs:
         # 7z x python3.pkg -o./test
         # cd test
         echo "--------"
-        rm /usr/local/bin python3
+        rm /usr/local/bin/python3
         which python3
 
     # - name: Set up Python
