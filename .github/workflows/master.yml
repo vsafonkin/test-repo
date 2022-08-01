@@ -102,11 +102,15 @@ jobs:
 
     - name: Test
       run: |
+        python --version
+        python3 --version
         curl "https://www.python.org/ftp/python/3.10.5/python-3.10.5-macos11.pkg" --output python3.pkg
-        mkdir test
-        7z x python3.pkg -o./test
-        cd test
-        ls -la .
+        sudo installer -pkg python3.pkg -target /
+        python3 --version
+        # mkdir test
+        # 7z x python3.pkg -o./test
+        # cd test
+        # ls -la .
 
     # - name: Set up Python
     #   uses: actions/setup-python@v3
