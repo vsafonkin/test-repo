@@ -108,6 +108,8 @@ jobs:
     - name: test
       run: |
         which python
+        echo "------"
+        ls -la /Users/runner/hostedtoolcache/Python/3.9.13/x64
         
   
     # - run: rm -rf /Users/runner/hostedtoolcache/Python
