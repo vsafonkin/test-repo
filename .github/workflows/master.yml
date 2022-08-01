@@ -101,20 +101,21 @@ jobs:
     # - run: brew install tcl-tk
 
     - name: Test
-      shell: pwsh
       run: |
-        (Get-Command python3).Path
+        curl "https://www.python.org/ftp/python/3.10.5/python-3.10.5-macos11.pkg" --output python3.pkg
+        mkdir test
+        7zip --version
 
-    - name: Set up Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: '3.9'
+    # - name: Set up Python
+    #   uses: actions/setup-python@v3
+    #   with:
+    #     python-version: '3.9'
 
-    - name: test
-      run: |
-        which python
-        echo "------"
-        ls -la /Users/runner/hostedtoolcache/Python/3.9.13/x64/bin
+    # - name: test
+    #   run: |
+    #     which python
+    #     echo "------"
+    #     ls -la /Users/runner/hostedtoolcache/Python/3.9.13/x64/bin
         
   
     # - run: rm -rf /Users/runner/hostedtoolcache/Python
