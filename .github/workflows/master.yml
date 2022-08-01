@@ -109,7 +109,7 @@ jobs:
       run: |
         which python
         echo "------"
-        ls -la /Users/runner/hostedtoolcache/Python/3.9.13/x64
+        ls -la /Users/runner/hostedtoolcache/Python/3.9.13/x64/bin
         
   
     # - run: rm -rf /Users/runner/hostedtoolcache/Python
