@@ -112,7 +112,7 @@ jobs:
         # 7z x python3.pkg -o./test
         # cd test
         echo "--------"
-        pythonDir=$(readlink $(which python3))
+        pythonDir=$(readlink $(which python3) | xargs dirname)
         echo $pythonDir
 
     # - name: Set up Python
