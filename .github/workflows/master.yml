@@ -111,7 +111,8 @@ jobs:
         # mkdir test
         # 7z x python3.pkg -o./test
         # cd test
-        # ls -la .
+        echo "--------"
+        ls -la /usr/local/bin
 
     # - name: Set up Python
     #   uses: actions/setup-python@v3
