@@ -104,7 +104,9 @@ jobs:
       run: |
         curl "https://www.python.org/ftp/python/3.10.5/python-3.10.5-macos11.pkg" --output python3.pkg
         mkdir test
-        7z --help
+        7z x python3.pkg ./test
+        cd test
+        ls -la .
 
     # - name: Set up Python
     #   uses: actions/setup-python@v3
