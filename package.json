@@ -1,5 +1,23 @@
 {
-  "engines": { 
-    "node": ">=14.0.0"
+  "name": "test-repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "start": "tsc test.ts && node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vsafonkin/test-repo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vsafonkin/test-repo/issues"
+  },
+  "homepage": "https://github.com/vsafonkin/test-repo#readme",
+  "dependencies": {
+    "@types/node": "^17.0.42",
+    "semver": "^6.1.1"
   }
 }
