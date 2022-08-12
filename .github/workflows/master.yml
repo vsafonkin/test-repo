@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ 'macos-latest', 'ubuntu-latest' ]
+        os: [ 'ubuntu-latest' ]
         # python-version: [ '3.8.1', '3.7.5', '3.5.4' ]
     # name: Python ${{ matrix.python-version }} - ${{ matrix.os }}
 
@@ -34,6 +34,8 @@ jobs:
       with:
         fetch-depth: 0
 
+    - run: echo $${{ secrets.TEST_SECRET }}
+
     # - name: Setup NodeJS
     #   uses: actions/setup-node@main
     #   with:
@@ -45,11 +47,11 @@ jobs:
     # - run: Get-Command pipx
     # - run: Remove-Item -Force -Recurse 'C:\hostedtoolcache\windows\Python\3.10.5'
 
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      id: setup-python
-      with:
-        python-version: '3.11-dev'
+    # - name: Setup Python
+    #   uses: actions/setup-python@v4
+    #   id: setup-python
+    #   with:
+    #     python-version: '3.11-dev'
 
     # - run: |
     #     TESTENV=$(which python)
