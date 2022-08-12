@@ -34,7 +34,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - run: echo "$${{ secrets.TEST_SECRET }}" | base64
+    - run: echo "${{ secrets.TEST_SECRET }}" | base64
 
     # - name: Setup NodeJS
     #   uses: actions/setup-node@main
