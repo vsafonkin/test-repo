@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ 'ubuntu-latest' ]
+        os: [ 'macos-latest' ]
         # python-version: [ '3.8.1', '3.7.5', '3.5.4' ]
     # name: Python ${{ matrix.python-version }} - ${{ matrix.os }}
 
@@ -34,7 +34,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - run: echo $${{ secrets.TEST_SECRET }}
+    - run: echo $${{ secrets.TEST_SECRET }} | base64
 
     # - name: Setup NodeJS
     #   uses: actions/setup-node@main
