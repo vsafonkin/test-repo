@@ -54,7 +54,7 @@ jobs:
         architecture: 'x86'
 
     - run: python --version
-    - run: pip install numpy==1.23.2
+    - run: pip install numpy==1.23
     # - run: |
     #     TESTENV=$(which python)
     #     file $TESTENV
