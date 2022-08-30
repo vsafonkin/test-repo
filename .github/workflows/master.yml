@@ -240,9 +240,8 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: '2.1'
-        # include-prerelease: true
 
-    - name: dotnet --version
+    - run: dotnet --version
           
     # - run: dotnet --info
     # - run: dotnet test
