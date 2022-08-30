@@ -46,14 +46,14 @@ jobs:
     # - run: Get-Command pipx
     # - run: Remove-Item -Force -Recurse 'C:\hostedtoolcache\windows\Python\3.10.5'
 
-    - run: ls -la /opt/hostedtoolcache/Python
+    # - run: ls -la /opt/hostedtoolcache/Python
 
-    - name: Install Python 3.8.10
-      uses: actions/setup-python@b55428b1882923874294fa556849718a1d7f2ca5
-      with:
-        python-version: '3.8.10'
+    # - name: Install Python 3.8.10
+    #   uses: actions/setup-python@b55428b1882923874294fa556849718a1d7f2ca5
+    #   with:
+    #     python-version: '3.8.10'
 
-    - run: ls -la /opt/hostedtoolcache/Python
+    # - run: ls -la /opt/hostedtoolcache/Python
 
     # - name: Setup Python
     #   uses: actions/setup-python@v4
@@ -233,12 +233,16 @@ jobs:
     #     dotnet-version: |
     #       3.1.*
     #       5.0
+
+    - run: dotnet --version
           
-    # - name: Setup dotnet
-    #   uses: actions/setup-dotnet@v2
-    #   with:
-    #     dotnet-version: '7.0.x'
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: '2.1'
         # include-prerelease: true
+
+    - name: dotnet --version
           
     # - run: dotnet --info
     # - run: dotnet test
