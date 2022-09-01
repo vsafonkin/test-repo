@@ -34,7 +34,7 @@ jobs:
       with:
         fetch-depth: 0
 
-
+    - run: echo $RUNNER_TOOL_CACHE
     # - name: Setup NodeJS
     #   uses: actions/setup-node@main
     #   with:
@@ -234,14 +234,14 @@ jobs:
     #       3.1.*
     #       5.0
 
-    - run: dotnet --version
+    # - run: dotnet --version
           
-    - name: Setup dotnet
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: '2.1'
+    # - name: Setup dotnet
+    #   uses: actions/setup-dotnet@v2
+    #   with:
+    #     dotnet-version: '2.1'
 
-    - run: dotnet --version
+    # - run: dotnet --version
           
     # - run: dotnet --info
     # - run: dotnet test
