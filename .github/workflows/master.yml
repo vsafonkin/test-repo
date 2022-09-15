@@ -54,7 +54,7 @@ jobs:
 
     - run: python --version
     - run: type python
-    - run: file $(which python3)
+    - run: file $(which python)
 
     # - name: Setup Python
     #   uses: actions/setup-python@v4
