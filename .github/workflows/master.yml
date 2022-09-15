@@ -50,7 +50,7 @@ jobs:
     - name: Install Python 3.11
       uses: actions/setup-python@main
       with:
-        python-version: '3.11.0-rc.2'
+        python-version: '3.11-dev'
 
     - run: python --version
     - run: type python
