@@ -53,7 +53,7 @@ jobs:
         python-version: '3.11-dev'
 
     - run: python --version
-    - run: type python
+
     - run: file $(which python)
 
     # - name: Setup Python
