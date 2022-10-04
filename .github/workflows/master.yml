@@ -59,6 +59,13 @@ jobs:
       run: |
         curl -sSL https://install.python-poetry.org | POETRY_VERSION=1.1.14 python3.7
 
+    - name: Load cached poetry packages
+      id: cached-poetry-dependencies
+      uses: actions/cache@v2
+      with:
+        path: .venv
+        key: poetry-ubuntu-3.7.13-${{ hashFiles('**/poetry.lock') }}
+
     - name: Poetry install
       run: |
         CPATH=$pythonLocation/include/python3.7m
