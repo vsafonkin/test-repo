@@ -53,6 +53,7 @@ jobs:
         python-version: '3.7'
 
     - run: python --version
+    - run: ls -la $pythonLocation/include
 
     - name: Setup Poetry
       run: |
@@ -60,6 +61,8 @@ jobs:
 
     - name: Poetry install
       run: |
+        CPATH=$pythonLocation/include/python3.7
+        echo "CPATH=$CPATH" >> $GITHUB_ENV
         poetry env use 3.7
         poetry install --no-interaction
 
