@@ -51,6 +51,8 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.7.13'
+      env:
+        AGENT_TOOLSDIRECTORY: "/opt/hostedtoolcache"
 
     - run: python --version
     - run: ls -la $pythonLocation/include
