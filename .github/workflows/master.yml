@@ -61,7 +61,7 @@ jobs:
 
     - name: Poetry install
       run: |
-        CPATH=$pythonLocation/include/python3.7
+        CPATH=$pythonLocation/include/python3.7m
         echo "CPATH=$CPATH" >> $GITHUB_ENV
         poetry env use 3.7
         poetry install --no-interaction
