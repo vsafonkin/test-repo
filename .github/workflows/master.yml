@@ -47,10 +47,10 @@ jobs:
 
     # - run: ls -la /opt/hostedtoolcache/Python
 
-    - name: Install Python 3.7
+    - name: Install Python 3.7.13
       uses: actions/setup-python@v4
       with:
-        python-version: '3.7'
+        python-version: '3.7.13'
 
     - run: python --version
     - run: ls -la $pythonLocation/include
