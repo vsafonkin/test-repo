@@ -55,6 +55,7 @@ jobs:
         AGENT_TOOLSDIRECTORY: "/opt/hostedtoolcache"
 
     - run: python --version
+    - run: echo $pythonLocation
     - run: ls -la $pythonLocation/include
 
     - name: Setup Poetry
