@@ -47,14 +47,14 @@ jobs:
 
     # - run: ls -la /opt/hostedtoolcache/Python
 
-    - run: mkdir /opt/test-python
+    - run: mkdir /opt/hostedtoolcache
 
-    - name: Install Python 3.7.13
+    - name: Install Python 3.7
       uses: actions/setup-python@v4
       with:
-        python-version: '3.7.13'
+        python-version: '3.7'
       env:
-        AGENT_TOOLSDIRECTORY: "/opt/test-python"
+        AGENT_TOOLSDIRECTORY: "/opt/hostedtoolcache"
 
     - run: python --version
     - run: echo $pythonLocation
