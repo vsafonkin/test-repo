@@ -49,7 +49,7 @@ jobs:
 
 
     - name: Install Python 3.8 x86
-      uses: vsafonkin/setup-python@pypy-arch-bug
+      uses: vsafonkin/setup-python@pypy-arch
       with:
         python-version: "pypy-3.8-nightly"
         architecture: "x86"
