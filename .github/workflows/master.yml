@@ -52,7 +52,7 @@ jobs:
       uses: vsafonkin/setup-python@pypy-arch-bugfix
       with:
         python-version: "pypy-3.8-nightly"
-        architecture: "x32"
+        # architecture: "x32"
       
 
     - run: python --version
