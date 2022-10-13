@@ -51,7 +51,7 @@ jobs:
     - name: Install Python x86
       uses: vsafonkin/setup-python@pypy-arch-bugfix
       with:
-        python-version: "pypy-3.7-nightly"
+        python-version: "pypy-3.8-nightly"
         # architecture: "x32"
       
 
