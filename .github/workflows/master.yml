@@ -48,10 +48,10 @@ jobs:
     # - run: ls -la /opt/hostedtoolcache/Python
 
 
-    - name: Install Python x86
+    - name: Install Python
       uses: vsafonkin/setup-python@pypy-arch-bugfix
       with:
-        python-version: "pypy-3.8-nightly"
+        python-version: "pypy-3.7-nightly"
         architecture: "x86"
       
 
