@@ -49,7 +49,7 @@ jobs:
 
 
     - name: Install Python
-      uses: actions/setup-python@main
+      uses: actions/setup-python@v4
       with:
         python-version: "3.7"
         check-latest: true
