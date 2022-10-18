@@ -52,7 +52,7 @@ jobs:
       uses: vsafonkin/setup-python@main
       with:
         python-version: "pypy-3.7-nightly"
-        architecture: "x86"
+        architecture: "x32"
       
 
     - run: python --version
