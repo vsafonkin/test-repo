@@ -51,7 +51,7 @@ jobs:
     - name: Install Python
       uses: actions/setup-python@main
       with:
-        python-version: "pypy-3.7-nightly"
+        python-version: "pypy-3.8-nightly"
         architecture: "x86"
       
 
