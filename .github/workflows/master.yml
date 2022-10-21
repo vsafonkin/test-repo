@@ -34,10 +34,10 @@ jobs:
       with:
         fetch-depth: 0
 
-    # - name: Setup NodeJS
-    #   uses: actions/setup-node@main
-    #   with:
-    #     node-version-file: 'package.json'
+    - name: Setup NodeJS
+      uses: actions/setup-node@main
+      with:
+        node-version-file: 'package.json'
 
     # - run: node --version
 
