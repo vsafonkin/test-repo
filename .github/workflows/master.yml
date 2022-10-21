@@ -48,12 +48,12 @@ jobs:
     # - run: ls -la /opt/hostedtoolcache/Python
 
 
-    # - name: Install Python
-    #   uses: actions/setup-python@v4
-    #   with:
-    #     python-version: "3.7"
-    #     check-latest: true
-        # architecture: "x86"
+    - name: Install Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.7"
+        check-latest: true
+        architecture: "x86"
       
 
     # - run: python --version
