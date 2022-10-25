@@ -1,13 +1,5 @@
-import tkinter as tk
+import sysconfig
 
-print('Tcl Version: ', tk.TclVersion)
-print('Tk Version', tk.TkVersion)
-print(tk.Misc().getvar('tk_version'))
+have_libreadline = sysconfig.get_config_var("HAVE_LIBREADLINE")
+print(have_libreadline)
 
-print('---------')
-
-root = tk.Tk()
-label = tk.Label(root, text="Hello World!")
-label.pack(padx=20, pady=20)
-root.after(5000, root.destroy)    # Close the Window after 5 seconds
-root.mainloop()
