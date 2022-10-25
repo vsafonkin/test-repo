@@ -15,7 +15,7 @@ on:
 
 jobs:
   run_master:
-    runs-on: 'ubuntu-22.04'
+    runs-on: 'macos-latest'
     # container:
     #   image: ${{ matrix.os }}
     strategy:
