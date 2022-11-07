@@ -34,20 +34,6 @@ jobs:
       with:
         fetch-depth: 0
 
-    # - name: Setup NodeJS
-    #   uses: actions/setup-node@main
-    #   with:
-    #     node-version-file: 'package.json'
-
-    # - run: node --version
-
-    # - run: echo $RUNNER_OS
-    # - run: Get-Command pipx
-    # - run: Remove-Item -Force -Recurse 'C:\hostedtoolcache\windows\Python\3.10.5'
-
-    # - run: ls -la /opt/hostedtoolcache/Python
-
-
     - name: Install Python
       uses: actions/setup-python@v4
       with:
