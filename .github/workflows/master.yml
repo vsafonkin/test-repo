@@ -16,8 +16,6 @@ on:
 jobs:
   run_master:
     runs-on: 'ubuntu-latest'
-    # container:
-    #   image: ${{ matrix.os }}
     strategy:
       fail-fast: false
       # matrix:
@@ -30,13 +28,7 @@ jobs:
       #     - '3.10'
         # python-version: [ '3.8.1', '3.7.5', '3.5.4' ]
     # name: Python ${{ matrix.python-version }} - ${{ matrix.os }}
-
-# jobs:     
-#   go-test:
-#     uses: vsafonkin/sample-go/.github/workflows/go.yml@main
-#     with:
-#       go-version: "1.17.7"
-
+  
     steps:
     - uses: actions/checkout@v3
       with:
@@ -170,125 +162,4 @@ jobs:
     # - name: Set up Python
     #   uses: actions/setup-python@v3
     #   with:
-    #     python-version: '3.9'
-
-    # - name: test
-    #   run: |
-    #     which python
-    #     echo "------"
-    #     ls -la /Users/runner/hostedtoolcache/Python/3.9.13/x64/bin
-        
-  
-    # - run: rm -rf /Users/runner/hostedtoolcache/Python
-    # - name: Setup Python
-    #   uses: actions/setup-python@v3
-    #   with:
-    #     python-version: '3.10'
-
-    # - run: python --version
-
-
-    # - run: xcrun simctl shutdown help
-
-    # - run: sudo xcode-select -s /Applications/Xcode_13.1.app/Contents/Developer
-    # - run: xcrun simctl list
-    # - run: xcrun simctl list runtimes
-
-    # - name: Install iOS sim 13.0
-    #   run: |
-    #     sudo xcversion simulators --install='iOS 13.0'
-    #     echo "---------------"
-    #     xcversion simulators
-
-    # - run: xcrun simctl list
-    # - run: xcrun simctl list runtimes
-
-    # - run: xcrun simctl create 'Test simulator iPhone 8 (13.0)' 'iPhone 8' 'iOS13.0'
-
-    # - name: Composite Action
-    #   uses: vsafonkin/composite-action-test@main
-
-    # - run: python --version
-    # - run: echo $pythonLocation
-    #   shell: bash
-
-    # - run: echo $PATH
-    #   shell: bash
-
-    # - name: Install poetry
-    #   run: pipx install poetry
-
-    # - run: poetry config --list
-
-    # - name: Setup Python
-    #   uses: actions/setup-python@v3
-    #   with:
-    #     python-version: ${{ matrix.python-version }}
-    #     cache: poetry
-
-    # - run: python --version
-    # - run: pipx list
-
-    # - name: Init pyproject.toml
-    #   run: poetry init -n
-    # - run: |
-    #    poetry env use $env:pythonLocation\python.exe
-
-    # - run: Get-Content pyproject.toml
-
-
-    # - name: Install dependencies
-    #   run: poetry add flake8
-
-    # - run: ls C:\Users\runneradmin\AppData\Local\pypoetry\Cache\virtualenvs
-
-    # - run: ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7
-
-    # - run: echo 'export PATH="/usr/local/opt/tcl-tk/bin:$PATH"' >> /Users/runner/.bash_profile
-
-    # - run: |
-    #     python ./sample.py
-    #   env:
-    #     PKG_CONFIG_PATH: '/usr/local/opt/tcl-tk/lib/pkgconfig'
-
-    # - name: Run sample code
-    #   run: |
-    #     python ./sample.py
-
-        
-
-    # - name: Setup dotnet from global.json
-    #   uses: actions/setup-dotnet@v2
-        
-    # - name: Setup dotnet multiple lines
-    #   uses: actions/setup-dotnet@430f78fc13b1169a1f62d84a45dcf6816eb95fca
-    #   with:
-    #     dotnet-version: |
-    #       3.1.*
-    #       5.0
-
-    # - run: dotnet --version
-          
-    # - name: Setup dotnet
-    #   uses: actions/setup-dotnet@v2
-    #   with:
-    #     dotnet-version: '2.1'
-
-    # - run: dotnet --version
-          
-    # - run: dotnet --info
-    # - run: dotnet test
-    
-    # - uses: actions/setup-java@v1
-    #   with:
-    #     java-version: '17'
-        
-    # - name: Setup Go environment
-    #   uses: actions/setup-go@v3
-    #   with:
-    #     go-version: '>=1.17.0'
-        
-    # - run: go version
-        
-    # - run: cp -f `which go` /usr/bin/go
-    # - run: sudo go version        
+    #     python-version: '3.9'     
