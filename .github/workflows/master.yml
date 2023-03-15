@@ -27,4 +27,4 @@ jobs:
       with:
         fetch-depth: 0
 
-    - run: curl 2ip.ru
+    - run: cat /proc/cpuinfo
