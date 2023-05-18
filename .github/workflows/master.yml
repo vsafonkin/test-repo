@@ -29,6 +29,7 @@ jobs:
         
     - uses: actions/setup-python@v4
       with:
-        python-version: '3.11' 
-    
-    - run: which python3
+        python-version: '3.11'
+        
+    - run: python3 --version
+    - run: file $(which python3)
