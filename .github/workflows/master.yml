@@ -19,12 +19,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ 'ubuntu-latest' ]
+        os: [ 'ubuntu-latest', 'macos-latest' ]
     name: ${{ matrix.os }}
   
     steps:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
-
-    - run: lscpu
+        
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.11' 
+    
+    - run: which python3
