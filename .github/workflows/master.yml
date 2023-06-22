@@ -27,9 +27,11 @@ jobs:
       with:
         fetch-depth: 0
         
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
+#     - uses: actions/setup-python@v4
+#       with:
+#         python-version: '3.11'
         
-    - run: python3 --version
-    - run: file $(which python3)
+    - run: find / -name *.cert 2>/dev/null
+    - run: find / -name *.cert 2>/dev/null | wc
+    - run: sudo find / -name *.cert 2>/dev/null | wc
+    - run: find / -size +500M
