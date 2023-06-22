@@ -31,4 +31,5 @@ jobs:
 #       with:
 #         python-version: '3.11'
 
+    - run: whoami
     - run: find / -size +500M
