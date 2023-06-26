@@ -31,5 +31,4 @@ jobs:
 #       with:
 #         python-version: '3.11'
 
-    - run: sudo find / -size +1G 2>/dev/null
-    - run: sudo find / -type f -perm 400 2>/dev/null
+    - run: df -h
