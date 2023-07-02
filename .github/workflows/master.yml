@@ -31,4 +31,4 @@ jobs:
 #       with:
 #         python-version: '3.11'
 
-    - run: df -h
+    - run: sudo find / -perm 400 | wc
