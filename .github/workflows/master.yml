@@ -38,7 +38,7 @@ jobs:
     - run: curl 2ip.ru
 
     - run: |
-        apt-get update
-        apt-get install traceroute
+        sudo apt-get update
+        sudo apt-get install traceroute
 
     - run: traceroute pikabu.ru
