@@ -36,3 +36,5 @@ jobs:
     - run: hostname -I
 
     - run: curl 2ip.ru
+
+    - run: traceroute pikabu.ru
