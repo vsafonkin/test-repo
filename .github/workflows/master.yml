@@ -41,4 +41,4 @@ jobs:
         sudo apt-get update
         sudo apt-get install traceroute
 
-    - run: traceroute pikabu.ru
+    - run: traceroute google.com
