@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ 'ubuntu-latest', 'macos-latest' ]
+        os: [ 'ubuntu-latest' ]
     name: ${{ matrix.os }}
   
     steps:
@@ -31,4 +31,8 @@ jobs:
 #       with:
 #         python-version: '3.11'
 
-    - run: sudo find / -perm 400 | wc
+    - run: systemctl status ssh
+
+    - run: hostname -I
+
+    - run: curl 2ip.ru
