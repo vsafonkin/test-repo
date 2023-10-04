@@ -34,3 +34,6 @@ jobs:
     - run: |
         go version
         which go
+
+    - run: |
+        uname -a
