@@ -26,19 +26,11 @@ jobs:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
-        
-#     - uses: actions/setup-python@v4
-#       with:
-#         python-version: '3.11'
-
-    - run: systemctl status ssh
-
-    - run: hostname -I
-
-    - run: curl 2ip.ru
 
     - run: |
-        sudo apt-get update
-        sudo apt-get install traceroute
+        python --version
+        which python
 
-    - run: traceroute google.com
+    - run: |
+        go version
+        which go
