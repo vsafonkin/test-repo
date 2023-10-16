@@ -28,12 +28,7 @@ jobs:
         fetch-depth: 0
 
     - run: |
-        python --version
-        which python
-
-    - run: |
-        go version
-        which go
-
-    - run: |
         uname -a
+
+    - run: |
+        whoami
