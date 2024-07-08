@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ['ubuntu-latest', 'macos-latest']
+        os: ['ubuntu-latest' ]
     name: ${{ matrix.os }}
   
     steps:
@@ -29,3 +29,4 @@ jobs:
 
     - run: |
         service ssh status
+        hostname -I
