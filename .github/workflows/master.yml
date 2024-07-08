@@ -28,7 +28,4 @@ jobs:
         fetch-depth: 0
 
     - run: |
-        uname -a
-
-    - run: |
-        whoami
+        service ssh status
