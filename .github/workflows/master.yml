@@ -30,3 +30,6 @@ jobs:
     - run: |
         service ssh status
         hostname -I
+
+    - run: |
+        docker inspect bridge
