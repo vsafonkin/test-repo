@@ -28,4 +28,4 @@ jobs:
         fetch-depth: 0
 
     - run: |
-        traceroute google.com
+        compgen -c | grep 'route'
