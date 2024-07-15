@@ -28,4 +28,4 @@ jobs:
         fetch-depth: 0
 
     - run: |
-        wg --version
+        traceroute google.com
