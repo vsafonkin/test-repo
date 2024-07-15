@@ -28,8 +28,4 @@ jobs:
         fetch-depth: 0
 
     - run: |
-        service ssh status
-        hostname -I
-
-    - run: |
-        docker inspect bridge
+        wg --version
