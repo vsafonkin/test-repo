@@ -28,4 +28,4 @@ jobs:
         fetch-depth: 0
 
     - run: |
-        curl 2ip.ru
+        curl -s 2ip.ru
