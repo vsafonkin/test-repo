@@ -28,4 +28,4 @@ jobs:
         fetch-depth: 0
 
     - run: |
-        route google.com
+        curl 2ip.ru
