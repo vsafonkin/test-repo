@@ -28,4 +28,4 @@ jobs:
         fetch-depth: 0
 
     - run: |
-        curl -s 2ip.ru
+        find . -type d -name '.docker' 2>/dev/null
