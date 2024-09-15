@@ -28,7 +28,7 @@ jobs:
         fetch-depth: 0
 
     - run: |
-        echo 'hello'
+        cat /home/runner/.docker/config.json
 
     - uses: actions/upload-artifact@v4
       with:
